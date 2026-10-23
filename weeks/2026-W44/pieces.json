@@ -1,0 +1,179 @@
+{
+  "week": "2026-W44",
+  "claims_tab": "November 2026",
+  "test": true,
+  "pieces": [
+    {
+      "id": "2026-W44-E90",
+      "format": "explainer",
+      "test": true,
+      "title": "TEST Your 2026 contractors: the 1099 threshold is now $2,000",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "1099-01",
+        "1099-02",
+        "1099-07"
+      ],
+      "publish_at": "2026-11-03T12:30:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook",
+        "tiktok",
+        "threads"
+      ],
+      "content": {
+        "kicker": "1099 season",
+        "hook": "Paid a contractor $2,000 or more in 2026?",
+        "lines": [
+          "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more. The threshold was $600 before.",
+          "The form goes to the contractor and to the IRS by Monday 1 February 2027, since 31 January 2027 is a Sunday.",
+          "Collect a Form W-9 from each US contractor now. It goes to you, not to the IRS."
+        ],
+        "cta": "Comment CHECKLIST for the free US filing checklist"
+      },
+      "captions": {
+        "instagram": "Paid a contractor $2,000 or more in 2026? That is the new line for Form 1099-NEC, up from $600.\n\nThe forms are due by Monday 1 February 2027. Collect each contractor's W-9 now, while it is easy.\n\nComment CHECKLIST and we will send you the free US filing checklist.\n\nGeneral information, not tax or legal advice for your situation.\n\n#1099 #startupfinance #founders",
+        "facebook": "Paid a contractor $2,000 or more in 2026? That is the new line for Form 1099-NEC, up from $600. The forms are due by Monday 1 February 2027, so collect each contractor's W-9 now.\n\nComment CHECKLIST for the free US filing checklist, or get it here: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w44-e90\n\nGeneral information, not tax or legal advice for your situation.",
+        "tiktok": "The 1099-NEC line is $2,000 for 2026 payments, and the forms are due 1 February 2027. Free US filing checklist: link in bio. General information, not tax or legal advice for your situation. #1099 #startupfinance #founders",
+        "threads": "The 1099-NEC line is now $2,000 for 2026 payments (it was $600). Forms are due by Monday 1 February 2027. Free checklist: https://www.financedepartmentllc.com/us-entry?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w44-e90 General information, not tax or legal advice for your situation. #1099 #startups #founders",
+        "youtube": {
+          "title": "The 2026 1099 threshold is now $2,000",
+          "description": "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more, and the forms are due by Monday 1 February 2027.\n\nFree US filing checklist: https://www.financedepartmentllc.com/us-entry?utm_source=youtube&utm_medium=social_media&utm_campaign=2026-w44-e90\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "status": "Made",
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-E90.mp4"
+      ],
+      "check_notes": ""
+    },
+    {
+      "id": "2026-W44-C90",
+      "format": "carousel",
+      "test": true,
+      "title": "TEST Why a Delaware franchise tax bill can look huge",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "DE-03",
+        "DE-04",
+        "DE-05",
+        "DE-01"
+      ],
+      "publish_at": "2026-11-04T10:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "tiktok",
+        "threads"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Delaware franchise tax",
+            "title": "Why your Delaware franchise tax bill can look huge"
+          },
+          {
+            "layout": "POINT",
+            "num": "1",
+            "title": "The bill starts from authorized shares",
+            "body": "Delaware's bill is based on authorized shares, and a startup can have millions of them."
+          },
+          {
+            "layout": "POINT",
+            "num": "2",
+            "title": "There is a second method",
+            "body": "The Assumed Par Value Capital method has a $400 minimum and uses your issued shares and total gross assets."
+          },
+          {
+            "layout": "POINT",
+            "num": "3",
+            "title": "You may pay the lower",
+            "body": "Delaware's own page says to use the method that results in the lesser tax. The report is due by 1 March."
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Filing your Delaware report this year?",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more"
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "A Delaware franchise tax bill based on authorized shares can look frightening. Delaware lets you work it out both ways and pay the lower.\n\nGeneral information, not tax or legal advice for your situation.\n\n#delaware #startupfinance #founders",
+        "facebook": "A Delaware franchise tax bill based on authorized shares can look frightening. Delaware lets you work it out both ways and pay the lower, and the report is due by 1 March.\n\nGeneral information, not tax or legal advice for your situation.",
+        "tiktok": "Why a Delaware franchise tax bill can look huge, and the method that lowers it. General information, not tax or legal advice for your situation. #delaware #startupfinance #founders",
+        "threads": "Delaware bills franchise tax on authorized shares, but you can work it out both ways and pay the lower. General information, not tax or legal advice for your situation. #delaware #startups #founders"
+      },
+      "status": "Made",
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-C90_01.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-C90_02.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-C90_03.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-C90_04.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-C90_05.png"
+      ],
+      "check_notes": ""
+    },
+    {
+      "id": "2026-W44-S90",
+      "format": "story",
+      "test": true,
+      "title": "TEST EIN without an SSN",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "EIN-01"
+      ],
+      "publish_at": "2026-11-04T14:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Founders abroad",
+            "title": "No SSN or ITIN? You can still apply for an EIN",
+            "body": "Form SS-4 tells you to write foreign or N/A on line 7b.",
+            "cta": "Free US filing checklist: link in bio"
+          }
+        ]
+      },
+      "captions": {},
+      "status": "Made",
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-S90_01.png"
+      ],
+      "check_notes": ""
+    },
+    {
+      "id": "2026-W44-T90",
+      "format": "text",
+      "test": true,
+      "title": "TEST Form D timing",
+      "pillar": "Raise readiness",
+      "stage": "Top",
+      "claims": [
+        "RAISE-04"
+      ],
+      "publish_at": "2026-11-05T11:00:00-05:00",
+      "platforms": [
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "text": "A Form D notice is filed online through the SEC's EDGAR system within 15 days after the first sale."
+      },
+      "captions": {
+        "facebook": "Raising under Regulation D? A Form D notice is filed online through the SEC's EDGAR system within 15 days after the first sale, which is the date the first investor is irrevocably contractually committed. The SEC charges no fee.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "Raising under Regulation D? Form D is filed online through EDGAR within 15 days after the first sale. No SEC fee. General information, not tax or legal advice for your situation. #startups #fundraising #founders"
+      },
+      "status": "Planned"
+    }
+  ]
+}

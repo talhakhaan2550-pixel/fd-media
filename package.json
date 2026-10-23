@@ -1,0 +1,13 @@
+{
+  "name": "fd-media",
+  "private": true,
+  "type": "module",
+  "description": "Makes and serves the finished media for Finance Department's social posts",
+  "scripts": {
+    "make": "node tools/make.mjs",
+    "check": "node tools/check.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.64.1"
+  }
+}
