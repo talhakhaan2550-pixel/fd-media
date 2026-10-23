@@ -1,7 +1,7 @@
 {
   "pagesBase": "https://talhakhaan2550-pixel.github.io/fd-media",
   "platforms_enabled": ["youtube", "instagram", "facebook", "tiktok", "threads"],
-  "posting_hours_eastern": [8, 19],
+  "posting_hours_eastern": [9, 19],
   "max_feed_posts_per_day": 3,
   "min_gap_hours": 2
 }
