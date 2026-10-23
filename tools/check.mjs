@@ -90,12 +90,16 @@ export function checkPiece(p, claims, week) {
     if (needsDisclaimer && !body.includes(DISCLAIMER)) errors.push(`${n} caption lacks "${DISCLAIMER}"`);
     const urls = body.match(/https?:\/\/\S+/g) || [];
     if ((n === "instagram" || n === "tiktok") && (urls.length || /www\./i.test(body))) errors.push(`${n} captions cannot carry links; say "link in bio"`);
-    for (const u of urls) {
+    // Every YouTube post is a Short, and YouTube makes links in Shorts descriptions unclickable,
+    // so the call to action points to the links on the channel page instead.
+    if (n === "youtube" && (urls.length || /www\./i.test(body))) errors.push('youtube Shorts cannot carry clickable links; say "link on our channel page"');
+    for (const u of n === "youtube" ? [] : urls) {
       const m = u.match(/^https:\/\/www\.financedepartmentllc\.com\/[a-z0-9\-\/]*\?utm_source=([a-z]+)&utm_medium=social_media&utm_campaign=([a-z0-9\-]+)$/);
       if (!m) errors.push(`${n} link is not a tracked financedepartmentllc.com link: ${u}`);
       else if (m[1] !== n || m[2] !== p.id.toLowerCase()) errors.push(`${n} link must carry utm_source=${n} and utm_campaign=${p.id.toLowerCase()}`);
     }
-    if ((p.stage === "Middle" || p.stage === "Bottom") && ["facebook", "x", "threads", "youtube"].includes(n) && !urls.length) errors.push(`${n} needs the tracked link for a ${p.stage.toLowerCase()} of funnel piece`);
+    if ((p.stage === "Middle" || p.stage === "Bottom") && ["facebook", "x", "threads"].includes(n) && !urls.length) errors.push(`${n} needs the tracked link for a ${p.stage.toLowerCase()} of funnel piece`);
+    if ((p.stage === "Middle" || p.stage === "Bottom") && n === "youtube" && !/link on our channel page/i.test(body)) errors.push('youtube needs "link on our channel page"');
     if ((p.stage === "Middle" || p.stage === "Bottom") && n === "instagram" && !/link in bio/i.test(body)) errors.push('instagram needs "link in bio"');
     if (n === "tiktok" && (p.stage === "Middle" || p.stage === "Bottom") && !/link in bio/i.test(body)) errors.push('tiktok needs "link in bio"');
   }
