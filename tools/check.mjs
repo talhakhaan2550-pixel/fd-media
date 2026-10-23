@@ -96,7 +96,7 @@ export function checkPiece(p, claims, week) {
       else if (m[1] !== n || m[2] !== p.id.toLowerCase()) errors.push(`${n} link must carry utm_source=${n} and utm_campaign=${p.id.toLowerCase()}`);
     }
     if ((p.stage === "Middle" || p.stage === "Bottom") && ["facebook", "x", "threads", "youtube"].includes(n) && !urls.length) errors.push(`${n} needs the tracked link for a ${p.stage.toLowerCase()} of funnel piece`);
-    if ((p.stage === "Middle" || p.stage === "Bottom") && n === "instagram" && !/link in bio|comment (SCORECARD|CHECKLIST)/i.test(body)) errors.push('instagram needs "link in bio" or a comment keyword');
+    if ((p.stage === "Middle" || p.stage === "Bottom") && n === "instagram" && !/link in bio/i.test(body)) errors.push('instagram needs "link in bio"');
     if (n === "tiktok" && (p.stage === "Middle" || p.stage === "Bottom") && !/link in bio/i.test(body)) errors.push('tiktok needs "link in bio"');
   }
   // Timing
