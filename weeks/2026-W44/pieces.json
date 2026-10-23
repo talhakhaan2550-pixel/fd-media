@@ -174,6 +174,83 @@
         "threads": "Raising under Regulation D? Form D is filed online through EDGAR within 15 days after the first sale. No SEC fee. General information, not tax or legal advice for your situation. #startups #fundraising #founders"
       },
       "status": "Planned"
+    },
+    {
+      "id": "2026-W44-E91",
+      "format": "explainer",
+      "test": true,
+      "title": "TEST Scheduled run check: the 1099 threshold is now $2,000",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "1099-01",
+        "1099-02",
+        "1099-07"
+      ],
+      "publish_at": "2026-11-05T12:30:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "kicker": "1099 season",
+        "hook": "Paid a contractor $2,000 or more in 2026?",
+        "lines": [
+          "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more. The threshold was $600 before.",
+          "The form goes to the contractor and to the IRS by Monday 1 February 2027, since 31 January 2027 is a Sunday.",
+          "Collect a Form W-9 from each US contractor now. It goes to you, not to the IRS."
+        ],
+        "cta": "Get the free US filing checklist"
+      },
+      "captions": {
+        "instagram": "Paid a contractor $2,000 or more in 2026? That is the new line for Form 1099-NEC, up from $600.\n\nThe forms are due by Monday 1 February 2027. Collect each contractor's W-9 now, while it is easy.\n\nThe free US filing checklist is at the link in bio.\n\nGeneral information, not tax or legal advice for your situation.\n\n#1099 #startupfinance #founders",
+        "facebook": "Paid a contractor $2,000 or more in 2026? That is the new line for Form 1099-NEC, up from $600. The forms are due by Monday 1 February 2027, so collect each contractor's W-9 now.\n\nGet the free US filing checklist here: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w44-e91\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "TEST The 2026 1099 threshold is now $2,000",
+          "description": "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more, and the forms are due by Monday 1 February 2027.\n\nFree US filing checklist: https://www.financedepartmentllc.com/us-entry?utm_source=youtube&utm_medium=social_media&utm_campaign=2026-w44-e91\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-E91.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W44-S91",
+      "format": "story",
+      "test": true,
+      "title": "TEST Scheduled run check: EIN without an SSN",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "EIN-01"
+      ],
+      "publish_at": "2026-11-05T14:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Founders abroad",
+            "title": "No SSN or ITIN? You can still apply for an EIN",
+            "body": "Form SS-4 tells you to write foreign or N/A on line 7b.",
+            "cta": "Free US filing checklist: link in bio"
+          }
+        ]
+      },
+      "captions": {},
+      "status": "Made",
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-S91_01.png"
+      ],
+      "check_notes": "",
+      "metricool": {}
     }
   ]
 }
