@@ -214,9 +214,14 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-E91.mp4"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {
+        "facebook": {
+          "id": 404066146,
+          "uuid": "-6268568824860948975"
+        }
+      }
     },
     {
       "id": "2026-W44-S91",
@@ -245,12 +250,17 @@
         ]
       },
       "captions": {},
-      "status": "Made",
+      "status": "Draft in Metricool",
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W44/media/TEST-2026-W44-S91_01.png"
       ],
       "check_notes": "",
-      "metricool": {}
+      "metricool": {
+        "instagram": {
+          "id": 404066129,
+          "uuid": "-6430416967046575039"
+        }
+      }
     }
   ]
 }
