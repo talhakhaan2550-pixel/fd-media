@@ -12,17 +12,18 @@ const here = dirname(fileURLToPath(import.meta.url));
 const config = JSON.parse(readFileSync(join(here, "config.json"), "utf8"));
 
 export const FORMAT_PLATFORMS = {
-  explainer: ["youtube", "instagram", "facebook", "tiktok", "x", "threads"],
+  explainer: ["youtube", "instagram", "facebook", "tiktok", "linkedin", "x", "threads"],
+  ad: ["youtube", "instagram", "facebook", "tiktok", "linkedin", "x", "threads"],
   reel: ["youtube", "instagram", "facebook", "tiktok", "x", "threads"],
   cut: ["youtube", "instagram", "facebook", "tiktok", "x", "threads"],
   avatar: ["youtube", "instagram", "facebook", "tiktok", "x", "threads"],
-  carousel: ["instagram", "facebook", "tiktok", "x", "threads"],
+  carousel: ["instagram", "facebook", "tiktok", "linkedin", "x", "threads"],
   story: ["instagram", "facebook"],
-  text: ["facebook", "x", "threads"],
+  text: ["facebook", "linkedin", "x", "threads"],
 };
-const LETTER = { reel: "Y", cut: "Y", explainer: "E", avatar: "A", carousel: "C", story: "S", text: "T" };
-const CAPTION_MAX = { x: 280, threads: 500, instagram: 2200, tiktok: 2200, facebook: 5000 };
-const HASHTAGS = { instagram: [3, 5], tiktok: [3, 5], threads: [3, 5], x: [0, 2], facebook: [0, 0], youtube: [0, 3] };
+const LETTER = { reel: "Y", cut: "Y", explainer: "E", ad: "D", avatar: "A", carousel: "C", story: "S", text: "T" };
+const CAPTION_MAX = { x: 280, threads: 500, instagram: 2200, tiktok: 2200, facebook: 5000, linkedin: 3000 };
+const HASHTAGS = { instagram: [3, 5], tiktok: [3, 5], threads: [3, 5], x: [0, 2], facebook: [0, 0], youtube: [0, 3], linkedin: [0, 3] };
 const DISCLAIMER = "General information, not tax or legal advice for your situation.";
 const BANNED = [
   [/\bthe finance department\b/i, 'the name is "Finance Department", never "The Finance Department"'],
@@ -40,7 +41,7 @@ const DASH = /[‒–—―]| - /;
 
 const allText = (p) => {
   const c = p.content || {};
-  const parts = [c.kicker, c.hook, ...(c.lines || []), c.cta, c.text, ...(c.slides || []).flatMap((s) => Object.entries(s).filter(([k]) => k !== "layout").map(([, v]) => v))];
+  const parts = [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta, c.text, ...(c.slides || []).flatMap((s) => Object.entries(s).filter(([k]) => k !== "layout").map(([, v]) => v))];
   for (const [k, v] of Object.entries(p.captions || {})) parts.push(typeof v === "string" ? v : [v.title, v.description].join(" "));
   return parts.filter((x) => typeof x === "string").join("\n");
 };
@@ -98,7 +99,7 @@ export function checkPiece(p, claims, week) {
       if (!m) errors.push(`${n} link is not a tracked financedepartmentllc.com link: ${u}`);
       else if (m[1] !== n || m[2] !== p.id.toLowerCase()) errors.push(`${n} link must carry utm_source=${n} and utm_campaign=${p.id.toLowerCase()}`);
     }
-    if ((p.stage === "Middle" || p.stage === "Bottom") && ["facebook", "x", "threads"].includes(n) && !urls.length) errors.push(`${n} needs the tracked link for a ${p.stage.toLowerCase()} of funnel piece`);
+    if ((p.stage === "Middle" || p.stage === "Bottom") && ["facebook", "linkedin", "x", "threads"].includes(n) && !urls.length) errors.push(`${n} needs the tracked link for a ${p.stage.toLowerCase()} of funnel piece`);
     if ((p.stage === "Middle" || p.stage === "Bottom") && n === "youtube" && !/link on our channel page/i.test(body)) errors.push('youtube needs "link on our channel page"');
     if ((p.stage === "Middle" || p.stage === "Bottom") && n === "instagram" && !/link in bio/i.test(body)) errors.push('instagram needs "link in bio"');
     if (n === "tiktok" && (p.stage === "Middle" || p.stage === "Bottom") && !/link in bio/i.test(body)) errors.push('tiktok needs "link in bio"');
@@ -107,8 +108,15 @@ export function checkPiece(p, claims, week) {
   const e = p.publish_at ? eastern(p.publish_at) : null;
   if (!e) errors.push("publish_at must be a date and time with its offset, such as 2026-11-03T12:30:00-05:00");
   else if (e.hour < config.posting_hours_eastern[0] || e.hour > config.posting_hours_eastern[1]) errors.push(`publish_at is outside ${config.posting_hours_eastern.join(":00 to ")}:00 Eastern`);
+  // Ads: an opening shot made by AI must say so, so the AI label goes on when the piece is placed.
+  if (fmt === "ad") {
+    const c = p.content || {};
+    if (c.hook_clip && typeof p.ai_generated !== "boolean") errors.push("an ad with a hook_clip needs ai_generated true or false");
+    if (p.ai_generated === true) warnings.push("AI made footage: switch on each platform's AI label when placing");
+    if (!c.offer) warnings.push("an ad usually names its offer on the end card");
+  }
   // Media
-  if (["explainer", "carousel", "story", "reel", "cut", "avatar"].includes(fmt) && ["Made", "Passed check", "Draft in Metricool", "Scheduled"].includes(p.status) && !(p.media || []).length) errors.push("no media");
+  if (["explainer", "ad", "carousel", "story", "reel", "cut", "avatar"].includes(fmt) && ["Made", "Passed check", "Draft in Metricool", "Scheduled"].includes(p.status) && !(p.media || []).length) errors.push("no media");
   if (fmt === "carousel" && (p.media || []).length && p.content && p.content.slides && p.media.length !== p.content.slides.length) errors.push("the carousel's image count does not match its slides");
   return { errors, warnings, eastern: e };
 }

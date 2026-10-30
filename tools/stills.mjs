@@ -12,9 +12,11 @@ export const LIMITS = {
   COVER: { kicker: 40, title: 90, footer: 60 },
   POINT: { num: 3, title: 80, body: 260, footer: 60 },
   CLOSE: { title: 80, body: 180, cta: 48 },
-  STORY: { kicker: 40, title: 110, body: 200, cta: 48 },
+  STORY: { photo: 10, kicker: 40, title: 110, body: 200, cta: 48 },
 };
 const SITE = "financedepartmentllc.com";
+// Real photos only, never AI made: Talha's portrait and the photo of him receiving the Best Freelancer of Swabi award.
+export const PHOTOS = { talha: "photos/talha.jpg", award: "photos/award.jpg" };
 
 export function checkStill(piece) {
   const p = [];
@@ -37,6 +39,7 @@ export function checkStill(piece) {
       if (!(k in lim)) { p.push(`slide ${i + 1} has a field ${k} its layout does not use`); continue; }
       if (String(s[k]).length > lim[k]) p.push(`slide ${i + 1} ${k} is ${String(s[k]).length} characters, over ${lim[k]}`);
     }
+    if (s.photo !== undefined && !(s.photo in PHOTOS)) p.push(`slide ${i + 1} photo must be one of ${Object.keys(PHOTOS).join(", ")}`);
     const needs = { COVER: ["title"], POINT: ["num", "title"], CLOSE: ["title", "cta"], STORY: ["title"] }[s.layout];
     for (const k of needs) if (!s[k] || !String(s[k]).trim()) p.push(`slide ${i + 1} needs ${k}`);
   });
@@ -116,8 +119,10 @@ function slideHtml(s, i, total, kind) {
     inner = `<div class="slide navy" style="padding:280px 96px 360px 96px">
       ${brand(72, "#F9FBFA")}
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
+        ${s.photo === "talha" ? `<img src="${ASSETS}/${PHOTOS.talha}" alt="" style="width:260px;height:260px;border-radius:50%;object-fit:cover;border:6px solid var(--emerald)">` : ""}
+        ${s.photo === "award" ? `<img src="${ASSETS}/${PHOTOS.award}" alt="" style="width:100%;height:auto;border-radius:24px;display:block">` : ""}
         ${s.kicker ? `<p style="font-weight:500;font-size:42px;color:var(--emerald)">${esc(s.kicker)}</p>` : ""}
-        <h1 class="serif" style="font-size:${size(s.title, 100, TITLE_STEPS)}px;line-height:1.07">${marked(s.title)}</h1>
+        <h1 class="serif" style="font-size:${size(s.title, s.photo ? 84 : 100, TITLE_STEPS)}px;line-height:1.07">${marked(s.title)}</h1>
         ${s.body ? `<p style="font-size:${size(s.body, 46, BODY_STEPS)}px;line-height:1.38;color:var(--soft)">${marked(s.body)}</p>` : ""}
       </div>
       ${s.cta ? `<p style="font-weight:500;font-size:46px;color:var(--emerald)">${esc(s.cta)}</p>` : ""}
@@ -130,9 +135,12 @@ export function chromiumPath() {
   if (process.env.CHROMIUM_PATH && existsSync(process.env.CHROMIUM_PATH)) return process.env.CHROMIUM_PATH;
   const root = "/opt/pw-browsers";
   if (existsSync(root)) {
+    // Newer Playwright builds use chrome-linux64, older ones chrome-linux.
     for (const d of readdirSync(root).filter((d) => /^chromium-\d+$/.test(d)).sort().reverse()) {
-      const p = join(root, d, "chrome-linux64", "chrome");
-      if (existsSync(p)) return p;
+      for (const sub of ["chrome-linux64", "chrome-linux"]) {
+        const p = join(root, d, sub, "chrome");
+        if (existsSync(p)) return p;
+      }
     }
   }
   return undefined;

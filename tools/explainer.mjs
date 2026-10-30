@@ -9,24 +9,28 @@ import { tmpdir } from "node:os";
 import { execFileSync } from "node:child_process";
 
 const here = dirname(fileURLToPath(import.meta.url));
-export const LIMITS = { kicker: 40, hook: 90, line: 150, cta: 60, minLines: 2, maxLines: 7 };
+export const LIMITS = { kicker: 40, hook: 90, line: 150, cta: 60, offer: 70, minLines: 2, maxLines: 7 };
 const SITE = "financedepartmentllc.com";
 export const HYPERFRAMES = "hyperframes@0.8.186";
 
-export function checkExplainer(piece) {
+// opts lets the ad format reuse this engine: its own id pattern, fewer lines and an offer on the end card.
+export function checkExplainer(piece, opts = {}) {
   const p = [];
-  if (!/^\d{4}-W\d{2}-E\d{2}$/.test(piece.id || "")) p.push("id must look like 2026-W45-E01");
+  const idRe = opts.idRe || /^\d{4}-W\d{2}-E\d{2}$/;
+  const minLines = opts.minLines ?? LIMITS.minLines, maxLines = opts.maxLines ?? LIMITS.maxLines;
+  if (!idRe.test(piece.id || "")) p.push(opts.idHint || "id must look like 2026-W45-E01");
   const c = piece.content || {};
   const text = (v) => typeof v === "string" && v.trim().length > 0;
   if (c.kicker !== undefined && (!text(c.kicker) || c.kicker.length > LIMITS.kicker)) p.push(`kicker must be 1 to ${LIMITS.kicker} characters`);
   if (!text(c.hook) || c.hook.length > LIMITS.hook) p.push(`hook must be 1 to ${LIMITS.hook} characters`);
-  if (!Array.isArray(c.lines) || c.lines.length < LIMITS.minLines || c.lines.length > LIMITS.maxLines) {
-    p.push(`lines must hold ${LIMITS.minLines} to ${LIMITS.maxLines} lines`);
+  if (c.offer !== undefined && (!opts.allowOffer || !text(c.offer) || c.offer.length > LIMITS.offer)) p.push(opts.allowOffer ? `offer must be 1 to ${LIMITS.offer} characters` : "only an ad carries an offer");
+  if (!Array.isArray(c.lines) || c.lines.length < minLines || c.lines.length > maxLines) {
+    p.push(`lines must hold ${minLines} to ${maxLines} lines`);
   } else {
     c.lines.forEach((l, i) => { if (!text(l) || l.length > LIMITS.line) p.push(`line ${i + 1} must be 1 to ${LIMITS.line} characters`); });
   }
   if (!text(c.cta) || c.cta.length > LIMITS.cta) p.push(`cta must be 1 to ${LIMITS.cta} characters`);
-  const all = [c.kicker, c.hook, ...(c.lines || []), c.cta].filter(text).join(" ");
+  const all = [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta].filter(text).join(" ");
   if (/https?:\/\/|www\.|\.(com|org|gov|net|io)\b/i.test(all)) p.push("no web address may appear in the words; the end card carries the site");
   return p;
 }
@@ -40,8 +44,8 @@ const MONTHS = "January|February|March|April|May|June|July|August|September|Octo
 const HL = new RegExp(`(\\$[\\d,.]+(?:\\s?(?:million|billion))?|\\d[\\d,.]*%|\\b\\d{1,2} (?:${MONTHS})(?: \\d{4})?\\b)`, "g");
 const marked = (s) => esc(s).replace(HL, '<span class="hl">$1</span>');
 
-export function buildExplainer(piece, outRoot = join(tmpdir(), "fd-explainers")) {
-  const problems = checkExplainer(piece);
+export function buildExplainer(piece, outRoot = join(tmpdir(), "fd-explainers"), opts = {}) {
+  const problems = checkExplainer(piece, opts);
   if (problems.length) throw new Error(problems.join("; "));
   const c = piece.content;
   const scenes = [];
@@ -96,6 +100,7 @@ export function buildExplainer(piece, outRoot = join(tmpdir(), "fd-explainers"))
       #bar { width: 840px; height: 6px; background: var(--emerald); border-radius: 3px; transform-origin: left center; }
       #end { display: flex; flex-direction: column; justify-content: center; padding: 300px 160px 520px 120px; gap: 44px; }
       #end img { width: 160px; height: 160px; display: block; }
+      #end .offer { font-weight: 500; font-size: 44px; line-height: 1.3; color: var(--emerald); }
       #end .cta { font-family: "Source Serif 4", serif; font-weight: 600; font-size: 76px; line-height: 1.12; letter-spacing: -0.01em; }
       #end .site { font-weight: 500; font-size: 46px; color: var(--emerald); }
     </style>
@@ -109,6 +114,7 @@ export function buildExplainer(piece, outRoot = join(tmpdir(), "fd-explainers"))
 ${sceneHtml}
       <section id="end" class="clip" data-start="${endStart}" data-duration="${endDur}" data-track-index="1">
         <img src="assets/fd-mark.svg" alt="" />
+        ${c.offer ? `<p class="offer">${esc(c.offer)}</p>` : ""}
         <p class="cta">${esc(c.cta)}</p>
         <p class="site">${SITE}</p>
       </section>
@@ -140,16 +146,18 @@ function headlessShell() {
   if (process.env.PRODUCER_HEADLESS_SHELL_PATH) return process.env.PRODUCER_HEADLESS_SHELL_PATH;
   const root = "/opt/pw-browsers";
   if (!existsSync(root)) return undefined;
+  // Newer Playwright builds ship chrome-headless-shell-linux64/chrome-headless-shell, older ones chrome-linux/headless_shell.
   for (const d of readdirSync(root).filter((d) => d.startsWith("chromium_headless_shell-")).sort().reverse()) {
-    const p = join(root, d, "chrome-headless-shell-linux64", "chrome-headless-shell");
-    if (existsSync(p)) return p;
+    for (const p of [join(root, d, "chrome-headless-shell-linux64", "chrome-headless-shell"), join(root, d, "chrome-linux", "headless_shell")]) {
+      if (existsSync(p)) return p;
+    }
   }
   return undefined;
 }
 
 // Builds and renders one explainer into mediaDir, and writes the scene frames into previewDir.
-export function renderExplainer(piece, mediaDir, previewDir) {
-  const { dir, total, looks } = buildExplainer(piece);
+export function renderExplainer(piece, mediaDir, previewDir, opts = {}) {
+  const { dir, total, looks } = buildExplainer(piece, undefined, opts);
   mkdirSync(mediaDir, { recursive: true });
   const name = `${piece.test ? "TEST-" : ""}${piece.id}.mp4`;
   const out = join(mediaDir, name);
@@ -166,5 +174,5 @@ export function renderExplainer(piece, mediaDir, previewDir) {
       frames.push(f);
     });
   }
-  return { file: name, seconds: total, frames };
+  return { file: name, seconds: total, frames, looks };
 }

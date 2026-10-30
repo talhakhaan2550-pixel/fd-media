@@ -1,4 +1,4 @@
-// Makes the media for a week's pieces: explainers through HyperFrames, carousels and stories through Chromium.
+// Makes the media for a week's pieces: explainers and ads through HyperFrames, carousels and stories through Chromium.
 // Files land in weeks/{week}/media/, which GitHub Pages serves at {pagesBase}/weeks/{week}/media/{file}.
 // For each piece it also writes one contact sheet to .previews/ for the run to look at before the piece passes.
 //
@@ -8,6 +8,7 @@ import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
 import { renderExplainer } from "./explainer.mjs";
+import { renderAd } from "./ad.mjs";
 import { renderStill } from "./stills.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -37,13 +38,13 @@ mkdirSync(previewDir, { recursive: true });
 const report = [];
 
 for (const p of week.pieces) {
-  if (!["explainer", "carousel", "story"].includes(p.format)) continue;
+  if (!["explainer", "ad", "carousel", "story"].includes(p.format)) continue;
   if (only && !only.includes(p.id)) continue;
   if (!force && !["Planned", "Rendering"].includes(p.status)) continue;
   try {
     let files, frames;
-    if (p.format === "explainer") {
-      const r = renderExplainer(p, mediaDir, join(previewDir, p.id));
+    if (p.format === "explainer" || p.format === "ad") {
+      const r = p.format === "ad" ? renderAd(p, mediaDir, join(previewDir, p.id)) : renderExplainer(p, mediaDir, join(previewDir, p.id));
       files = [r.file];
       frames = r.frames;
     } else {
