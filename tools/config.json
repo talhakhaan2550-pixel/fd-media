@@ -3,8 +3,7 @@
   "platforms_enabled": [
     "youtube",
     "instagram",
-    "facebook",
-    "threads"
+    "facebook"
   ],
   "posting_hours_eastern": [
     9,
