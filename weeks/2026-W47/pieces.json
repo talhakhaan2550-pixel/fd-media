@@ -1,0 +1,778 @@
+{
+  "week": "2026-W47",
+  "claims_tab": "November 2026",
+  "test": true,
+  "pieces": [
+    {
+      "id": "2026-W47-E90",
+      "format": "explainer",
+      "test": true,
+      "title": "TEST Ten forms or more means e-filing, and IRIS is the only way in for 2026 returns",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "1099-02",
+        "1099-04",
+        "1099-05"
+      ],
+      "publish_at": "2026-11-16T12:30:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "kicker": "IRS e-filing",
+        "hook": "Filing 10 or more information returns in a year?",
+        "lines": [
+          "Information returns include the 1099s that go to your contractors and to the IRS.",
+          "A business filing 10 or more information returns in a year, counting every type of form together, must file them electronically.",
+          "For tax year 2026, IRIS is the only IRS system for filing information returns electronically.",
+          "The old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026."
+        ],
+        "cta": "Follow for more founder finance, explained simply"
+      },
+      "captions": {
+        "instagram": "Filing 10 or more information returns in a year, counting every type of form together? Then they must be filed electronically. Information returns include the 1099s that go to your contractors and to the IRS.\n\nFor tax year 2026, IRIS is the only IRS system for filing information returns electronically. The old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026.\n\nFollow for more founder finance, explained simply.\n\n#1099 #irs #smallbusiness #startupfinance\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Filing 10 or more information returns in a year, counting every type of form together? Then they must be filed electronically. Information returns include the 1099s that go to your contractors and to the IRS.\n\nFor tax year 2026, IRIS is the only IRS system for filing information returns electronically. The old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "Filing 10 or more information returns, like 1099s, in a year, counting every type of form together? They must be filed electronically.\n\nFor tax year 2026, IRIS is the only IRS system for that, and the old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026.\n\nFollow for more founder finance, explained simply.\n#1099 #irs #smallbusiness\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "TEST 10 or more information returns? IRIS is the only way in for 2026",
+          "description": "Information returns include the 1099s that go to your contractors and to the IRS. A business filing 10 or more information returns in a year, counting every type of form together, must file them electronically. For tax year 2026, IRIS is the only IRS system for filing information returns electronically, and the old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-E90.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T90",
+      "format": "text",
+      "test": true,
+      "title": "TEST Why we never take a success fee",
+      "pillar": "Founder stories",
+      "stage": "Bottom",
+      "claims": [
+        "FD-05",
+        "FD-01",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-16T16:30:00-05:00",
+      "platforms": [
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "text": "Why we never take a success fee. A success fee is a share of the money you raise. We do not introduce investors or take a success fee; you stay in charge of your raise."
+      },
+      "captions": {
+        "facebook": "Why we never take a success fee.\n\nA success fee is a share of the money you raise. We do not introduce investors or take a success fee; you stay in charge of your raise.\n\nWe have worked with 300+ founders.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/scorecard?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w47-t90",
+        "threads": "Why we never take a success fee: a success fee is a share of the money you raise. We do not introduce investors or take a success fee; you stay in charge of your raise.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/scorecard?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w47-t90\n#founders #fundraising #startups"
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-S90",
+      "format": "story",
+      "test": true,
+      "title": "TEST Who you would work with: 300+ founders",
+      "pillar": "Founder stories",
+      "stage": "Bottom",
+      "claims": [
+        "FD-01",
+        "FD-02",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-16T18:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "photo": "talha",
+            "kicker": "Who you would work with",
+            "title": "We have worked with 300+ founders",
+            "body": "Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {},
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S90_01.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-C90",
+      "format": "carousel",
+      "test": true,
+      "title": "TEST Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "DE-01",
+        "DE-02",
+        "DE-03",
+        "DE-04",
+        "DE-05",
+        "DE-08",
+        "WY-01",
+        "WY-02"
+      ],
+      "publish_at": "2026-11-17T10:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Forming a US company",
+            "title": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year"
+          },
+          {
+            "layout": "POINT",
+            "num": "1",
+            "title": "Delaware corporation",
+            "body": "Delaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. The annual report fee is $50 for a corporation that is not exempt, and $25 for an exempt one."
+          },
+          {
+            "layout": "POINT",
+            "num": "2",
+            "title": "Franchise tax by authorized shares",
+            "body": "Authorized shares are the most shares your charter allows. Under the Authorized Shares method, 5,000 shares or fewer pay the minimum $175, 5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85."
+          },
+          {
+            "layout": "POINT",
+            "num": "3",
+            "title": "Or by assumed par value capital",
+            "body": "The Assumed Par Value Capital method has a $400 minimum and needs the corporation's issued shares and total gross assets. Delaware's page says: \"Use the method that results in the lesser tax.\""
+          },
+          {
+            "layout": "POINT",
+            "num": "4",
+            "title": "Delaware LLC",
+            "body": "A Delaware LLC pays an annual tax of $400, due by 1 June for the year before."
+          },
+          {
+            "layout": "POINT",
+            "num": "5",
+            "title": "Wyoming LLC",
+            "body": "A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater."
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Forming your US company?",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more"
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year.\n\nDelaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. A Delaware LLC pays an annual tax of $400, due by 1 June for the year before. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater.\n\nFollow for more founder finance, explained simply.\n\n#delaware #wyoming #llc #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year.\n\nDelaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. A Delaware LLC pays an annual tax of $400, due by 1 June for the year before. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "What a US company pays every year: Delaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March. A Delaware LLC pays an annual tax of $400, due by 1 June for the year before. A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year.\n\nFollow for more founder finance, explained simply.\n#delaware #wyoming #llc\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_01.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_02.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_03.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_04.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_05.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_06.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_07.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-E91",
+      "format": "explainer",
+      "test": true,
+      "title": "TEST US research costs can again be deducted in the year paid or incurred",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "RD-01",
+        "RD-02"
+      ],
+      "publish_at": "2026-11-17T15:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "kicker": "Research costs",
+        "hook": "Paid for US research in a tax year beginning after 31 December 2024?",
+        "lines": [
+          "Those US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A of the tax code.",
+          "Spreading them over 60 months or more is optional.",
+          "Research and experimental costs for work done outside the US must still be spread over 15 years."
+        ],
+        "cta": "Follow for more founder finance, explained simply"
+      },
+      "captions": {
+        "instagram": "For tax years beginning after 31 December 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A of the tax code. Spreading them over 60 months or more is optional.\n\nResearch and experimental costs for work done outside the US must still be spread over 15 years.\n\nFollow for more founder finance, explained simply.\n\n#startupfinance #founders #taxes #research\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "For tax years beginning after 31 December 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A of the tax code. Spreading them over 60 months or more is optional.\n\nResearch and experimental costs for work done outside the US must still be spread over 15 years.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "For tax years beginning after 31 December 2024, US research costs can again be deducted in the year paid or incurred, under Section 174A of the tax code. Costs for work done outside the US must still be spread over 15 years.\n\nFollow for more founder finance, explained simply.\n#startupfinance #founders #taxes\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "TEST Tax years beginning after 2024: US research costs deductible in the year paid or incurred",
+          "description": "For tax years beginning after 31 December 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A of the tax code; spreading them over 60 months or more is optional. Research and experimental costs for work done outside the US must still be spread over 15 years.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-E91.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-S91",
+      "format": "story",
+      "test": true,
+      "title": "TEST FIRE takes its last filings on 19 November 2026",
+      "pillar": "Deadlines",
+      "stage": "Bottom",
+      "claims": [
+        "1099-05",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-17T18:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Filing 1099s",
+            "title": "The old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026",
+            "body": "For tax year 2026, IRIS is the only IRS system for filing information returns, such as 1099s, electronically.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {},
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S91_01.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-D90",
+      "format": "ad",
+      "test": true,
+      "title": "TEST Ad: the free raise readiness scorecard",
+      "pillar": "Raise readiness",
+      "stage": "Middle",
+      "claims": [
+        "FD-10",
+        "FD-02"
+      ],
+      "publish_at": "2026-11-18T12:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "ai_generated": true,
+      "content": {
+        "hook_visual": "Slow push in on a dark wooden desk at night: loose receipts, a bank statement and an open laptop showing a half finished spreadsheet under one warm lamp, cinematic light, shallow depth of field, no people, no hands, no faces",
+        "kicker": "Raise readiness",
+        "hook": "Would your numbers hold up if an investor asked today?",
+        "lines": [
+          "The free raise readiness scorecard is twelve questions.",
+          "Then you get your score and your three biggest gaps.",
+          "Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds."
+        ],
+        "offer": "The free raise readiness scorecard",
+        "cta": "Take the free scorecard"
+      },
+      "captions": {
+        "instagram": "Would your numbers hold up if an investor asked today?\n\nThe free raise readiness scorecard is twelve questions, then your score and your three biggest gaps.\n\nTake the free scorecard through the link in bio.\n\n#startupfinance #fundraising #founders #investorready",
+        "facebook": "Would your numbers hold up if an investor asked today?\n\nThe free raise readiness scorecard is twelve questions, then your score and your three biggest gaps. Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds.\n\nTake the free scorecard: https://www.financedepartmentllc.com/scorecard?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w47-d90",
+        "threads": "Would your numbers hold up if an investor asked today? The free raise readiness scorecard is twelve questions, then your score and your three biggest gaps.\n\nTake the free scorecard: https://www.financedepartmentllc.com/scorecard?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w47-d90\n#startupfinance #fundraising #founders",
+        "youtube": {
+          "title": "TEST The free raise readiness scorecard: twelve questions",
+          "description": "The free raise readiness scorecard is twelve questions, then your score and your three biggest gaps.\n\nTake the free scorecard through the link on our channel page."
+        }
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-D90.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T91",
+      "format": "text",
+      "test": true,
+      "title": "TEST Payment apps and Form 1099-K: the $20,000 and 200 test",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "1099-06"
+      ],
+      "publish_at": "2026-11-18T16:00:00-05:00",
+      "platforms": [
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "text": "Payment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200."
+      },
+      "captions": {
+        "facebook": "Paid through a payment app this year?\n\nPayment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200. Both have to be true.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "Payment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200. Both have to be true.\n\nFollow for more founder finance, explained simply.\n#1099k #smallbusiness #founders\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-S92",
+      "format": "story",
+      "test": true,
+      "title": "TEST Your Wyoming annual report lands in the month you formed",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "WY-01",
+        "WY-04",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-18T18:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Wyoming LLC owners",
+            "title": "Your annual report is due on the first day of the month your LLC was formed in, every year",
+            "body": "A Wyoming company whose annual report tax is not paid within 60 days of the due date can be dissolved, and the reinstatement fee is $100.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {},
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S92_01.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-E92",
+      "format": "explainer",
+      "test": true,
+      "title": "TEST Foreign owned US LLC? Form 5472 and the $25,000 penalty",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "5472-01",
+        "5472-02",
+        "5472-03",
+        "5472-04",
+        "FD-11"
+      ],
+      "publish_at": "2026-11-19T12:30:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "kicker": "Form 5472",
+        "hook": "Is your US LLC owned entirely by one foreign person?",
+        "lines": [
+          "If it is not taxed as a corporation, it files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality.",
+          "That is for each year it has a reportable transaction with a related party, such as its owner.",
+          "For 2026, that pro forma 1120 with Form 5472 is due by Thursday 15 April 2027.",
+          "Form 7004 extends the time to file by six months, to Friday 15 October 2027.",
+          "This Form 5472 cannot be filed electronically: it is faxed to 855-887-7737 or mailed to the IRS in Ogden, Utah.",
+          "Not filing a required Form 5472 on time carries a $25,000 penalty.",
+          "Another $25,000 follows for each 30 days, or part of 30 days, that the failure continues more than 90 days after the IRS's notice."
+        ],
+        "cta": "Get the free US filing checklist"
+      },
+      "captions": {
+        "instagram": "Is your US LLC owned entirely by one foreign person? If it is not taxed as a corporation, it files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality, for each year it has a reportable transaction with a related party, such as its owner.\n\nFor 2026 that is due by Thursday 15 April 2027, and Form 7004 extends the time to file by six months, to Friday 15 October 2027. This Form 5472 cannot be filed electronically. Not filing a required Form 5472 on time carries a $25,000 penalty.\n\nGet the free US filing checklist through the link in bio.\n\n#llc #usllc #founders #smallbusiness\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Is your US LLC owned entirely by one foreign person? If it is not taxed as a corporation, it files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality, for each year it has a reportable transaction with a related party, such as its owner.\n\nFor 2026 that is due by Thursday 15 April 2027, and Form 7004 extends the time to file by six months, to Friday 15 October 2027. This Form 5472 cannot be filed electronically. Not filing a required Form 5472 on time carries a $25,000 penalty.\n\nGet the free US filing checklist: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w47-e92\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "A US LLC owned entirely by one foreign person, and not taxed as a corporation, files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality, for each year it has a reportable transaction with a related party, such as its owner.\n\nFree US filing checklist: https://www.financedepartmentllc.com/us-entry?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w47-e92\n#llc #usllc #founders\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "TEST Foreign owned US LLC? Form 5472 and the $25,000 penalty",
+          "description": "A US LLC owned entirely by one foreign person, and not taxed as a corporation, files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality, for each year it has a reportable transaction with a related party, such as its owner. For 2026 it is due by Thursday 15 April 2027, and not filing a required Form 5472 on time carries a $25,000 penalty.\n\nGet the free US filing checklist through the link on our channel page.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-E92.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T92",
+      "format": "text",
+      "test": true,
+      "title": "TEST Beneficial ownership reports in 2026: who still files",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "BOI-01",
+        "BOI-02"
+      ],
+      "publish_at": "2026-11-19T16:30:00-05:00",
+      "platforms": [
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "text": "US companies and US persons do not report beneficial ownership information to FinCEN; a final rule made this permanent from 14 August 2026."
+      },
+      "captions": {
+        "facebook": "Beneficial ownership reports in 2026: who still files?\n\nBeneficial ownership information is about who owns or controls a company. US companies and US persons do not report it to FinCEN, the Financial Crimes Enforcement Network; a final rule made this permanent from 14 August 2026.\n\nCertain companies formed outside the US and registered to do business in a US state still report it, leaving out any US person owners, within 30 days of notice that their registration is effective.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "Beneficial ownership information is about who owns or controls a company. US companies and US persons do not report it to FinCEN, the Financial Crimes Enforcement Network; a final rule made this permanent from 14 August 2026. Certain companies formed outside the US and registered to do business in a US state still report it.\n\nFollow for more founder finance, explained simply.\n#llc #founders #smallbusiness\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-S93",
+      "format": "story",
+      "test": true,
+      "title": "TEST What the call is: 30 minutes with Muhammad Talha",
+      "pillar": "Raise readiness",
+      "stage": "Bottom",
+      "claims": [
+        "FD-12",
+        "FD-05"
+      ],
+      "publish_at": "2026-11-19T18:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "photo": "talha",
+            "kicker": "Raising in the next year?",
+            "title": "A 30 minute call with Muhammad Talha",
+            "body": "We do not introduce investors or take a success fee; you stay in charge of your raise.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {},
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S93_01.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-E93",
+      "format": "explainer",
+      "test": true,
+      "title": "TEST 506(b) or 506(c): can you post about your raise?",
+      "pillar": "Raise readiness",
+      "stage": "Top",
+      "claims": [
+        "RAISE-01",
+        "RAISE-03",
+        "RAISE-05",
+        "RAISE-06"
+      ],
+      "publish_at": "2026-11-20T12:30:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "kicker": "Raising money",
+        "hook": "506(b) or 506(c): can you post about your raise?",
+        "lines": [
+          "Under Rule 506(b), a company cannot use general solicitation or advertising, meaning promoting the raise to the public.",
+          "It can sell to any number of accredited investors plus up to 35 other purchasers who are financially sophisticated, alone or with a representative.",
+          "An individual can be an accredited investor through the SEC's income, net worth or license tests.",
+          "Under Rule 506(c), a company can advertise its raise broadly.",
+          "But every purchaser must be accredited, and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements."
+        ],
+        "cta": "Follow for more founder finance, explained simply"
+      },
+      "captions": {
+        "instagram": "506(b) or 506(c): can you post about your raise?\n\nUnder Rule 506(b), a company cannot use general solicitation or advertising, meaning promoting the raise to the public. Under Rule 506(c), a company can advertise its raise broadly, but every purchaser must be accredited, and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements.\n\nFollow for more founder finance, explained simply.\n\n#fundraising #startups #founders #startupfinance\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "506(b) or 506(c): can you post about your raise?\n\nUnder Rule 506(b), a company cannot use general solicitation or advertising, meaning promoting the raise to the public. Under Rule 506(c), a company can advertise its raise broadly, but every purchaser must be accredited, and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "Can you post about your raise? Under Rule 506(b), a company cannot use general solicitation or advertising, meaning promoting the raise to the public. Under Rule 506(c), it can advertise broadly, but every purchaser must be accredited and the company must take reasonable steps to verify it.\n\nFollow for more founder finance, explained simply.\n#fundraising #startups #founders\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "TEST 506(b) or 506(c): can you post about your raise?",
+          "description": "Under Rule 506(b), a company cannot use general solicitation or advertising, meaning promoting the raise to the public. Under Rule 506(c), a company can advertise its raise broadly, but every purchaser must be accredited, and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-E93.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-S94",
+      "format": "story",
+      "test": true,
+      "title": "TEST Delaware's 1 March deadline and what missing it costs",
+      "pillar": "Deadlines",
+      "stage": "Bottom",
+      "claims": [
+        "DE-01",
+        "DE-07",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-20T18:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Delaware corporations",
+            "title": "Your annual report and franchise tax, a yearly state tax, are due by 1 March each year",
+            "body": "In 2027 that is a Monday. Missing 1 March brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {},
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S94_01.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-C91",
+      "format": "carousel",
+      "test": true,
+      "title": "TEST Who counts as an accredited investor",
+      "pillar": "Raise readiness",
+      "stage": "Top",
+      "claims": [
+        "RAISE-05",
+        "RAISE-06"
+      ],
+      "publish_at": "2026-11-21T11:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Raise readiness",
+            "title": "Who counts as an accredited investor"
+          },
+          {
+            "layout": "POINT",
+            "num": "1",
+            "title": "By income",
+            "body": "An individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year."
+          },
+          {
+            "layout": "POINT",
+            "num": "2",
+            "title": "By net worth",
+            "body": "An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence."
+          },
+          {
+            "layout": "POINT",
+            "num": "3",
+            "title": "By a professional license",
+            "body": "An individual also qualifies by holding a Series 7, 65 or 82 license in good standing."
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Raising from individual investors?",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more"
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Who counts as an accredited investor?\n\nAn individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year. An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence, or by holding a Series 7, 65 or 82 license in good standing.\n\nFollow for more founder finance, explained simply.\n\n#fundraising #angelinvesting #startups #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Who counts as an accredited investor?\n\nAn individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year. An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence, or by holding a Series 7, 65 or 82 license in good standing.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "An individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years and reasonably expected this year; or a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting the primary residence; or a Series 7, 65 or 82 license in good standing.\n\nFollow for more founder finance, explained simply.\n#fundraising #startups #founders\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C91_01.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C91_02.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C91_03.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C91_04.png",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C91_05.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-S95",
+      "format": "story",
+      "test": true,
+      "title": "TEST The award and more than 150 Fiverr reviews",
+      "pillar": "Founder stories",
+      "stage": "Bottom",
+      "claims": [
+        "FD-04",
+        "FD-07",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-21T18:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "photo": "award",
+            "kicker": "Talha's track record",
+            "title": "Best Freelancer of Swabi award",
+            "body": "More than 150 reviews clients have left for Talha's work on Fiverr.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {},
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S95_01.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-E94",
+      "format": "explainer",
+      "test": true,
+      "title": "TEST What a late or wrong 1099 costs",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "1099-08",
+        "1099-02",
+        "FD-11"
+      ],
+      "publish_at": "2026-11-22T12:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "content": {
+        "kicker": "1099 penalties",
+        "hook": "What does a late or wrong 1099 cost?",
+        "lines": [
+          "Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027.",
+          "A 1099 due in 2027 that is late or wrong costs $60 a return if put right within 30 days of the due date.",
+          "It costs $130 a return if put right by 1 August, and $340 after that or if never filed.",
+          "Intentional disregard, ignoring the rules on purpose, costs at least $690 a return.",
+          "A late or wrong payee copy, the one for the person you paid, is penalized separately on the same scale."
+        ],
+        "cta": "Get the free US filing checklist"
+      },
+      "captions": {
+        "instagram": "What does a late or wrong 1099 cost?\n\nA 1099 due in 2027 that is late or wrong costs $60 a return if put right within 30 days of the due date, $130 if put right by 1 August, and $340 after that or if never filed. Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027.\n\nGet the free US filing checklist through the link in bio.\n\n#1099 #irs #smallbusiness #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "What does a late or wrong 1099 cost?\n\nA 1099 due in 2027 that is late or wrong costs $60 a return if put right within 30 days of the due date, $130 if put right by 1 August, and $340 after that or if never filed. Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027.\n\nGet the free US filing checklist: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w47-e94\n\nGeneral information, not tax or legal advice for your situation.",
+        "threads": "A 1099 due in 2027 that is late or wrong costs $60 a return if put right within 30 days of the due date, $130 if put right by 1 August, and $340 after that or if never filed.\n\nFree US filing checklist: https://www.financedepartmentllc.com/us-entry?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w47-e94\n#1099 #irs #smallbusiness\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "TEST What a late or wrong 1099 costs",
+          "description": "A 1099 due in 2027 that is late or wrong costs $60 a return if put right within 30 days of the due date, $130 if put right by 1 August, and $340 after that or if never filed. Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027.\n\nGet the free US filing checklist through the link on our channel page.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-E94.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-S96",
+      "format": "story",
+      "test": true,
+      "title": "TEST The 5 Day Investor Ready Scan",
+      "pillar": "Raise readiness",
+      "stage": "Bottom",
+      "claims": [
+        "FD-13",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-22T18:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Before you raise",
+            "title": "The 5 Day Investor Ready Scan: a findings report with a Money at Stake page in five working days",
+            "body": "$750 for our first five clients, then $1,250.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {},
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S96_01.png"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    }
+  ]
+}
