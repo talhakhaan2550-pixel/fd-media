@@ -43,9 +43,22 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-E90.mp4"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {
+        "youtube": {
+          "id": "425716091",
+          "uuid": "5035627628514068246"
+        }
+      },
+      "buffer": {
+        "instagram": [
+          "6af5cfab1529ce0ee251c4bd"
+        ],
+        "facebook": [
+          "6af5cfb534d77ef87be52864"
+        ]
+      }
     },
     {
       "id": "2026-W47-T90",
@@ -70,8 +83,8 @@
         "facebook": "Why we never take a success fee.\n\nA success fee is a share of the money you raise. We do not introduce investors or take a success fee; you stay in charge of your raise.\n\nWe have worked with 300+ founders.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/scorecard?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w47-t90"
       },
       "media": [],
-      "status": "Planned",
-      "check_notes": "",
+      "status": "Held",
+      "check_notes": "Production check: the Facebook caption's call to action is the 30 minute call, but its tracked link goes to the /scorecard page; the kit's tracked link rule sends the 30 minute call to the book page.",
       "metricool": {}
     },
     {
@@ -107,9 +120,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S90_01.png"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6af5cfb534d77ef87be528b7"
+        ],
+        "facebook": [
+          "6af5cfb793f7b85068996b0c"
+        ]
+      }
     },
     {
       "id": "2026-W47-C90",
@@ -191,9 +212,17 @@
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_06.png",
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-C90_07.png"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6af5cfc834d77ef87be533d0"
+        ],
+        "facebook": [
+          "6af5cfc893f7b8506899757c"
+        ]
+      }
     },
     {
       "id": "2026-W47-E91",
@@ -233,9 +262,22 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-E91.mp4"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {
+        "youtube": {
+          "id": "425716763",
+          "uuid": "-73113228026493468"
+        }
+      },
+      "buffer": {
+        "instagram": [
+          "6af5cfd50900687297ef5c69"
+        ],
+        "facebook": [
+          "6af5cfd581d2b1069d0cf0b2"
+        ]
+      }
     },
     {
       "id": "2026-W47-S91",
@@ -268,9 +310,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S91_01.png"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6af5cfd60900687297ef5cb7"
+        ],
+        "facebook": [
+          "6af5cfd634d77ef87be539af"
+        ]
+      }
     },
     {
       "id": "2026-W47-D90",
@@ -313,9 +363,22 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-D90.mp4"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {
+        "youtube": {
+          "id": "425716848",
+          "uuid": "-730818435870014339"
+        }
+      },
+      "buffer": {
+        "instagram": [
+          "6af5cfe51529ce0ee251e04c"
+        ],
+        "facebook": [
+          "6af5cfe5f4b3fbda6553bf41"
+        ]
+      }
     },
     {
       "id": "2026-W47-T91",
@@ -338,9 +401,14 @@
         "facebook": "Paid through a payment app this year?\n\nPayment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200. Both have to be true.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Planned",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "facebook": [
+          "6af5cfe61529ce0ee251e0e3"
+        ]
+      }
     },
     {
       "id": "2026-W47-S92",
@@ -374,9 +442,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/TEST-2026-W47-S92_01.png"
       ],
-      "status": "Made",
+      "status": "Draft in Metricool",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6af5cfe634d77ef87be53f8a"
+        ],
+        "facebook": [
+          "6af5cfe793f7b85068997f33"
+        ]
+      }
     },
     {
       "id": "2026-W47-E92",
