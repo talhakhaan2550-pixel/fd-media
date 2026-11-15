@@ -18,10 +18,11 @@ export const FORMAT_PLATFORMS = {
   cut: ["youtube", "instagram", "facebook", "tiktok", "x", "threads"],
   avatar: ["youtube", "instagram", "facebook", "tiktok", "x", "threads"],
   carousel: ["instagram", "facebook", "tiktok", "linkedin", "x", "threads"],
+  carousel_reel: ["youtube", "instagram", "facebook", "tiktok"],
   story: ["instagram", "facebook"],
   text: ["facebook", "linkedin", "x", "threads"],
 };
-const LETTER = { reel: "Y", cut: "Y", explainer: "E", ad: "D", avatar: "A", carousel: "C", story: "S", text: "T" };
+const LETTER = { reel: "Y", cut: "Y", explainer: "E", ad: "D", avatar: "A", carousel: "C", carousel_reel: "M", story: "S", text: "T" };
 const CAPTION_MAX = { x: 280, threads: 500, instagram: 2200, tiktok: 2200, facebook: 5000, linkedin: 3000 };
 const HASHTAGS = { instagram: [3, 5], tiktok: [3, 5], threads: [3, 5], x: [0, 2], facebook: [0, 0], youtube: [0, 3], linkedin: [0, 3] };
 const DISCLAIMER = "General information, not tax or legal advice for your situation.";
@@ -39,9 +40,25 @@ const BANNED = [
 ];
 const DASH = /[‒–—―]| - /;
 
+// Every string inside a value (visuals and scenes are nested objects).
+const strings = (v) => typeof v === "string" ? [v] : Array.isArray(v) ? v.flatMap(strings) : v && typeof v === "object" ? Object.values(v).flatMap(strings) : [];
+// The piece's own words: what visuals and scenes may show again.
+const ownWords = (p) => {
+  const c = p.content || {};
+  return [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta, c.text,
+    ...(c.slides || []).flatMap((s) => [s.kicker, s.title, s.body, s.cta, s.footer])].filter((x) => typeof x === "string").join("\n");
+};
+const SCENE_TYPES = ["headline", "stat", "doc", "route", "date", "ladder", "alert", "compare", "checklist", "map", "icons", "steps", "quote", "gauge", "end"];
+const VISUAL_TYPES = ["map", "stats", "date", "bars", "quote", "hero", "chips", "threshold", "split", "tiles", "list", "steps", "compare", "checklist"];
+// Figures that matter: money, percentages, numbers of two digits or more and years.
+const FIGS = /\$[\d,.]+(?:\s?(?:million|billion|M|K))?|\d[\d,.]*%|\b\d{1,3}(?:,\d{3})+\b|\b\d{2,}(?:\.\d+)?(?=s?\b)/g;
+// Money keeps its $ and percentages their %, so $65 never passes for a 65 elsewhere; plain one and two digit
+// numbers (days on a calendar) are not checked.
+const figureSet = (s) => new Set((s.match(FIGS) || []).map((f) => f.replace(/[.,]+$/, "").replace(/[,\s]|million|billion/g, "")));
 const allText = (p) => {
   const c = p.content || {};
-  const parts = [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta, c.text, ...(c.slides || []).flatMap((s) => Object.entries(s).filter(([k]) => k !== "layout").map(([, v]) => v))];
+  const parts = [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta, c.text, ...(c.slides || []).flatMap((s) => Object.entries(s).filter(([k]) => k !== "layout").flatMap(([, v]) => strings(v))),
+    ...strings(c.scenes || []), ...strings(c.say || {})];
   for (const [k, v] of Object.entries(p.captions || {})) parts.push(typeof v === "string" ? v : [v.title, v.description].join(" "));
   return parts.filter((x) => typeof x === "string").join("\n");
 };
@@ -115,8 +132,35 @@ export function checkPiece(p, claims, week) {
     if (p.ai_generated === true) warnings.push("AI made footage: switch on each platform's AI label when placing");
     if (!c.offer) warnings.push("an ad usually names its offer on the end card");
   }
+  // Studio: spoken words, scenes and visuals restate the piece's own words and add no figure
+  if (p.style !== "classic") {
+    const c = p.content || {};
+    const say = c.say || {};
+    if (say.lines !== undefined && (!Array.isArray(say.lines) || say.lines.length !== (c.lines || []).length)) errors.push("say.lines must have one entry per line");
+    for (const v of [say.hook, say.cta, ...(Array.isArray(say.lines) ? say.lines : [])]) if (v !== undefined && v !== null && (typeof v !== "string" || !v.trim())) errors.push("every say entry is a non-empty string");
+    const own = figureSet(ownWords(p));
+    const extras = [];
+    if (Array.isArray(c.scenes)) {
+      const beats = 2 + (c.lines || []).length;
+      if (c.scenes.length > beats) errors.push(`scenes has ${c.scenes.length} entries for ${beats} beats`);
+      c.scenes.forEach((s, i) => { if (s && !SCENE_TYPES.includes(s.type)) errors.push(`scene ${i + 1} has an unknown type ${s && s.type}`); if (s) extras.push(...strings(s)); });
+    }
+    for (const [i, s] of (c.slides || []).entries()) for (const k of ["visual", "visual2"]) {
+      if (!s[k]) continue;
+      if (!VISUAL_TYPES.includes(s[k].type)) errors.push(`slide ${i + 1} ${k} has an unknown type ${s[k].type}`);
+      extras.push(...strings(s[k]));
+    }
+    for (const t of extras) for (const f of figureSet(t)) if (!own.has(f) && !/^\d{1,2}$/.test(f)) errors.push(`a scene or visual shows ${f}, which is not in the piece's own words`);
+    if (fmt === "carousel_reel") {
+      const src = c.slides ? null : week.pieces.find((x) => x.id === c.from);
+      if (!c.slides && (!src || src.format !== "carousel")) errors.push("a carousel_reel needs content.from naming a carousel in this week");
+      if (src && !(p.claims || []).every((x) => (src.claims || []).includes(x))) warnings.push("its claims differ from its carousel's");
+    }
+    if ((fmt === "explainer" || fmt === "ad") && p.ai_voice === true) warnings.push("AI voice: switch on each platform's AI label when placing");
+  }
   // Media
-  if (["explainer", "ad", "carousel", "story", "reel", "cut", "avatar"].includes(fmt) && ["Made", "Passed check", "Draft in Metricool", "Scheduled"].includes(p.status) && !(p.media || []).length) errors.push("no media");
+  if (fmt === "carousel_reel" && (p.media || []).length > 1) errors.push("a carousel_reel has one video");
+  if (["explainer", "ad", "carousel", "carousel_reel", "story", "reel", "cut", "avatar"].includes(fmt) && ["Made", "Passed check", "Draft in Metricool", "Scheduled"].includes(p.status) && !(p.media || []).length) errors.push("no media");
   if (fmt === "carousel" && (p.media || []).length && p.content && p.content.slides && p.media.length !== p.content.slides.length) errors.push("the carousel's image count does not match its slides");
   return { errors, warnings, eastern: e };
 }

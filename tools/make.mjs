@@ -1,6 +1,10 @@
-// Makes the media for a week's pieces: explainers and ads through HyperFrames, carousels and stories through Chromium.
-// Files land in weeks/{week}/media/, which GitHub Pages serves at {pagesBase}/weeks/{week}/media/{file}.
-// For each piece it also writes one contact sheet to .previews/ for the run to look at before the piece passes.
+// Makes the media for a week's pieces. Files land in weeks/{week}/media/, which GitHub Pages serves at
+// {pagesBase}/weeks/{week}/media/{file}. For each piece it also writes one contact sheet to .previews/ for the run
+// to look at before the piece passes.
+//
+// Since 15 November 2026 every piece is made by the studio (tools/studio, Python): narrated story videos for
+// explainers and ads, carousels with visuals, carousel music reels and stories in the new style. A piece with
+// "style": "classic" is still made by the first engine (HyperFrames explainers and the plain slides).
 //
 //   node tools/make.mjs weeks/2026-W45/pieces.json [--only 2026-W45-E01,2026-W45-C01] [--force]
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
@@ -38,11 +42,25 @@ mkdirSync(previewDir, { recursive: true });
 const report = [];
 
 for (const p of week.pieces) {
-  if (!["explainer", "ad", "carousel", "story"].includes(p.format)) continue;
+  if (!["explainer", "ad", "carousel", "story", "carousel_reel"].includes(p.format)) continue;
   if (only && !only.includes(p.id)) continue;
   if (!force && !["Planned", "Rendering"].includes(p.status)) continue;
   try {
     let files, frames;
+    if (p.style !== "classic") {
+      const out = execFileSync("python3", [join(here, "studio", "render.py"), weekFile, p.id, "--media", mediaDir, "--preview", previewDir],
+        { encoding: "utf8", timeout: 30 * 60 * 1000, maxBuffer: 1 << 26 });
+      const r = JSON.parse(out.slice(out.indexOf("{")));
+      p.media = r.files.map((f) => `${config.pagesBase}/weeks/${week.week}/media/${f}`);
+      const notes = [...(r.problems || []).map((x) => `layout: ${x}`), ...(r.notes || [])];
+      if (p.content?.hook_clip) notes.push("the studio does not add the opening shot (hook_clip) yet; mark the piece \"style\": \"classic\" to stitch it");
+      if (p.format === "explainer" || p.format === "ad") p.ai_voice = r.voiced === true;
+      p.status = (r.problems || []).length ? "Held" : "Made";
+      p.check_notes = notes.join("; ");
+      report.push({ id: p.id, status: p.status, media: p.media, preview: r.preview, seconds: r.seconds, notes, loudness: r.loudness });
+      continue;
+    }
+    if (p.format === "carousel_reel") throw new Error("a carousel_reel is made only by the studio");
     if (p.format === "explainer" || p.format === "ad") {
       const r = p.format === "ad" ? renderAd(p, mediaDir, join(previewDir, p.id)) : renderExplainer(p, mediaDir, join(previewDir, p.id));
       files = [r.file];
