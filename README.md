@@ -8,6 +8,9 @@ Facebook) and Metricool (YouTube) fetch them by link when a post is placed. Ever
 
 - `weeks/{week}/pieces.json`: the week's pieces, written by the Monday plan run and updated by every run after it.
 - `weeks/{week}/media/`: the finished files, served at `{pagesBase}/weeks/{week}/media/{file}`.
+- `instagram/highlights/`: the six Instagram highlights put up on 15 November 2026. `media/` holds each highlight's cover
+  (`-01`) and its frames as 1080 x 1920 JPEGs, drawn by `tools/studio/instagram_highlights.py` and approved by Talha;
+  `stories.json` lists them in posting order with their alt text and the Buffer post that published each highlight's set.
 - `tools/studio/`: the studio, in Python, that makes every piece since 15 November 2026: carousel slides
   (1080 x 1350), story frames (1080 x 1920), narrated story videos for explainers and ads, each carousel's music reel
   (1080 x 1920) and LinkedIn post images (1080 x 1350). Since the afternoon of 15 November 2026 everything is in the
@@ -28,8 +31,8 @@ Facebook) and Metricool (YouTube) fetch them by link when a post is placed. Ever
     350 MB, checked by SHA-256 and kept in `~/.cache/fd-studio`).
 - `site/offer-videos.json`: the website's page videos, one for each offer page and one for the home page, written by
   `site/make_offer_videos.py` from the pages' words and the Claim Library (15 November 2026). Each runs the same way in under a
-  minute: the visitor's situation, what is at stake, the offer and its price, the written guarantee (the `promise` scene), what
-  you get, the record, and "Book a 30 minute call", the words of the button under the video on the page. Render one with
+  minute: the visitor's situation, what is at stake, the offer and its price, the written guarantee (the `promise` scene; the home page's video
+  opens on FD-30, Talha's line, in its place since 15 November 2026), what you get, the record, and "Book a 30 minute call", the words of the button under the video on the page. Render one with
   `python3 tools/studio/render.py site/offer-videos.json offer-1099 --media /tmp/out --preview /tmp/prev`; the finished files
   live in the website's `public/media` at 720 by 1280, not here.
 - `tools/make.mjs`: makes the media for a week's pieces and a contact sheet of each in `.previews/` (not committed).
