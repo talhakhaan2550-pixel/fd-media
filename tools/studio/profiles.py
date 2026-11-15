@@ -15,7 +15,7 @@ from brand import esc
 from capture import Browser
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else "/tmp/fd-profiles"
-HEAD = 'Every service has a fixed price and a <span class="em">written guarantee</span>.'
+HEAD = 'Every startup or company needs a Finance Department. <span class="em">Here\u2019s yours.</span>'
 DOORS = ["Books and tax", "Your US company from abroad", "Raising"]
 
 def chips(scale=1.0):
@@ -33,7 +33,7 @@ def facebook():
     w, h = 1640, 856  # phones show about the middle 1110 x 624; text stays inside it
     inner = ('<div class="lay" style="left:265px;top:150px;width:1110px;height:556px;display:flex;align-items:center;gap:52px">'
              '<div style="flex:1;display:flex;flex-direction:column;gap:26px">'
-             '<span class="kicker">Finance Department</span>'
+             '<span class="kicker">For US founders</span>'
              '<h1 style="font-family:Fraunces;font-weight:700;font-size:64px;line-height:1.08;margin:0">%s</h1>'
              '<div style="display:flex;flex-wrap:wrap;gap:12px">%s</div>'
              '<div style="font-size:26px;font-weight:600">300+ founders · financedepartmentllc.com</div></div>'
@@ -46,7 +46,7 @@ def youtube():
              '%s<div style="flex:1;display:flex;flex-direction:column;gap:22px">'
              '<h1 style="font-family:Fraunces;font-weight:700;font-size:68px;line-height:1.06;margin:0">%s</h1>'
              '<div style="display:flex;flex-wrap:wrap;gap:12px">%s</div>'
-             '<div style="font-size:28px;font-weight:600">Finance Department · 300+ founders · financedepartmentllc.com</div></div></div>'
+             '<div style="font-size:28px;font-weight:600">300+ founders · financedepartmentllc.com</div></div></div>'
              ) % (me(300), HEAD, chips(1.05))
     return w, h, page(w, h, inner)
 
