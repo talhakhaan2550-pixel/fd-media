@@ -391,7 +391,9 @@ def carousel_slide(s, idx, total, mode="post", disclaimer=False):
         if s.get("visual"):
             inner += visuals(s, mode, 0.9)
         else:
-            inner += '<div class="zmap" style="display:flex;justify-content:center;margin:30px 0 22px;opacity:.7">%s</div>' % usmap(640 if mode == "post" else 470, [], pins=False, d=0.9, faint=True, uid="z")
+            # the faint map may shrink (and is clipped) so the disclaimer and the dots below it never collide
+            inner += ('<div class="zmap" style="display:flex;justify-content:center;align-items:flex-start;margin:%s;opacity:.7;flex:0 1 auto;min-height:0;overflow:hidden">%s</div>'
+                      % ("30px 0 22px" if mode == "post" else "18px 0 10px", usmap(640 if mode == "post" else 400, [], pins=False, d=0.9, faint=True, uid="z")))
         if disclaimer:
             inner += '<div class="fine" style="margin-top:14px" data-a="fade" data-d="1.1">%s</div>' % DISCLAIMER
         top = page_top(idx, total)

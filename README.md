@@ -72,8 +72,10 @@ cannot be installed, explainers and ads are made with captions and music but no 
   writes them out itself. `scenes` has one scene per beat in order (hook, each line, call to action); `null` is the
   default, the line as a large headline, and the call to action's default is the end card. Scene types: headline,
   stat, doc, route, date, ladder, alert, compare, checklist, map, icons, steps, quote, gauge, end. A scene's `at`
-  names the spoken word its main moment lands on; consecutive `ladder` scenes with the same `id` grow one chart.
-- carousel and story `{slides: [{layout, ...}]}` with layouts COVER, POINT, CLOSE (carousels) and STORY, where a STORY may
+  names the spoken word it reacts to: its picture is on screen within about 1.4 seconds of the line starting and
+  pulses or lights up on that word; consecutive `ladder` scenes with the same `id` grow one chart.
+- carousel and story `{slides: [{layout, ...}]}` (each slide published as a JPEG, quality 93), with layouts COVER, POINT,
+  CLOSE (carousels) and STORY, where a STORY may
   carry `photo` set to `talha` or `award`. Optional slide fields: `emph` (the part of the title in emerald), `bold`
   (more phrases of the body to bold; figures and dates are bold anyway), `tag` (a point's small line above its
   title), `state` (a postal code for the small map), and `visual` and `visual2`, each one of: map, stats, date, bars,

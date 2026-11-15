@@ -31,6 +31,16 @@ def pad(s):
     return s
 
 
+def to_jpeg(png_path):
+    """Stills are published as JPEG (quality 93, full colour resolution): they look the same as the PNG at a
+    fifth of the size, and JPEG is what Instagram takes for images."""
+    from PIL import Image
+    jpg = png_path[:-4] + ".jpg"
+    Image.open(png_path).convert("RGB").save(jpg, "JPEG", quality=93, subsampling=0, optimize=True)
+    os.remove(png_path)
+    return jpg
+
+
 def render_carousel(piece, media, preview, browser):
     sl = piece["content"]["slides"]
     files, problems = [], []
@@ -40,7 +50,7 @@ def render_carousel(piece, media, preview, browser):
         p = browser.still(html, 1080, 1350, os.path.join(media, name), name)
         if p:
             problems.append("slide %d: %s" % (i + 1, p))
-        files.append(name)
+        files.append(os.path.basename(to_jpeg(os.path.join(media, name))))
     frames = [os.path.join(media, f) for f in files]
     return {"files": files, "frames": frames, "problems": problems}
 
@@ -49,6 +59,7 @@ def render_story(piece, media, preview, browser):
     s = piece["content"]["slides"][0]
     name = "%s%s_01.png" % (prefix(piece), piece["id"])
     p = browser.still(slides.story_frame(s, disclaimer=disclaimer_for(piece)), 1080, 1920, os.path.join(media, name), name)
+    name = os.path.basename(to_jpeg(os.path.join(media, name)))
     return {"files": [name], "frames": [os.path.join(media, name)], "problems": ["story: " + p] if p else []}
 
 

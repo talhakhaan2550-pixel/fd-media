@@ -14,6 +14,7 @@ from brand import esc, ic, ARROW, WAVE, us_map, shell, SITE, DISCLAIMER, AI_NOTE
 
 W, H, FPS = 1080, 1920, 30
 GAP, GAP_SAME, START = 0.55, 0.25, 0.35
+LATE = 1.4    # a scene's main picture is on screen by this many seconds into its beat; a later word gets a pulse
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 FIG = re.compile(r"^(\$[\d,.]+(?:M|K)?\+?|\d[\d,.]*%|\d[\d,]*\+?|" + MONTHS + r")[.,;:?!]?$")
 
@@ -157,6 +158,12 @@ class Out:
 TONES = {"green": "b1", "amber": "b2", "red": "b3"}
 
 
+def pulse(o, sel, t, amount=1.1):
+    """A short scale pulse, with a tick, on a word spoken after the picture is already up."""
+    o.j("TL.to('%s',{keyframes:{scale:[1,%.2f,1]},duration:.44,ease:'power1.inOut'},%.3f);", sel, amount, t - 0.12)
+    o.cues.append(("tick", t - 0.12, 0.26))
+
+
 def sc_headline(o, g, beats, gi, hook_kicker):
     b = beats[0]
     n = len(b.text)
@@ -248,10 +255,13 @@ def sc_date(o, g, beats, gi):
     o.html.append('<div class="center">%s<div class="calB big"><div class="m">%s</div><div class="d">%s</div><div class="s">%s</div></div>%s</div>'
                   % (lab, esc(sp.get("top", "")), esc(sp.get("day", "")), esc(sp.get("bottom", "")),
                      ('<div class="dtext">%s</div>' % esc(sp["text"])) if sp.get("text") else ""))
-    t = b.at(sp.get("at"), b.start + 0.4)
+    said = b.at(sp.get("at"), b.start + 0.4)
+    t = min(said, b.start + LATE)
     o.j("TL.fromTo('#%s .calB',{autoAlpha:0,y:80,scale:.7},{autoAlpha:1,y:0,scale:1,duration:.55,ease:'back.out(1.7)'},%.3f);", g, t - 0.3)
     o.j("TL.from('#%s .label,#%s .dtext',{opacity:0,y:20,duration:.5},%.3f);", g, g, b.start - 0.1)
     o.cues += [("tick", t - 0.3, 0.3), ("impact", t + 0.1, 0.25)]
+    if said > t + 0.6:
+        pulse(o, "#%s .calB" % g, said, 1.08)
 
 
 def sc_ladder(o, g, beats, gi):
@@ -415,8 +425,11 @@ def sc_stat(o, g, beats, gi):
                   % (('<div class="label slab">%s</div>' % esc(sp["prefix"])) if sp.get("prefix") else "", tone, g, esc(sp.get("value", "")),
                      ('<div class="ssuf">%s</div>' % esc(sp["label"])) if sp.get("label") else "", ('<div class="chips">%s</div>' % chips) if chips else ""))
     s = b.start
-    land = b.at(sp.get("at"), s + 0.5)
+    said = b.at(sp.get("at"), s + 0.5)
+    land = min(said, s + LATE)
     o.j("TL.from('#%s .slab,#%s .ssuf',{opacity:0,y:20,duration:.5},%.3f);", g, g, s - 0.1)
+    if said > land + 0.6:
+        pulse(o, "#%s_v" % g, said, 1.1)
     o.j("TL.fromTo('#%s_v',{opacity:0,scale:.7},{opacity:1,scale:1,duration:.55,ease:'back.out(1.6)'},%.3f);", g, land - 0.4)
     v = num_of(sp.get("value"))
     raw = str(sp.get("value", ""))
@@ -466,10 +479,13 @@ def sc_icons(o, g, beats, gi):
     tiles = "".join('<div class="itile" id="%s_i%d"><div class="ico big2">%s</div><div class="itl">%s</div></div>' % (g, k, ic(it.get("icon", "check"), 64), esc(it.get("label", "")))
                     for k, it in enumerate(items))
     o.html.append('<div class="center"><div class="igrid n%d">%s</div></div>' % (len(items), tiles))
+    # every tile is on stage, dimmed, from the start of the beat; each one lights up on its word
+    o.j("TL.fromTo('#%s .itile',{opacity:0,y:40,scale:.9},{opacity:.3,y:0,scale:.95,duration:.5,stagger:.08,ease:'power3.out'},%.3f);", g, b.start - 0.1)
     for k, it in enumerate(items):
-        t = b.at(it.get("at"), b.start + 0.3 + k * 0.55)
-        o.j("TL.fromTo('#%s_i%d',{opacity:0,y:40,scale:.9},{opacity:1,y:0,scale:1,duration:.5,ease:'back.out(1.6)'},%.3f);", g, k, t - 0.15)
-        o.cues.append(("tick", t - 0.15, 0.25))
+        t = max(b.start + 0.6, b.at(it.get("at"), b.start + 0.3 + k * 0.55) - 0.15)
+        o.j("TL.to('#%s_i%d',{opacity:1,scale:1.06,duration:.22,ease:'power2.out'},%.3f); TL.to('#%s_i%d',{scale:1,duration:.3,ease:'power2.inOut'},%.3f);",
+            g, k, t, g, k, t + 0.22)
+        o.cues.append(("tick", t, 0.25))
 
 
 def sc_steps(o, g, beats, gi):
@@ -652,7 +668,7 @@ def build(piece, beats, voiced=True, disclaimer=False):
             groups.append([b])
     o = Out()
     scene_html = []
-    caption_html, cap_js = [], []
+    caption_html, cap_js, cap_pages = [], [], []
     red_any = False
     for gi, gb in enumerate(groups):
         typ = gb[0].scene.get("type", "headline")
@@ -700,11 +716,16 @@ def build(piece, beats, voiced=True, disclaimer=False):
                     pages = caption_pages(b)
                     nxt_show = pages[pi + 1][0][1] - 0.06 if pi + 1 < len(pages) else None
                     hide = min(nxt_show - 0.22, page[-1][1] + 1.0) if nxt_show else b.end + 0.45
+                    cap_pages.append([cid, show, hide])
                     cap_js.append("TL.fromTo('#%s',{opacity:0,y:18},{opacity:1,y:0,duration:.16,ease:'power2.out'},%.3f);" % (cid, show))
                     for k, (w, t) in enumerate(page):
                         cap_js.append("TL.to('#%s span:nth-child(%d)',{opacity:1,duration:.12},%.3f);" % (cid, k + 1, t))
-                    cap_js.append("TL.to('#%s',{opacity:0,duration:.14},%.3f);" % (cid, hide))
                 cap_js.append("TL.to('#capband',{opacity:1,duration:.3},%.3f); TL.to('#capband',{opacity:0,duration:.3},%.3f);" % (b.start - 0.2, b.end + 0.3))
+    cap_pages.sort(key=lambda x: x[1])
+    for k, (cid, show, hide) in enumerate(cap_pages):
+        if k + 1 < len(cap_pages):
+            hide = min(hide, cap_pages[k + 1][1] - 0.2)
+        cap_js.append("TL.to('#%s',{opacity:0,duration:.14},%.3f);" % (cid, max(show + 0.3, hide)))
     # end card, spoken over when the call to action has no scene of its own
     last = beats[-1]
     endc = end_card(piece, voiced, disclaimer)
