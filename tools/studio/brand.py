@@ -11,12 +11,24 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(os.path.dirname(HERE), "assets")
 SITE = "financedepartmentllc.com"
 DISCLAIMER = "General information, not tax or legal advice for your situation."
-AI_NOTE = "Narration is an AI voice."
 
 
 def _b64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
+
+
+# The light look (15 November 2026): Fraunces for display, Plus Jakarta Sans for text, Caveat for handwriting
+FONTS_LIGHT = [("Fraunces", "fraunces-latin-600-normal.woff2", 600, "normal"), ("Fraunces", "fraunces-latin-700-normal.woff2", 700, "normal"),
+               ("Fraunces", "fraunces-latin-600-italic.woff2", 600, "italic"), ("Fraunces", "fraunces-latin-700-italic.woff2", 700, "italic"),
+               ("Jakarta", "plus-jakarta-sans-latin-500-normal.woff2", 500, "normal"), ("Jakarta", "plus-jakarta-sans-latin-600-normal.woff2", 600, "normal"),
+               ("Jakarta", "plus-jakarta-sans-latin-700-normal.woff2", 700, "normal"), ("Jakarta", "plus-jakarta-sans-latin-800-normal.woff2", 800, "normal"),
+               ("Caveat", "caveat-latin-600-normal.woff2", 600, "normal"), ("Caveat", "caveat-latin-700-normal.woff2", 700, "normal"),
+               ("PlexMono", "ibm-plex-mono-latin-400-normal.woff2", 400, "normal")]
+FONT_CHECKS = ["400 40px SS4", "600 40px SS4", "700 40px SS4", "400 40px Plex", "500 40px Plex", "600 40px Plex",
+               "600 40px Fraunces", "700 40px Fraunces", "italic 700 40px Fraunces", "500 40px Jakarta", "600 40px Jakarta",
+               "700 40px Jakarta", "800 40px Jakarta", "700 40px Caveat", "400 40px PlexMono"]
+INK, PAPER, EM, YEL, RED = "#15191F", "#F6F1E7", "#0B7955", "#FFD84D", "#C23A2B"
 
 
 @functools.lru_cache(None)
@@ -27,6 +39,9 @@ def fonts_css():
                          ("Plex", "ibm-plex-sans-latin-500-normal.woff2", 500), ("Plex", "ibm-plex-sans-latin-600-normal.woff2", 600)]:
         out.append("@font-face{font-family:'%s';src:url(data:font/woff2;base64,%s) format('woff2');font-weight:%d;font-display:block}"
                    % (fam, _b64(os.path.join(ASSETS, "fonts", file)), w))
+    for fam, file, w, st in FONTS_LIGHT:
+        out.append("@font-face{font-family:'%s';src:url(data:font/woff2;base64,%s) format('woff2');font-weight:%d;font-style:%s;font-display:block}"
+                   % (fam, _b64(os.path.join(ASSETS, "fonts", file)), w, st))
     return "".join(out)
 
 
@@ -42,8 +57,18 @@ def us_map():
         return json.load(f)
 
 
+PHOTOS = {"talha": "talha.jpg", "award": "award.jpg", "talha_cut": "talha_cut.png", "talha_sticker": "talha_sticker.png"}
+
+
+@functools.lru_cache(None)
 def photo_uri(name):
-    return "data:image/jpeg;base64," + _b64(os.path.join(ASSETS, "photos", {"talha": "talha.jpg", "award": "award.jpg"}[name]))
+    f = PHOTOS[name]
+    return "data:image/%s;base64,%s" % ("png" if f.endswith(".png") else "jpeg", _b64(os.path.join(ASSETS, "photos", f)))
+
+
+@functools.lru_cache(None)
+def texture_uri(name):
+    return "data:image/png;base64," + _b64(os.path.join(ASSETS, "textures", name + ".png"))
 
 
 def esc(s):
@@ -64,35 +89,22 @@ def _hex(h):
 
 @functools.lru_cache(None)
 def backgrounds(w, h):
-    """Base layer (gradient and a faint grid fading out from the upper right) and a top layer (vignette and grain)."""
+    """Base layer (warm paper, a little lighter at the top left) and a top layer (a very soft warm edge)."""
     y, x = np.mgrid[0:h, 0:w].astype(np.float32)
-    t = np.clip(0.82 * (y / h) + 0.18 * (x / w), 0, 1)[..., None]
-    c0, c1, c2 = _hex("#0B2343"), _hex("#06162D"), _hex("#030B19")
-    base = np.where(t < 0.5, c0 + (c1 - c0) * (t / 0.5), c1 + (c2 - c1) * ((t - 0.5) / 0.5))
-    tall = h > 1500
-    cx, cy, rx, ry = 0.80 * w, (0.30 if tall else 0.18) * h, (760 if tall else 720), (700 if tall else 620)
-    d = np.sqrt(((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2)
-    mask = np.clip(1 - d / 0.72, 0, 1)
-    grid = (((x.astype(int) % 60) == 59) | ((y.astype(int) % 60) == 59)).astype(np.float32)
-    base = base + (255 - base) * (0.055 * grid * mask)[..., None]
-    base_img = np.clip(base, 0, 255).astype(np.uint8)
-    # top layer: a vignette; the film grain is a small tile repeated over the frame
-    vx, vy = (x - 0.5 * w) / (1.30 * w / 2), (y - 0.42 * h) / (0.95 * h / 2)
-    vd = np.sqrt(vx ** 2 + vy ** 2)
-    vig = np.clip((vd - 0.58) / 0.42, 0, 1) * 0.5
+    t = np.clip(0.78 * (y / h) + 0.22 * (x / w), 0, 1)[..., None]
+    c0, c1 = _hex("#F9F5EE"), _hex("#F1EADC")
+    base_img = np.clip(c0 + (c1 - c0) * t, 0, 255).astype(np.uint8)
+    vx, vy = (x - 0.5 * w) / (1.30 * w / 2), (y - 0.45 * h) / (1.0 * h / 2)
+    vig = np.clip((np.sqrt(vx ** 2 + vy ** 2) - 0.62) / 0.5, 0, 1) * 0.10
     top = np.zeros((h, w, 4), np.uint8)
+    top[..., 0], top[..., 1], top[..., 2] = 118, 96, 58
     top[..., 3] = np.clip(vig * 255, 0, 255).astype(np.uint8)
     return _png_uri(base_img), _png_uri(top)
 
 
-@functools.lru_cache(None)
 def grain_tile():
-    rng = np.random.default_rng(3)
-    g = rng.normal(0, 1, (256, 256)).astype(np.float32)
-    tile = np.zeros((256, 256, 4), np.uint8)
-    tile[..., :3] = np.where(g[..., None] > 0, 255, 0).astype(np.uint8)
-    tile[..., 3] = np.clip(np.abs(g) * 0.035 * 255, 0, 0.09 * 255).astype(np.uint8)
-    return _png_uri(tile)
+    """Paper grain: dark specks at low opacity on a 256 pixel tile (held still in videos so they stay small)."""
+    return texture_uri("paper_grain")
 
 
 # ---------------------------------------------------------------- icons (stroke style, 48 unit box)
@@ -126,7 +138,7 @@ ICONS = {
 }
 
 
-def ic(name, size=48, color="#4BE3AA", sw=2.4):
+def ic(name, size=48, color="#0B7955", sw=2.4):
     body = ICONS.get(name, ICONS["doc"])
     return ('<svg width="%d" height="%d" viewBox="0 0 48 48" fill="none" stroke="%s" stroke-width="%s" stroke-linecap="round" '
             'stroke-linejoin="round" style="flex:none">%s</svg>' % (size, size, color, sw, body))
@@ -134,7 +146,7 @@ def ic(name, size=48, color="#4BE3AA", sw=2.4):
 
 ARROW = ('<svg width="32" height="18" viewBox="0 0 34 20" style="flex:none"><path d="M2 10h28M22 2l8 8-8 8" fill="none" stroke="currentColor" '
          'stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>')
-WAVE = ('<svg width="22" height="18" viewBox="0 0 22 18"><path d="M2 7v4M6 4v10M10 1v16M14 5v8M18 7v4" stroke="#6AF3C0" '
+WAVE = ('<svg width="22" height="18" viewBox="0 0 22 18"><path d="M2 7v4M6 4v10M10 1v16M14 5v8M18 7v4" stroke="#15191F" '
         'stroke-width="2.2" stroke-linecap="round"/></svg>')
 
 
@@ -142,9 +154,9 @@ WAVE = ('<svg width="22" height="18" viewBox="0 0 22 18"><path d="M2 7v4M6 4v10M
 def state_shape(code, size, d=0.3, anim=True):
     s = us_map()["states"][code]["shape"]
     a = ' data-a="draw" data-d="%s" data-dur="0.9"' % d if anim else ""
-    return ('<svg width="%d" height="%d" viewBox="0 0 400 400" style="overflow:visible"><path%s d="%s" fill="rgba(21,183,129,.10)" '
-            'stroke="#4BE3AA" stroke-width="2.5" vector-effect="non-scaling-stroke" stroke-linejoin="round" '
-            'style="filter:drop-shadow(0 0 16px rgba(21,183,129,.55))"/></svg>' % (size, size, a, s))
+    return ('<svg width="%d" height="%d" viewBox="0 0 400 400" style="overflow:visible"><path%s d="%s" fill="rgba(11,121,85,.12)" '
+            'stroke="#0B7955" stroke-width="2.5" vector-effect="non-scaling-stroke" stroke-linejoin="round" '
+            'style="filter:drop-shadow(0 8px 14px rgba(70,55,30,.18))"/></svg>' % (size, size, a, s))
 
 
 def usmap(width, states=(), labels=None, d=0.3, pins=True, faint=False, uid="m", anim=True):
@@ -155,89 +167,91 @@ def usmap(width, states=(), labels=None, d=0.3, pins=True, faint=False, uid="m",
     A = (lambda k, dd: ' data-a="%s" data-d="%.2f"' % (k, dd)) if anim else (lambda k, dd: "")
     hl = ""
     for code in states:
-        hl += ('<path d="%s" fill="rgba(21,183,129,.42)" stroke="#6AF3C0" stroke-width="%.2f" stroke-linejoin="round" filter="url(#gl%s)"%s/>'
+        hl += ('<path d="%s" fill="rgba(11,121,85,.34)" stroke="#0B7955" stroke-width="%.2f" stroke-linejoin="round" data-gl="%s"%s/>'
                % (m["states"][code]["albers"], 2.2 / s if small else 2.2, uid, A("fade", d + 0.35)))
     pin, lab = "", ""
     if pins:
         for i, code in enumerate(states):
             cx, cy = m["states"][code]["c"]
-            pin += ('<g%s style="transform-origin:%spx %spx"><circle cx="%s" cy="%s" r="17" fill="none" stroke="rgba(106,243,192,.55)" stroke-width="2"/>'
-                    '<circle cx="%s" cy="%s" r="7" fill="#B9FBE2"/></g>' % (A("pop", d + 0.6 + i * 0.15), cx, cy, cx, cy, cx, cy))
+            pin += ('<g%s style="transform-origin:%spx %spx"><circle cx="%s" cy="%s" r="17" fill="none" stroke="rgba(21,25,31,.45)" stroke-width="2"/>'
+                    '<circle cx="%s" cy="%s" r="8" fill="#FFD84D" stroke="#15191F" stroke-width="2.5"/></g>' % (A("pop", d + 0.6 + i * 0.15), cx, cy, cx, cy, cx, cy))
             if labels is not False:
                 name = (labels or {}).get(code, m["states"][code]["name"])
                 lab += ('<div%s style="position:absolute;left:%.0fpx;top:%.0fpx;transform:translateX(-50%%);display:flex;flex-direction:column;align-items:center">'
-                        '<div class="maplabel">%s</div><div style="width:2px;height:40px;background:linear-gradient(#6AF3C0,rgba(106,243,192,0))"></div></div>'
+                        '<div class="maplabel">%s</div><div style="width:2px;height:40px;background:linear-gradient(#15191F,rgba(21,25,31,0))"></div></div>'
                         % (A("up", d + 0.75 + i * 0.15), cx * s, cy * s - 96, esc(name)))
     return ('<div style="position:relative;width:%dpx;height:%.0fpx;opacity:%s"><svg viewBox="0 0 %d %d" width="%d" height="%.0f" '
             'style="overflow:visible;position:absolute;inset:0"><defs><filter id="gl%s" x="-50%%" y="-50%%" width="200%%" height="200%%">'
             '<feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>'
-            '<path d="%s" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.30)" stroke-width="%.2f"%s/>'
-            '<path d="%s" fill="none" stroke="rgba(255,255,255,.13)" stroke-width="%.2f"%s/>%s%s</svg>%s</div>'
+            '<path d="%s" fill="rgba(255,255,255,.55)" stroke="rgba(21,25,31,.42)" stroke-width="%.2f"%s/>'
+            '<path d="%s" fill="none" stroke="rgba(21,25,31,.16)" stroke-width="%.2f"%s/>%s%s</svg>%s</div>'
             % (width, h, ".55" if faint else "1", m["w"], m["h"], width, h, uid, m["nation"], 1.2 / s if small else 1.3, A("fade", d),
                m["mesh"], 0.8 / s if small else 0.9, A("fade", d + 0.1), hl, pin, lab))
 
 
 # ---------------------------------------------------------------- shared CSS
 CSS = """
-:root{--navy:#06162D;--em:#0B7955;--em2:#15B781;--off:#F9FBFA;--grey:#C9D1DB;--mute:#8C99AB;--amber:#F2B544;--red:#FF5A5F}
+:root{--ink:#15191F;--paper:#F6F1E7;--em:#0B7955;--em2:#14A374;--yel:#FFD84D;--red:#C23A2B;--mute:#59606C;--grey:#4D5562}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#06162D}
-.slide{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--off);font-family:'Plex';background:#06162D}
+html,body{background:#F6F1E7}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;color:#15191F;font-family:'Jakarta';background:#F6F1E7}
 .tall .slide{height:1920px}
 .bg,.ov{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
 .bg{z-index:0}.ov{z-index:20}
 .grain{position:absolute;inset:0;z-index:21;pointer-events:none;background-repeat:repeat}
 .bgl{position:absolute;border-radius:50%;pointer-events:none;z-index:1;will-change:transform}
-.g1{width:1100px;height:900px;right:-330px;top:-300px;background:radial-gradient(closest-side,rgba(21,183,129,.32),rgba(21,183,129,.10) 55%,transparent)}
-.g2{width:1000px;height:1000px;left:-420px;bottom:-420px;background:radial-gradient(closest-side,rgba(52,110,220,.28),rgba(52,110,220,.08) 55%,transparent)}
-.tall .g1{top:-60px}.tall .g2{bottom:-120px}
+.g1{width:1100px;height:1000px;left:-320px;top:-380px;background:radial-gradient(closest-side,rgba(255,255,255,.92),rgba(255,255,255,0))}
+.g2{width:1000px;height:1000px;right:-440px;bottom:-440px;background:radial-gradient(closest-side,rgba(255,216,77,.28),rgba(255,216,77,0))}
+.tall .g1{top:-120px}.tall .g2{bottom:-160px}
 .top{position:absolute;left:72px;right:72px;top:62px;display:flex;align-items:center;justify-content:space-between;z-index:5}
-.brand{display:flex;align-items:center;gap:16px;font-family:'SS4';font-weight:600;font-size:29px;color:#EEF3F1;white-space:nowrap}
-.mark{width:54px;height:54px;border-radius:7.5px;background:#0B7955;display:grid;place-items:center;font-family:'SS4';font-weight:600;font-size:30px;line-height:1;color:#fff;
- box-shadow:0 10px 30px rgba(11,121,85,.55),inset 0 1px 0 rgba(255,255,255,.22);flex:none}
-.count{font-weight:500;font-size:22px;letter-spacing:.16em;color:var(--mute)}
-.count b{color:#fff;font-weight:600}
+.brand{display:flex;align-items:center;gap:16px;font-family:'SS4';font-weight:600;font-size:29px;color:#15191F;white-space:nowrap}
+.mark{width:54px;height:54px;border-radius:8px;background:#0B7955;display:grid;place-items:center;font-family:'SS4';font-weight:600;font-size:30px;line-height:1;color:#fff;flex:none}
+.count{font-weight:600;font-size:22px;letter-spacing:.16em;color:#59606C}
+.count b{color:#15191F;font-weight:800}
 .content{position:absolute;left:72px;right:72px;top:168px;bottom:118px;display:flex;flex-direction:column;z-index:4}
-.kicker{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;padding:11px 22px 11px 18px;border-radius:999px;border:1px solid rgba(21,183,129,.5);
- background:rgba(21,183,129,.11);color:#8BF0CA;font-weight:600;font-size:21px;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
-.kicker i{width:10px;height:10px;border-radius:50%;background:var(--em2);box-shadow:0 0 14px 2px rgba(21,183,129,.9)}
-h1,h2{font-family:'SS4';font-weight:600;letter-spacing:-.02em;color:#F7FAF9;text-wrap:balance}
+.kicker{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;padding:10px 20px 10px 16px;border-radius:999px;border:2.5px solid #15191F;
+ background:rgba(255,255,255,.6);color:#15191F;font-weight:700;font-size:20px;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
+.kicker i{width:13px;height:13px;border-radius:50%;background:#FFD84D;border:2px solid #15191F}
+h1,h2{font-family:'Fraunces';font-weight:700;letter-spacing:-.02em;color:#15191F;text-wrap:balance}
 h1{font-size:84px;line-height:1.04}
-h2{font-size:70px;line-height:1.05}
-.em{background:linear-gradient(100deg,#8CF7CF 0%,#2AD196 45%,#14A374 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.body{font-size:30px;line-height:1.45;color:var(--grey)}
-.body b{color:#fff;font-weight:600}
-.card{position:relative;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.13);
- box-shadow:0 36px 80px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.13)}
-.card.hl{border-color:rgba(60,220,160,.45);box-shadow:0 36px 80px rgba(0,0,0,.42),0 0 50px rgba(21,183,129,.20),inset 0 1px 0 rgba(255,255,255,.16)}
-.big{font-family:'SS4';font-weight:700;letter-spacing:-.035em;line-height:.92;background:linear-gradient(180deg,#C2FCE5 0%,#41DDA5 45%,#0F8C61 100%);
- -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 12px 34px rgba(21,183,129,.35));white-space:nowrap}
-.label{font-weight:600;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:#86E9C2}
-.small{font-size:23px;line-height:1.35;color:var(--grey)}
-.cal{width:176px;border-radius:24px;overflow:hidden;background:#F4F7F6;color:#06162D;box-shadow:0 26px 60px rgba(0,0,0,.5);text-align:center;flex:none}
-.cal .m{background:#0B7955;color:#fff;font-weight:600;font-size:22px;letter-spacing:.2em;padding:11px 6px 10px;white-space:nowrap}
-.cal .d{font-family:'SS4';font-weight:700;font-size:96px;line-height:1.02;padding:8px 0 0;letter-spacing:-.02em}
-.cal .s{font-weight:600;font-size:16px;letter-spacing:.08em;color:#4E596A;padding:0 10px 16px}
+h2{font-size:70px;line-height:1.06}
+.em{font-style:italic;background:linear-gradient(transparent 12%,#FFD84D 12%,#FFD84D 92%,transparent 92%);padding:0 .12em;margin:0 -.06em;
+ -webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:6px}
+.body{font-size:30px;line-height:1.45;color:#3F4652;font-weight:500}
+.body b{color:#15191F;font-weight:800}
+.card{position:relative;border-radius:30px;background:#FFFDF8;border:2px solid rgba(21,25,31,.11);box-shadow:0 30px 60px rgba(70,55,30,.12)}
+.card.hl{border:3px solid #15191F;box-shadow:8px 8px 0 #15191F}
+.big{font-family:'Fraunces';font-weight:700;letter-spacing:-.035em;line-height:.95;color:#15191F;white-space:nowrap}
+.label{font-weight:700;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:#0B7955}
+.small{font-size:23px;line-height:1.38;color:#4D5562;font-weight:500}
+.cal{width:176px;border-radius:24px;overflow:hidden;background:#FFFFFF;color:#15191F;box-shadow:0 22px 44px rgba(70,55,30,.18);border:2px solid rgba(21,25,31,.12);text-align:center;flex:none}
+.cal .m{background:#0B7955;color:#fff;font-weight:700;font-size:22px;letter-spacing:.2em;padding:11px 6px 10px;white-space:nowrap}
+.cal .d{font-family:'Fraunces';font-weight:700;font-size:96px;line-height:1.02;padding:8px 0 0;letter-spacing:-.02em}
+.cal .s{font-weight:700;font-size:16px;letter-spacing:.08em;color:#59606C;padding:0 10px 16px}
 .dots{position:absolute;left:0;right:0;bottom:56px;display:flex;justify-content:center;gap:12px;z-index:5}
-.dots span{width:12px;height:12px;border-radius:99px;background:rgba(255,255,255,.22)}
-.dots span.on{width:44px;background:linear-gradient(90deg,#41DDA5,#15B781);box-shadow:0 0 14px rgba(21,183,129,.7)}
-.cta{display:inline-flex;align-items:center;gap:16px;padding:24px 42px;border-radius:999px;font-weight:600;font-size:30px;color:#04150E;
- background:linear-gradient(180deg,#5CF0B6,#16B07B);box-shadow:0 18px 54px rgba(21,183,129,.5),inset 0 1px 0 rgba(255,255,255,.5);white-space:nowrap}
-.fine{font-size:18px;color:#7D8A9C;letter-spacing:.01em}
+.dots span{width:12px;height:12px;border-radius:99px;background:rgba(21,25,31,.18)}
+.dots span.on{width:44px;background:#15191F}
+.cta{display:inline-flex;align-items:center;gap:16px;padding:22px 40px;border-radius:999px;font-weight:800;font-size:30px;color:#15191F;
+ background:#FFD84D;border:3px solid #15191F;box-shadow:6px 6px 0 #15191F;white-space:nowrap}
+.fine{font-size:18px;color:#7A808A;letter-spacing:.01em}
 .row{display:flex;gap:20px}
 .sp{flex:1}
-.chip{display:inline-flex;align-items:center;gap:12px;padding:13px 20px;border-radius:14px;background:rgba(21,183,129,.10);border:1px solid rgba(21,183,129,.35);
- color:#D6FBEB;font-weight:500;font-size:24px;line-height:1.25}
-.maplabel{padding:9px 16px;border-radius:12px;background:rgba(6,22,45,.82);border:1px solid rgba(106,243,192,.5);font-weight:600;font-size:21px;letter-spacing:.12em;
- text-transform:uppercase;color:#C9FBE7;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-.quote{font-family:'SS4';font-weight:600;font-size:46px;line-height:1.18;color:#F3F8F6}
-.qm{font-family:'SS4';font-weight:700;font-size:120px;line-height:.6;color:#2AD196;opacity:.9}
-.seal{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#7CF5C6,#12996B 70%);
- box-shadow:0 0 0 8px rgba(21,183,129,.15),0 18px 50px rgba(21,183,129,.45);flex:none}
-.ico{width:66px;height:66px;border-radius:18px;display:grid;place-items:center;background:rgba(21,183,129,.13);border:1px solid rgba(21,183,129,.35);flex:none}
-.tone-amber{background:linear-gradient(180deg,#FFE7B0 0%,#FFC85C 45%,#B97A0E 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;filter:drop-shadow(0 12px 34px rgba(242,181,68,.35))!important}
-.tone-red{background:linear-gradient(180deg,#FFD0D2 0%,#FF6B70 45%,#B4242B 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;filter:drop-shadow(0 12px 34px rgba(255,90,95,.4))!important}
-.tone-white{background:linear-gradient(180deg,#FFFFFF 0%,#DCE6EE 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;filter:none!important}
+.chip{display:inline-flex;align-items:center;gap:12px;padding:13px 20px;border-radius:14px;background:#FFFFFF;border:2px solid rgba(21,25,31,.14);
+ color:#15191F;font-weight:600;font-size:24px;line-height:1.25}
+.maplabel{padding:9px 16px;border-radius:12px;background:#FFFFFF;border:2.5px solid #15191F;font-weight:700;font-size:21px;letter-spacing:.12em;
+ text-transform:uppercase;color:#15191F;white-space:nowrap;box-shadow:4px 4px 0 #15191F}
+.quote{font-family:'Fraunces';font-weight:600;font-size:46px;line-height:1.18;color:#15191F}
+.qm{font-family:'Fraunces';font-weight:700;font-size:120px;line-height:.6;color:#0B7955}
+.seal{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:#0B7955;box-shadow:0 0 0 8px rgba(11,121,85,.14),0 14px 30px rgba(11,121,85,.3);flex:none}
+.ico{width:66px;height:66px;border-radius:18px;display:grid;place-items:center;background:rgba(11,121,85,.10);border:2px solid rgba(11,121,85,.3);flex:none}
+.tone-amber{color:#B26B00!important}
+.tone-red{color:#C23A2B!important}
+.tone-white{color:#15191F!important}
+.me{position:relative;display:flex;align-items:center;gap:22px}
+.me .ring{position:relative;width:var(--rs,190px);height:var(--rs,190px);border-radius:50%;background:#FFD84D;overflow:hidden;flex:none;border:3px solid #15191F}
+.me .ring img{position:absolute;left:4%;top:8%;width:92%}
+.me .who b{display:block;font-family:'Fraunces';font-weight:700;font-size:36px;line-height:1.1}
+.me .who span{display:block;font-weight:600;font-size:22px;color:#59606C;margin-top:4px}
 """
 
 # Entrance animations: every element with data-a gets a tween; window.seek(t) draws time t; window.final() the built slide.

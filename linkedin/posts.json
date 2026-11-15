@@ -1,0 +1,183 @@
+{
+ "week": "linkedin",
+ "media": "linkedin/media",
+ "about": "One image per LinkedIn post, made by the studio (tools/studio/linkedin.py) from the post's own words. The LinkedIn daily run attaches each image when it schedules the post; the posts doc names it under the post in a paragraph starting Image:.",
+ "pieces": [
+  {
+   "id": "LI-2026-11-23",
+   "format": "linkedin_image",
+   "date": "2026-11-23",
+   "post": "Monday 23 November: Delaware franchise tax, expectation versus reality",
+   "claims": [
+    "DE-01",
+    "DE-02",
+    "DE-03",
+    "DE-04",
+    "DE-05",
+    "DE-07"
+   ],
+   "alt": "A franchise tax bill on the Authorized Shares method for 10,000,000 shares: $85,165, stamped Reality",
+   "content": {
+    "kicker": "Delaware franchise tax",
+    "lead": "Expectation versus reality:",
+    "title": "Your first Delaware franchise tax bill",
+    "emph": "franchise tax bill",
+    "object": {
+     "type": "bill",
+     "title": "Franchise tax",
+     "sub": "Authorized Shares method",
+     "rows": [
+      [
+       "Authorized shares",
+       "10,000,000"
+      ],
+      [
+       "5,001 to 10,000 shares",
+       "$250"
+      ],
+      [
+       "Each further 10,000 shares or part",
+       "+ $85"
+      ]
+     ],
+     "total": [
+      "Tax",
+      "$85,165"
+     ],
+     "stamp": "REALITY",
+     "note": {
+      "label": "Expectation",
+      "text": "a small tax",
+      "strike": true
+     }
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "tick",
+       "title": "Work it out both ways",
+       "text": "Delaware's own page says to use the method that results in the lesser tax."
+      },
+      {
+       "mark": "tick",
+       "title": "Assumed Par Value Capital",
+       "text": "A $400 minimum, at $400 for each $1 million of assumed par value capital or part of a million. It needs your issued shares and total gross assets."
+      },
+      {
+       "mark": "box",
+       "title": "Due by Monday 1 March 2027",
+       "text": "Annual report fee $50 if not exempt. Missing 1 March brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "LI-2026-11-24",
+   "format": "linkedin_image",
+   "date": "2026-11-24",
+   "post": "Tuesday 24 November: who counts as an accredited investor",
+   "claims": [
+    "RAISE-01",
+    "RAISE-02",
+    "RAISE-05",
+    "RAISE-06"
+   ],
+   "alt": "A cheque from a friend, memo for your round, stamped Accredited? beside the SEC's three tests for an individual",
+   "content": {
+    "kicker": "Accredited investor",
+    "lead": "Before you take a check from a friend for your round, find out one thing:",
+    "title": "Are they an\naccredited investor?",
+    "emph": "accredited investor?",
+    "object": {
+     "type": "cheque",
+     "payer": "A friend",
+     "memo": "for your round",
+     "signature": "A friend",
+     "stamp": "ACCREDITED?"
+    },
+    "points": {
+     "title": "For an individual, the SEC's tests are:",
+     "items": [
+      {
+       "mark": "box",
+       "title": "Income over $200,000",
+       "text": "or over $300,000 with a spouse or spousal equivalent, in each of the last two years, with a reasonable expectation of the same this year"
+      },
+      {
+       "mark": "box",
+       "title": "Or a net worth over $1 million",
+       "text": "alone or with a spouse or spousal equivalent, not counting their primary residence"
+      },
+      {
+       "mark": "box",
+       "title": "Or a Series 7, 65 or 82 license",
+       "text": "in good standing"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "LI-2026-11-25",
+   "format": "linkedin_image",
+   "date": "2026-11-25",
+   "post": "Wednesday 25 November: research costs under the 2025 tax law",
+   "claims": [
+    "RD-01",
+    "RD-02",
+    "RD-03",
+    "LAW-01"
+   ],
+   "alt": "A timeline: US research costs deducted in year one; research done outside the US spread over 15 years",
+   "content": {
+    "kicker": "R&D costs, 2025 tax law",
+    "lead": "If your startup spends money on research and development, the 2025 tax law changed how those costs are deducted.",
+    "title": "Where the work is done\nnow matters",
+    "emph": "Where the work is done",
+    "object": {
+     "type": "spread",
+     "years": 15,
+     "rows": [
+      {
+       "label": "Work done in the US",
+       "note": "deducted in the year paid or incurred",
+       "span": 1,
+       "tone": "em"
+      },
+      {
+       "label": "Work done outside the US",
+       "note": "must still be spread over 15 years",
+       "span": 15,
+       "tone": "red",
+       "bar": "15 years"
+      }
+     ],
+     "axis": [
+      "Year 1",
+      "Year 15"
+     ]
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "tick",
+       "title": "US work: deduct in the year",
+       "text": "For tax years beginning after 31 December 2024, under Section 174A. Spreading it over 60 months or more is optional."
+      },
+      {
+       "mark": "box",
+       "title": "A catch up for 2022 to 2024",
+       "text": "US research costs not yet amortized can be deducted in full in the first tax year beginning after 2024, or over that year and the next."
+      },
+      {
+       "mark": "box",
+       "title": "Tag costs by where work is done",
+       "text": "In the US or outside it, with payroll and contractor invoices tagged the same way."
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

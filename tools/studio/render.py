@@ -3,11 +3,11 @@
   python3 tools/studio/render.py weeks/2026-W47/pieces.json 2026-W47-E05 --media weeks/2026-W47/media --preview .previews/2026-W47
 
 Formats: explainer and ad (narrated video), carousel (slides), carousel_reel (the carousel as a music reel),
-story (one frame). A video whose narrator cannot run is made without a voice and says so in "notes".
+story (one frame), linkedin_image (one 1080 by 1350 image for a LinkedIn post; its file is linkedin/posts.json). A video whose narrator cannot run is made without a voice and says so in "notes".
 """
 import argparse, hashlib, json, os, shutil, sys, tempfile, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import audio, capture, slides, video
+import audio, capture, linkedin, slides, video
 
 FPS = 30
 
@@ -61,6 +61,17 @@ def render_story(piece, media, preview, browser):
     p = browser.still(slides.story_frame(s, disclaimer=disclaimer_for(piece)), 1080, 1920, os.path.join(media, name), name)
     name = os.path.basename(to_jpeg(os.path.join(media, name)))
     return {"files": [name], "frames": [os.path.join(media, name)], "problems": ["story: " + p] if p else []}
+
+
+def render_linkedin(piece, media, preview, browser):
+    c = piece["content"]
+    name = "%s%s.png" % (prefix(piece), piece["id"])
+    problems = linkedin.problems_in(c)
+    p = browser.still(linkedin.image(c, disclaimer=disclaimer_for(piece)), 1080, 1350, os.path.join(media, name), name)
+    if p:
+        problems.append("image: " + p)
+    name = os.path.basename(to_jpeg(os.path.join(media, name)))
+    return {"files": [name], "frames": [os.path.join(media, name)], "problems": problems}
 
 
 def slide_seconds(s):
@@ -174,7 +185,7 @@ def main():
         sys.exit("no piece %s" % a.piece_id)
     piece = piece[0]
     root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    media = a.media or os.path.join(root, "weeks", week["week"], "media")
+    media = a.media or (os.path.join(root, week["media"]) if week.get("media") else os.path.join(root, "weeks", week["week"], "media"))
     preview = a.preview or os.path.join(root, ".previews", week["week"])
     os.makedirs(media, exist_ok=True); os.makedirs(preview, exist_ok=True)
     t0 = time.time()
@@ -189,6 +200,8 @@ def main():
             r = render_video(piece, media, preview, b, allow_silent=not a.no_silent)
         elif f == "carousel_reel":
             r = render_carousel_reel(piece, week, media, preview, b)
+        elif f == "linkedin_image":
+            r = render_linkedin(piece, media, preview, b)
         else:
             sys.exit("format %s is not made by the studio" % f)
     finally:

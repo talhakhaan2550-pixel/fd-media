@@ -70,12 +70,12 @@ def v_map(v, mode, d):
 def v_stats(v, mode, d):
     items = v.get("items", [])[:3]
     n = len(items) or 1
-    size = {1: 200, 2: 150, 3: 116}[n] if mode == "post" else {1: 160, 2: 120, 3: 92}[n]
+    size = {1: 200, 2: 150, 3: 116}[n] if mode == "post" else {1: 128, 2: 112, 3: 88}[n]
     cards = ""
     for i, it in enumerate(items):
         hl = " hl" if it.get("highlight", i == 0) else ""
         cards += ('<div class="card%s statc" data-a="up" data-d="%.2f"><div class="label"%s>%s</div><div class="sp"></div>%s%s</div>'
-                  % (hl, d + i * 0.12, "" if hl else ' style="color:#9AA6B6"', esc(it.get("label", "")),
+                  % (hl, d + i * 0.12, "" if hl else ' style="color:#59606C"', esc(it.get("label", "")),
                      value_html(it.get("value", ""), style="font-size:%dpx;margin-top:18px" % size, d=d + 0.25 + i * 0.12, extra_cls=tone_cls(it.get("tone"))),
                      ('<div class="small" style="margin-top:14px">%s</div>' % esc(it["note"])) if it.get("note") else ""))
     return '<div class="row vis" style="gap:20px;align-items:stretch">%s</div>' % cards
@@ -93,7 +93,7 @@ def v_date(v, mode, d):
     if v.get("label"):
         right += '<div class="label">%s</div>' % esc(v["label"])
     if v.get("text"):
-        right += '<div style="font-family:SS4;font-weight:600;font-size:40px;line-height:1.12;color:#F4F8F6">%s</div>' % esc(v["text"])
+        right += '<div style="font-family:Fraunces;font-weight:700;font-size:40px;line-height:1.12;color:#15191F">%s</div>' % esc(v["text"])
     for i, c in enumerate(v.get("chips", [])):
         c = c if isinstance(c, dict) else {"text": c}
         right += '<span class="chip" data-a="left" data-d="%.2f">%s%s</span>' % (d + 0.35 + i * 0.12, ic(c.get("icon", "check"), 30), esc(c["text"]))
@@ -120,17 +120,17 @@ def v_bars(v, mode, d):
         inc = float(add.get("amount", 0)) / top
         i = len(bars)
         cols += ('<div class="col"><div class="val" data-a="fade" data-d="%.2f">%s</div>'
-                 '<div class="barv" style="height:calc(%s*%.3f - 6px);border-radius:16px 16px 4px 4px;background:linear-gradient(180deg,#B5F9DE,#2BC48D)" data-a="bar" data-d="%.2f"></div>'
+                 '<div class="barv" style="height:calc(%s*%.3f - 6px);border-radius:16px 16px 4px 4px;background:#FFD84D;border:3px solid #15191F" data-a="bar" data-d="%.2f"></div>'
                  '<div class="barg" style="height:calc(%s*%.3f);margin-top:6px" data-a="bar" data-d="%.2f"></div></div>'
                  % (d + 0.85, esc(add.get("value", "")), H, inc, d + 0.75, H, base, d + 0.55))
         labels += '<div class="col xl">%s</div>' % esc(add.get("label", ""))
     return ('<div class="card vis" style="padding:30px 34px 28px" data-a="up" data-d="%.2f"><div class="chart">%s</div>'
-            '<div class="row" style="gap:26px;border-top:1px solid rgba(255,255,255,.16)">%s</div></div>' % (d, cols, labels))
+            '<div class="row" style="gap:26px;border-top:2px solid rgba(21,25,31,.18)">%s</div></div>' % (d, cols, labels))
 
 
 def v_quote(v, mode, d):
     return ('<div class="card vis" style="padding:34px 36px 38px;display:flex;gap:26px;align-items:flex-start;'
-            'background:linear-gradient(180deg,rgba(21,183,129,.17),rgba(21,183,129,.04));border-color:rgba(60,220,160,.38)" data-a="up" data-d="%.2f">'
+            'background:#FFF7D9;border:3px solid #15191F;box-shadow:8px 8px 0 #15191F" data-a="up" data-d="%.2f">'
             '<div class="qm">“</div><div>%s<div class="quote">%s”</div></div></div>'
             % (d, ('<div class="label" style="margin-bottom:14px">%s</div>' % esc(v["source"])) if v.get("source") else "", esc(v.get("text", ""))))
 
@@ -151,7 +151,7 @@ def v_chips(v, mode, d):
         c = c if isinstance(c, dict) else {"text": c}
         out += '<span class="chip" data-a="left" data-d="%.2f">%s%s</span>' % (d + 0.3 + i * 0.12, ic(c.get("icon", "check"), 32), esc(c["text"]))
     return ('<div class="card vis" style="padding:26px 30px;display:flex;flex-direction:column;gap:14px;align-items:flex-start" data-a="up" data-d="%.2f">%s%s</div>'
-            % (d, ('<div class="label" style="color:#9AA6B6;margin-bottom:6px">%s</div>' % esc(v["label"])) if v.get("label") else "", out))
+            % (d, ('<div class="label" style="color:#59606C;margin-bottom:6px">%s</div>' % esc(v["label"])) if v.get("label") else "", out))
 
 
 def v_threshold(v, mode, d):
@@ -174,7 +174,7 @@ def v_threshold(v, mode, d):
                    % (x, 21 * span - 4, esc(g.get("label", ""))))
         x += 21 * span
     return ('<div class="card vis" style="padding:56px 34px 22px" data-a="up" data-d="%.2f"><div class="inc">%s</div>'
-            '<div style="position:relative;height:64px;border-top:1px solid rgba(255,255,255,.18)">%s</div></div>' % (d, out, groups))
+            '<div style="position:relative;height:64px;border-top:2px solid rgba(21,25,31,.18)">%s</div></div>' % (d, out, groups))
 
 
 def v_split(v, mode, d):
@@ -182,15 +182,15 @@ def v_split(v, mode, d):
     items = ""
     for i, it in enumerate(L.get("items", [])):
         if i:
-            items += '<span style="color:#8C99AB;font-size:24px;padding-left:6px">%s</span>' % esc(L.get("joiner", "or"))
+            items += '<span style="color:#59606C;font-size:24px;font-weight:700;padding-left:6px">%s</span>' % esc(L.get("joiner", "or"))
         items += '<span class="chip" data-a="left" data-d="%.2f">%s%s</span>' % (d + 0.3 + i * 0.15, ic(L.get("icon", "person"), 30), esc(it))
-    left = ('<div class="card feeW" style="flex:1;gap:16px" data-a="up" data-d="%.2f"><div class="label" style="color:#9AA6B6;margin-bottom:8px">%s</div>%s</div>'
+    left = ('<div class="card feeW" style="flex:1;gap:16px" data-a="up" data-d="%.2f"><div class="label" style="color:#59606C;margin-bottom:8px">%s</div>%s</div>'
             % (d, esc(L.get("label", "")), items))
     crossed = " crossed" if R.get("crossed", True) else ""
     right = ('<div class="card feeW" style="flex:.85;align-items:center;text-align:center" data-a="up" data-d="%.2f">'
              '<div class="label" style="color:%s;align-self:flex-start">%s</div><div class="sp"></div><div class="house%s" data-a="pop" data-d="%.2f">%s</div>'
-             '<div style="font-family:SS4;font-weight:600;font-size:32px;margin-top:16px;color:#fff">%s</div></div>'
-             % (d + 0.12, "#FF9EA2" if crossed else "#86E9C2", esc(R.get("label", "")), crossed, d + 0.4, ic(R.get("icon", "house"), 80, "#E9F2EE", 2.2), esc(R.get("title", ""))))
+             '<div style="font-family:Fraunces;font-weight:700;font-size:32px;margin-top:16px;color:#15191F">%s</div></div>'
+             % (d + 0.12, "#C23A2B" if crossed else "#0B7955", esc(R.get("label", "")), crossed, d + 0.4, ic(R.get("icon", "house"), 80, "#15191F", 2.2), esc(R.get("title", ""))))
     return '<div class="row vis" style="gap:20px;align-items:stretch">%s%s</div>' % (left, right)
 
 
@@ -204,8 +204,8 @@ def v_tiles(v, mode, d):
     if st:
         status = ('<div class="card hl" style="margin-top:20px;padding:26px 30px;display:flex;align-items:center;gap:22px" data-a="up" data-d="%.2f">'
                   '<div class="seal" style="width:84px;height:84px" data-a="pop" data-d="%.2f">%s</div><div><div class="label">%s</div>'
-                  '<div style="font-family:SS4;font-weight:600;font-size:44px;color:#fff;margin-top:4px">%s</div></div></div>'
-                  % (d + 0.45, d + 0.65, ic("check", 42, "#04150E", 4), esc(st.get("label", "")), esc(st.get("text", ""))))
+                  '<div style="font-family:Fraunces;font-weight:700;font-size:44px;color:#15191F;margin-top:4px">%s</div></div></div>'
+                  % (d + 0.45, d + 0.65, ic("check", 42, "#FFFFFF", 4), esc(st.get("label", "")), esc(st.get("text", ""))))
     return '<div class="vis"><div class="row" style="gap:20px">%s</div>%s</div>' % (cards, status)
 
 
@@ -213,12 +213,12 @@ def v_list(v, mode, d):
     rows = ""
     for i, it in enumerate(v.get("items", [])):
         it = it if isinstance(it, dict) else {"text": it}
-        rows += ('<div class="crow" data-a="left" data-d="%.2f"><div class="ico">%s</div><div class="t">%s</div><div class="sp"></div><div style="color:#6AF3C0">%s</div></div>'
+        rows += ('<div class="crow" data-a="left" data-d="%.2f"><div class="ico">%s</div><div class="t">%s</div><div class="sp"></div><div style="color:#0B7955">%s</div></div>'
                  % (d + 0.35 + i * 0.14, ic(it.get("icon", "check"), 36), esc(it["text"]), ARROW))
     head = ""
     if v.get("title"):
         head = ('<div style="display:flex;align-items:center;gap:24px;margin-bottom:22px"><div class="seal" data-a="pop" data-d="%.2f">%s</div>'
-                '<div style="font-family:SS4;font-weight:600;font-size:46px;color:#fff">%s</div></div>' % (d + 0.25, ic("check", 50, "#04150E", 4), esc(v["title"])))
+                '<div style="font-family:Fraunces;font-weight:700;font-size:46px;color:#15191F">%s</div></div>' % (d + 0.25, ic("check", 50, "#FFFFFF", 4), esc(v["title"])))
     return '<div class="cred vis" data-a="up" data-d="%.2f">%s%s</div>' % (d, head, rows)
 
 
@@ -235,7 +235,7 @@ def v_compare(v, mode, d):
         items = "".join('<div class="cmpi">%s<span>%s</span></div>' % (ic("check", 26), esc(x)) for x in s.get("items", []))
         val = value_html(s["value"], style="font-size:%dpx;margin:16px 0 6px" % (110 if mode == "post" else 84), d=dd + 0.3, extra_cls=tone_cls(s.get("tone"))) if s.get("value") else ""
         return ('<div class="card%s feeW" style="flex:1" data-a="up" data-d="%.2f"><div style="display:flex;align-items:center;gap:14px">%s'
-                '<div style="font-family:SS4;font-weight:600;font-size:36px;color:#fff">%s</div></div>%s%s%s</div>'
+                '<div style="font-family:Fraunces;font-weight:700;font-size:36px;color:#15191F">%s</div></div>%s%s%s</div>'
                 % (" hl" if hl else "", dd, ic(s.get("icon", "doc"), 40), esc(s.get("title", "")), val,
                    ('<div class="small">%s</div>' % esc(s["note"])) if s.get("note") else "", items))
     j = esc(v.get("join", "vs"))
@@ -248,11 +248,11 @@ def v_checklist(v, mode, d):
     items = v.get("items") or [None] * int(v.get("rows", 4))
     widths = [78, 62, 84, 55, 70, 66]
     for i, it in enumerate(items[:6]):
-        txt = ('<span style="font-size:26px;color:#E5ECE9">%s</span>' % esc(it)) if it else '<i style="width:%d%%"></i>' % widths[i % 6]
+        txt = ('<span style="font-size:26px;font-weight:600;color:#15191F">%s</span>' % esc(it)) if it else '<i style="width:%d%%"></i>' % widths[i % 6]
         rows += '<div class="ckr"><div class="box on" data-a="pop" data-d="%.2f">%s</div>%s</div>' % (d + 0.4 + i * 0.15, ic("check", 30, "#04150E", 4), txt)
     tag = ('<div class="kicker" style="font-size:18px;padding:8px 14px"><i></i>%s</div>' % esc(v["tag"])) if v.get("tag") else ""
     return ('<div class="card hl vis" style="padding:30px 34px" data-a="up" data-d="%.2f"><div style="display:flex;align-items:center;justify-content:space-between;gap:20px">'
-            '<div style="font-family:SS4;font-weight:600;font-size:40px;color:#fff">%s</div>%s</div>%s</div>' % (d, esc(v.get("title", "")), tag, rows))
+            '<div style="font-family:Fraunces;font-weight:700;font-size:40px;color:#15191F">%s</div>%s</div>%s</div>' % (d, esc(v.get("title", "")), tag, rows))
 
 
 VISUALS = {"map": v_map, "stats": v_stats, "date": v_date, "bars": v_bars, "quote": v_quote, "hero": v_hero, "chips": v_chips,
@@ -288,45 +288,43 @@ EXTRA = """
 .chart{display:flex;gap:26px;align-items:flex-end;height:calc(var(--ch,330px) + 92px)}
 .reel .chart{--ch:200px}
 .col{flex:1;display:flex;flex-direction:column;align-items:stretch;min-width:0}
-.barv{border-radius:16px 16px 6px 6px;background:linear-gradient(180deg,#3FE0A6 0%,#0F8C61 100%);box-shadow:0 0 40px rgba(21,183,129,.32),inset 0 1px 0 rgba(255,255,255,.4)}
-.barg{border-radius:6px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.25)}
-.val{font-family:'SS4';font-weight:700;font-size:60px;letter-spacing:-.02em;color:#fff;margin-bottom:12px;line-height:1;white-space:nowrap}
+.barv{border-radius:16px 16px 6px 6px;background:linear-gradient(180deg,#14A374 0%,#0B7955 100%);box-shadow:0 14px 30px rgba(11,121,85,.22)}
+.barg{border-radius:6px;background:rgba(21,25,31,.04);border:2px dashed rgba(21,25,31,.35)}
+.val{font-family:'Fraunces';font-weight:700;font-size:60px;letter-spacing:-.02em;color:#15191F;margin-bottom:12px;line-height:1;white-space:nowrap}
 .reel .val{font-size:46px}
-.xl{font-size:22px;line-height:1.3;color:#B4BFCC;margin-top:16px}
+.xl{font-size:22px;line-height:1.3;color:#4D5562;font-weight:600;margin-top:16px}
 .reel .xl{font-size:19px}
 .heroshape{position:absolute;right:-10px;top:-40px;z-index:-1;opacity:.95}
-.cred{position:relative;border-radius:34px;padding:34px 36px 30px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.03) 55%,rgba(21,183,129,.10));
- border:1px solid rgba(255,255,255,.18);box-shadow:0 50px 100px rgba(0,0,0,.5),0 0 0 1px rgba(21,183,129,.15),inset 0 1px 0 rgba(255,255,255,.2);overflow:hidden}
-.crow{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.12)}
-.crow .t{font-family:'SS4';font-weight:600;font-size:36px;color:#F4F8F6}
+.cred{position:relative;border-radius:34px;padding:34px 36px 30px;background:#FFFDF8;border:3px solid #15191F;box-shadow:8px 8px 0 #15191F;overflow:hidden}
+.crow{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:2px solid rgba(21,25,31,.12)}
+.crow .t{font-family:'Fraunces';font-weight:700;font-size:36px;color:#15191F}
 .reel .crow{padding:14px 0}.reel .crow .t{font-size:30px}.reel .ico{width:54px;height:54px}
 .inc{position:relative;height:var(--ih,400px)}
 .reel .inc{--ih:230px}
-.ibar{position:absolute;bottom:0;border-radius:14px 14px 4px 4px;background:linear-gradient(180deg,#3FE0A6,#0F8C61);box-shadow:0 0 36px rgba(21,183,129,.3),inset 0 1px 0 rgba(255,255,255,.4)}
-.ibar.exp{background:repeating-linear-gradient(135deg,rgba(63,224,166,.22) 0 10px,rgba(63,224,166,.08) 10px 20px);border:2px dashed rgba(106,243,192,.7);box-shadow:none}
-.thr{position:absolute;left:0;right:0;border-top:2px dashed rgba(255,255,255,.55)}
+.ibar{position:absolute;bottom:0;border-radius:14px 14px 4px 4px;background:linear-gradient(180deg,#14A374,#0B7955);box-shadow:0 14px 30px rgba(11,121,85,.22)}
+.ibar.exp{background:repeating-linear-gradient(135deg,rgba(11,121,85,.25) 0 10px,rgba(11,121,85,.08) 10px 20px);border:3px dashed #0B7955;box-shadow:none}
+.thr{position:absolute;left:0;right:0;border-top:3px dashed #15191F}
 .thr span{position:absolute;right:0;bottom:8px;width:34%;display:flex;flex-direction:column;gap:2px;text-align:right}
-.thr span b{font-family:'SS4';font-weight:700;font-size:34px;color:#fff;letter-spacing:-.01em}
-.thr span i{font-style:normal;font-size:20px;line-height:1.25;color:#B4BFCC}
+.thr span b{font-family:'Fraunces';font-weight:700;font-size:34px;color:#15191F;letter-spacing:-.01em}
+.thr span i{font-style:normal;font-size:20px;font-weight:600;line-height:1.25;color:#4D5562}
 .reel .thr span b{font-size:28px}.reel .thr span i{font-size:18px}
-.house{width:170px;height:170px;border-radius:50%;border:2px dashed rgba(255,255,255,.35);display:grid;place-items:center;position:relative;flex:none}
+.house{width:170px;height:170px;border-radius:50%;border:3px dashed rgba(21,25,31,.4);background:rgba(255,255,255,.6);display:grid;place-items:center;position:relative;flex:none}
 .reel .house{width:130px;height:130px}
-.house.crossed:after{content:"";position:absolute;width:150%;height:3px;background:#FF7A7F;transform:rotate(-38deg);box-shadow:0 0 16px rgba(255,90,95,.6);border-radius:3px}
-.lic{flex:1;border-radius:26px;padding:24px 24px 26px;background:linear-gradient(160deg,rgba(255,255,255,.11),rgba(255,255,255,.025));border:1px solid rgba(106,243,192,.35);
- box-shadow:0 30px 70px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.16);display:flex;flex-direction:column}
-.lic .n{font-family:'SS4';font-weight:700;font-size:190px;line-height:.9;letter-spacing:-.04em;margin-top:50px;margin-bottom:10px}
+.house.crossed:after{content:"";position:absolute;width:118%;height:8px;background:#C23A2B;transform:rotate(-38deg);border-radius:8px}
+.lic{flex:1;border-radius:26px;padding:24px 24px 26px;background:linear-gradient(160deg,#FFFFFF,#F1F6F3);border:2.5px solid rgba(11,121,85,.4);
+ box-shadow:0 24px 50px rgba(70,55,30,.14);display:flex;flex-direction:column}
+.lic .n{font-family:'Fraunces';font-weight:700;color:#15191F;font-size:190px;line-height:.9;letter-spacing:-.04em;margin-top:50px;margin-bottom:10px}
 .reel .lic .n{font-size:110px;margin-top:20px}
 .step{display:flex;align-items:center;gap:22px;padding:14px 0}
-.stepn{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#0B7955;color:#fff;font-family:SS4;font-weight:700;font-size:30px;flex:none;
- box-shadow:0 0 0 6px rgba(21,183,129,.15)}
-.stept{font-size:28px;line-height:1.3;color:#E9F0EC}
-.cmpi{display:flex;align-items:flex-start;gap:12px;margin-top:14px;font-size:24px;line-height:1.3;color:#DCE4EA}
-.vsj{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:#0B7955;
- font-family:SS4;font-weight:700;font-size:30px;color:#fff;box-shadow:0 0 0 8px rgba(21,183,129,.18),0 20px 50px rgba(21,183,129,.4);z-index:3}
+.stepn{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#FFD84D;color:#15191F;border:3px solid #15191F;font-family:Fraunces;font-weight:700;font-size:30px;flex:none}
+.stept{font-size:28px;font-weight:600;line-height:1.3;color:#15191F}
+.cmpi{display:flex;align-items:flex-start;gap:12px;margin-top:14px;font-size:24px;font-weight:600;line-height:1.3;color:#3F4652}
+.vsj{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;display:grid;place-items:center;background:#FFD84D;
+ border:3px solid #15191F;font-family:Fraunces;font-weight:700;font-size:30px;color:#15191F;box-shadow:4px 4px 0 #15191F;z-index:3}
 .ckr{display:flex;align-items:center;gap:20px;margin-top:22px}
-.box{width:46px;height:46px;border-radius:12px;border:2px solid rgba(255,255,255,.35);display:grid;place-items:center;flex:none}
-.box.on{background:#5CF0B6;border-color:#5CF0B6}
-.ckr i{display:block;height:16px;border-radius:8px;background:rgba(255,255,255,.18)}
+.box{width:46px;height:46px;border-radius:12px;border:3.5px solid #15191F;background:#fff;display:grid;place-items:center;flex:none}
+.box.on{background:#FFD84D;border-color:#15191F}
+.ckr i{display:block;height:16px;border-radius:8px;background:rgba(21,25,31,.12)}
 .reel .card{padding:22px 24px!important}
 .reel .chip{font-size:22px;padding:10px 16px}
 .reel .quote{font-size:40px!important}
@@ -339,19 +337,25 @@ EXTRA = """
 """
 
 
+def me_html(ring, d, extra_style=""):
+    """Talha's cut-out photo on a yellow circle, with his name: the real person behind the firm."""
+    return ('<div class="me" style="--rs:%dpx;%s" data-a="up" data-d="%.2f"><div class="ring"><img src="%s"></div>'
+            '<div class="who"><b>Muhammad Talha</b><span>Finance Department</span></div></div>' % (ring, extra_style, d, photo_uri("talha_cut")))
+
+
 def page_top(idx, total, count=None):
     c = count if count is not None else "<b>%02d</b> / %02d" % (idx + 1, total)
     return '<div class="top"><div class="brand"><div class="mark">FD</div>Finance Department</div><div class="count">%s</div></div>' % c
 
 
-SWIPE = '<span style="display:inline-flex;align-items:center;gap:12px;color:#E8F0EC;font-weight:600">SWIPE ' + ARROW + "</span>"
+SWIPE = '<span style="display:inline-flex;align-items:center;gap:12px;color:#15191F;font-weight:800;letter-spacing:.12em;font-size:22px">SWIPE ' + ARROW + "</span>"
 
 
 def tag_html(text, n=None):
     num = ""
     if n:
-        num = ('<span style="font-family:SS4;font-weight:700;font-size:26px;color:#fff;letter-spacing:0">%s</span>'
-               '<span style="width:26px;height:1px;background:rgba(255,255,255,.35)"></span>' % esc(n))
+        num = ('<span style="font-family:Fraunces;font-weight:700;font-size:28px;color:#15191F;letter-spacing:0">%s</span>'
+               '<span style="width:26px;height:2px;background:rgba(21,25,31,.35)"></span>' % esc(n))
     return '<div style="display:flex;align-items:center;gap:14px" data-a="fade" data-d="0.12">%s<span class="label">%s</span></div>' % (num, esc(text or ""))
 
 
@@ -384,16 +388,15 @@ def carousel_slide(s, idx, total, mode="post", disclaimer=False):
         inner = ('<div class="sp" style="flex:.18"></div><div class="mark" style="width:116px;height:116px;border-radius:16px;font-size:64px" data-a="pop" data-d="0.15">FD</div>'
                  '<h1 style="margin-top:44px;font-size:%dpx" data-a="up" data-d="0.35">%s</h1>' % (96 if mode == "post" else 80, emph_title(s["title"], s.get("emph"))))
         if s.get("body"):
-            inner += '<p class="body" style="font-size:38px;line-height:1.35;margin-top:26px;color:#DCE4EA" data-a="up" data-d="0.55">%s</p>' % esc(s["body"])
+            inner += '<p class="body" style="font-size:38px;line-height:1.35;margin-top:26px;color:#3F4652" data-a="up" data-d="0.55">%s</p>' % esc(s["body"])
         if s.get("cta"):
             inner += '<div style="margin-top:50px" data-a="pop" data-d="0.85"><span class="cta">%s %s</span></div>' % (esc(s["cta"]), ARROW)
         inner += '<div class="sp"></div>'
         if s.get("visual"):
             inner += visuals(s, mode, 0.9)
         else:
-            # the faint map may shrink (and is clipped) so the disclaimer and the dots below it never collide
-            inner += ('<div class="zmap" style="display:flex;justify-content:center;align-items:flex-start;margin:%s;opacity:.7;flex:0 1 auto;min-height:0;overflow:hidden">%s</div>'
-                      % ("30px 0 22px" if mode == "post" else "18px 0 10px", usmap(640 if mode == "post" else 400, [], pins=False, d=0.9, faint=True, uid="z")))
+            # Talha's real photo signs the carousel off
+            inner += me_html(190 if mode == "post" else 132, 0.9)
         if disclaimer:
             inner += '<div class="fine" style="margin-top:14px" data-a="fade" data-d="1.1">%s</div>' % DISCLAIMER
         top = page_top(idx, total)
@@ -410,10 +413,11 @@ STORY_CSS = """
 .st .top{top:270px;left:84px;right:84px}
 .st h1{font-size:88px;line-height:1.05}
 .st .body{font-size:38px;line-height:1.38}
-.photo{width:300px;height:300px;border-radius:50%;object-fit:cover;border:6px solid #15B781;box-shadow:0 0 0 12px rgba(21,183,129,.16),0 30px 80px rgba(0,0,0,.55);display:block}
-.award{width:100%;height:auto;border-radius:28px;display:block;border:1px solid rgba(255,255,255,.2);box-shadow:0 40px 90px rgba(0,0,0,.55)}
-.reply{display:flex;align-items:center;gap:18px;align-self:stretch;justify-content:center;padding:28px 36px;border-radius:999px;font-weight:600;font-size:36px;color:#04150E;
- background:linear-gradient(180deg,#5CF0B6,#16B07B);box-shadow:0 18px 54px rgba(21,183,129,.5),inset 0 1px 0 rgba(255,255,255,.5)}
+.sring{position:relative;width:340px;height:340px;border-radius:50%;background:#FFD84D;overflow:hidden;border:4px solid #15191F;flex:none}
+.sring img{position:absolute;left:4%;top:8%;width:92%}
+.award{width:94%;align-self:center;height:auto;display:block;border:16px solid #FFFFFF;border-bottom-width:56px;border-radius:6px;box-shadow:0 34px 70px rgba(70,55,30,.25);transform:rotate(-2deg)}
+.reply{display:flex;align-items:center;gap:18px;align-self:stretch;justify-content:center;padding:26px 36px;border-radius:999px;font-weight:800;font-size:36px;color:#15191F;
+ background:#FFD84D;border:3px solid #15191F;box-shadow:6px 6px 0 #15191F}
 """
 
 
@@ -421,7 +425,7 @@ def story_frame(s, disclaimer=False):
     inner = '<div class="sp" style="flex:.3"></div>' if not s.get("visual") else ""
     photo = s.get("photo")
     if photo == "talha":
-        inner += '<img class="photo" src="%s" data-a="pop" data-d="0.15">' % photo_uri("talha")
+        inner += '<div class="sring" data-a="pop" data-d="0.15"><img src="%s"></div>' % photo_uri("talha_cut")
         inner += '<div style="height:44px"></div>'
     elif photo == "award":
         inner += '<img class="award" src="%s" data-a="up" data-d="0.15">' % photo_uri("award")
@@ -439,7 +443,7 @@ def story_frame(s, disclaimer=False):
     if s.get("visual"):
         inner += visuals(s, "post", 0.6) + '<div class="sp" style="flex:.4"></div>'
     if s.get("cta"):
-        inner += '<div class="reply" data-a="pop" data-d="0.8">%s<span>%s</span></div>' % (ic("reply", 40, "#04150E", 3.2), esc(s["cta"]))
+        inner += '<div class="reply" data-a="pop" data-d="0.8">%s<span>%s</span></div>' % (ic("reply", 40, "#15191F", 3.2), esc(s["cta"]))
     if disclaimer:
         inner += '<div class="fine" style="margin-top:18px;text-align:center" data-a="fade" data-d="1">%s</div>' % DISCLAIMER
     body = '<div class="top"><div class="brand"><div class="mark">FD</div>Finance Department</div></div><div class="content">%s</div>' % inner

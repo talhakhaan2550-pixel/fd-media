@@ -8,11 +8,17 @@ Facebook) and Metricool (YouTube) fetch them by link when a post is placed. Ever
 
 - `weeks/{week}/pieces.json`: the week's pieces, written by the Monday plan run and updated by every run after it.
 - `weeks/{week}/media/`: the finished files, served at `{pagesBase}/weeks/{week}/media/{file}`.
-- `tools/studio/`: the studio, in Python, that makes every piece since 15 November 2026 in the style Talha approved
-  that day: carousel slides (1080 x 1350), story frames (1080 x 1920), narrated story videos for explainers and ads,
-  and each carousel's music reel (1080 x 1920).
+- `tools/studio/`: the studio, in Python, that makes every piece since 15 November 2026: carousel slides
+  (1080 x 1350), story frames (1080 x 1920), narrated story videos for explainers and ads, each carousel's music reel
+  (1080 x 1920) and LinkedIn post images (1080 x 1350). Since the afternoon of 15 November 2026 everything is in the
+  light look Talha chose that day, a mix of his two favourite options: warm paper with grain, Fraunces headlines with
+  one part on a yellow marker, ink outlined cards with offset shadows, drawn objects (cheques, bills, forms, stamps,
+  calendars), and his real photo cut out on a yellow circle; videos move from scene to scene on colour wipes, with big
+  words and big figures.
   - `render.py` makes one piece; `make.mjs` calls it.
   - `slides.py` draws COVER, POINT, CLOSE and STORY with their visuals; `video.py` builds a video's scenes and captions;
+    `linkedin.py` draws a LinkedIn post image (a cheque, a bill, a timeline or any carousel visual, up to three points,
+    Talha's photo);
     `brand.py` holds the fonts, colours, icons, US map and page shell; `capture.py` drives Chromium and ffmpeg.
   - `audio.py` is the sound: the AI narrator (Kokoro 82M through kokoro-onnx, voice af_heart, never Talha's voice), word
     timings for the captions, music beds and sound effects made in code (original, so free of any licence), and the
@@ -24,9 +30,15 @@ Facebook) and Metricool (YouTube) fetch them by link when a post is placed. Ever
 - `tools/explainer.mjs`, `tools/ad.mjs`, `tools/stills.mjs`: the first engine (HyperFrames and Chromium), kept for any
   piece marked `"style": "classic"`; it needs `npm install`.
 - `tools/config.json`: the Pages address, the platforms switched on, posting hours and spacing.
-- `tools/assets/`: the brand fonts (Source Serif 4 and IBM Plex Sans, SIL Open Font License), the FD mark, GSAP,
-  `us-map.json` (US states from us-atlas, ISC licence) and `photos/` with Talha's real portrait and the photo of him
-  receiving the Best Freelancer of Swabi award (never AI made).
+- `tools/assets/`: the fonts (Source Serif 4 and IBM Plex Sans, and for the light look Fraunces, Plus Jakarta Sans,
+  Caveat and IBM Plex Mono, all SIL Open Font License), the FD mark, GSAP, `us-map.json` (US states from us-atlas, ISC
+  licence), `textures/` (paper grain and a stamp mask, drawn in code) and `photos/` with Talha's real portrait, the
+  same photo cut out (`talha_cut.png`, and `talha_sticker.png` with a white edge) and the photo of him receiving the
+  Best Freelancer of Swabi award (never AI made).
+- `linkedin/posts.json` and `linkedin/media/`: one image per LinkedIn post, made from the post's own words in the
+  LinkedIn posts doc and named under the post there in a paragraph starting "Image:"; the LinkedIn daily run attaches
+  it when it schedules the post. Make one with
+  `python3 tools/studio/render.py linkedin/posts.json LI-2026-11-24 --preview /tmp/prev`.
 
 The words on screen are always exactly the words in the piece file: the tools add nothing, reword nothing and
 invent nothing. A visual or scene shows the piece's own words and figures again, never a new fact, and the narrator
@@ -85,8 +97,9 @@ cannot be installed, explainers and ads are made with captions and music but no 
 - text `{text}`; reel and cuts `{brief, opus_project, clip}`.
 
 A piece with `"style": "classic"` is made by the first engine. `make.mjs` sets `ai_voice` to true on every explainer or
-ad it narrates, and the AI label goes on when it is placed; each narrated frame carries an AI VOICE tag and the end card
-says "Narration is an AI voice."
+ad it narrates, and the platforms' AI labels go on when it is placed (Meta requires one on a reel narrated with a
+realistic AI voice). Since the afternoon of 15 November 2026, at Talha's request, the videos carry no AI wording on
+screen.
 
 An ad's `hook_visual` describes the opening shot to make (in Higgsfield). Its `hook_clip` is the finished shot:
 `{file}` for a clip inside this repository, which the first engine stitches in front of the ad, or `{url}` for a clip

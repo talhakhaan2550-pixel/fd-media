@@ -10,7 +10,7 @@ A piece's content may carry:
 Scene labels restate the piece's own words; they never add a fact.
 """
 import json, math, re
-from brand import esc, ic, ARROW, WAVE, us_map, shell, SITE, DISCLAIMER, AI_NOTE
+from brand import esc, ic, ARROW, us_map, shell, SITE, DISCLAIMER, photo_uri, texture_uri
 
 W, H, FPS = 1080, 1920, 30
 GAP, GAP_SAME, START = 0.55, 0.25, 0.35
@@ -168,13 +168,13 @@ def sc_headline(o, g, beats, gi, hook_kicker):
     b = beats[0]
     n = len(b.text)
     if b.key == "hook":
-        fs = 92 if n <= 40 else (80 if n <= 70 else 68)
+        fs = 104 if n <= 40 else (90 if n <= 70 else 76)
     else:
-        fs = 74 if n <= 60 else (64 if n <= 100 else 56)
+        fs = 86 if n <= 60 else (74 if n <= 100 else 64)
     spans = "".join('<span class="%s">%s</span> ' % (word_cls(w), esc(w)) for w, _ in caption_words(b))
     o.html.append('<div class="hlw"><div class="hlt%s" style="font-size:%dpx">%s</div></div>' % (" serif" if b.key == "hook" else "", fs, spans))
     for k, (w, t) in enumerate(caption_words(b)):
-        o.j("TL.to('#%s .hlt span:nth-child(%d)',{opacity:1,duration:.14},%.3f);", g, k + 1, t)
+        o.j("TL.fromTo('#%s .hlt span:nth-child(%d)',{opacity:0,y:28,scale:.88},{opacity:1,y:0,scale:1,duration:.24,ease:'back.out(1.9)'},%.3f);", g, k + 1, t - 0.03)
     o.j("TL.from('#%s .hlw',{y:40,opacity:0,duration:.6,ease:'power3.out'},%.3f);", g, b.start - 0.12)
 
 
@@ -219,9 +219,9 @@ def sc_route(o, g, beats, gi, prev):
     for k, nd in enumerate(to):
         x = xs[k]
         nodes += ('<div class="node n%d" style="left:%dpx"><div class="nc">%s</div><div class="nl">%s</div></div>'
-                  % (k, x, ic(nd.get("icon", "person"), 70, "#C9FBE7", 2.2), esc(nd.get("label", ""))))
+                  % (k, x, ic(nd.get("icon", "person"), 70, "#0B7955", 2.4), esc(nd.get("label", ""))))
         cx = x + 85
-        paths += '<path class="p%d" d="M420 236 C 420 290, %d 250, %d 296" fill="none" stroke="#6AF3C0" stroke-width="3" stroke-dasharray="8 10" opacity="0"/>' % (k, cx, cx)
+        paths += '<path class="p%d" d="M420 236 C 420 290, %d 250, %d 296" fill="none" stroke="#15191F" stroke-width="3.5" stroke-dasharray="8 10" opacity="0"/>' % (k, cx, cx)
     minis = "".join('<div class="minic m%d"><div></div><div></div><div style="width:70%%"></div></div>' % k for k in range(len(to)))
     date = ""
     if sp.get("date") and len(to) <= 2:
@@ -241,7 +241,7 @@ def sc_route(o, g, beats, gi, prev):
         o.j("gsap.set('#%s .m%d',{left:345,top:180});", g, k)
         o.j("TL.fromTo('#%s .m%d',{autoAlpha:0,scale:.5,x:0,y:0},{autoAlpha:1,scale:.75,x:%d,y:150,duration:.75,ease:'power2.inOut'},%.3f);", g, k, dx, t - 0.35)
         o.j("TL.to('#%s .m%d',{autoAlpha:0,scale:.4,duration:.25},%.3f);", g, k, t + 0.42)
-        o.j("TL.fromTo('#%s .n%d .nc',{boxShadow:'0 0 50px rgba(21,183,129,.3)'},{boxShadow:'0 0 90px rgba(21,183,129,.85)',duration:.3,yoyo:true,repeat:1},%.3f);", g, k, t + 0.35)
+        o.j("TL.fromTo('#%s .n%d .nc',{boxShadow:'0 0 0 0px rgba(255,216,77,0)'},{boxShadow:'0 0 0 16px rgba(255,216,77,.85)',duration:.3,yoyo:true,repeat:1},%.3f);", g, k, t + 0.35)
         o.cues.append(("whoosh", t - 0.35, 0.2))
     if date:
         t = b.at(sp["date"].get("at"), b.end - 1.6)
@@ -320,7 +320,7 @@ def sc_ladder(o, g, beats, gi):
             if k >= len(bars):
                 continue
             t = b.at(mats[j] if j < len(mats) else None, b.start + 0.3)
-            col = {"b1": ("#B9FBE2", "rgba(21,183,129,.16)"), "b2": ("#FFE2A6", "rgba(242,181,68,.14)"), "b3": ("#FFC2C4", "rgba(255,90,95,.14)")}[TONES.get(bars[k].get("tone"), ["b1", "b2", "b3", "b1"][k])]
+            col = {"b1": ("#0B7955", "rgba(11,121,85,.12)"), "b2": ("#7A5200", "rgba(255,216,77,.45)"), "b3": ("#C23A2B", "rgba(194,58,43,.12)")}[TONES.get(bars[k].get("tone"), ["b1", "b2", "b3", "b1"][k])]
             o.j("TL.to('#%s_lx%d',{color:'%s',backgroundColor:'%s',duration:.35},%.3f);", g, k, col[0], col[1], t)
 
 
@@ -328,8 +328,8 @@ def sc_alert(o, g, beats, gi):
     b = beats[0]; sp = b.scene
     o.html.append('<div class="warn"><div class="wi">%s</div><div class="rlabel wl">%s</div>%s<div style="margin-top:26px;display:flex;flex-direction:column;align-items:center">'
                   '%s<div class="bigred" id="%s_v">%s</div>%s</div></div>'
-                  % (ic("warning", 96, "#FF8A8E", 2.4), esc(sp.get("title", "")), ('<div class="wsub">%s</div>' % esc(sp["sub"])) if sp.get("sub") else "",
-                     ('<div class="rlabel atl" style="color:#FFC2C4">%s</div>' % esc(sp["prefix"])) if sp.get("prefix") else "", g, esc(sp.get("value", "")),
+                  % (ic("warning", 96, "#C23A2B", 2.6), esc(sp.get("title", "")), ('<div class="wsub">%s</div>' % esc(sp["sub"])) if sp.get("sub") else "",
+                     ('<div class="rlabel atl" style="color:#C23A2B">%s</div>' % esc(sp["prefix"])) if sp.get("prefix") else "", g, esc(sp.get("value", "")),
                      ('<div class="per">%s</div>' % esc(sp["suffix"])) if sp.get("suffix") else ""))
     s = b.start
     o.j("TL.to('#redv',{opacity:1,duration:.7},%.3f);", s - 0.45)
@@ -369,9 +369,9 @@ def sc_compare(o, g, beats, gi):
                    % (["b1", "b2", "b3", "b1"][k], g, side, k, bx, h, g, side, k, bx - 10, 82 + h, esc(v)))
         if not vals:
             return ('<div class="pc" id="%s_%s" style="left:%dpx"><div class="h">%s</div>%s<div class="pcicon">%s</div></div>'
-                    % (g, side, x, esc(s.get("title", "")), ('<div class="pcnote">%s</div>' % esc(s["note"])) if s.get("note") else "", ic(s.get("icon", "doc"), 150, "#6AF3C0", 1.6)))
+                    % (g, side, x, esc(s.get("title", "")), ('<div class="pcnote">%s</div>' % esc(s["note"])) if s.get("note") else "", ic(s.get("icon", "doc"), 150, "#0B7955", 1.8)))
         return ('<div class="pc" id="%s_%s" style="left:%dpx"><div class="h">%s%s</div>%s<div class="pcbase"></div>%s</div>'
-                % (g, side, x, ic(s.get("icon", "doc"), 44, "#6AF3C0"), esc(s.get("title", "")),
+                % (g, side, x, ic(s.get("icon", "doc"), 44, "#0B7955"), esc(s.get("title", "")),
                    ('<div class="pcnote">%s</div>' % esc(s["note"])) if s.get("note") else "", mb))
     o.html.append('%s%s<div class="eq">%s</div>%s' % (card("l", L, 0), card("r", R, 460), esc(sp.get("join", "=")),
                                                        ('<div class="same">%s</div>' % esc(sp["chip"])) if sp.get("chip") else ""))
@@ -382,7 +382,7 @@ def sc_compare(o, g, beats, gi):
     o.j("TL.from('#%s_l .mb',{scaleY:0,transformOrigin:'50%% 100%%',duration:.5,stagger:.1,ease:'power3.out'},%.3f);", g, s + 0.25)
     o.j("TL.from('#%s_l .mv',{opacity:0,duration:.3,stagger:.1},%.3f);", g, s + 0.45)
     t = b.at(sp.get("at"), s + 1.6)
-    o.j("TL.to('#%s_r',{borderColor:'rgba(255,122,127,.85)',boxShadow:'0 40px 90px rgba(0,0,0,.45),0 0 60px rgba(255,90,95,.35)',duration:.4},%.3f);", g, s + 0.6)
+    o.j("TL.to('#%s_r',{borderColor:'#C23A2B',boxShadow:'0 30px 60px rgba(70,55,30,.14),0 0 0 6px rgba(194,58,43,.16)',duration:.4},%.3f);", g, s + 0.6)
     o.j("gsap.set('#%s_r .mb',{scaleY:0,transformOrigin:'50%% 100%%'}); gsap.set('#%s_r .mv',{opacity:0});", g, g)
     o.j("TL.fromTo('#%s .eq',{opacity:0,scale:.5},{opacity:1,scale:1,duration:.45,ease:'back.out(2)'},%.3f);", g, t - 0.25)
     o.j("TL.to('#%s_r .mb',{scaleY:1,duration:.5,stagger:.12,ease:'power3.out'},%.3f);", g, t)
@@ -408,7 +408,7 @@ def sc_checklist(o, g, beats, gi):
     o.j("TL.from('#%s .ck',{y:70,opacity:0,duration:.6,ease:'power3.out'},%.3f);", g, s - 0.1)
     for k in range(len(items[:6])):
         t = s + 0.45 + k * 0.28
-        o.j("TL.to('#%s_bx%d',{backgroundColor:'#5CF0B6',borderColor:'#5CF0B6',duration:.15},%.3f);", g, k, t)
+        o.j("TL.to('#%s_bx%d',{backgroundColor:'#FFD84D',borderColor:'#15191F',duration:.15},%.3f);", g, k, t)
         o.j("TL.fromTo('#%s_bx%d svg',{opacity:0,scale:.4},{opacity:1,scale:1,duration:.25,ease:'back.out(2.5)'},%.3f);", g, k, t)
         o.cues.append(("tick", t, 0.28))
     if btn:
@@ -455,14 +455,14 @@ def sc_map(o, g, beats, gi):
     hl, pins, labs = "", "", ""
     for k, code in enumerate(states):
         st = m["states"][code]; cx, cy = st["c"]
-        hl += '<path id="%s_s%d" d="%s" fill="rgba(21,183,129,.42)" stroke="#6AF3C0" stroke-width="2.2" stroke-linejoin="round" opacity="0"/>' % (g, k, st["albers"])
-        pins += ('<g id="%s_p%d" opacity="0" style="transform-origin:%spx %spx"><circle cx="%s" cy="%s" r="17" fill="none" stroke="rgba(106,243,192,.55)" stroke-width="2"/>'
-                 '<circle cx="%s" cy="%s" r="7" fill="#B9FBE2"/></g>' % (g, k, cx, cy, cx, cy, cx, cy))
+        hl += '<path id="%s_s%d" d="%s" fill="rgba(11,121,85,.34)" stroke="#0B7955" stroke-width="2.4" stroke-linejoin="round" opacity="0"/>' % (g, k, st["albers"])
+        pins += ('<g id="%s_p%d" opacity="0" style="transform-origin:%spx %spx"><circle cx="%s" cy="%s" r="17" fill="none" stroke="rgba(21,25,31,.45)" stroke-width="2"/>'
+                 '<circle cx="%s" cy="%s" r="8" fill="#FFD84D" stroke="#15191F" stroke-width="2.5"/></g>' % (g, k, cx, cy, cx, cy, cx, cy))
         name = (sp.get("labels") or {}).get(code, st["name"])
         labs += ('<div id="%s_l%d" style="position:absolute;left:%.0fpx;top:%.0fpx;transform:translateX(-50%%);display:flex;flex-direction:column;align-items:center;opacity:0">'
-                 '<div class="maplabel">%s</div><div style="width:2px;height:40px;background:linear-gradient(#6AF3C0,rgba(106,243,192,0))"></div></div>' % (g, k, cx * s, cy * s - 96, esc(name)))
+                 '<div class="maplabel">%s</div><div style="width:2px;height:40px;background:linear-gradient(#15191F,rgba(21,25,31,0))"></div></div>' % (g, k, cx * s, cy * s - 96, esc(name)))
     o.html.append('<div style="position:absolute;left:0;top:70px;width:%dpx;height:%.0fpx"><svg viewBox="0 0 %d %d" width="%d" height="%.0f" style="overflow:visible;position:absolute;inset:0">'
-                  '<path d="%s" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.30)" stroke-width="1.3"/><path d="%s" fill="none" stroke="rgba(255,255,255,.13)" stroke-width=".9"/>%s%s</svg>%s</div>'
+                  '<path d="%s" fill="rgba(255,255,255,.6)" stroke="rgba(21,25,31,.42)" stroke-width="1.4"/><path d="%s" fill="none" stroke="rgba(21,25,31,.16)" stroke-width=".9"/>%s%s</svg>%s</div>'
                   % (width, h, m["w"], m["h"], width, h, m["nation"], m["mesh"], hl, pins, labs))
     ats = sp.get("at") or []
     o.j("TL.from('#%s svg',{opacity:0,duration:.6},%.3f);", g, b.start - 0.1)
@@ -512,8 +512,8 @@ def sc_gauge(o, g, beats, gi):
     b = beats[0]; sp = b.scene
     n = int(sp.get("gaps", 3))
     bars = "".join('<div class="gapr"><span>%s %d</span><i id="%s_g%d" style="width:%d%%"></i></div>' % (esc(sp.get("gap_label", "Gap")), k + 1, g, k, [86, 64, 48, 36][k % 4]) for k in range(n))
-    o.html.append('<div class="center"><svg width="420" height="230" viewBox="0 0 420 230"><path d="M30 210 A180 180 0 0 1 390 210" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="26" stroke-linecap="round"/>'
-                  '<path id="%s_arc" d="M30 210 A180 180 0 0 1 390 210" fill="none" stroke="url(#%s_gr)" stroke-width="26" stroke-linecap="round"/><defs><linearGradient id="%s_gr"><stop offset="0" stop-color="#FF8A8E"/><stop offset=".5" stop-color="#FFD57A"/><stop offset="1" stop-color="#5CF0B6"/></linearGradient></defs></svg>'
+    o.html.append('<div class="center"><svg width="420" height="230" viewBox="0 0 420 230"><path d="M30 210 A180 180 0 0 1 390 210" fill="none" stroke="rgba(21,25,31,.10)" stroke-width="26" stroke-linecap="round"/>'
+                  '<path id="%s_arc" d="M30 210 A180 180 0 0 1 390 210" fill="none" stroke="url(#%s_gr)" stroke-width="26" stroke-linecap="round"/><defs><linearGradient id="%s_gr"><stop offset="0" stop-color="#C23A2B"/><stop offset=".5" stop-color="#FFD84D"/><stop offset="1" stop-color="#0B7955"/></linearGradient></defs></svg>'
                   '<div class="label" style="margin-top:6px;font-size:24px">%s</div><div class="gaps">%s</div></div>' % (g, g, g, esc(sp.get("label", "")), bars))
     o.j("(()=>{const p=document.getElementById('%s_arc'),L=p.getTotalLength();p.style.strokeDasharray=L;TL.fromTo(p,{strokeDashoffset:L},{strokeDashoffset:L*0.28,duration:1.2,ease:'power2.out'},%.3f)})();", g, b.start + 0.1)
     for k in range(n):
@@ -523,132 +523,131 @@ def sc_gauge(o, g, beats, gi):
 
 
 def end_card(piece, voiced, disclaimer):
+    """The last frame: Talha's real photo on a yellow circle, the firm, the offer and the call to action."""
     c = piece["content"]
     offer = ('<div class="eoffer">%s</div>' % esc(c["offer"])) if c.get("offer") else ""
-    fine = []
-    if disclaimer:
-        fine.append(DISCLAIMER)
-    if voiced:
-        fine.append(AI_NOTE)
-    return ('<div class="endc" id="endc"><div class="mark" style="width:150px;height:150px;border-radius:21px;font-size:82px">FD</div>'
-            '<div class="ebrand">Finance Department</div>%s<div class="ecta">%s %s</div><div class="esite">%s</div>'
-            '<div class="efine">%s</div></div>' % (offer, esc(c["cta"]), ARROW, SITE, "<br>".join(fine)))
+    fine = '<div class="efine">%s</div>' % DISCLAIMER if disclaimer else ""
+    return ('<div class="endc" id="endc"><div class="ering"><img src="%s"></div><div class="ename">Muhammad Talha</div>'
+            '<div class="ebrand"><span class="mark">FD</span>Finance Department</div>%s<div class="ecta">%s %s</div><div class="esite">%s</div>%s</div>'
+            % (photo_uri("talha_cut"), offer, esc(c["cta"]), ARROW, SITE, fine))
 
 
 CSS = """
-.slide{width:1080px;height:1920px}
+.slide{width:1080px;height:1920px;--mk:#FFD84D}
 .top{top:400px;left:80px;right:160px}
-.ai{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);
- font-weight:600;font-size:19px;letter-spacing:.14em;color:#C9D1DB}
 .kick{position:absolute;left:80px;top:480px;z-index:5}
+.wipe{position:absolute;inset:0;z-index:2;visibility:hidden}
 .stage{position:absolute;left:80px;top:570px;width:840px;height:600px;z-index:4}
 .scene{position:absolute;inset:0}
 .hlw{position:absolute;left:0;right:0;top:-10px;height:830px;display:flex;align-items:center}
-.hlt{font-family:'Plex';font-weight:600;line-height:1.16;color:#fff;letter-spacing:-.01em;text-wrap:balance}
-.hlt.serif{font-family:'SS4';font-weight:600;letter-spacing:-.02em;line-height:1.06}
-.hlt span{opacity:.18}.hlt span.n1{color:#6AF3C0}
-.form{position:absolute;left:120px;top:90px;width:600px;padding:30px 32px 30px;border-radius:24px;background:linear-gradient(180deg,#FAFCFB,#E9EFEC);color:#06162D;
- box-shadow:0 50px 100px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.6) inset}
+.hlt{font-family:'Jakarta';font-weight:800;line-height:1.08;color:#15191F;letter-spacing:-.035em;text-wrap:balance}
+.hlt.serif{font-family:'Fraunces';font-weight:700;letter-spacing:-.02em;line-height:1.04}
+.hlt span{opacity:0;display:inline-block}
+.hlt span.n1{background:var(--mk);border-radius:12px;padding:0 12px;margin:0 -4px}
+.form{position:absolute;left:120px;top:90px;width:600px;padding:30px 32px 30px;border-radius:24px;background:linear-gradient(180deg,#FFFFFF,#F3F0E8);color:#15191F;
+ border:2px solid rgba(21,25,31,.12);box-shadow:0 40px 80px rgba(70,55,30,.22)}
 .form.mini{left:420px;top:10px;transform:translateX(-50%) scale(.62);transform-origin:50% 0}
-.dlab{font-size:20px;font-weight:600;letter-spacing:.14em;color:#4E596A}
-.dtitle{font-family:SS4;font-weight:700;font-size:62px;line-height:1;color:#06162D;letter-spacing:-.02em}
-.dtag{padding:10px 18px;border-radius:12px;background:#0B7955;color:#fff;font-weight:600;font-size:26px}
-.fld{position:relative;display:flex;align-items:center;gap:14px;height:62px;margin-top:12px;padding:0 18px;border:1.5px solid #C5D0CB;border-radius:12px;background:#fff}
+.dlab{font-size:20px;font-weight:700;letter-spacing:.14em;color:#59606C}
+.dtitle{font-family:'Fraunces';font-weight:700;font-size:62px;line-height:1;color:#15191F;letter-spacing:-.02em}
+.dtag{padding:10px 18px;border-radius:12px;background:#0B7955;color:#fff;font-weight:700;font-size:26px}
+.fld{position:relative;display:flex;align-items:center;gap:14px;height:62px;margin-top:12px;padding:0 18px;border:2px solid #D8D2C4;border-radius:12px;background:#fff}
 .fld:first-of-type{margin-top:22px}
-.fld span{font-size:17px;font-weight:600;letter-spacing:.1em;color:#6B7686;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fld i{display:block;height:14px;border-radius:7px;background:#DCE3E0;margin-left:auto}
-.fld b{font-family:SS4;font-size:30px;color:#06162D;margin-left:auto}
+.fld span{font-size:17px;font-weight:700;letter-spacing:.1em;color:#59606C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fld i{display:block;height:14px;border-radius:7px;background:#E6E0D3;margin-left:auto}
+.fld b{font-family:'Fraunces';font-size:30px;color:#15191F;margin-left:auto}
 .fld b+i{margin-left:0}
 .docw{position:absolute;inset:0}
-.stamp{position:absolute;padding:8px 22px;border:6px solid #E5484D;border-radius:14px;color:#E5484D;font-weight:600;font-size:64px;letter-spacing:.12em;background:rgba(229,72,77,.07);opacity:0;white-space:nowrap}
+.stamp{position:absolute;padding:8px 24px 6px;border:8px solid #C23A2B;border-radius:16px;color:#C23A2B;font-family:'Jakarta';font-weight:800;font-size:64px;letter-spacing:.06em;
+ opacity:0;white-space:nowrap;mix-blend-mode:multiply;-webkit-mask-image:url(STAMP);mask-image:url(STAMP);-webkit-mask-size:100% 100%;mask-size:100% 100%}
 .stamp.st0{right:94px;top:208px}.stamp.st1{left:180px;top:380px}.stamp.st2{left:300px;top:260px}
 .node{position:absolute;top:300px;width:170px;display:flex;flex-direction:column;align-items:center;gap:14px}
-.nc{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,rgba(21,183,129,.35),rgba(6,22,45,.9) 70%);
- border:2px solid rgba(106,243,192,.6);box-shadow:0 0 50px rgba(21,183,129,.3)}
-.nl{font-weight:600;font-size:26px;letter-spacing:.14em;color:#E8F4EF;text-transform:uppercase;white-space:nowrap}
-.minic{position:absolute;width:150px;padding:14px 16px;border-radius:14px;background:#F3F6F5;box-shadow:0 20px 40px rgba(0,0,0,.45);opacity:0}
-.minic div{height:10px;border-radius:5px;background:#CBD5D1;margin-top:8px}
+.nc{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;background:#FFFFFF;border:3px solid #15191F;box-shadow:6px 6px 0 #15191F}
+.nl{font-weight:800;font-size:25px;letter-spacing:.12em;color:#15191F;text-transform:uppercase;white-space:nowrap}
+.minic{position:absolute;width:150px;padding:14px 16px;border-radius:14px;background:#FFFFFF;border:2px solid rgba(21,25,31,.12);box-shadow:0 16px 30px rgba(70,55,30,.2);opacity:0}
+.minic div{height:10px;border-radius:5px;background:#E6E0D3;margin-top:8px}
 .minic div:first-child{margin-top:0;height:14px;width:60%;background:#0B7955}
-.calB{position:absolute;left:310px;top:300px;width:220px;border-radius:26px;overflow:hidden;background:#F4F7F6;color:#06162D;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.55)}
-.calB .m{background:#0B7955;color:#fff;font-weight:600;font-size:24px;letter-spacing:.18em;padding:12px 4px 11px;white-space:nowrap}
-.calB .d{font-family:SS4;font-weight:700;font-size:118px;line-height:1.02;padding:6px 0 0}
-.calB .s{font-weight:600;font-size:21px;letter-spacing:.16em;color:#4E596A;padding:0 0 18px;min-height:20px}
+.calB{position:absolute;left:310px;top:300px;width:220px;border-radius:26px;overflow:hidden;background:#FFFFFF;color:#15191F;text-align:center;border:3px solid #15191F;box-shadow:8px 8px 0 #15191F}
+.calB .m{background:#0B7955;color:#fff;font-weight:800;font-size:24px;letter-spacing:.18em;padding:12px 4px 11px;white-space:nowrap}
+.calB .d{font-family:'Fraunces';font-weight:700;font-size:118px;line-height:1.02;padding:6px 0 0}
+.calB .s{font-weight:700;font-size:21px;letter-spacing:.16em;color:#59606C;padding:0 0 18px;min-height:20px}
 .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .center .calB{position:relative;left:auto;top:auto}
 .center .calB.big{width:300px}.center .calB.big .d{font-size:160px}.center .calB.big .m{font-size:30px}
-.dtext{font-family:SS4;font-weight:600;font-size:46px;color:#fff;margin-top:34px}
+.dtext{font-family:'Fraunces';font-weight:700;font-size:48px;color:#15191F;margin-top:34px}
 .lad{position:absolute;left:0;right:0;top:60px;height:470px}
-.base{position:absolute;left:0;right:0;bottom:90px;height:2px;background:rgba(255,255,255,.35)}
+.base{position:absolute;left:0;right:0;bottom:90px;height:3px;background:#15191F}
 .lc{position:absolute;bottom:92px;display:flex;flex-direction:column;align-items:center}
-.lv{font-family:SS4;font-weight:700;font-size:70px;line-height:1;letter-spacing:-.02em;margin-bottom:14px;color:#fff;white-space:nowrap}
+.lv{font-family:'Fraunces';font-weight:700;font-size:70px;line-height:1;letter-spacing:-.02em;margin-bottom:14px;color:#15191F;white-space:nowrap}
 .lb{width:100%;border-radius:18px 18px 6px 6px}
-.lg{position:absolute;bottom:92px;border-radius:18px 18px 6px 6px;border:2px dashed rgba(255,255,255,.18)}
-.lx{position:absolute;bottom:0;height:84px;text-align:center;font-weight:600;font-size:25px;line-height:1.25;color:#8C99AB;padding-top:14px;border-radius:14px}
-.b1{background:linear-gradient(180deg,#5CF0B6,#0F8C61);box-shadow:0 0 50px rgba(21,183,129,.45)}
-.b2{background:linear-gradient(180deg,#FFD57A,#C98A12);box-shadow:0 0 50px rgba(242,181,68,.45)}
-.b3{background:linear-gradient(180deg,#FF9A9D,#C9363C);box-shadow:0 0 60px rgba(255,90,95,.5)}
-.redv{position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 45%,transparent 35%,rgba(200,30,40,.55) 100%);opacity:0;z-index:3;pointer-events:none}
+.lg{position:absolute;bottom:92px;border-radius:18px 18px 6px 6px;border:2px dashed rgba(21,25,31,.22)}
+.lx{position:absolute;bottom:0;height:84px;text-align:center;font-weight:700;font-size:25px;line-height:1.25;color:#4D5562;padding-top:14px;border-radius:14px}
+.b1{background:linear-gradient(180deg,#14A374,#0B7955);box-shadow:0 16px 30px rgba(11,121,85,.25)}
+.b2{background:linear-gradient(180deg,#FFE27A,#E9B300);box-shadow:0 16px 30px rgba(200,150,0,.25)}
+.b3{background:linear-gradient(180deg,#E2574A,#C23A2B);box-shadow:0 16px 30px rgba(194,58,43,.28)}
+.redv{position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 45%,transparent 40%,rgba(194,58,43,.30) 100%);opacity:0;z-index:3;pointer-events:none}
 .warn{position:absolute;left:0;right:0;top:10px;display:flex;flex-direction:column;align-items:center;gap:16px}
-.rlabel{font-weight:600;font-size:30px;letter-spacing:.16em;color:#FF9EA2;text-transform:uppercase;text-align:center}
-.wsub{font-size:30px;color:#E7C9CB;text-align:center}
-.per{font-size:30px;color:#E7C9CB;margin-top:10px}
-.bigred{font-family:SS4;font-weight:700;font-size:250px;line-height:.9;letter-spacing:-.04em;background:linear-gradient(180deg,#FFD0D2 0%,#FF6B70 45%,#B4242B 100%);
- -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 18px 50px rgba(255,90,95,.45));white-space:nowrap}
-.pc{position:absolute;top:30px;width:380px;height:470px;border-radius:30px;padding:28px 28px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));
- border:1px solid rgba(255,255,255,.15);box-shadow:0 40px 90px rgba(0,0,0,.45)}
-.pc .h{display:flex;align-items:center;gap:16px;font-family:SS4;font-weight:600;font-size:38px;color:#fff}
-.pcnote{font-size:26px;color:#C9D1DB;margin-top:16px;line-height:1.3}
-.pcicon{position:absolute;left:0;right:0;bottom:60px;display:flex;justify-content:center;opacity:.95;filter:drop-shadow(0 0 30px rgba(21,183,129,.45))}
+.rlabel{font-weight:800;font-size:30px;letter-spacing:.16em;color:#C23A2B;text-transform:uppercase;text-align:center}
+.wsub{font-size:30px;font-weight:600;color:#3F4652;text-align:center}
+.per{font-size:30px;font-weight:600;color:#3F4652;margin-top:10px}
+.bigred{font-family:'Fraunces';font-weight:700;font-size:250px;line-height:.9;letter-spacing:-.04em;color:#C23A2B;white-space:nowrap}
+.pc{position:absolute;top:30px;width:380px;height:470px;border-radius:30px;padding:28px 28px;background:#FFFDF8;border:2px solid rgba(21,25,31,.14);box-shadow:0 30px 60px rgba(70,55,30,.14)}
+.pc .h{display:flex;align-items:center;gap:16px;font-family:'Fraunces';font-weight:700;font-size:38px;color:#15191F}
+.pcnote{font-size:26px;font-weight:600;color:#4D5562;margin-top:16px;line-height:1.3}
+.pcicon{position:absolute;left:0;right:0;bottom:60px;display:flex;justify-content:center}
 .mb{position:absolute;bottom:80px;width:76px;border-radius:10px 10px 4px 4px}
-.mv{position:absolute;width:96px;text-align:center;font-family:SS4;font-weight:700;font-size:30px;color:#fff}
-.pcbase{position:absolute;left:28px;right:28px;bottom:78px;height:2px;background:rgba(255,255,255,.3)}
-.eq{position:absolute;left:50%;top:205px;transform:translateX(-50%);width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:#0B7955;
- font-family:SS4;font-weight:700;font-size:44px;color:#fff;box-shadow:0 0 0 8px rgba(21,183,129,.18),0 20px 50px rgba(21,183,129,.4);z-index:2}
-.same{position:absolute;left:50%;bottom:0;transform:translateX(-50%);padding:14px 26px;border-radius:999px;background:rgba(21,183,129,.14);border:1px solid rgba(106,243,192,.55);
- color:#D6FBEB;font-weight:600;font-size:26px;letter-spacing:.04em;white-space:nowrap}
-.ck{position:absolute;left:110px;top:10px;width:620px;border-radius:30px;padding:32px 34px;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.025));
- border:1px solid rgba(106,243,192,.35);box-shadow:0 40px 90px rgba(0,0,0,.45),0 0 60px rgba(21,183,129,.15)}
-.ckh{font-family:SS4;font-weight:600;font-size:40px;color:#fff;text-align:left}
+.mv{position:absolute;width:96px;text-align:center;font-family:'Fraunces';font-weight:700;font-size:30px;color:#15191F}
+.pcbase{position:absolute;left:28px;right:28px;bottom:78px;height:3px;background:rgba(21,25,31,.3)}
+.eq{position:absolute;left:50%;top:205px;transform:translateX(-50%);width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:#FFD84D;border:3px solid #15191F;
+ font-family:'Fraunces';font-weight:700;font-size:44px;color:#15191F;box-shadow:5px 5px 0 #15191F;z-index:2}
+.same{position:absolute;left:50%;bottom:0;transform:translateX(-50%);padding:14px 26px;border-radius:999px;background:#FFFFFF;border:3px solid #15191F;
+ color:#15191F;font-weight:800;font-size:26px;letter-spacing:.04em;white-space:nowrap;box-shadow:5px 5px 0 #15191F}
+.ck{position:absolute;left:110px;top:10px;width:620px;border-radius:30px;padding:32px 34px;background:#FFFDF8;border:3px solid #15191F;box-shadow:8px 8px 0 #15191F}
+.ckh{font-family:'Fraunces';font-weight:700;font-size:40px;color:#15191F;text-align:left}
 .ckr{display:flex;align-items:center;gap:20px;margin-top:22px}
-.ckt{font-size:28px;color:#E5ECE9;text-align:left}
-.box{width:46px;height:46px;border-radius:12px;border:2px solid rgba(255,255,255,.35);display:grid;place-items:center;flex:none}
+.ckt{font-size:28px;font-weight:600;color:#15191F;text-align:left}
+.box{width:46px;height:46px;border-radius:12px;border:3.5px solid #15191F;background:#fff;display:grid;place-items:center;flex:none}
 .box svg{opacity:0}
-.ckr i{display:block;height:16px;border-radius:8px;background:rgba(255,255,255,.18)}
+.ckr i{display:block;height:16px;border-radius:8px;background:rgba(21,25,31,.12)}
 .btn{position:absolute;left:50%;transform:translateX(-50%);top:480px;display:inline-flex;align-items:center;gap:14px;white-space:nowrap;padding:24px 36px;border-radius:999px;
- font-weight:600;font-size:31px;color:#04150E;background:linear-gradient(180deg,#5CF0B6,#16B07B);box-shadow:0 18px 54px rgba(21,183,129,.5),inset 0 1px 0 rgba(255,255,255,.5)}
+ font-weight:800;font-size:31px;color:#15191F;background:#FFD84D;border:3px solid #15191F;box-shadow:6px 6px 0 #15191F}
 .sbig{font-size:230px;max-width:840px}
 .slab{font-size:26px;margin-bottom:10px}
-.ssuf{font-size:34px;color:#DCE4EA;margin-top:22px;max-width:760px;line-height:1.3}
+.ssuf{font-size:34px;font-weight:600;color:#3F4652;margin-top:22px;max-width:760px;line-height:1.3}
 .chips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px;max-width:840px}
 .sch{font-size:26px}
 .igrid{display:grid;gap:22px;width:840px}
 .igrid.n1{grid-template-columns:1fr}.igrid.n2{grid-template-columns:1fr 1fr}.igrid.n3{grid-template-columns:1fr 1fr 1fr}.igrid.n4{grid-template-columns:1fr 1fr}
 .igrid.n3 .itl{font-size:27px}.igrid.n3 .itile{padding:26px 14px}
-.itile{border-radius:28px;padding:30px 20px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.14);
- display:flex;flex-direction:column;align-items:center;gap:20px;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.itile{border-radius:28px;padding:30px 20px;background:#FFFDF8;border:2px solid rgba(21,25,31,.14);display:flex;flex-direction:column;align-items:center;gap:20px;box-shadow:0 24px 50px rgba(70,55,30,.14)}
 .ico.big2{width:110px;height:110px;border-radius:28px}
-.itl{font-family:SS4;font-weight:600;font-size:34px;color:#fff;line-height:1.15}
+.itl{font-family:'Fraunces';font-weight:700;font-size:34px;color:#15191F;line-height:1.15}
 .step{display:flex;align-items:center;gap:22px;padding:16px 0;text-align:left}
-.stepn{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#0B7955;color:#fff;font-family:SS4;font-weight:700;font-size:32px;flex:none;box-shadow:0 0 0 6px rgba(21,183,129,.15)}
-.stept{font-size:32px;line-height:1.28;color:#E9F0EC}
-.qcard{padding:40px 40px 44px;display:flex;gap:26px;align-items:flex-start;text-align:left;width:840px;background:linear-gradient(180deg,rgba(21,183,129,.17),rgba(21,183,129,.04));border-color:rgba(60,220,160,.38)}
+.stepn{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#FFD84D;color:#15191F;border:3px solid #15191F;font-family:'Fraunces';font-weight:700;font-size:32px;flex:none}
+.stept{font-size:32px;font-weight:600;line-height:1.28;color:#15191F}
+.qcard{padding:40px 40px 44px;display:flex;gap:26px;align-items:flex-start;text-align:left;width:840px;background:#FFF7D9;border:3px solid #15191F;box-shadow:8px 8px 0 #15191F}
 .gaps{width:640px;margin-top:30px;display:flex;flex-direction:column;gap:16px}
-.gapr{display:flex;align-items:center;gap:18px}.gapr span{width:110px;text-align:left;font-weight:600;font-size:22px;letter-spacing:.1em;color:#FFC2C4;text-transform:uppercase}
-.gapr i{display:block;height:22px;border-radius:11px;background:linear-gradient(90deg,#FF8A8E,#FFD57A)}
+.gapr{display:flex;align-items:center;gap:18px}.gapr span{width:110px;text-align:left;font-weight:800;font-size:22px;letter-spacing:.1em;color:#C23A2B;text-transform:uppercase}
+.gapr i{display:block;height:22px;border-radius:11px;background:linear-gradient(90deg,#E2574A,#FFD84D)}
 .caps{position:absolute;left:80px;top:1205px;width:840px;height:200px;z-index:6}
-.cap{position:absolute;left:0;top:0;width:100%;font-weight:600;font-size:54px;line-height:1.2;color:#fff;opacity:0;text-shadow:0 4px 24px rgba(0,0,0,.6)}
-.cap span{opacity:.28}.cap span.n1{color:#6AF3C0}
-.capband{position:absolute;left:0;right:0;top:1150px;height:300px;background:linear-gradient(180deg,transparent,rgba(3,11,25,.55) 40%,rgba(3,11,25,.55) 70%,transparent);z-index:5;opacity:0}
-.endc{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;padding:0 160px 0 80px;text-align:center;
- background:radial-gradient(900px 700px at 50% 45%,rgba(11,121,85,.25),transparent 70%),linear-gradient(160deg,#0B2343,#06162D 55%,#030B19)}
-.ebrand{font-family:SS4;font-weight:600;font-size:60px;color:#F7FAF9;margin-top:34px}
-.eoffer{font-size:32px;color:#8BF0CA;margin-top:30px;font-weight:600}
-.ecta{display:inline-flex;align-items:center;gap:16px;margin-top:40px;padding:26px 40px;border-radius:999px;font-weight:600;font-size:34px;color:#04150E;
- background:linear-gradient(180deg,#5CF0B6,#16B07B);box-shadow:0 18px 54px rgba(21,183,129,.5),inset 0 1px 0 rgba(255,255,255,.5);max-width:840px;line-height:1.2}
-.esite{font-size:30px;color:#C9D1DB;margin-top:30px;letter-spacing:.02em}
-.efine{position:absolute;left:80px;right:160px;top:1250px;text-align:center;font-size:24px;line-height:1.5;color:#8C99AB}
-.dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#6AF3C0;box-shadow:0 0 12px rgba(106,243,192,.9);opacity:0}
-"""
+.cap{position:absolute;left:0;top:0;width:100%;font-weight:800;font-size:54px;line-height:1.2;color:#15191F;opacity:0;letter-spacing:-.01em}
+.cap span{opacity:.25}.cap span.n1{background:var(--mk);border-radius:8px;padding:0 8px}
+.capband{position:absolute;left:0;right:0;top:1150px;height:300px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.6) 35%,rgba(255,255,255,.6) 70%,rgba(255,255,255,0));z-index:5;opacity:0}
+.endc{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;padding:0 160px 0 80px;text-align:center;background:#F6F1E7}
+.ering{position:relative;width:400px;height:400px;border-radius:50%;background:#FFD84D;overflow:hidden;border:4px solid #15191F;flex:none}
+.ering img{position:absolute;left:4%;top:8%;width:92%}
+.ename{font-family:'Fraunces';font-weight:700;font-size:76px;letter-spacing:-.02em;color:#15191F;margin-top:36px}
+.ebrand{display:flex;align-items:center;gap:14px;font-family:'SS4';font-weight:600;font-size:36px;color:#3F4652;margin-top:10px}
+.ebrand .mark{width:48px;height:48px;font-size:26px;border-radius:8px}
+.eoffer{font-size:32px;color:#0B7955;margin-top:30px;font-weight:700}
+.ecta{display:inline-flex;align-items:center;gap:16px;margin-top:40px;padding:24px 40px;border-radius:999px;font-weight:800;font-size:34px;color:#15191F;
+ background:#FFD84D;border:3px solid #15191F;box-shadow:6px 6px 0 #15191F;max-width:840px;line-height:1.2}
+.esite{font-size:30px;font-weight:600;color:#3F4652;margin-top:30px;letter-spacing:.02em}
+.efine{margin-top:28px;text-align:center;font-size:23px;line-height:1.5;color:#7A808A;max-width:760px}
+.dot{display:none}
+""".replace("STAMP", texture_uri("stamp_mask"))
+
+WIPES = ["#FFD84D", "#FFFFFF", "#DDF1E7", "#FFE6D3", "#F6F1E7"]
+
 
 SCENES = {"headline", "stat", "doc", "route", "date", "ladder", "alert", "compare", "checklist", "map", "icons", "steps", "quote", "gauge", "end"}
 
@@ -667,7 +666,7 @@ def build(piece, beats, voiced=True, disclaimer=False):
         else:
             groups.append([b])
     o = Out()
-    scene_html = []
+    scene_html, wipe_html = [], []
     caption_html, cap_js, cap_pages = [], [], []
     red_any = False
     for gi, gb in enumerate(groups):
@@ -676,6 +675,16 @@ def build(piece, beats, voiced=True, disclaimer=False):
             raise ValueError("unknown scene type %s" % typ)
         g = "g%d" % gi
         prev = groups[gi - 1][-1] if gi else None
+        # each scene after the first arrives on its own colour, swept up from the bottom
+        if gi:
+            col = "#FFFFFF" if typ == "alert" else WIPES[(gi - 1) % len(WIPES)]
+            t_in = max(0, gb[0].start - 0.45)
+            wipe_html.append('<div class="wipe" id="wp%d" style="background:%s"></div>' % (gi, col))
+            o.j("TL.set('#wp%d',{visibility:'visible',clipPath:'inset(100%% 0%% 0%% 0%%)'},%.3f); TL.to('#wp%d',{clipPath:'inset(0%% 0%% 0%% 0%%)',duration:.42,ease:'power3.inOut'},%.3f);",
+                gi, max(0, t_in - 0.02), gi, t_in)
+            o.j("TL.set('#slide',{'--mk':'%s'},%.3f);", "#FFFFFF" if col == "#FFD84D" else "#FFD84D", t_in)
+            if gi > 1:
+                o.j("TL.set('#wp%d',{visibility:'hidden'},%.3f);", gi - 1, t_in + 0.5)
         nxt = groups[gi + 1][0] if gi + 1 < len(groups) else None
         sub = Out(); sub.exit_style = None; sub.red = False
         if typ == "headline":
@@ -730,16 +739,17 @@ def build(piece, beats, voiced=True, disclaimer=False):
     last = beats[-1]
     endc = end_card(piece, voiced, disclaimer)
     o.j("TL.to('#endc',{opacity:1,duration:.6,ease:'power1.inOut'},%.3f);", end_at)
-    o.j("TL.from('#endc .mark',{scale:.6,opacity:0,duration:.6,ease:'back.out(1.8)'},%.3f);", end_at + 0.15)
+    o.j("TL.from('#endc .ering',{scale:.6,opacity:0,duration:.6,ease:'back.out(1.8)'},%.3f);", end_at + 0.1)
+    o.j("TL.from('#endc .ename,#endc .ebrand',{y:30,opacity:0,duration:.5,ease:'power3.out',stagger:.08},%.3f);", end_at + 0.3)
     o.j("TL.from('#endc .ecta',{y:30,opacity:0,duration:.5,ease:'back.out(1.6)'},%.3f);", end_at + 0.45)
     o.cues.append(("chime", end_at + 0.2, 0.3))
     if last.scene.get("type") != "end":
         o.cues.append(("whoosh", end_at - 0.2, 0.2))
     kick = ('<div class="kick"><div class="kicker" id="kick"><i></i>%s</div></div>' % esc(c["kicker"])) if c.get("kicker") else ""
-    ai = '<div class="ai">%sAI VOICE</div>' % WAVE if voiced else ""
-    body = ('<div id="dots"></div><div class="top"><div class="brand"><div class="mark">FD</div>Finance Department</div>%s</div>%s'
+    ai = ""
+    body = ('<div id="dots"></div>%s<div class="top"><div class="brand"><div class="mark">FD</div>Finance Department</div>%s</div>%s'
             '<div class="redv" id="redv"></div><div class="stage" id="stage">%s</div><div class="capband" id="capband"></div><div class="caps">%s</div>%s'
-            % (ai, kick, "".join(scene_html), "".join(caption_html), endc))
+            % ("".join(wipe_html), ai, kick, "".join(scene_html), "".join(caption_html), endc))
     script = TIMELINE % {"T": total, "JS": "\n".join(o.js + cap_js)}
     html = shell(body, W, H, CSS, "video", script=script)
     looks = [round(max(0.2, (gb[0].start + gb[-1].end) / 2), 2) for gb in groups] + [round(min(total - 0.3, end_at + 1.6), 2)]

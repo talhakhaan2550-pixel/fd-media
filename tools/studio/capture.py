@@ -47,12 +47,12 @@ class Browser:
             fh.write(html)
         page = self.browser.new_page(viewport={"width": w, "height": h}, device_scale_factor=1)
         page.goto("file://" + f)
-        ok = page.evaluate("""async () => {
-          const want = ['400 40px SS4', '600 40px SS4', '700 40px SS4', '400 40px Plex', '500 40px Plex', '600 40px Plex'];
+        from brand import FONT_CHECKS
+        ok = page.evaluate("""async (want) => {
           await Promise.all(want.map(f => document.fonts.load(f)));
           await document.fonts.ready;
           return want.every(f => document.fonts.check(f));
-        }""")
+        }""", FONT_CHECKS)
         if not ok:
             raise RuntimeError("the brand fonts did not load")
         page.evaluate("window.fitNow && window.fitNow()")
