@@ -20,7 +20,8 @@ Facebook) and Metricool (YouTube) fetch them by link when a post is placed. Ever
   words and big figures.
   - `render.py` makes one piece; `make.mjs` calls it.
   - `slides.py` draws COVER, POINT, CLOSE and STORY with their visuals; `video.py` builds a video's scenes and captions;
-    `linkedin.py` draws a LinkedIn post image (a cheque, a bill, a timeline or any carousel visual, up to three points,
+    `linkedin_profile.py` draws Talha's LinkedIn background photo (1584 x 396; the record banner has been on his profile since
+    15 November 2026) and previews of it on his profile; `linkedin.py` draws a LinkedIn post image (a cheque, a bill, a timeline or any carousel visual, up to three points,
     Talha's photo); `profiles.py` draws the Facebook cover, the YouTube banner and the LinkedIn company banner put up
     on 15 November 2026;
     `brand.py` holds the fonts, colours, icons, US map and page shell; `capture.py` drives Chromium and ffmpeg.
