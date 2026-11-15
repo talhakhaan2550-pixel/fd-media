@@ -26,16 +26,20 @@ const LETTER = { reel: "Y", cut: "Y", explainer: "E", ad: "D", avatar: "A", caro
 const CAPTION_MAX = { x: 280, threads: 500, instagram: 2200, tiktok: 2200, facebook: 5000, linkedin: 3000 };
 const HASHTAGS = { instagram: [3, 5], tiktok: [3, 5], threads: [3, 5], x: [0, 2], facebook: [0, 0], youtube: [0, 3], linkedin: [0, 3] };
 const DISCLAIMER = "General information, not tax or legal advice for your situation.";
+// [words, why, and the approved firm claims whose own wording carries those words: a piece that cites one of them
+// may use them]. Talha, 15 November 2026: posts may use the approved wording of the written guarantees and of the
+// tax return and Form 5472 offers; return work starts once the firm's PTIN is active.
 const BANNED = [
   [/\bthe finance department\b/i, 'the name is "Finance Department", never "The Finance Department"'],
   [/\bCPA\b/, '"CPA" is not a title anyone here holds'],
   [/\bbig (4|four)\b/i, '"Big 4" may not be used'],
   [/\b5[- ]star|\bfive[- ]star/i, 'star ratings may not be used'],
-  [/\bguarantee/i, 'no promised outcomes'],
+  [/\bguarantee/i, '"guarantee" only in the approved wording of FD-14 or FD-29, with that claim listed', ["FD-14", "FD-29"]],
   [/\b(150\+|50\+)\s*(businesses|clients|founders)?/i, 'old client figures; the only one is "300+ founders"'],
   [/\bintroduc\w* (you )?to investors\b|\binvestor introductions?\b/i, 'the firm does not introduce investors'],
   [/\byou will raise\b|\bwe('ll| will) raise\b/i, 'no promised outcomes'],
-  [/\b(prepare|file|do) your (tax return|1120|form 5472|5472)\b|\btax return preparation\b/i, 'tax returns are not offered until the firm has a PTIN'],
+  [/\b(prepare|file|do) your (tax return|1120|form 5472|5472)\b|\btax return preparation\b/i, 'tax return and Form 5472 offers only in their approved wording (FD-16, FD-18, FD-20, FD-22, FD-23 or FD-28), with that claim listed', ["FD-16", "FD-18", "FD-20", "FD-22", "FD-23", "FD-28"]],
+  [/\b(we|the firm|finance department)( now| already)? (hold|holds|have|has) (a |an |our |its )?(PTIN|EFIN)\b|\bour (PTIN|EFIN)\b|\bauthori[sz]ed (IRS )?e-?file provider\b/i, 'never say the firm holds a PTIN or IRS e-file authorization'],
   [/\b\d+% (in )?(tax )?savings?\b|\bsave \d+%/i, 'no tax savings figures'],
 ];
 const DASH = /[‒–—―]| - /;
@@ -87,7 +91,7 @@ export function checkPiece(p, claims, week) {
   for (const id of used) if (!ok.has(id)) errors.push(`claim ${id} is not approved in ${claims.tab}`);
   // Words
   const text = allText(p);
-  for (const [re, why] of BANNED) if (re.test(text)) errors.push(why);
+  for (const [re, why, allowedBy] of BANNED) if (re.test(text) && !(allowedBy || []).some((id) => used.includes(id) && ok.has(id))) errors.push(why);
   if (DASH.test(text)) errors.push("a dash is used as punctuation; rewrite the sentence (hyphens inside names such as 1099-NEC are fine)");
   if (/\bchartered accountant\b/i.test(text) && !/working towards qualifying as a Chartered Accountant with ICAP/.test(text)) errors.push('"Chartered Accountant" only in the FD-03 wording');
   if (/success fee/i.test(text) && !/do not introduce investors or take a success fee/i.test(text)) warnings.push('"success fee" outside the FD-05 wording: check it says the firm takes none');
