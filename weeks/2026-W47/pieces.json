@@ -27,7 +27,85 @@
           "For tax year 2026, IRIS is the only IRS system for filing information returns electronically.",
           "The old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026."
         ],
-        "cta": "Follow for more founder finance, explained simply"
+        "cta": "Follow for more founder finance, explained simply",
+        "say": {
+          "hook": "Filing ten or more information returns in a year?",
+          "lines": [
+            "Information returns include the ten ninety-nines, that go to your contractors, and to the I R S.",
+            "A business filing ten or more information returns in a year, counting every type of form together, must file them electronically.",
+            "For tax year twenty twenty-six, Iris is the only I R S system for filing information returns electronically.",
+            "The old Fire system takes its last filings at three P M Eastern, on Thursday, November nineteenth, twenty twenty-six."
+          ],
+          "cta": "Follow for more founder finance, explained simply."
+        },
+        "scenes": [
+          {
+            "type": "stat",
+            "value": "10",
+            "prefix": "Filing",
+            "label": "or more information returns in a year",
+            "at": "ten"
+          },
+          {
+            "type": "route",
+            "label": "Information return",
+            "title": "1099",
+            "fields": [
+              "Payer",
+              "Recipient",
+              "Amount"
+            ],
+            "to": [
+              {
+                "label": "Contractors",
+                "icon": "people",
+                "at": "contractors"
+              },
+              {
+                "label": "IRS",
+                "icon": "bank",
+                "at": "i"
+              }
+            ]
+          },
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "doc",
+                "label": "Every type of form",
+                "at": "counting"
+              },
+              {
+                "icon": "list",
+                "label": "Counted together",
+                "at": "together"
+              },
+              {
+                "icon": "send",
+                "label": "Filed electronically",
+                "at": "electronically"
+              }
+            ]
+          },
+          {
+            "type": "stat",
+            "value": "IRIS",
+            "prefix": "Tax year 2026",
+            "label": "the only IRS system for filing information returns electronically",
+            "at": "iris"
+          },
+          {
+            "type": "date",
+            "label": "FIRE's last filings",
+            "top": "NOV 2026",
+            "day": "19",
+            "bottom": "THURSDAY",
+            "text": "3 p.m. Eastern",
+            "at": "november"
+          },
+          null
+        ]
       },
       "captions": {
         "instagram": "Filing 10 or more information returns in a year, counting every type of form together? Then they must be filed electronically. Information returns include the 1099s that go to your contractors and to the IRS.\n\nFor tax year 2026, IRIS is the only IRS system for filing information returns electronically. The old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026.\n\nFollow for more founder finance, explained simply.\n\n#1099 #irs #smallbusiness #startupfinance\n\nGeneral information, not tax or legal advice for your situation.",
@@ -42,7 +120,8 @@
       ],
       "status": "Made",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "ai_voice": true
     },
     {
       "id": "2026-W47-T01",
@@ -100,7 +179,7 @@
       },
       "captions": {},
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S01_01.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S01_01.jpg"
       ],
       "status": "Made",
       "check_notes": "",
@@ -132,37 +211,162 @@
           {
             "layout": "COVER",
             "kicker": "Forming a US company",
-            "title": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year"
+            "title": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year",
+            "visual": {
+              "type": "map",
+              "states": [
+                "DE",
+                "WY"
+              ]
+            }
           },
           {
             "layout": "POINT",
             "num": "1",
             "title": "Delaware corporation",
-            "body": "Delaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. The annual report fee is $50 for a corporation that is not exempt, and $25 for an exempt one."
+            "body": "Delaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. The annual report fee is $50 for a corporation that is not exempt, and $25 for an exempt one.",
+            "tag": "Delaware",
+            "state": "DE",
+            "visual": {
+              "type": "date",
+              "month": "MAR",
+              "day": "1",
+              "sub": "EACH YEAR",
+              "label": "Due by 1 March",
+              "chips": [
+                {
+                  "text": "Annual report",
+                  "icon": "doc"
+                },
+                {
+                  "text": "Franchise tax",
+                  "icon": "check"
+                }
+              ]
+            },
+            "visual2": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "Annual report fee",
+                  "value": "$50",
+                  "note": "Not exempt"
+                },
+                {
+                  "label": "Annual report fee",
+                  "value": "$25",
+                  "note": "Exempt",
+                  "highlight": false
+                }
+              ]
+            }
           },
           {
             "layout": "POINT",
             "num": "2",
             "title": "Franchise tax by authorized shares",
-            "body": "Authorized shares are the most shares your charter allows. Under the Authorized Shares method, 5,000 shares or fewer pay the minimum $175, 5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85."
+            "body": "Authorized shares are the most shares your charter allows. Under the Authorized Shares method, 5,000 shares or fewer pay the minimum $175, 5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85.",
+            "tag": "Delaware corporation",
+            "state": "DE",
+            "visual": {
+              "type": "bars",
+              "bars": [
+                {
+                  "value": "$175",
+                  "amount": 175,
+                  "label": "5,000 shares or fewer",
+                  "tag": "Minimum"
+                },
+                {
+                  "value": "$250",
+                  "amount": 250,
+                  "label": "5,001 to 10,000 shares"
+                }
+              ],
+              "add": {
+                "value": "+$85",
+                "amount": 85,
+                "label": "Each further 10,000 shares or part of them"
+              }
+            }
           },
           {
             "layout": "POINT",
             "num": "3",
             "title": "Or by assumed par value capital",
-            "body": "The Assumed Par Value Capital method has a $400 minimum and needs the corporation's issued shares and total gross assets. Delaware's page says: \"Use the method that results in the lesser tax.\""
+            "body": "The Assumed Par Value Capital method has a $400 minimum and needs the corporation's issued shares and total gross assets. Delaware's page says: \"Use the method that results in the lesser tax.\"",
+            "tag": "Delaware corporation",
+            "state": "DE",
+            "visual": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "Minimum",
+                  "value": "$400"
+                }
+              ]
+            },
+            "visual2": {
+              "type": "chips",
+              "label": "Needs",
+              "items": [
+                {
+                  "text": "Issued shares",
+                  "icon": "stack"
+                },
+                {
+                  "text": "Total gross assets",
+                  "icon": "bars"
+                }
+              ]
+            }
           },
           {
             "layout": "POINT",
             "num": "4",
             "title": "Delaware LLC",
-            "body": "A Delaware LLC pays an annual tax of $400, due by 1 June for the year before."
+            "body": "A Delaware LLC pays an annual tax of $400, due by 1 June for the year before.",
+            "tag": "Delaware",
+            "state": "DE",
+            "visual": {
+              "type": "hero",
+              "label": "Annual tax",
+              "value": "$400",
+              "state": "DE"
+            },
+            "visual2": {
+              "type": "date",
+              "month": "JUN",
+              "day": "1",
+              "sub": "DUE BY",
+              "text": "For the year before"
+            }
           },
           {
             "layout": "POINT",
             "num": "5",
             "title": "Wyoming LLC",
-            "body": "A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater."
+            "body": "A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater.",
+            "tag": "Wyoming",
+            "state": "WY",
+            "visual": {
+              "type": "date",
+              "month": "MONTH FORMED",
+              "day": "1",
+              "sub": "EVERY YEAR",
+              "label": "Annual report due",
+              "text": "First day of the month it was formed in"
+            },
+            "visual2": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "Annual license tax",
+                  "value": "$60",
+                  "note": "or $0.0002 for each dollar of assets located and employed in Wyoming, whichever is greater"
+                }
+              ]
+            }
           },
           {
             "layout": "CLOSE",
@@ -177,13 +381,13 @@
         "facebook": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year.\n\nDelaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. A Delaware LLC pays an annual tax of $400, due by 1 June for the year before. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_01.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_02.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_03.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_04.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_05.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_06.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_07.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_04.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_05.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_06.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_07.jpg"
       ],
       "status": "Made",
       "check_notes": "",
@@ -213,7 +417,48 @@
           "Spreading them over 60 months or more is optional.",
           "Research and experimental costs for work done outside the US must still be spread over 15 years."
         ],
-        "cta": "Follow for more founder finance, explained simply"
+        "cta": "Follow for more founder finance, explained simply",
+        "say": {
+          "hook": "Paid for U S research, in a tax year beginning after December thirty-first, twenty twenty-four?",
+          "lines": [
+            "Those U S research and experimental costs can again be deducted in the year paid or incurred, under Section one seventy-four A of the tax code.",
+            "Spreading them over sixty months or more is optional.",
+            "Research and experimental costs for work done outside the U S must still be spread over fifteen years."
+          ],
+          "cta": "Follow for more founder finance, explained simply."
+        },
+        "scenes": [
+          {
+            "type": "date",
+            "label": "Tax years beginning after",
+            "top": "DEC 2024",
+            "day": "31",
+            "bottom": "",
+            "at": "december"
+          },
+          {
+            "type": "stat",
+            "value": "174A",
+            "prefix": "Section",
+            "label": "Deducted in the year paid or incurred",
+            "at": "section"
+          },
+          {
+            "type": "stat",
+            "value": "60",
+            "prefix": "Optional",
+            "label": "months or more",
+            "at": "sixty"
+          },
+          {
+            "type": "stat",
+            "value": "15 years",
+            "prefix": "Outside the US, spread over",
+            "at": "fifteen",
+            "tone": "amber"
+          },
+          null
+        ]
       },
       "captions": {
         "instagram": "For tax years beginning after 31 December 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A of the tax code. Spreading them over 60 months or more is optional.\n\nResearch and experimental costs for work done outside the US must still be spread over 15 years.\n\nFollow for more founder finance, explained simply.\n\n#startupfinance #founders #taxes #research\n\nGeneral information, not tax or legal advice for your situation.",
@@ -228,7 +473,8 @@
       ],
       "status": "Made",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "ai_voice": true
     },
     {
       "id": "2026-W47-S02",
@@ -252,13 +498,21 @@
             "kicker": "Filing 1099s",
             "title": "The old FIRE system takes its last filings at 3 p.m. Eastern on Thursday 19 November 2026",
             "body": "For tax year 2026, IRIS is the only IRS system for filing information returns, such as 1099s, electronically.",
-            "cta": "Reply CALL to book a 30 minute call"
+            "cta": "Reply CALL to book a 30 minute call",
+            "visual": {
+              "type": "date",
+              "month": "NOV 2026",
+              "day": "19",
+              "sub": "THURSDAY",
+              "label": "FIRE's last filings",
+              "text": "3 p.m. Eastern"
+            }
           }
         ]
       },
       "captions": {},
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S02_01.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S02_01.jpg"
       ],
       "status": "Made",
       "check_notes": "",
@@ -291,7 +545,49 @@
           "Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds."
         ],
         "offer": "The free raise readiness scorecard",
-        "cta": "Take the free scorecard"
+        "cta": "Take the free scorecard",
+        "say": {
+          "hook": "Would your numbers hold up, if an investor asked today?",
+          "lines": [
+            "The free raise readiness scorecard is twelve questions.",
+            "Then you get your score, and your three biggest gaps.",
+            "Materials we prepared have helped founders raise more than one hundred million dollars, across S B A loans, angel rounds and early venture rounds."
+          ],
+          "cta": "Take the free scorecard."
+        },
+        "scenes": [
+          null,
+          {
+            "type": "stat",
+            "value": "12",
+            "prefix": "The free raise readiness scorecard",
+            "label": "questions",
+            "at": "twelve"
+          },
+          {
+            "type": "gauge",
+            "label": "Your score",
+            "gaps": 3,
+            "gap_label": "Gap"
+          },
+          {
+            "type": "stat",
+            "value": "$100M",
+            "prefix": "Helped founders raise more than",
+            "chips": [
+              "SBA loans",
+              "Angel rounds",
+              "Early venture rounds"
+            ],
+            "chips_at": [
+              "loans",
+              "angel",
+              "early"
+            ],
+            "at": "one"
+          },
+          null
+        ]
       },
       "captions": {
         "instagram": "Would your numbers hold up if an investor asked today?\n\nThe free raise readiness scorecard is twelve questions, then your score and your three biggest gaps.\n\nTake the free scorecard through the link in bio.\n\n#startupfinance #fundraising #founders #investorready",
@@ -306,7 +602,8 @@
       ],
       "status": "Made",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "ai_voice": true
     },
     {
       "id": "2026-W47-T02",
@@ -355,13 +652,56 @@
             "kicker": "Wyoming LLC owners",
             "title": "Your annual report is due on the first day of the month your LLC was formed in, every year",
             "body": "A Wyoming company whose annual report tax is not paid within 60 days of the due date can be dissolved, and the reinstatement fee is $100.",
-            "cta": "Reply CALL to book a 30 minute call"
+            "cta": "Reply CALL to book a 30 minute call",
+            "visual": {
+              "type": "date",
+              "month": "MONTH FORMED",
+              "day": "1",
+              "sub": "EVERY YEAR",
+              "label": "Annual report due",
+              "text": "First day of the month your LLC was formed in"
+            }
           }
         ]
       },
       "captions": {},
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S03_01.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S03_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-M01",
+      "format": "carousel_reel",
+      "title": "Music reel: Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "DE-01",
+        "DE-02",
+        "DE-03",
+        "DE-04",
+        "DE-05",
+        "DE-08",
+        "WY-01",
+        "WY-02"
+      ],
+      "publish_at": "2026-11-19T10:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "from": "2026-W47-C01"
+      },
+      "captions": {
+        "instagram": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year.\n\nDelaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. A Delaware LLC pays an annual tax of $400, due by 1 June for the year before. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater.\n\nFollow for more founder finance, explained simply.\n\n#delaware #wyoming #llc #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Delaware corporation, Delaware LLC or Wyoming LLC: what each pays every year.\n\nDelaware corporations file their annual report and pay franchise tax, a yearly state tax, by 1 March each year. A Delaware LLC pays an annual tax of $400, due by 1 June for the year before. Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-M01.mp4"
       ],
       "status": "Made",
       "check_notes": "",
@@ -398,7 +738,130 @@
           "Not filing a required Form 5472 on time carries a $25,000 penalty.",
           "Another $25,000 follows for each 30 days, or part of 30 days, that the failure continues more than 90 days after the IRS's notice."
         ],
-        "cta": "Get the free US filing checklist"
+        "cta": "Get the free US filing checklist",
+        "say": {
+          "hook": "Is your U S L L C owned entirely by one foreign person?",
+          "lines": [
+            "If it is not taxed as a corporation, it files Form fifty-four seventy-two, with a pro forma Form eleven twenty, a corporate return filed as a formality.",
+            "That is for each year it has a reportable transaction with a related party, such as its owner.",
+            "For twenty twenty-six, that pro forma eleven twenty with Form fifty-four seventy-two is due by Thursday, April fifteenth, twenty twenty-seven.",
+            "Form seventy oh four extends the time to file by six months, to Friday, October fifteenth, twenty twenty-seven.",
+            "This Form fifty-four seventy-two cannot be filed electronically: it is faxed to eight five five, eight eight seven, seven seven three seven, or mailed to the I R S in Ogden, Utah.",
+            "Not filing a required Form fifty-four seventy-two on time carries a twenty-five thousand dollar penalty.",
+            "Another twenty-five thousand dollars follows for each thirty days, or part of thirty days, that the failure continues more than ninety days after the I R S's notice."
+          ],
+          "cta": "Get the free U S filing checklist."
+        },
+        "scenes": [
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "building",
+                "label": "US LLC",
+                "at": "l"
+              },
+              {
+                "icon": "globe",
+                "label": "One foreign person",
+                "at": "foreign"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "left": {
+              "title": "Form 5472",
+              "icon": "doc"
+            },
+            "right": {
+              "title": "Pro forma 1120",
+              "icon": "doc",
+              "note": "A corporate return filed as a formality"
+            },
+            "join": "+",
+            "at": "pro"
+          },
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "calendar",
+                "label": "Each year",
+                "at": "each"
+              },
+              {
+                "icon": "send",
+                "label": "Reportable transaction",
+                "at": "reportable"
+              },
+              {
+                "icon": "person",
+                "label": "Related party, such as its owner",
+                "at": "related"
+              }
+            ]
+          },
+          {
+            "type": "date",
+            "label": "Due by",
+            "top": "APR 2027",
+            "day": "15",
+            "bottom": "THURSDAY",
+            "text": "Form 5472 with pro forma 1120",
+            "at": "april"
+          },
+          {
+            "type": "date",
+            "label": "Form 7004 extends it to",
+            "top": "OCT 2027",
+            "day": "15",
+            "bottom": "FRIDAY",
+            "at": "october"
+          },
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "warning",
+                "label": "Not filed electronically",
+                "at": "electronically"
+              },
+              {
+                "icon": "doc",
+                "label": "Fax 855-887-7737",
+                "at": "faxed"
+              },
+              {
+                "icon": "mail",
+                "label": "Mail to the IRS, Ogden, Utah",
+                "at": "mailed"
+              }
+            ]
+          },
+          {
+            "type": "alert",
+            "title": "Form 5472 not filed on time",
+            "value": "$25,000",
+            "suffix": "penalty",
+            "at": "twenty"
+          },
+          {
+            "type": "stat",
+            "value": "$25,000",
+            "prefix": "Another",
+            "label": "for each 30 days, or part of 30 days, the failure continues more than 90 days after the IRS's notice",
+            "tone": "red",
+            "at": "twenty"
+          },
+          {
+            "type": "checklist",
+            "title": "US filing checklist",
+            "tag": "Free",
+            "rows": 4,
+            "button": "Get the free US filing checklist"
+          }
+        ]
       },
       "captions": {
         "instagram": "Is your US LLC owned entirely by one foreign person? If it is not taxed as a corporation, it files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality, for each year it has a reportable transaction with a related party, such as its owner.\n\nFor 2026 that is due by Thursday 15 April 2027, and Form 7004 extends the time to file by six months, to Friday 15 October 2027. This Form 5472 cannot be filed electronically. Not filing a required Form 5472 on time carries a $25,000 penalty.\n\nGet the free US filing checklist through the link in bio.\n\n#llc #usllc #founders #smallbusiness\n\nGeneral information, not tax or legal advice for your situation.",
@@ -413,7 +876,8 @@
       ],
       "status": "Made",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "ai_voice": true
     },
     {
       "id": "2026-W47-T03",
@@ -469,7 +933,7 @@
       },
       "captions": {},
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S04_01.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S04_01.jpg"
       ],
       "status": "Made",
       "check_notes": "",
@@ -502,7 +966,100 @@
           "Under Rule 506(c), a company can advertise its raise broadly.",
           "But every purchaser must be accredited, and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements."
         ],
-        "cta": "Follow for more founder finance, explained simply"
+        "cta": "Follow for more founder finance, explained simply",
+        "say": {
+          "hook": "Five oh six b, or five oh six c: can you post about your raise?",
+          "lines": [
+            "Under Rule five oh six b, a company cannot use general solicitation or advertising, meaning promoting the raise to the public.",
+            "It can sell to any number of accredited investors, plus up to thirty-five other purchasers who are financially sophisticated, alone or with a representative.",
+            "An individual can be an accredited investor through the S E C's income, net worth or license tests.",
+            "Under Rule five oh six c, a company can advertise its raise broadly.",
+            "But every purchaser must be accredited, and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements."
+          ],
+          "cta": "Follow for more founder finance, explained simply."
+        },
+        "scenes": [
+          {
+            "type": "compare",
+            "left": {
+              "title": "506(b)",
+              "icon": "lock"
+            },
+            "right": {
+              "title": "506(c)",
+              "icon": "send"
+            },
+            "join": "or",
+            "at": "c"
+          },
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "lock",
+                "label": "Rule 506(b)",
+                "at": "rule"
+              },
+              {
+                "icon": "warning",
+                "label": "No general solicitation or advertising",
+                "at": "general"
+              }
+            ]
+          },
+          {
+            "type": "stat",
+            "value": "35",
+            "prefix": "Plus up to",
+            "label": "other purchasers who are financially sophisticated",
+            "at": "thirty"
+          },
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "bars",
+                "label": "Income",
+                "at": "income"
+              },
+              {
+                "icon": "stack",
+                "label": "Net worth",
+                "at": "net"
+              },
+              {
+                "icon": "badge",
+                "label": "License",
+                "at": "license"
+              }
+            ]
+          },
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "send",
+                "label": "Rule 506(c)",
+                "at": "rule"
+              },
+              {
+                "icon": "globe",
+                "label": "Can advertise its raise broadly",
+                "at": "advertise"
+              }
+            ]
+          },
+          {
+            "type": "checklist",
+            "title": "Rule 506(c)",
+            "items": [
+              "Every purchaser accredited",
+              "Reasonable steps to verify it",
+              "Such as tax returns or bank statements"
+            ]
+          },
+          null
+        ]
       },
       "captions": {
         "instagram": "506(b) or 506(c): can you post about your raise?\n\nUnder Rule 506(b), a company cannot use general solicitation or advertising, meaning promoting the raise to the public. Under Rule 506(c), a company can advertise its raise broadly, but every purchaser must be accredited, and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements.\n\nFollow for more founder finance, explained simply.\n\n#fundraising #startups #founders #startupfinance\n\nGeneral information, not tax or legal advice for your situation.",
@@ -513,7 +1070,8 @@
       ],
       "status": "Made",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "ai_voice": true
     },
     {
       "id": "2026-W47-S05",
@@ -538,13 +1096,27 @@
             "kicker": "Delaware corporations",
             "title": "Your annual report and franchise tax, a yearly state tax, are due by 1 March each year",
             "body": "In 2027 that is a Monday. Missing 1 March brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.",
-            "cta": "Reply CALL to book a 30 minute call"
+            "cta": "Reply CALL to book a 30 minute call",
+            "visual": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "Penalty",
+                  "value": "$200"
+                },
+                {
+                  "label": "Interest, a month",
+                  "value": "1.5%",
+                  "highlight": false
+                }
+              ]
+            }
           }
         ]
       },
       "captions": {},
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S05_01.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S05_01.jpg"
       ],
       "status": "Made",
       "check_notes": "",
@@ -570,25 +1142,113 @@
           {
             "layout": "COVER",
             "kicker": "Raise readiness",
-            "title": "Who counts as an accredited investor"
+            "title": "Who counts as an accredited investor",
+            "visual": {
+              "type": "list",
+              "title": "Accredited investor",
+              "items": [
+                {
+                  "icon": "bars",
+                  "text": "By income"
+                },
+                {
+                  "icon": "stack",
+                  "text": "By net worth"
+                },
+                {
+                  "icon": "badge",
+                  "text": "By a professional license"
+                }
+              ]
+            }
           },
           {
             "layout": "POINT",
             "num": "1",
             "title": "By income",
-            "body": "An individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year."
+            "body": "An individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year.",
+            "tag": "Accredited investor",
+            "visual": {
+              "type": "threshold",
+              "lines": [
+                {
+                  "value": "Over $300,000",
+                  "note": "with spouse or spousal equivalent"
+                },
+                {
+                  "value": "Over $200,000",
+                  "note": "individual"
+                }
+              ],
+              "bars": [
+                {},
+                {},
+                {
+                  "dashed": true
+                }
+              ],
+              "groups": [
+                {
+                  "label": "Each of the last two years",
+                  "span": 2
+                },
+                {
+                  "label": "This year, expected",
+                  "span": 1
+                }
+              ]
+            }
           },
           {
             "layout": "POINT",
             "num": "2",
             "title": "By net worth",
-            "body": "An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence."
+            "body": "An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence.",
+            "tag": "Accredited investor",
+            "visual": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "Net worth",
+                  "value": "Over $1 million"
+                }
+              ]
+            },
+            "visual2": {
+              "type": "split",
+              "left": {
+                "label": "Alone or",
+                "items": [
+                  "With a spouse or spousal equivalent"
+                ]
+              },
+              "right": {
+                "label": "Not counted",
+                "icon": "house",
+                "title": "Primary residence"
+              }
+            }
           },
           {
             "layout": "POINT",
             "num": "3",
             "title": "By a professional license",
-            "body": "An individual also qualifies by holding a Series 7, 65 or 82 license in good standing."
+            "body": "An individual also qualifies by holding a Series 7, 65 or 82 license in good standing.",
+            "tag": "Accredited investor",
+            "visual": {
+              "type": "tiles",
+              "label": "Series",
+              "items": [
+                "7",
+                "65",
+                "82"
+              ],
+              "icon": "badge",
+              "status": {
+                "label": "License",
+                "text": "In good standing"
+              }
+            }
           },
           {
             "layout": "CLOSE",
@@ -603,11 +1263,11 @@
         "facebook": "Who counts as an accredited investor?\n\nAn individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year. An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence, or by holding a Series 7, 65 or 82 license in good standing.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_01.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_02.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_03.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_04.png",
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_05.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_04.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_05.jpg"
       ],
       "status": "Made",
       "check_notes": "",
@@ -643,7 +1303,7 @@
       },
       "captions": {},
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S06_01.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S06_01.jpg"
       ],
       "status": "Made",
       "check_notes": "",
@@ -675,7 +1335,159 @@
           "Intentional disregard, ignoring the rules on purpose, costs at least $690 a return.",
           "A late or wrong payee copy, the one for the person you paid, is penalized separately on the same scale."
         ],
-        "cta": "Get the free US filing checklist"
+        "cta": "Get the free US filing checklist",
+        "say": {
+          "hook": "What does a late or wrong ten ninety-nine cost?",
+          "lines": [
+            "Forms ten ninety-nine N E C, for twenty twenty-six payments, go to each payee, and to the I R S, by Monday, February first, twenty twenty-seven.",
+            "A ten ninety-nine due in twenty twenty-seven that is late or wrong, costs sixty dollars a return, if put right within thirty days of the due date.",
+            "It costs one hundred and thirty dollars a return, if put right by August first, and three hundred and forty dollars after that, or if never filed.",
+            "Intentional disregard, ignoring the rules on purpose, costs at least six hundred and ninety dollars a return.",
+            "A late or wrong payee copy, the one for the person you paid, is penalized separately, on the same scale."
+          ],
+          "cta": "Get the free U S filing checklist."
+        },
+        "scenes": [
+          {
+            "type": "doc",
+            "label": "Form",
+            "title": "1099-NEC",
+            "tag": "2026",
+            "fields": [
+              "Payer",
+              "Recipient",
+              "1 Nonemployee compensation"
+            ],
+            "stamps": [
+              {
+                "text": "LATE",
+                "at": "late"
+              },
+              {
+                "text": "WRONG",
+                "at": "wrong"
+              }
+            ]
+          },
+          {
+            "type": "route",
+            "to": [
+              {
+                "label": "Payee",
+                "icon": "person",
+                "at": "payee"
+              },
+              {
+                "label": "IRS",
+                "icon": "bank",
+                "at": "i"
+              }
+            ],
+            "date": {
+              "top": "FEB 2027",
+              "day": "1",
+              "bottom": "MONDAY",
+              "at": "february"
+            }
+          },
+          {
+            "type": "ladder",
+            "id": "pen",
+            "title": "Penalty per return, 1099 due in 2027",
+            "bars": [
+              {
+                "value": "$60",
+                "label": "Put right within 30 days",
+                "tone": "green"
+              },
+              {
+                "value": "$130",
+                "label": "Put right by 1 August",
+                "tone": "amber"
+              },
+              {
+                "value": "$340",
+                "label": "After that or never filed",
+                "tone": "red"
+              }
+            ],
+            "show": [
+              0
+            ],
+            "at": [
+              "sixty"
+            ],
+            "mark": [
+              0
+            ],
+            "mark_at": [
+              "within"
+            ]
+          },
+          {
+            "type": "ladder",
+            "id": "pen",
+            "show": [
+              1,
+              2
+            ],
+            "at": [
+              "one",
+              "three"
+            ],
+            "mark": [
+              1,
+              2
+            ],
+            "mark_at": [
+              "august",
+              "never"
+            ]
+          },
+          {
+            "type": "alert",
+            "title": "Intentional disregard",
+            "sub": "Ignoring the rules on purpose",
+            "prefix": "At least",
+            "value": "$690",
+            "suffix": "a return",
+            "from": 340,
+            "at": "six",
+            "sub_at": "ignoring"
+          },
+          {
+            "type": "compare",
+            "left": {
+              "title": "IRS copy",
+              "icon": "bank",
+              "values": [
+                "$60",
+                "$130",
+                "$340"
+              ]
+            },
+            "right": {
+              "title": "Payee copy",
+              "icon": "person",
+              "values": [
+                "$60",
+                "$130",
+                "$340"
+              ]
+            },
+            "join": "=",
+            "chip": "Penalized separately, same scale",
+            "at": "penalized",
+            "chip_at": "same"
+          },
+          {
+            "type": "checklist",
+            "title": "US filing checklist",
+            "tag": "Free",
+            "rows": 4,
+            "button": "Get the free US filing checklist"
+          }
+        ]
       },
       "captions": {
         "instagram": "What does a late or wrong 1099 cost?\n\nA 1099 due in 2027 that is late or wrong costs $60 a return if put right within 30 days of the due date, $130 if put right by 1 August, and $340 after that or if never filed. Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027.\n\nGet the free US filing checklist through the link in bio.\n\n#1099 #irs #smallbusiness #founders\n\nGeneral information, not tax or legal advice for your situation.",
@@ -683,6 +1495,36 @@
       },
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-E05.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "ai_voice": true
+    },
+    {
+      "id": "2026-W47-M02",
+      "format": "carousel_reel",
+      "title": "Music reel: Who counts as an accredited investor",
+      "pillar": "Raise readiness",
+      "stage": "Top",
+      "claims": [
+        "RAISE-05",
+        "RAISE-06"
+      ],
+      "publish_at": "2026-11-22T15:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "from": "2026-W47-C02"
+      },
+      "captions": {
+        "instagram": "Who counts as an accredited investor?\n\nAn individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year. An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence, or by holding a Series 7, 65 or 82 license in good standing.\n\nFollow for more founder finance, explained simply.\n\n#fundraising #angelinvesting #startups #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Who counts as an accredited investor?\n\nAn individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year. An individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence, or by holding a Series 7, 65 or 82 license in good standing.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-M02.mp4"
       ],
       "status": "Made",
       "check_notes": "",
@@ -710,13 +1552,27 @@
             "kicker": "Before you raise",
             "title": "The 5 Day Investor Ready Scan: a findings report with a Money at Stake page in five working days",
             "body": "$750 for our first five clients, then $1,250.",
-            "cta": "Reply CALL to book a 30 minute call"
+            "cta": "Reply CALL to book a 30 minute call",
+            "visual": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "First five clients",
+                  "value": "$750"
+                },
+                {
+                  "label": "Then",
+                  "value": "$1,250",
+                  "highlight": false
+                }
+              ]
+            }
           }
         ]
       },
       "captions": {},
       "media": [
-        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S07_01.png"
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S07_01.jpg"
       ],
       "status": "Made",
       "check_notes": "",
