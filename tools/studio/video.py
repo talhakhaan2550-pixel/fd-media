@@ -6,7 +6,7 @@ A piece's content may carry:
           spoken from the words themselves (numbers and initials written out by audio.speakable).
   scenes: one scene per beat, in the order hook, lines..., cta; null or missing means the default (the line as a
           large headline; the end card for the call to action). Scene types: headline, stat, doc, route, date,
-          ladder, alert, compare, checklist, map, icons, steps, quote, gauge, end.
+          ladder, alert, compare, checklist, map, icons, steps, quote, gauge, promise (a written guarantee), end.
 Scene labels restate the piece's own words; they never add a fact.
 """
 import json, math, re
@@ -77,8 +77,9 @@ def group_id(b):
     return "b%d" % b.i
 
 
-def lay_out(beats, est_only=False):
-    """Places the beats in time. Spoken beats use their narration's length; silent ones a reading time."""
+def lay_out(beats, est_only=False, hold=3.0):
+    """Places the beats in time. Spoken beats use their narration's length; silent ones a reading time. `hold` is
+    how long the end card stays after the call to action is spoken."""
     t = START
     for i, b in enumerate(beats):
         if not b.words:
@@ -91,7 +92,7 @@ def lay_out(beats, est_only=False):
         t = b.end + (GAP_SAME if nxt and group_id(nxt) == group_id(b) else GAP)
     last = beats[-1]
     end_at = last.start - 0.1 if last.scene.get("type") == "end" else last.end + 0.3
-    total = (last.end + 3.0) if last.scene.get("type") == "end" else end_at + 3.2
+    total = (last.end + hold) if last.scene.get("type") == "end" else end_at + hold + 0.2
     return round(end_at, 3), round(total, 2)
 
 
@@ -137,6 +138,12 @@ def caption_pages(b, max_chars=58):
             pages.append(cur); cur, n = [], 0
     if cur:
         pages.append(cur)
+    # a last page of one short word or two reads as an orphan: it joins the page before when that still fits
+    if len(pages) > 1:
+        tail = sum(len(w) + 1 for w, _ in pages[-1])
+        if len(pages[-1]) <= 2 and tail <= 16 and sum(len(w) + 1 for w, _ in pages[-2]) + tail <= max_chars + 16:
+            last = pages.pop()
+            pages[-1] = pages[-1] + last
     return pages
 
 
@@ -274,7 +281,7 @@ def sc_ladder(o, g, beats, gi):
     top = max(vals) or 1
     cols = ""
     for k, x in enumerate(bars):
-        h = max(46, 352 * vals[k] / top)
+        h = max(46, (296 if sp.get("title") else 352) * vals[k] / top)   # a title above leaves room for the tallest value
         left = k * (cw + gap)
         cls = TONES.get(x.get("tone"), ["b1", "b2", "b3", "b1"][k])
         cols += ('<div class="lg" id="%s_lg%d" style="left:%.0fpx;width:%.0fpx;height:%.0fpx"></div><div class="lc" style="left:%.0fpx;width:%.0fpx">'
@@ -326,10 +333,12 @@ def sc_ladder(o, g, beats, gi):
 
 def sc_alert(o, g, beats, gi):
     b = beats[0]; sp = b.scene
+    nv = len(str(sp.get("value", "")))
+    fs = 250 if nv <= 5 else (210 if nv <= 7 else 170)   # a long figure stays inside the frame
     o.html.append('<div class="warn"><div class="wi">%s</div><div class="rlabel wl">%s</div>%s<div style="margin-top:26px;display:flex;flex-direction:column;align-items:center">'
-                  '%s<div class="bigred" id="%s_v">%s</div>%s</div></div>'
+                  '%s<div class="bigred" id="%s_v" style="font-size:%dpx">%s</div>%s</div></div>'
                   % (ic("warning", 96, "#C23A2B", 2.6), esc(sp.get("title", "")), ('<div class="wsub">%s</div>' % esc(sp["sub"])) if sp.get("sub") else "",
-                     ('<div class="rlabel atl" style="color:#C23A2B">%s</div>' % esc(sp["prefix"])) if sp.get("prefix") else "", g, esc(sp.get("value", "")),
+                     ('<div class="rlabel atl" style="color:#C23A2B">%s</div>' % esc(sp["prefix"])) if sp.get("prefix") else "", g, fs, esc(sp.get("value", "")),
                      ('<div class="per">%s</div>' % esc(sp["suffix"])) if sp.get("suffix") else ""))
     s = b.start
     o.j("TL.to('#redv',{opacity:1,duration:.7},%.3f);", s - 0.45)
@@ -421,8 +430,8 @@ def sc_stat(o, g, beats, gi):
     tone = {"amber": "tone-amber", "red": "tone-red"}.get(sp.get("tone"), "")
     chips = "".join('<span class="chip sch" id="%s_c%d">%s%s</span>' % (g, k, ic((c.get("icon") if isinstance(c, dict) else None) or "check", 30),
                                                                         esc(c.get("text") if isinstance(c, dict) else c)) for k, c in enumerate(sp.get("chips", [])[:4]))
-    o.html.append('<div class="center">%s<div class="big sbig %s fit" id="%s_v">%s</div>%s%s</div>'
-                  % (('<div class="label slab">%s</div>' % esc(sp["prefix"])) if sp.get("prefix") else "", tone, g, esc(sp.get("value", "")),
+    o.html.append('<div class="center">%s<div class="big sbig %s fit" id="%s_v" data-fit="%s">%s</div>%s%s</div>'
+                  % (('<div class="label slab">%s</div>' % esc(sp["prefix"])) if sp.get("prefix") else "", tone, g, esc(sp.get("value", "")), esc(sp.get("value", "")),
                      ('<div class="ssuf">%s</div>' % esc(sp["label"])) if sp.get("label") else "", ('<div class="chips">%s</div>' % chips) if chips else ""))
     s = b.start
     said = b.at(sp.get("at"), s + 0.5)
@@ -522,6 +531,32 @@ def sc_gauge(o, g, beats, gi):
         o.cues.append(("tick", t, 0.22))
 
 
+def sc_promise(o, g, beats, gi):
+    """A written guarantee, drawn like the certificate on the website: a double ruled card with a shield, the
+    promise in big type and a red stamp that lands on its word. Fields: stamp, note (small line above), title,
+    text, at (the spoken word the stamp lands on)."""
+    b = beats[0]; sp = b.scene
+    text = sp.get("text", "")
+    n = len(text)
+    fs = 46 if n <= 50 else (42 if n <= 80 else 36)
+    spans = " ".join('<span class="%s">%s</span>' % (word_cls(w), esc(w)) for w in text.split())
+    note = ('<div class="cnote">%s</div>' % esc(sp["note"])) if sp.get("note") else ""
+    stamp = ('<div class="cstamp" id="%s_st">%s</div>' % (g, esc(sp["stamp"]))) if sp.get("stamp") else ""
+    o.html.append('<div class="center"><div class="cert" id="%s_c"><div class="cico">%s</div>%s<div class="ctitle">%s</div><div class="ctext" style="font-size:%dpx">%s</div>%s</div></div>'
+                  % (g, ic("shield", 58, "#0B7955", 2.4), note, esc(sp.get("title", "")), fs, spans, stamp))
+    s = b.start
+    o.j("TL.fromTo('#%s_c',{opacity:0,y:80,rotation:-2},{opacity:1,y:0,rotation:0,duration:.6,ease:'power3.out'},%.3f);", g, s - 0.15)
+    o.j("TL.from('#%s .cico',{scale:.3,opacity:0,duration:.45,ease:'back.out(2.2)'},%.3f);", g, s + 0.1)
+    o.j("TL.from('#%s .cnote,#%s .ctitle',{opacity:0,y:16,duration:.4,stagger:.12},%.3f);", g, g, s + 0.2)
+    o.j("TL.from('#%s .ctext span',{opacity:0,y:12,duration:.3,stagger:.05},%.3f);", g, s + 0.5)
+    o.cues.append(("whoosh", max(0, s - 0.2), 0.2))
+    if stamp:
+        t = max(s + 0.9, min(b.at(sp.get("at"), s + 1.4), b.end - 0.4))
+        o.j("TL.fromTo('#%s_st',{opacity:0,scale:2.4,rotation:-6},{opacity:.94,scale:1,rotation:8,duration:.3,ease:'power4.in'},%.3f);", g, t - 0.3)
+        o.j("TL.to('#%s_c',{keyframes:{x:[0,-9,7,-3,0]},duration:.3},%.3f);", g, t)
+        o.cues.append(("impact", t, 0.45))
+
+
 def end_card(piece, voiced, disclaimer):
     """The last frame: Talha's real photo on a yellow circle, the firm, the offer and the call to action."""
     c = piece["content"]
@@ -588,7 +623,7 @@ CSS = """
 .warn{position:absolute;left:0;right:0;top:10px;display:flex;flex-direction:column;align-items:center;gap:16px}
 .rlabel{font-weight:800;font-size:30px;letter-spacing:.16em;color:#C23A2B;text-transform:uppercase;text-align:center}
 .wsub{font-size:30px;font-weight:600;color:#3F4652;text-align:center}
-.per{font-size:30px;font-weight:600;color:#3F4652;margin-top:10px}
+.per{font-size:30px;font-weight:600;color:#3F4652;margin-top:24px}
 .bigred{font-family:'Fraunces';font-weight:700;font-size:250px;line-height:.9;letter-spacing:-.04em;color:#C23A2B;white-space:nowrap}
 .pc{position:absolute;top:30px;width:380px;height:470px;border-radius:30px;padding:28px 28px;background:#FFFDF8;border:2px solid rgba(21,25,31,.14);box-shadow:0 30px 60px rgba(70,55,30,.14)}
 .pc .h{display:flex;align-items:center;gap:16px;font-family:'Fraunces';font-weight:700;font-size:38px;color:#15191F}
@@ -632,13 +667,23 @@ CSS = """
 .cap{position:absolute;left:0;top:0;width:100%;font-weight:800;font-size:54px;line-height:1.2;color:#15191F;opacity:0;letter-spacing:-.01em}
 .cap span{opacity:.25}.cap span.n1{background:var(--mk);border-radius:8px;padding:0 8px}
 .capband{position:absolute;left:0;right:0;top:1150px;height:300px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.6) 35%,rgba(255,255,255,.6) 70%,rgba(255,255,255,0));z-index:5;opacity:0}
+.cert{position:relative;width:800px;padding:40px 52px 50px;border-radius:30px;background:#FFFFFF;border:8px double #15191F;box-shadow:10px 10px 0 #15191F;text-align:center}
+.cico{width:100px;height:100px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:#DDF1E7;border:3px solid #15191F}
+.cnote{font-weight:800;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:#0B7955;margin-bottom:14px;line-height:1.3}
+.ctitle{font-family:'Fraunces';font-weight:700;font-size:62px;line-height:1.04;letter-spacing:-.02em;color:#15191F;text-wrap:balance}
+.ctext{margin-top:22px;font-weight:700;line-height:1.3;color:#3F4652;text-wrap:balance}
+.ctext span{display:inline-block}
+.ctext span.n1{background:#FFD84D;color:#15191F;border-radius:10px;padding:0 10px}
+.cstamp{position:absolute;right:-30px;top:-46px;padding:8px 24px 6px;border:7px solid #C23A2B;border-radius:16px;color:#C23A2B;font-family:'Jakarta';font-weight:800;font-size:46px;
+ letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.92);opacity:0;white-space:nowrap;
+ -webkit-mask-image:url(STAMP);mask-image:url(STAMP);-webkit-mask-size:100% 100%;mask-size:100% 100%}
 .endc{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;padding:0 160px 0 80px;text-align:center;background:#F6F1E7}
 .ering{position:relative;width:400px;height:400px;border-radius:50%;background:#FFD84D;overflow:hidden;border:4px solid #15191F;flex:none}
 .ering img{position:absolute;left:4%;top:8%;width:92%}
 .ename{font-family:'Fraunces';font-weight:700;font-size:76px;letter-spacing:-.02em;color:#15191F;margin-top:36px}
 .ebrand{display:flex;align-items:center;gap:14px;font-family:'SS4';font-weight:600;font-size:36px;color:#3F4652;margin-top:10px}
 .ebrand .mark{width:48px;height:48px;font-size:26px;border-radius:8px}
-.eoffer{font-size:32px;color:#0B7955;margin-top:30px;font-weight:700}
+.eoffer{font-size:36px;line-height:1.25;color:#0B7955;margin-top:30px;font-weight:800;max-width:840px}
 .ecta{display:inline-flex;align-items:center;gap:16px;margin-top:40px;padding:24px 40px;border-radius:999px;font-weight:800;font-size:34px;color:#15191F;
  background:#FFD84D;border:3px solid #15191F;box-shadow:6px 6px 0 #15191F;max-width:840px;line-height:1.2}
 .esite{font-size:30px;font-weight:600;color:#3F4652;margin-top:30px;letter-spacing:.02em}
@@ -649,12 +694,13 @@ CSS = """
 WIPES = ["#FFD84D", "#FFFFFF", "#DDF1E7", "#FFE6D3", "#F6F1E7"]
 
 
-SCENES = {"headline", "stat", "doc", "route", "date", "ladder", "alert", "compare", "checklist", "map", "icons", "steps", "quote", "gauge", "end"}
+SCENES = {"headline", "stat", "doc", "route", "date", "ladder", "alert", "compare", "checklist", "map", "icons", "steps", "quote", "gauge", "promise", "end"}
 
 
 def build(piece, beats, voiced=True, disclaimer=False):
     """The whole video as one page with a GSAP timeline. Returns (html, total, cues, dips, looks)."""
-    end_at, total = lay_out(beats)
+    # a page video can end sooner: the player keeps showing the end card once it stops
+    end_at, total = lay_out(beats, hold=float(piece.get("content", {}).get("end_hold", 3.0)))
     c = piece["content"]
     # group consecutive beats that share a scene id
     groups = []
@@ -695,7 +741,7 @@ def build(piece, beats, voiced=True, disclaimer=False):
             sc_route(sub, g, gb, gi, prev)
         else:
             {"stat": sc_stat, "date": sc_date, "ladder": sc_ladder, "alert": sc_alert, "compare": sc_compare, "checklist": sc_checklist,
-             "map": sc_map, "icons": sc_icons, "steps": sc_steps, "quote": sc_quote, "gauge": sc_gauge}[typ](sub, g, gb, gi)
+             "map": sc_map, "icons": sc_icons, "steps": sc_steps, "quote": sc_quote, "gauge": sc_gauge, "promise": sc_promise}[typ](sub, g, gb, gi)
         red_any = red_any or sub.red
         scene_html.append('<div class="scene" id="%s">%s</div>' % (g, "".join(sub.html)))
         start = gb[0].start - 0.45
@@ -771,9 +817,12 @@ for(let i=0;i<24;i++){const d=document.createElement('div');d.className='dot';d.
   DOTS.push({el:d,s:0.5+rnd()*1.1,dur:7+rnd()*6,ph:rnd()});}
 function drawDots(t){for(const p of DOTS){const u=((t/p.dur)+p.ph)%%1;const o=u<.5?u*2:(1-u)*2;p.el.style.transform=`translateY(${-520*u}px) scale(${p.s})`;p.el.style.opacity=(o*.55).toFixed(3);}}
 window.fitNow=()=>{document.querySelectorAll('.fit').forEach((el)=>{
+  // a figure that counts up may show its starting value now: measure the figure it ends on
+  const shown=el.textContent; if(el.dataset.fit) el.textContent=el.dataset.fit;
   let fs=parseFloat(getComputedStyle(el).fontSize); const room=840-8;
   const textW=()=>{const r=document.createRange(); r.selectNodeContents(el); const sc=(el.getBoundingClientRect().width/(el.offsetWidth||1))||1; return r.getBoundingClientRect().width/sc;};
   let guard=0; while(textW()>room&&fs>40&&guard++<80){fs-=4;el.style.fontSize=fs+'px';}
+  el.textContent=shown;
 });};
 %(JS)s
 TL.set({},{},T);

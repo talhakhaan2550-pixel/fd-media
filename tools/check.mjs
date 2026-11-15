@@ -48,7 +48,7 @@ const ownWords = (p) => {
   return [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta, c.text,
     ...(c.slides || []).flatMap((s) => [s.kicker, s.title, s.body, s.cta, s.footer])].filter((x) => typeof x === "string").join("\n");
 };
-const SCENE_TYPES = ["headline", "stat", "doc", "route", "date", "ladder", "alert", "compare", "checklist", "map", "icons", "steps", "quote", "gauge", "end"];
+const SCENE_TYPES = ["headline", "stat", "doc", "route", "date", "ladder", "alert", "compare", "checklist", "map", "icons", "steps", "quote", "gauge", "promise", "end"];
 const VISUAL_TYPES = ["map", "stats", "date", "bars", "quote", "hero", "chips", "threshold", "split", "tiles", "list", "steps", "compare", "checklist"];
 // Figures that matter: money, percentages, numbers of two digits or more and years.
 const FIGS = /\$[\d,.]+(?:\s?(?:million|billion|M|K))?|\d[\d,.]*%|\b\d{1,3}(?:,\d{3})+\b|\b\d{2,}(?:\.\d+)?(?=s?\b)/g;

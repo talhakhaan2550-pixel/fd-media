@@ -1,0 +1,1630 @@
+{
+ "week": "site",
+ "media": "site/media",
+ "note": "Conversion videos for the website's offer pages and home page. Made by make_offer_videos.py.",
+ "pieces": [
+  {
+   "id": "offer-1099",
+   "format": "explainer",
+   "title": "1099s Done by February 1",
+   "page": "/1099-filing",
+   "claims": [
+    "1099-02",
+    "1099-08",
+    "FD-09",
+    "FD-24",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "1099s for 2026 payments",
+    "hook": "Paid a contractor $2,000 or more in 2026?",
+    "lines": [
+     "Form 1099-NEC is due by Monday 1 February 2027.",
+     "Late or wrong, each one costs $60 if put right within 30 days, $130 by 1 August, then $340.",
+     "We file them for you: $100 for up to five contractors, then $12.50 a form.",
+     "Guaranteed in writing: send your list by 20 January, and if we miss 1 February, we pay the IRS penalties up to $500.",
+     "We prepare every form, collect missing W-9s, file with the IRS and send each contractor a copy.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "1099s Done by February 1, from $100",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Paid a contractor two thousand dollars or more in twenty twenty-six?",
+     "lines": [
+      "Form ten ninety-nine N E C is due by Monday, February first, twenty twenty-seven.",
+      "Late or wrong, each one costs sixty dollars if put right within thirty days, a hundred and thirty by August first, then three hundred and forty.",
+      "We file them for you. A hundred dollars for up to five contractors, then twelve fifty a form.",
+      "Guaranteed, in writing. Send your list by January twentieth, and if we miss February first, we pay the I R S penalties, up to five hundred dollars.",
+      "We prepare every form, collect missing W nine forms, file with the I R S, and send each contractor a copy.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "date",
+      "label": "Form 1099-NEC due",
+      "top": "FEB 2027",
+      "day": "1",
+      "bottom": "MONDAY",
+      "at": "february"
+     },
+     {
+      "type": "ladder",
+      "title": "A late or wrong 1099, each",
+      "bars": [
+       {
+        "value": "$60",
+        "label": "Within 30 days",
+        "tone": "green"
+       },
+       {
+        "value": "$130",
+        "label": "By 1 August",
+        "tone": "amber"
+       },
+       {
+        "value": "$340",
+        "label": "Then",
+        "tone": "red"
+       }
+      ],
+      "show": [
+       0,
+       1,
+       2
+      ],
+      "at": [
+       "sixty",
+       "hundred",
+       "three"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "We file them for you",
+      "value": "$100",
+      "label": "for up to five contractors",
+      "chips": [
+       "then $12.50 a form"
+      ],
+      "chips_at": [
+       "twelve"
+      ],
+      "at": "hundred"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Send your list by 20 January",
+      "title": "If we miss 1 February",
+      "text": "we pay the IRS penalties up to $500",
+      "at": "five"
+     },
+     {
+      "type": "checklist",
+      "title": "What you get",
+      "items": [
+       "Every form prepared",
+       "Missing W-9s collected",
+       "Filed with the IRS",
+       "A copy to each contractor"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-tax-returns",
+   "format": "explainer",
+   "title": "Startup Tax Return, Filed On Time",
+   "page": "/startup-tax-returns",
+   "claims": [
+    "IRS-7004-2026",
+    "FD-16",
+    "FD-22",
+    "FD-23",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "Tax returns for 2026",
+    "hook": "No profit yet? Your startup still files.",
+    "lines": [
+     "C corporations file by 15 April 2027, and S corporations and partnerships by 15 March, profit or not.",
+     "$600 for an S corporation or partnership, $750 for a C corporation, with one state included.",
+     "Guaranteed in writing: if your details are in four weeks before the deadline and we miss it, we pay the IRS late filing penalty up to the fee.",
+     "Included: a free extension if anything is late, Delaware franchise tax checked both ways, and a review of last year's return.",
+     "Tax season places are limited: reserve yours now and pay when we start your return.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "Startup Tax Return, Filed On Time, from $600",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "No profit yet? Your startup still files.",
+     "lines": [
+      "C corporations file by April fifteenth, twenty twenty-seven, and S corporations and partnerships by March fifteenth, profit or not.",
+      "Six hundred dollars for an S corporation or partnership, seven fifty for a C corporation, with one state included.",
+      "Guaranteed, in writing. If your details are in four weeks before the deadline, and we miss it, we pay the I R S late filing penalty, up to the fee.",
+      "Included. A free extension if anything is late, Delaware franchise tax checked both ways, and a review of last year's return.",
+      "Tax season places are limited. Reserve yours now, and pay when we start your return.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "compare",
+      "left": {
+       "title": "15 March",
+       "icon": "calendar",
+       "note": "S corporations and partnerships"
+      },
+      "right": {
+       "title": "15 April",
+       "icon": "calendar",
+       "note": "C corporations"
+      },
+      "join": "+",
+      "chip": "Profit or not",
+      "chip_at": "profit",
+      "at": "march"
+     },
+     {
+      "type": "stat",
+      "prefix": "S corporation or partnership",
+      "value": "$600",
+      "label": "with one state included",
+      "chips": [
+       "$750 for a C corporation"
+      ],
+      "chips_at": [
+       "seven"
+      ],
+      "at": "six"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Details in four weeks before the deadline",
+      "title": "If we miss it",
+      "text": "we pay the IRS late filing penalty up to the fee",
+      "at": "penalty"
+     },
+     {
+      "type": "checklist",
+      "title": "Included",
+      "items": [
+       "A free extension if anything is late",
+       "Delaware franchise tax checked both ways",
+       "A review of last year's return"
+      ]
+     },
+     {
+      "type": "steps",
+      "items": [
+       "Places are limited",
+       "Reserve yours now",
+       "Pay when we start your return"
+      ],
+      "at": [
+       "places",
+       "reserve",
+       "pay"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-books",
+   "format": "explainer",
+   "title": "Books Catch Up",
+   "page": "/books-cleanup",
+   "claims": [
+    "FD-21",
+    "FD-29",
+    "FD-02",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "Books behind",
+    "hook": "Books behind? Caught up before an investor looks.",
+    "lines": [
+     "Diligence starts with your monthly financials: your books need to hold up when an investor's accountant opens them.",
+     "We bring them current on the accrual basis: $1,000 up to 6 months behind, $1,750 for 7 to 12, and $3,000 for 13 to 24.",
+     "Guaranteed in writing: every account reconciled to its statements, or we fix it free.",
+     "You get every account reconciled, accrual books with revenue recognition, monthly statements and a log of every adjustment.",
+     "Up to 6 months behind, they are ready in 15 working days from complete documents, and you pay half to start, half on delivery.",
+     "Materials we prepared have helped founders raise more than $100M."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "Books Catch Up, from $1,000",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Books behind? Caught up, before an investor looks.",
+     "lines": [
+      "Diligence starts with your monthly financials. Your books need to hold up when an investor's accountant opens them.",
+      "We bring them current, on the accrual basis. A thousand dollars up to six months behind, seventeen fifty for seven to twelve, and three thousand for thirteen to twenty-four.",
+      "Guaranteed, in writing. Every account reconciled to its statements, or we fix it free.",
+      "You get every account reconciled, accrual books with revenue recognition, monthly statements, and a log of every adjustment.",
+      "Up to six months behind, they are ready in fifteen working days from complete documents, and you pay half to start, half on delivery.",
+      "Materials we prepared have helped founders raise more than one hundred million dollars."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "search",
+        "label": "Diligence",
+        "at": "diligence"
+       },
+       {
+        "icon": "chart",
+        "label": "Your monthly financials",
+        "at": "monthly"
+       },
+       {
+        "icon": "person",
+        "label": "An investor's accountant",
+        "at": "accountant"
+       }
+      ]
+     },
+     {
+      "type": "ladder",
+      "title": "Fixed fee, by months behind",
+      "bars": [
+       {
+        "value": "$1,000",
+        "label": "Up to 6 months",
+        "tone": "green"
+       },
+       {
+        "value": "$1,750",
+        "label": "7 to 12 months",
+        "tone": "green"
+       },
+       {
+        "value": "$3,000",
+        "label": "13 to 24 months",
+        "tone": "green"
+       }
+      ],
+      "show": [
+       0,
+       1,
+       2
+      ],
+      "at": [
+       "thousand",
+       "seventeen",
+       "three"
+      ]
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Every account",
+      "title": "Reconciled to its statements",
+      "text": "or we fix it free",
+      "at": "free"
+     },
+     {
+      "type": "checklist",
+      "title": "What you get",
+      "items": [
+       "Every account reconciled",
+       "Accrual books with revenue recognition",
+       "Monthly statements",
+       "A log of every adjustment"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Up to 6 months behind, ready in",
+      "value": "15",
+      "label": "working days from complete documents",
+      "chips": [
+       "Half to start",
+       "Half on delivery"
+      ],
+      "chips_at": [
+       "half",
+       "delivery"
+      ],
+      "at": "fifteen"
+     },
+     {
+      "type": "stat",
+      "prefix": "Materials we prepared have helped founders raise more than",
+      "value": "$100M",
+      "at": "one"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-payroll",
+   "format": "explainer",
+   "title": "Payroll Set Up Right",
+   "page": "/payroll",
+   "claims": [
+    "FD-16",
+    "FD-25",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "Your first hires",
+    "hook": "First hire coming? Payroll set up right from day one.",
+    "lines": [
+     "Payroll brings federal and state withholding, unemployment tax registration, quarterly returns and W-2s each January.",
+     "We set it up in your own Gusto account for $200, one state included, then $75 a month for up to five people.",
+     "Guaranteed in writing: if an error in our setup causes a payroll tax penalty, we pay it up to the setup fee.",
+     "The money never passes through us, and every run is checked before you approve it.",
+     "You get your payroll tax registrations, your pay schedule and people set up, and your first run checked with you.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "Payroll Set Up Right, $200, then $75 a month",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "First hire coming? Payroll, set up right from day one.",
+     "lines": [
+      "Payroll brings federal and state withholding, unemployment tax registration, quarterly returns, and W twos each January.",
+      "We set it up in your own Gusto account for two hundred dollars, one state included, then seventy-five dollars a month for up to five people.",
+      "Guaranteed, in writing. If an error in our setup causes a payroll tax penalty, we pay it, up to the setup fee.",
+      "The money never passes through us, and every run is checked before you approve it.",
+      "You get your payroll tax registrations, your pay schedule and people set up, and your first run checked with you.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "bank",
+        "label": "Withholding",
+        "at": "withholding"
+       },
+       {
+        "icon": "doc",
+        "label": "Unemployment tax registration",
+        "at": "unemployment"
+       },
+       {
+        "icon": "calendar",
+        "label": "Quarterly returns",
+        "at": "quarterly"
+       },
+       {
+        "icon": "mail",
+        "label": "W-2s each January",
+        "at": "january"
+       }
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Set up in your own Gusto account",
+      "value": "$200",
+      "label": "one state included",
+      "chips": [
+       "then $75 a month for up to five people"
+      ],
+      "chips_at": [
+       "seventy"
+      ],
+      "at": "two"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "An error in our setup",
+      "title": "Causes a payroll tax penalty?",
+      "text": "we pay it up to the setup fee",
+      "at": "pay"
+     },
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "lock",
+        "label": "The money never passes through us",
+        "at": "money"
+       },
+       {
+        "icon": "check",
+        "label": "Every run checked before you approve it",
+        "at": "every"
+       }
+      ]
+     },
+     {
+      "type": "checklist",
+      "title": "What you get",
+      "items": [
+       "Payroll tax registrations",
+       "Pay schedule and people set up",
+       "First run checked with you"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-rd-credit",
+   "format": "explainer",
+   "title": "R&D Credit at a Fixed $1,000",
+   "page": "/rd-tax-credit",
+   "claims": [
+    "IRC-41h",
+    "FD-16",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "The research credit",
+    "hook": "Building a product? Claim the research credit against payroll taxes.",
+    "lines": [
+     "With gross receipts under $5 million, and none before the last five years, a company can use it against payroll taxes.",
+     "That is up to $500,000 a year off payroll taxes, instead of waiting for income tax.",
+     "Our fee is a fixed $1,000, never a share of your credit.",
+     "Guaranteed in writing: if the study finds no credit you can claim, you get the fee back.",
+     "Before you pay, a short call checks whether your work looks like qualifying research.",
+     "Then we review your work and costs against the IRS test, prepare Form 6765, and set up the payroll offset each quarter.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "R&D Credit at a Fixed $1,000",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Building a product? Claim the research credit, against payroll taxes.",
+     "lines": [
+      "With gross receipts under five million dollars, and none before the last five years, a company can use it against payroll taxes.",
+      "That is up to five hundred thousand dollars a year off payroll taxes, instead of waiting for income tax.",
+      "Our fee is a fixed thousand dollars, never a share of your credit.",
+      "Guaranteed, in writing. If the study finds no credit you can claim, you get the fee back.",
+      "Before you pay, a short call checks whether your work looks like qualifying research.",
+      "Then we review your work and costs against the I R S test, prepare form sixty-seven sixty-five, and set up the payroll offset each quarter.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "stat",
+      "prefix": "Gross receipts under",
+      "value": "$5M",
+      "label": "and none before the last five years",
+      "at": "five"
+     },
+     {
+      "type": "stat",
+      "prefix": "Up to",
+      "value": "$500,000",
+      "label": "a year off payroll taxes",
+      "at": "five"
+     },
+     {
+      "type": "stat",
+      "prefix": "Our fee is a fixed",
+      "value": "$1,000",
+      "label": "never a share of your credit",
+      "at": "thousand"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "If the study finds",
+      "title": "No credit you can claim?",
+      "text": "you get the fee back",
+      "at": "fee"
+     },
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "reply",
+        "label": "A short call before you pay",
+        "at": "short"
+       },
+       {
+        "icon": "search",
+        "label": "Does your work look like qualifying research?",
+        "at": "qualifying"
+       }
+      ]
+     },
+     {
+      "type": "checklist",
+      "title": "What you get",
+      "items": [
+       "Work and costs reviewed against the IRS test",
+       "Form 6765 prepared",
+       "The payroll offset set up each quarter"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-funded",
+   "format": "explainer",
+   "title": "The Funded Startup Finance Department",
+   "page": "/funded-startups",
+   "claims": [
+    "FD-17",
+    "FD-18",
+    "FD-19",
+    "FD-29",
+    "FD-02",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "The Funded plan",
+    "hook": "Closed a round? Your finance department, for $625 a month.",
+    "lines": [
+     "Your books closed within 10 working days of month end, with burn and runway every close.",
+     "Payroll for up to five people in your own Gusto, and your federal and state return each year.",
+     "Guaranteed in writing: a close later than 10 working days, or runway under nine months without a warning first, makes that month free.",
+     "When you start, up to three months of past books are caught up free, and your 1099s and Delaware filing are included.",
+     "Leave anytime on 30 days' notice, with a full handover.",
+     "Materials we prepared have helped founders raise more than $100M."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "The Funded Startup Finance Department, $625 a month",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Closed a round? Your finance department, for six hundred and twenty-five dollars a month.",
+     "lines": [
+      "Your books closed within ten working days of month end, with burn and runway every close.",
+      "Payroll for up to five people in your own Gusto, and your federal and state return each year.",
+      "Guaranteed, in writing. A close later than ten working days, or runway under nine months without a warning first, makes that month free.",
+      "When you start, up to three months of past books are caught up free, and your ten ninety-nines and Delaware filing are included.",
+      "Leave anytime, on thirty days' notice, with a full handover.",
+      "Materials we prepared have helped founders raise more than one hundred million dollars."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "stat",
+      "prefix": "Books closed within",
+      "value": "10",
+      "label": "working days of month end",
+      "chips": [
+       "Burn and runway every close"
+      ],
+      "chips_at": [
+       "burn"
+      ],
+      "at": "ten"
+     },
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "people",
+        "label": "Payroll for up to five people",
+        "at": "payroll"
+       },
+       {
+        "icon": "doc",
+        "label": "Your federal and state return",
+        "at": "federal"
+       }
+      ]
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "A close later than 10 working days",
+      "title": "That month free",
+      "text": "and the same if runway falls under nine months without a warning first",
+      "at": "free"
+     },
+     {
+      "type": "checklist",
+      "title": "Included",
+      "items": [
+       "Up to three months of past books caught up free",
+       "Your 1099s",
+       "Your Delaware filing"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Leave anytime on",
+      "value": "30",
+      "label": "days' notice, with a full handover",
+      "at": "thirty"
+     },
+     {
+      "type": "stat",
+      "prefix": "Materials we prepared have helped founders raise more than",
+      "value": "$100M",
+      "at": "one"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-international",
+   "format": "explainer",
+   "title": "The International Founder Plan",
+   "page": "/international-founder-plan",
+   "claims": [
+    "5472-04",
+    "FD-17",
+    "FD-20",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "The International Founder Plan",
+    "hook": "Running a US company from abroad?",
+    "lines": [
+     "For an LLC with one owner outside the US, each Form 5472 not filed when due costs $25,000.",
+     "For $175 a month, plus state fees at cost, we keep your US company compliant: monthly books, your registered agent and annual report, and Form 5472.",
+     "Guaranteed in writing: if your Form 5472 details are in by 31 March and we miss 15 April, a month's fee back and a penalty relief request.",
+     "When you start, you get a calendar of every US filing deadline your company has.",
+     "Your books reconciled and closed within 10 working days of each month end.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "The International Founder Plan, $175 a month",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Running a U S company from abroad?",
+     "lines": [
+      "For an L L C with one owner outside the U S, each form fifty-four seventy-two not filed when due costs twenty-five thousand dollars.",
+      "For a hundred and seventy-five dollars a month, plus state fees at cost, we keep your U S company compliant. Monthly books, your registered agent and annual report, and form fifty-four seventy-two.",
+      "Guaranteed, in writing. If your form fifty-four seventy-two details are in by March thirty-first, and we miss April fifteenth, a month's fee back, and a penalty relief request.",
+      "When you start, you get a calendar of every U S filing deadline your company has.",
+      "Your books reconciled, and closed within ten working days of each month end.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "alert",
+      "title": "Form 5472 not filed when due",
+      "value": "$25,000",
+      "suffix": "each",
+      "at": "twenty"
+     },
+     {
+      "type": "stat",
+      "prefix": "We keep your US company compliant",
+      "value": "$175",
+      "label": "a month, plus state fees at cost",
+      "chips": [
+       "Monthly books",
+       "Registered agent and annual report",
+       "Form 5472"
+      ],
+      "chips_at": [
+       "monthly",
+       "registered",
+       "form"
+      ],
+      "at": "hundred"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Your details in by 31 March",
+      "title": "If we miss 15 April",
+      "text": "a month's fee back and a penalty relief request",
+      "at": "penalty"
+     },
+     {
+      "type": "checklist",
+      "title": "Every US filing deadline",
+      "rows": 4
+     },
+     {
+      "type": "stat",
+      "prefix": "Books closed within",
+      "value": "10",
+      "label": "working days of each month end",
+      "at": "ten"
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-us-company",
+   "format": "explainer",
+   "title": "US Company in 10 Working Days",
+   "page": "/us-entry",
+   "claims": [
+    "FD-26",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "US company setup",
+    "hook": "Setting up a US company from abroad?",
+    "lines": [
+     "Without a US Social Security or taxpayer number, the IRS online EIN application is closed to you.",
+     "Your company formed, your EIN, help with your US bank application and your first year of state compliance, for one price.",
+     "$425 for a Wyoming LLC, or $484 for a Delaware corporation, state fees included.",
+     "Guaranteed in writing: filed within 10 working days of complete details, or our fee back.",
+     "Start the International Founder Plan with your company, and its first month is free.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "US Company in 10 Working Days, from $425",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Setting up a U S company from abroad?",
+     "lines": [
+      "Without a U S Social Security or taxpayer number, the I R S online E I N application is closed to you.",
+      "Your company formed, your E I N, help with your U S bank application, and your first year of state compliance, for one price.",
+      "Four hundred and twenty-five dollars for a Wyoming L L C, or four hundred and eighty-four for a Delaware corporation, state fees included.",
+      "Guaranteed, in writing. Filed within ten working days of complete details, or our fee back.",
+      "Start the International Founder Plan with your company, and its first month is free.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "globe",
+        "label": "No US Social Security or taxpayer number",
+        "at": "social"
+       },
+       {
+        "icon": "lock",
+        "label": "Online EIN application closed",
+        "at": "closed"
+       }
+      ]
+     },
+     {
+      "type": "checklist",
+      "title": "For one price",
+      "items": [
+       "Your company formed",
+       "Your EIN",
+       "Help with your US bank application",
+       "Your first year of state compliance"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Wyoming LLC",
+      "value": "$425",
+      "label": "state fees included",
+      "chips": [
+       "$484 for a Delaware corporation"
+      ],
+      "chips_at": [
+       "eighty"
+      ],
+      "at": "four"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Your company",
+      "title": "Filed within 10 working days",
+      "text": "of complete details, or our fee back",
+      "at": "fee"
+     },
+     {
+      "type": "stat",
+      "prefix": "The International Founder Plan",
+      "value": "Free",
+      "label": "its first month, with your company",
+      "at": "free"
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-delaware",
+   "format": "explainer",
+   "title": "Delaware Franchise Tax, Worked Out Both Ways",
+   "page": "/delaware-franchise-tax",
+   "claims": [
+    "DE-01",
+    "DE-03",
+    "DE-04",
+    "DE-07",
+    "FD-08",
+    "FD-27",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "Delaware franchise tax",
+    "hook": "Your Delaware franchise tax may be far higher than it needs to be.",
+    "lines": [
+     "Delaware gives two ways to work out the tax, and says to use whichever gives the lower figure.",
+     "With 10,000,000 authorized shares, the authorized shares method gives $85,165.",
+     "With 8,000,000 shares issued and $1,000,000 in gross assets, assumed par value gives $800.",
+     "We work it out both ways and file the lower figure, for $125 a year plus Delaware's own tax and fee.",
+     "Guaranteed in writing: send your details by 15 February, and if we miss 1 March, we pay the penalty and interest up to $500.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "Delaware Franchise Tax, Worked Out Both Ways, $125 a year",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Your Delaware franchise tax may be far higher than it needs to be.",
+     "lines": [
+      "Delaware gives two ways to work out the tax, and says to use whichever gives the lower figure.",
+      "With ten million authorized shares, the authorized shares method gives eighty-five thousand, one hundred and sixty-five dollars.",
+      "With eight million shares issued, and one million dollars in gross assets, assumed par value gives eight hundred dollars.",
+      "We work it out both ways, and file the lower figure, for a hundred and twenty-five dollars a year, plus Delaware's own tax and fee.",
+      "Guaranteed, in writing. Send your details by February fifteenth, and if we miss March first, we pay the penalty and interest, up to five hundred dollars.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "scale",
+        "label": "Two ways to work out the tax",
+        "at": "two"
+       },
+       {
+        "icon": "check",
+        "label": "Use the lower figure",
+        "at": "lower"
+       }
+      ]
+     },
+     {
+      "type": "ladder",
+      "id": "dft",
+      "title": "Two ways to work out the tax",
+      "bars": [
+       {
+        "value": "$85,165",
+        "label": "Authorized shares",
+        "tone": "red"
+       },
+       {
+        "value": "$800",
+        "label": "Assumed par value",
+        "tone": "green"
+       }
+      ],
+      "at": [
+       "eighty"
+      ]
+     },
+     {
+      "type": "ladder",
+      "id": "dft",
+      "show": [
+       1
+      ],
+      "at": [
+       "hundred"
+      ],
+      "mark": [
+       1
+      ],
+      "mark_at": [
+       "assumed"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Worked out both ways",
+      "value": "$125",
+      "label": "a year",
+      "chips": [
+       "The lower figure filed",
+       "Plus Delaware's own tax and fee"
+      ],
+      "chips_at": [
+       "file",
+       "plus"
+      ],
+      "at": "hundred"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Send your details by 15 February",
+      "title": "If we miss 1 March",
+      "text": "we pay the penalty and interest up to $500",
+      "at": "five"
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-5472",
+   "format": "explainer",
+   "title": "Form 5472 for Foreign Owned LLCs",
+   "page": "/form-5472",
+   "claims": [
+    "5472-01",
+    "5472-04",
+    "FD-16",
+    "FD-28",
+    "FD-29",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "Form 5472",
+    "hook": "Own a US LLC from abroad?",
+    "lines": [
+     "If you are its only owner, money in or out means Form 5472 that year, even with no US tax owed.",
+     "Each Form 5472 not filed when due carries a $25,000 penalty.",
+     "We file it for you for $300 a year, with a free extension when needed.",
+     "Guaranteed in writing: if your details are in by 31 March and we miss 15 April, the fee back and a penalty relief request.",
+     "We work out the year's transactions from your bank statements, prepare the forms, and fax or mail them to the IRS.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "Form 5472 for Foreign Owned LLCs, $300 a year",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Own a U S L L C from abroad?",
+     "lines": [
+      "If you are its only owner, money in or out means form fifty-four seventy-two that year, even with no U S tax owed.",
+      "Each form fifty-four seventy-two not filed when due carries a twenty-five thousand dollar penalty.",
+      "We file it for you for three hundred dollars a year, with a free extension when needed.",
+      "Guaranteed, in writing. If your details are in by March thirty-first, and we miss April fifteenth, the fee back, and a penalty relief request.",
+      "We work out the year's transactions from your bank statements, prepare the forms, and fax or mail them to the I R S.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "person",
+        "label": "Its only owner",
+        "at": "only"
+       },
+       {
+        "icon": "dollar",
+        "label": "Money in or out",
+        "at": "money"
+       },
+       {
+        "icon": "doc",
+        "label": "Form 5472 that year",
+        "at": "form"
+       },
+       {
+        "icon": "check",
+        "label": "Even with no US tax owed",
+        "at": "even"
+       }
+      ]
+     },
+     {
+      "type": "alert",
+      "title": "Form 5472 not filed when due",
+      "value": "$25,000",
+      "suffix": "penalty",
+      "at": "twenty"
+     },
+     {
+      "type": "stat",
+      "prefix": "Filed for you",
+      "value": "$300",
+      "label": "a year",
+      "chips": [
+       "A free extension when needed"
+      ],
+      "chips_at": [
+       "free"
+      ],
+      "at": "three"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Your details in by 31 March",
+      "title": "If we miss 15 April",
+      "text": "the fee back and a penalty relief request",
+      "at": "penalty"
+     },
+     {
+      "type": "checklist",
+      "title": "What you get",
+      "items": [
+       "The year's transactions worked out",
+       "The forms prepared",
+       "Faxed or mailed to the IRS"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-scan",
+   "format": "explainer",
+   "title": "5 Day Investor Ready Scan",
+   "page": "/investor-ready-scan",
+   "claims": [
+    "FD-13",
+    "FD-14",
+    "FD-05",
+    "FD-29",
+    "FD-02",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "5 Day Investor Ready Scan",
+    "hook": "Raising soon? Find what investors will find, in five working days.",
+    "lines": [
+     "The Scan reviews your books, revenue recognition, cap table, key contracts and runway against what a seed or Series A investor will check.",
+     "Your findings report names every gap and what it costs to fix, with a Money at Stake page.",
+     "$750 for our first five clients, then $1,250.",
+     "Guaranteed in writing: your findings within five working days of complete documents, or the fee back.",
+     "Go ahead within 90 days, and the full fee is credited against a books cleanup or the Investor Ready Sprint.",
+     "We do not introduce investors or take a success fee: you stay in charge of your raise.",
+     "Materials we prepared have helped founders raise more than $100M."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "5 Day Investor Ready Scan, $750 for our first five clients",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Raising soon? Find what investors will find, in five working days.",
+     "lines": [
+      "The Scan reviews your books, revenue recognition, cap table, key contracts, and runway, against what a seed or Series A investor will check.",
+      "Your findings report names every gap, and what it costs to fix, with a Money at Stake page.",
+      "Seven hundred and fifty dollars for our first five clients, then twelve fifty.",
+      "Guaranteed, in writing. Your findings within five working days of complete documents, or the fee back.",
+      "Go ahead within ninety days, and the full fee is credited against a books cleanup, or the Investor Ready Sprint.",
+      "We do not introduce investors, or take a success fee. You stay in charge of your raise.",
+      "Materials we prepared have helped founders raise more than one hundred million dollars."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "checklist",
+      "title": "What the Scan reviews",
+      "items": [
+       "Books",
+       "Revenue recognition",
+       "Cap table",
+       "Key contracts",
+       "Runway"
+      ]
+     },
+     {
+      "type": "gauge",
+      "label": "Your findings report",
+      "gap_label": "Gap",
+      "gaps": 3,
+      "at": [
+       "every",
+       "costs",
+       "money"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "For our first five clients",
+      "value": "$750",
+      "label": "then $1,250",
+      "at": "seven"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Your findings",
+      "title": "Within five working days",
+      "text": "of complete documents, or the fee back",
+      "at": "fee"
+     },
+     {
+      "type": "stat",
+      "prefix": "Go ahead within",
+      "value": "90",
+      "label": "days, and the full fee is credited",
+      "chips": [
+       "A books cleanup",
+       "The Investor Ready Sprint"
+      ],
+      "chips_at": [
+       "books",
+       "investor"
+      ],
+      "at": "ninety"
+     },
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "shield",
+        "label": "No success fee",
+        "at": "success"
+       },
+       {
+        "icon": "person",
+        "label": "You stay in charge of your raise",
+        "at": "charge"
+       }
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Materials we prepared have helped founders raise more than",
+      "value": "$100M",
+      "at": "one"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "offer-sprint",
+   "format": "explainer",
+   "title": "Investor Ready Sprint",
+   "page": "/investor-ready-sprint",
+   "claims": [
+    "FD-15",
+    "FD-05",
+    "FD-29",
+    "FD-02",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "Investor Ready Sprint",
+    "hook": "Raising soon? Investor ready in 40 working days.",
+    "lines": [
+     "First the Scan, then a three statement financial model, then an investor pack and a data room, delivered in order.",
+     "The Scan in 5 working days, the model in 15, and the investor pack and data room in 20.",
+     "The investor pack is a pitch deck, an investment memo and a one page summary.",
+     "$4,250 for one company: half to start, and half when we deliver.",
+     "Guaranteed in writing: six of our scorecard checks at full marks by delivery, or we keep working at no extra cost.",
+     "We do not introduce investors or take a success fee: you stay in charge of your raise.",
+     "Materials we prepared have helped founders raise more than $100M."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "Investor Ready Sprint, $4,250",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Raising soon? Investor ready in forty working days.",
+     "lines": [
+      "First the Scan, then a three statement financial model, then an investor pack and a data room, delivered in order.",
+      "The Scan in five working days, the model in fifteen, and the investor pack and data room in twenty.",
+      "The investor pack is a pitch deck, an investment memo, and a one page summary.",
+      "Four thousand two hundred and fifty dollars for one company. Half to start, and half when we deliver.",
+      "Guaranteed, in writing. Six of our scorecard checks at full marks by delivery, or we keep working, at no extra cost.",
+      "We do not introduce investors, or take a success fee. You stay in charge of your raise.",
+      "Materials we prepared have helped founders raise more than one hundred million dollars."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "steps",
+      "items": [
+       "The Scan",
+       "A three statement financial model",
+       "An investor pack and a data room"
+      ],
+      "at": [
+       "scan",
+       "three",
+       "investor"
+      ]
+     },
+     {
+      "type": "ladder",
+      "title": "Working days",
+      "bars": [
+       {
+        "value": "5",
+        "label": "The Scan",
+        "tone": "green"
+       },
+       {
+        "value": "15",
+        "label": "The model",
+        "tone": "green"
+       },
+       {
+        "value": "20",
+        "label": "Pack and data room",
+        "tone": "green"
+       }
+      ],
+      "show": [
+       0,
+       1,
+       2
+      ],
+      "at": [
+       "five",
+       "fifteen",
+       "twenty"
+      ]
+     },
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "chart",
+        "label": "Pitch deck",
+        "at": "pitch"
+       },
+       {
+        "icon": "doc",
+        "label": "Investment memo",
+        "at": "memo"
+       },
+       {
+        "icon": "list",
+        "label": "One page summary",
+        "at": "summary"
+       }
+      ]
+     },
+     {
+      "type": "stat",
+      "value": "$4,250",
+      "label": "for one company",
+      "chips": [
+       "Half to start",
+       "Half when we deliver"
+      ],
+      "chips_at": [
+       "start",
+       "deliver"
+      ],
+      "at": "four"
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Six of our scorecard checks",
+      "title": "At full marks by delivery",
+      "text": "or we keep working at no extra cost",
+      "at": "keep"
+     },
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "shield",
+        "label": "No success fee",
+        "at": "success"
+       },
+       {
+        "icon": "person",
+        "label": "You stay in charge of your raise",
+        "at": "charge"
+       }
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Materials we prepared have helped founders raise more than",
+      "value": "$100M",
+      "at": "one"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  },
+  {
+   "id": "home-finance-department",
+   "format": "explainer",
+   "title": "Finance Department",
+   "page": "/",
+   "claims": [
+    "FD-29",
+    "FD-09",
+    "FD-16",
+    "FD-17",
+    "FD-26",
+    "FD-13",
+    "FD-01",
+    "FD-03",
+    "FD-12"
+   ],
+   "content": {
+    "kicker": "For US founders",
+    "hook": "Your books, taxes and US filings, handled.",
+    "lines": [
+     "For US startups, and for founders running a US company from abroad.",
+     "Every service has a fixed price and a written guarantee.",
+     "Books and tax: 1099s from $100, tax returns from $600, and your finance department for $625 a month.",
+     "Your US company set up from $425, and kept compliant for $175 a month.",
+     "Raising? The 5 Day Investor Ready Scan finds your gaps before an investor does.",
+     "Pick a service or book a call, send your documents, and we do the work, on time.",
+     "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
+    ],
+    "cta": "Book a 30 minute call",
+    "offer": "Every service has a fixed price and a written guarantee",
+    "end_hold": 2.0,
+    "say": {
+     "hook": "Your books, taxes, and U S filings, handled.",
+     "lines": [
+      "For U S startups, and for founders running a U S company from abroad.",
+      "Every service has a fixed price, and a written guarantee.",
+      "Books and tax. Ten ninety-nines from a hundred dollars, tax returns from six hundred, and your finance department for six hundred and twenty-five dollars a month.",
+      "Your U S company set up from four hundred and twenty-five dollars, and kept compliant for a hundred and seventy-five a month.",
+      "Raising? The five day Investor Ready Scan finds your gaps, before an investor does.",
+      "Pick a service or book a call, send your documents, and we do the work, on time.",
+      "We have worked with more than three hundred founders, and Muhammad Talha trained at B D O Ebrahim and Co."
+     ],
+     "cta": "Book a thirty minute call with Muhammad Talha."
+    },
+    "scenes": [
+     null,
+     {
+      "type": "icons",
+      "items": [
+       {
+        "icon": "rocket",
+        "label": "US startups",
+        "at": "startups"
+       },
+       {
+        "icon": "globe",
+        "label": "Founders running a US company from abroad",
+        "at": "founders"
+       }
+      ]
+     },
+     {
+      "type": "promise",
+      "stamp": "Guaranteed",
+      "note": "Every service",
+      "title": "A fixed price",
+      "text": "and a written guarantee",
+      "at": "guarantee"
+     },
+     {
+      "type": "checklist",
+      "title": "Books and tax",
+      "items": [
+       "1099s from $100",
+       "Tax returns from $600",
+       "Your finance department for $625 a month"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "Your US company set up from",
+      "value": "$425",
+      "label": "and kept compliant for $175 a month",
+      "at": "four"
+     },
+     {
+      "type": "gauge",
+      "label": "The 5 Day Investor Ready Scan",
+      "gap_label": "Gap",
+      "gaps": 3,
+      "at": [
+       "finds",
+       "gaps",
+       "investor"
+      ]
+     },
+     {
+      "type": "steps",
+      "items": [
+       "Pick a service or book a call",
+       "Send your documents",
+       "We do the work, on time"
+      ],
+      "at": [
+       "pick",
+       "send",
+       "work"
+      ]
+     },
+     {
+      "type": "stat",
+      "prefix": "We have worked with",
+      "value": "300+",
+      "label": "founders",
+      "chips": [
+       "Muhammad Talha trained at BDO Ebrahim & Co."
+      ],
+      "chips_at": [
+       "muhammad"
+      ],
+      "at": "three"
+     },
+     null
+    ]
+   },
+   "media": [],
+   "status": "Planned"
+  }
+ ]
+}

@@ -25,6 +25,12 @@ Facebook) and Metricool (YouTube) fetch them by link when a post is placed. Ever
     mix, ducked under the voice and set to -14 LUFS.
   - `doctor.py` checks the workspace and, with `--setup`, installs the narrator (pip package and model files, about
     350 MB, checked by SHA-256 and kept in `~/.cache/fd-studio`).
+- `site/offer-videos.json`: the website's page videos, one for each offer page and one for the home page, written by
+  `site/make_offer_videos.py` from the pages' words and the Claim Library (15 November 2026). Each runs the same way in under a
+  minute: the visitor's situation, what is at stake, the offer and its price, the written guarantee (the `promise` scene), what
+  you get, the record, and "Book a 30 minute call", the words of the button under the video on the page. Render one with
+  `python3 tools/studio/render.py site/offer-videos.json offer-1099 --media /tmp/out --preview /tmp/prev`; the finished files
+  live in the website's `public/media` at 720 by 1280, not here.
 - `tools/make.mjs`: makes the media for a week's pieces and a contact sheet of each in `.previews/` (not committed).
 - `tools/check.mjs`: the automatic half of the quality check.
 - `tools/explainer.mjs`, `tools/ad.mjs`, `tools/stills.mjs`: the first engine (HyperFrames and Chromium), kept for any
@@ -78,12 +84,14 @@ cannot be installed, explainers and ads are made with captions and music but no 
 
 `content` by format:
 
-- explainer `{kicker?, hook, lines[2..7], cta, say?, scenes?}`; ad `{hook_visual?, hook_clip?, kicker?, hook, lines[1..4], offer?, cta, say?, scenes?}`.
+- explainer `{kicker?, hook, lines[2..7], cta, offer?, end_hold?, say?, scenes?}` (`end_hold`: seconds the end card stays, 3 by
+  default); ad `{hook_visual?, hook_clip?, kicker?, hook, lines[1..4], offer?, cta, say?, scenes?}`.
   `say` has the spoken words for the hook, each line and the call to action: numbers, dates, form numbers and initials
   written as they are said ("ten ninety-nine N E C"), keeping the line's commas for the pauses. Without it the studio
   writes them out itself. `scenes` has one scene per beat in order (hook, each line, call to action); `null` is the
   default, the line as a large headline, and the call to action's default is the end card. Scene types: headline,
-  stat, doc, route, date, ladder, alert, compare, checklist, map, icons, steps, quote, gauge, end. A scene's `at`
+  stat, doc, route, date, ladder, alert, compare, checklist, map, icons, steps, quote, gauge, promise (a written
+  guarantee drawn as a certificate with a stamp: `stamp`, `note`, `title`, `text`, `at`), end. A scene's `at`
   names the spoken word it reacts to: its picture is on screen within about 1.4 seconds of the line starting and
   pulses or lights up on that word; consecutive `ladder` scenes with the same `id` grow one chart.
 - carousel and story `{slides: [{layout, ...}]}` (each slide published as a JPEG, quality 93), with layouts COVER, POINT,
