@@ -118,10 +118,23 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-E01.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 15 November 2026. Line 1 says the 1099s go to your contractors and to the IRS, which rests on approved claim 1099-02; the piece lists only 1099-04 and 1099-05.",
-      "metricool": {},
-      "ai_voice": true
+      "metricool": {
+        "youtube": {
+          "id": "429011529",
+          "uuid": "-6557292675365582142"
+        }
+      },
+      "ai_voice": true,
+      "buffer": {
+        "instagram": [
+          "6af9d5f1544d0574a9297fdf"
+        ],
+        "facebook": [
+          "6af9d5f2544d0574a9298042"
+        ]
+      }
     },
     {
       "id": "2026-W47-T01",
@@ -145,9 +158,14 @@
         "facebook": "Why we never take a success fee.\n\nA success fee is a share of the money you raise. We do not introduce investors or take a success fee; you stay in charge of your raise.\n\nWe have worked with 300+ founders.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/book?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w47-t01"
       },
       "media": [],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "facebook": [
+          "6af9d5fee86a5789a61dc0e7"
+        ]
+      }
     },
     {
       "id": "2026-W47-S01",
@@ -181,9 +199,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S01_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6af9d5fe16191f4f5d2cc9d1"
+        ],
+        "facebook": [
+          "6af9d5ffb9a106584cba7e4e"
+        ]
+      }
     },
     {
       "id": "2026-W47-C01",
