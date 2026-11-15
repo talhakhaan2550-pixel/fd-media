@@ -29,12 +29,17 @@ const DISCLAIMER = "General information, not tax or legal advice for your situat
 // [words, why, and the approved firm claims whose own wording carries those words: a piece that cites one of them
 // may use them]. Talha, 15 November 2026: posts may use the approved wording of the written guarantees and of the
 // tax return and Form 5472 offers; return work starts once the firm's PTIN is active.
+// Claims Talha has struck: never used, whatever claims.json says.
+const STRUCK = new Set(["FD-29"]);
+
 const BANNED = [
   [/\bthe finance department\b/i, 'the name is "Finance Department", never "The Finance Department"'],
   [/\bCPA\b/, '"CPA" is not a title anyone here holds'],
   [/\bbig (4|four)\b/i, '"Big 4" may not be used'],
   [/\b5[- ]star|\bfive[- ]star/i, 'star ratings may not be used'],
-  [/\bguarantee/i, '"guarantee" only in the approved wording of FD-14 or FD-29, with that claim listed', ["FD-14", "FD-29"]],
+  [/\bguarantee/i, '"guarantee" only in the approved wording of FD-14, with that claim listed', ["FD-14"]],
+  // Talha, 15 November 2026: the firm's old line is struck everywhere, posts included; FD-30 is the firm's line.
+  [/every service has a fixed price and a written guarantee/i, 'the old line "Every service has a fixed price and a written guarantee" (FD-29) is struck; the firm\'s line is FD-30'],
   [/\b(150\+|50\+)\s*(businesses|clients|founders)?/i, 'old client figures; the only one is "300+ founders"'],
   [/\bintroduc\w* (you )?to investors\b|\binvestor introductions?\b/i, 'the firm does not introduce investors'],
   [/\byou will raise\b|\bwe('ll| will) raise\b/i, 'no promised outcomes'],
@@ -89,6 +94,7 @@ export function checkPiece(p, claims, week) {
   const used = p.claims || [];
   if (!used.length) warnings.push("no claims listed: the piece must state no facts at all");
   for (const id of used) if (!ok.has(id)) errors.push(`claim ${id} is not approved in ${claims.tab}`);
+  for (const id of used) if (STRUCK.has(id)) errors.push(`claim ${id} is struck in the Claim Library`);
   // Words
   const text = allText(p);
   for (const [re, why, allowedBy] of BANNED) if (re.test(text) && !(allowedBy || []).some((id) => used.includes(id) && ok.has(id))) errors.push(why);
