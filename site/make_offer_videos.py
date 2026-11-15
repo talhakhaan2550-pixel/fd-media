@@ -358,17 +358,19 @@ P.append(piece(
     "Investor Ready Sprint, $4,250", record=RAISED))
 
 P.append(piece(
-    "home-finance-department", "/", "Finance Department", ["FD-29", "FD-09", "FD-16", "FD-17", "FD-26", "FD-13", "FD-01", "FD-03", "FD-12"],
-    "For US founders", "Your books, taxes and US filings, handled.",
-    "Your books, taxes, and U S filings, handled.",
+    "home-finance-department", "/", "Finance Department", ["FD-30", "FD-09", "FD-16", "FD-17", "FD-26", "FD-13", "FD-01", "FD-03", "FD-12"],
+    "For US founders", "Every startup or company needs a Finance Department. Here's yours.",
+    "Every startup or company needs a Finance Department. Here's yours.",
     [
+        # Talha, 15 November 2026: the home video opens on his line (FD-30), as the home page now does, and the
+        # old headline follows as the line under it; FD-29's guarantee line is struck.
+        ("Your books, taxes and US filings, handled.",
+         "Your books, taxes, and U S filings, handled.",
+         {"type": "headline"}),
         ("For US startups, and for founders running a US company from abroad.",
          "For U S startups, and for founders running a U S company from abroad.",
          {"type": "icons", "items": [{"icon": "rocket", "label": "US startups", "at": "startups"},
                                      {"icon": "globe", "label": "Founders running a US company from abroad", "at": "founders"}]}),
-        ("Every service has a fixed price and a written guarantee.",
-         "Every service has a fixed price, and a written guarantee.",
-         {"type": "promise", "stamp": "Guaranteed", "note": "Every service", "title": "A fixed price", "text": "and a written guarantee", "at": "guarantee"}),
         ("Books and tax: 1099s from $100, tax returns from $600, and your finance department for $625 a month.",
          "Books and tax. Ten ninety-nines from a hundred dollars, tax returns from six hundred, and your finance department for six hundred and twenty-five dollars a month.",
          {"type": "checklist", "title": "Books and tax", "items": ["1099s from $100", "Tax returns from $600", "Your finance department for $625 a month"]}),
@@ -382,7 +384,7 @@ P.append(piece(
          "Pick a service or book a call, send your documents, and we do the work, on time.",
          {"type": "steps", "items": ["Pick a service or book a call", "Send your documents", "We do the work, on time"], "at": ["pick", "send", "work"]}),
     ],
-    "Every service has a fixed price and a written guarantee"))
+    "Every startup or company needs a Finance Department. Here's yours."))
 
 out = {"week": "site", "media": "site/media", "note": "Conversion videos for the website's offer pages and home page. Made by make_offer_videos.py.", "pieces": P}
 here = os.path.dirname(os.path.abspath(__file__))

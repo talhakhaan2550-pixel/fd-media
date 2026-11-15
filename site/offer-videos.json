@@ -1504,7 +1504,7 @@
    "title": "Finance Department",
    "page": "/",
    "claims": [
-    "FD-29",
+    "FD-30",
     "FD-09",
     "FD-16",
     "FD-17",
@@ -1516,10 +1516,10 @@
    ],
    "content": {
     "kicker": "For US founders",
-    "hook": "Your books, taxes and US filings, handled.",
+    "hook": "Every startup or company needs a Finance Department. Here's yours.",
     "lines": [
+     "Your books, taxes and US filings, handled.",
      "For US startups, and for founders running a US company from abroad.",
-     "Every service has a fixed price and a written guarantee.",
      "Books and tax: 1099s from $100, tax returns from $600, and your finance department for $625 a month.",
      "Your US company set up from $425, and kept compliant for $175 a month.",
      "Raising? The 5 Day Investor Ready Scan finds your gaps before an investor does.",
@@ -1527,13 +1527,13 @@
      "We have worked with 300+ founders, and Muhammad Talha trained at BDO Ebrahim & Co."
     ],
     "cta": "Book a 30 minute call",
-    "offer": "Every service has a fixed price and a written guarantee",
+    "offer": "Every startup or company needs a Finance Department. Here's yours.",
     "end_hold": 2.0,
     "say": {
-     "hook": "Your books, taxes, and U S filings, handled.",
+     "hook": "Every startup or company needs a Finance Department. Here's yours.",
      "lines": [
+      "Your books, taxes, and U S filings, handled.",
       "For U S startups, and for founders running a U S company from abroad.",
-      "Every service has a fixed price, and a written guarantee.",
       "Books and tax. Ten ninety-nines from a hundred dollars, tax returns from six hundred, and your finance department for six hundred and twenty-five dollars a month.",
       "Your U S company set up from four hundred and twenty-five dollars, and kept compliant for a hundred and seventy-five a month.",
       "Raising? The five day Investor Ready Scan finds your gaps, before an investor does.",
@@ -1544,6 +1544,9 @@
     },
     "scenes": [
      null,
+     {
+      "type": "headline"
+     },
      {
       "type": "icons",
       "items": [
@@ -1558,14 +1561,6 @@
         "at": "founders"
        }
       ]
-     },
-     {
-      "type": "promise",
-      "stamp": "Guaranteed",
-      "note": "Every service",
-      "title": "A fixed price",
-      "text": "and a written guarantee",
-      "at": "guarantee"
      },
      {
       "type": "checklist",
