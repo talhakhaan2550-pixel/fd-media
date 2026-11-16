@@ -108,7 +108,7 @@ cannot be installed, explainers and ads are made with captions and music but no 
   hero, chips, quote, threshold, split, tiles, list, steps, compare, checklist.
 - carousel_reel `{from}`: the ID of a carousel in the same week, whose slides it plays at 1080 x 1920 with music; it
   posts as a reel on Instagram and Facebook one to three days after the carousel, with the carousel's claims and captions.
-- text `{text}`; reel and cuts `{brief, opus_project, clip}`.
+- text `{text}`, and on Threads (since 16 November 2026) also `thread` (up to 4 follow up posts, each under 500 characters), `poll` (2 to 4 options of up to 25 characters), `first_reply` (our first reply under the post, the only place a Threads piece carries its tracked link) and `video_from` (an explainer in the same week whose video the post carries); a Threads caption is the post itself, under 500 characters, with exactly one hashtag, which Threads makes the topic tag; reel and cuts `{brief, opus_project, clip}`.
 
 A piece with `"style": "classic"` is made by the first engine. `make.mjs` sets `ai_voice` to true on every explainer or
 ad it narrates, and the platforms' AI labels go on when it is placed (Meta requires one on a reel narrated with a
@@ -124,3 +124,12 @@ person presented as a client, a reviewer or Talha.
 Platforms are switched on in `tools/config.json`. LinkedIn (Talha's profile) takes explainers, ads, carousels and text
 posts, with the tracked link on middle and bottom of funnel pieces, once it is connected in Metricool and added there.
 Status runs Planned, Rendering, Made, Passed check, Held, Draft in Metricool, Scheduled, Vetoed, Published, Taken down.
+
+## Threads (since 16 November 2026)
+
+Threads is not placed through Buffer or Metricool. The Social desk, a scheduled run in Talha's business Chrome (Run instructions tab of the Content Engine Kit, block "Social desk"), schedules each Threads piece in Threads' own composer up to three days ahead and keeps its records here:
+
+- `weeks/{week}/threads.json`: one line per scheduled Threads piece, `{"id", "scheduled_et", "scheduled_pkt", "first_reply"}`, plus `"pulled"` when a vetoed post was taken down.
+- `threads/replies.json`: the Social desk's replies on other US accounts' Threads posts, `{"date", "url", "account", "words"}` (at most 10 a day, never the same account twice in seven days).
+- `threads/insights.json`: Threads' own insights saved on Thursday nights, keyed by ISO week, for the Friday report.
+

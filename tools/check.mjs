@@ -24,7 +24,7 @@ export const FORMAT_PLATFORMS = {
 };
 const LETTER = { reel: "Y", cut: "Y", explainer: "E", ad: "D", avatar: "A", carousel: "C", carousel_reel: "M", story: "S", text: "T" };
 const CAPTION_MAX = { x: 280, threads: 500, instagram: 2200, tiktok: 2200, facebook: 5000, linkedin: 3000 };
-const HASHTAGS = { instagram: [3, 5], tiktok: [3, 5], threads: [3, 5], x: [0, 2], facebook: [0, 0], youtube: [0, 3], linkedin: [0, 3] };
+const HASHTAGS = { instagram: [3, 5], tiktok: [3, 5], threads: [1, 1], x: [0, 2], facebook: [0, 0], youtube: [0, 3], linkedin: [0, 3] };
 const DISCLAIMER = "General information, not tax or legal advice for your situation.";
 // [words, why, and the approved firm claims whose own wording carries those words: a piece that cites one of them
 // may use them]. Talha, 15 November 2026: posts may use the approved wording of the written guarantees and of the
@@ -126,7 +126,25 @@ export function checkPiece(p, claims, week) {
       if (!m) errors.push(`${n} link is not a tracked financedepartmentllc.com link: ${u}`);
       else if (m[1] !== n || m[2] !== p.id.toLowerCase()) errors.push(`${n} link must carry utm_source=${n} and utm_campaign=${p.id.toLowerCase()}`);
     }
-    if ((p.stage === "Middle" || p.stage === "Bottom") && ["facebook", "linkedin", "x", "threads"].includes(n) && !urls.length) errors.push(`${n} needs the tracked link for a ${p.stage.toLowerCase()} of funnel piece`);
+    // Threads (since 16 November 2026): no link in the post itself; a middle or bottom of funnel piece
+    // carries its tracked link in content.first_reply, which the Social desk posts as our first reply.
+    if (n === "threads") {
+      if (urls.length || /www\./i.test(body)) errors.push("threads posts carry no link; put the tracked link in content.first_reply");
+      const fr = (p.content || {}).first_reply;
+      const frUrls = typeof fr === "string" ? fr.match(/https?:\/\/\S+/g) || [] : [];
+      for (const u of frUrls) {
+        const m = u.match(/^https:\/\/www\.financedepartmentllc\.com\/[a-z0-9\-\/]*\?utm_source=([a-z]+)&utm_medium=social_media&utm_campaign=([a-z0-9\-]+)$/);
+        if (!m) errors.push(`threads first_reply link is not a tracked financedepartmentllc.com link: ${u}`);
+        else if (m[1] !== "threads" || m[2] !== p.id.toLowerCase()) errors.push(`threads first_reply link must carry utm_source=threads and utm_campaign=${p.id.toLowerCase()}`);
+      }
+      if (fr !== undefined && (typeof fr !== "string" || fr.length > 500)) errors.push("content.first_reply is text under 500 characters");
+      if ((p.stage === "Middle" || p.stage === "Bottom") && !frUrls.length) errors.push(`threads needs the tracked link in content.first_reply for a ${p.stage.toLowerCase()} of funnel piece`);
+      const th = (p.content || {}).thread;
+      if (th !== undefined && (!Array.isArray(th) || th.length > 4 || th.some((t) => typeof t !== "string" || !t.trim() || t.length > 500))) errors.push("content.thread is a list of up to 4 follow up posts, each under 500 characters");
+      const poll = (p.content || {}).poll;
+      if (poll !== undefined && (!Array.isArray(poll) || poll.length < 2 || poll.length > 4 || poll.some((o) => typeof o !== "string" || !o.trim() || o.length > 25))) errors.push("content.poll is a list of 2 to 4 options, each up to 25 characters");
+    }
+    if ((p.stage === "Middle" || p.stage === "Bottom") && ["facebook", "linkedin", "x"].includes(n) && !urls.length) errors.push(`${n} needs the tracked link for a ${p.stage.toLowerCase()} of funnel piece`);
     if ((p.stage === "Middle" || p.stage === "Bottom") && n === "youtube" && !/link on our channel page/i.test(body)) errors.push('youtube needs "link on our channel page"');
     if ((p.stage === "Middle" || p.stage === "Bottom") && n === "instagram" && !/link in bio/i.test(body)) errors.push('instagram needs "link in bio"');
     if (n === "tiktok" && (p.stage === "Middle" || p.stage === "Bottom") && !/link in bio/i.test(body)) errors.push('tiktok needs "link in bio"');

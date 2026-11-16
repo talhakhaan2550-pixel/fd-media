@@ -3,12 +3,13 @@
   "platforms_enabled": [
     "youtube",
     "instagram",
-    "facebook"
+    "facebook",
+    "threads"
   ],
   "posting_hours_eastern": [
-    9,
-    19
+    8,
+    21
   ],
-  "max_feed_posts_per_day": 3,
+  "max_feed_posts_per_day": 4,
   "min_gap_hours": 2
 }
