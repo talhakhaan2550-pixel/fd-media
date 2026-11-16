@@ -171,5 +171,7 @@ Threads is not placed through Buffer or Metricool. The Social desk, a scheduled 
 
 - `weeks/{week}/threads.json`: one line per scheduled Threads piece, `{"id", "scheduled_et", "scheduled_pkt", "first_reply"}`, plus `"pulled"` when a vetoed post was taken down.
 - `threads/replies.json`: the Social desk's replies on other US accounts' Threads posts, `{"date", "url", "account", "words"}` (at most 10 a day, never the same account twice in seven days).
-- `threads/insights.json`: Threads' own insights saved on Thursday nights, keyed by ISO week, for the Friday report.
+- `threads/insights.json`: no longer written. Talha connected Threads in Metricool on 15 November 2026, so from 16 November 2026 the Weekly report, the Growth loop and the Client Acquisition Dashboard read Threads' numbers from Metricool (brand 7464082: the threads evolution, posts and country fields). The file stays for history.
+
+The Social desk also answers what people send us on Threads: replies, mentions and quotes of our posts, replies to our own replies on other accounts' posts (its step 2b) and direct messages (its step 6), from the answer bank on the kit's Replies tab. Anything it should not answer waits in Slack #content for Talha's ✅. Threads conversations and social media leads are logged in the Conversations sheet, not here.
 
