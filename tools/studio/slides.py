@@ -255,20 +255,26 @@ def v_checklist(v, mode, d):
             '<div style="font-family:Fraunces;font-weight:700;font-size:40px;color:#15191F">%s</div>%s</div>%s</div>' % (d, esc(v.get("title", "")), tag, rows))
 
 
-def v_cast(v, mode, d):
-    """The approved cartoon cast (cast.py): one to three characters, with an optional speech bubble holding the piece's own words."""
+def v_cast(v, mode, d, small=False):
+    """The approved cartoon cast in 3D (cast.py): one to three characters, with an optional speech bubble holding the piece's own words."""
     import cast
     who = v.get("who") or ["sam"]
     who = [who] if isinstance(who, str) else list(who)
     exprs = v.get("expr") or []
     exprs = [exprs] if isinstance(exprs, str) else list(exprs)
     big = v.get("size") == "l"
-    h = (560 if big else 460) if mode == "post" else (700 if big else 560)
+    # the 3D sprites fill their frame more than the old drawings did, so these heights keep the same figure size
+    # a reel keeps its words inside the 840 x 900 safe area (.reel .content), so its cast stands smaller than in a post
+    h = (490 if big else 400) if mode == "post" else (470 if big else 380)
+    if small:
+        # under a closing slide's title, button and fine print in a reel there is room for a small cast only
+        h = 260
+    h = cast.row_height(who[:3], exprs, h, 900 if mode == "post" else 816)
     figs = ""
     for i, w in enumerate(who[:3]):
         e = exprs[i] if i < len(exprs) else None
         figs += ('<div class="castc" data-a="pop" data-d="%.2f" style="height:%dpx">%s</div>'
-                 % (d + 0.25 + i * 0.15, h, cast.svg(w, e).replace("<svg ", '<svg style="height:100%" ', 1)))
+                 % (d + 0.25 + i * 0.15, h, cast.figure(w, e)))
     bubble = ('<div class="castb" data-a="up" data-d="%.2f">%s</div>' % (d, esc(v["says"]))) if v.get("says") else ""
     return '<div class="vis castv">%s<div class="castf">%s</div></div>' % (bubble, figs)
 
@@ -278,20 +284,20 @@ VISUALS = {"map": v_map, "stats": v_stats, "date": v_date, "bars": v_bars, "quot
            "checklist": v_checklist, "cast": v_cast}
 
 
-def visual(v, mode, d=0.6):
+def visual(v, mode, d=0.6, small=False):
     if not v:
         return ""
     fn = VISUALS.get(v.get("type"))
     if not fn:
         raise ValueError("unknown visual type %s" % v.get("type"))
-    return fn(v, mode, d)
+    return fn(v, mode, d, small=True) if small and fn is v_cast else fn(v, mode, d)
 
 
-def visuals(s, mode, d=0.6):
+def visuals(s, mode, d=0.6, small=False):
     """A slide may carry one visual, or two stacked (visual and visual2)."""
-    out = visual(s.get("visual"), mode, d)
+    out = visual(s.get("visual"), mode, d, small)
     if s.get("visual2"):
-        out += '<div style="height:20px"></div>' + visual(s.get("visual2"), mode, d + 0.35)
+        out += '<div style="height:20px"></div>' + visual(s.get("visual2"), mode, d + 0.35, small)
     return out
 
 
@@ -300,7 +306,8 @@ EXTRA = """
 .castb{position:relative;background:#fff;border:3px solid #15191F;border-radius:24px;padding:18px 26px;font-size:34px;line-height:1.3;font-weight:600;color:#15191F;max-width:900px;text-align:center}
 .castb:after{content:"";position:absolute;bottom:-17px;left:50%;width:28px;height:28px;background:#fff;border-right:3px solid #15191F;border-bottom:3px solid #15191F;transform:translateX(-50%) rotate(45deg)}
 .castf{display:flex;align-items:flex-end;justify-content:center;gap:6px}
-.castc svg{display:block}
+.castc{transform-origin:50% 100%}
+.castc svg,.castc img{display:block;height:100%;width:auto}
 .vis{flex:none;min-width:0}
 .statc,.feeW,.col,.lic,.card{min-width:0}
 .loc{position:absolute;right:0;top:-8px}
@@ -416,7 +423,7 @@ def carousel_slide(s, idx, total, mode="post", disclaimer=False):
             inner += '<div style="margin-top:50px" data-a="pop" data-d="0.85"><span class="cta">%s %s</span></div>' % (esc(s["cta"]), ARROW)
         inner += '<div class="sp"></div>'
         if s.get("visual"):
-            inner += visuals(s, mode, 0.9)
+            inner += visuals(s, mode, 0.9, small=(mode == "reel"))
         else:
             # Talha's real photo signs the carousel off
             inner += me_html(190 if mode == "post" else 132, 0.9)

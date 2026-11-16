@@ -59,6 +59,9 @@ const ownWords = (p) => {
 };
 const SCENE_TYPES = ["headline", "stat", "doc", "route", "date", "ladder", "alert", "compare", "checklist", "map", "icons", "steps", "quote", "gauge", "promise", "end"];
 const VISUAL_TYPES = ["map", "stats", "date", "bars", "quote", "hero", "chips", "threshold", "split", "tiles", "list", "steps", "compare", "checklist", "cast"];
+// The cast visual's characters and their expressions (tools/studio/cast.py POSES; the 3D cast since 16 November 2026)
+const PEOPLE = ["happy", "surprised", "thinking"];
+const CAST = { sam: PEOPLE, penny: PEOPLE, zara: PEOPLE, grace: PEOPLE, dev: PEOPLE, maya: PEOPLE, rex: ["sly", "surprised", "happy", "wink"], dot: ["happy", "surprised", "wink"] };
 // Figures that matter: money, percentages, numbers of two digits or more and years.
 const FIGS = /\$[\d,.]+(?:\s?(?:million|billion|M|K))?|\d[\d,.]*%|\b\d{1,3}(?:,\d{3})+\b|\b\d{2,}(?:\.\d+)?(?=s?\b)/g;
 // Money keeps its $ and percentages their %, so $65 never passes for a 65 elsewhere; plain one and two digit
@@ -176,6 +179,14 @@ export function checkPiece(p, claims, week) {
     for (const [i, s] of (c.slides || []).entries()) for (const k of ["visual", "visual2"]) {
       if (!s[k]) continue;
       if (!VISUAL_TYPES.includes(s[k].type)) errors.push(`slide ${i + 1} ${k} has an unknown type ${s[k].type}`);
+      if (s[k].type === "cast") {
+        const who = s[k].who === undefined ? ["sam"] : [].concat(s[k].who), expr = s[k].expr === undefined ? [] : [].concat(s[k].expr);
+        if (!who.length || who.length > 3) errors.push(`slide ${i + 1} ${k}: the cast visual shows one to three characters`);
+        who.forEach((w, j) => {
+          if (!CAST[w]) errors.push(`slide ${i + 1} ${k}: ${w} is not in the cast (${Object.keys(CAST).join(", ")})`);
+          else if (expr[j] != null && !CAST[w].includes(expr[j])) warnings.push(`slide ${i + 1} ${k}: ${w} has no ${expr[j]} expression (${CAST[w].join(", ")}), so it wears its usual one`);
+        });
+      }
       extras.push(...strings(s[k]));
     }
     for (const t of extras) for (const f of figureSet(t)) if (!own.has(f) && !/^\d{1,2}$/.test(f)) errors.push(`a scene or visual shows ${f}, which is not in the piece's own words`);

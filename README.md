@@ -108,10 +108,14 @@ cannot be installed, explainers and ads are made with captions and music but no 
   carry `photo` set to `talha` or `award`. Optional slide fields: `emph` (the part of the title in emerald), `bold`
   (more phrases of the body to bold; figures and dates are bold anyway), `tag` (a point's small line above its
   title), `state` (a postal code for the small map), and `visual` and `visual2`, each one of: map, stats, date, bars,
-  hero, chips, quote, threshold, split, tiles, list, steps, compare, checklist, cast. `cast` (approved by Talha on
-  16 November 2026, tools/studio/cast.py) draws the cartoon cast: `who` (sam, penny or rex, or a list of up to three),
-  `expr` (one per character: sam and penny happy, surprised or thinking; rex sly, surprised, happy or wink), `says` (a
-  speech bubble holding only the piece's own words) and `size` (m, or l for a single big character).
+  hero, chips, quote, threshold, split, tiles, list, steps, compare, checklist, cast. `cast` (tools/studio/cast.py) shows the cartoon cast
+  in 3D (Talha approved the 3D cast on the evening of 16 November 2026; it replaced the 2D drawings approved that
+  morning): `who` (one of sam the founder, penny the bookkeeper, rex the runaway receipt, zara the founder abroad,
+  grace the angel investor, dev the co-founder, maya the freelancer and dot the deadline, or a list of up to three),
+  `expr` (one per character: the six people happy, surprised or thinking; rex sly, surprised, happy or wink; dot happy,
+  surprised or wink), `says` (a speech bubble holding only the piece's own words) and `size` (m, or l for a single big
+  character). The characters are sprites rendered in Blender (tools/cast3d) and pop in; in a reel they then sway
+  gently, and a closing slide in a reel shows them small.
 - carousel_reel `{from}`: the ID of a carousel in the same week, whose slides it plays at 1080 x 1920 with music; it
   posts as a reel on Instagram and Facebook one to three days after the carousel, with the carousel's claims and captions.
 - text `{text}`, and on Threads (since 16 November 2026) also `thread` (up to 4 follow up posts, each under 500 characters), `poll` (2 to 4 options of up to 25 characters), `first_reply` (our first reply under the post, the only place a Threads piece carries its tracked link) and `video_from` (an explainer in the same week whose video the post carries); a Threads caption is the post itself, under 500 characters, with exactly one hashtag, which Threads makes the topic tag; reel and cuts `{brief, opus_project, clip}`.

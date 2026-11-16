@@ -293,6 +293,9 @@ if(g1) TL.fromTo(g1,{x:0,y:0},{x:-70,y:40,duration:12,ease:'sine.inOut'},0);
 if(g2) TL.fromTo(g2,{x:0,y:0},{x:60,y:-50,duration:12,ease:'sine.inOut'},0);
 if(document.documentElement.classList.contains('reel')) TL.fromTo('.content',{scale:1},{scale:1.022,duration:8,ease:'none',transformOrigin:'40% 40%'},0);
 window.ENTRANCE=Math.max(0.01,...TL.getChildren(false,true,true).filter(c=>c.duration()<6).map(c=>c.endTime()));
+// in reels the cast sways gently once everything has come in, so the built slide (window.final) shows it standing still
+if(document.documentElement.classList.contains('reel')) document.querySelectorAll('.castc').forEach((el,i)=>{
+  TL.fromTo(el,{rotation:0,y:0},{rotation:i%2?-2:2,y:-6,duration:1.4,ease:'sine.inOut',yoyo:true,repeat:9,immediateRender:false},window.ENTRANCE+0.05+i*0.2);});
 window.seek=(t)=>{TL.seek(Math.min(t,TL.duration()),false);return true};
 window.final=()=>{TL.seek(window.ENTRANCE+0.01,false);return window.ENTRANCE};
 </script>"""

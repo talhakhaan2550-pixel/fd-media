@@ -1,8 +1,16 @@
-"""The cartoon cast, approved by Talha on 16 November 2026: Sam the founder, Penny the bookkeeper and Rex the runaway receipt.
+"""The cartoon cast. Since 16 November 2026 the studio shows it in 3D (Talha approved the 3D cast that evening):
 
-Original characters drawn as SVG in the light paper look. svg(who, expr) returns one character, full body; a slide shows them
-through the "cast" visual (slides.py v_cast). Expressions: Sam and Penny happy, surprised, thinking; Rex sly, surprised, happy, wink.
+  Sam the founder, Penny the bookkeeper, Rex the runaway receipt, Zara the founder abroad, Grace the angel investor,
+  Dev the co-founder, Maya the freelancer and Dot the deadline.
+
+figure(who, expr) returns one character as an <img> of its 3D sprite (tools/assets/cast/<who>_<expr>.webp, made by
+tools/cast3d: render_poses.sh, then make_sprites.py). All sprites share one vertical frame, so characters shown at one
+height keep their real sizes. A slide shows them through the "cast" visual (slides.py v_cast). Expressions are in
+POSES: the six people happy, surprised or thinking; Rex sly, surprised, happy or wink; Dot happy, surprised or wink.
 They never play a real client, a reviewer or Talha, and say only the piece's own words.
+
+The original 2D drawings of Sam, Penny and Rex (svg below, approved earlier on 16 November) stay for reference; the
+studio no longer uses them.
 """
 
 INK = '#15191F'
@@ -149,3 +157,51 @@ def svg(who, expr=None):
         raise ValueError("unknown cast member %s" % who)
     expr = expr if expr in EXPRESSIONS[who] else DEFAULT[who]
     return {"sam": sam, "penny": penny, "rex": rex}[who](expr)
+
+
+# ---------------------------------------------------------------- the cast in 3D
+import base64, functools, os
+
+SPRITES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "cast")
+PEOPLE = ("happy", "surprised", "thinking")
+POSES = {"sam": PEOPLE, "penny": PEOPLE, "zara": PEOPLE, "grace": PEOPLE, "dev": PEOPLE, "maya": PEOPLE,
+         "rex": ("sly", "surprised", "happy", "wink"), "dot": ("happy", "surprised", "wink")}
+POSE_DEFAULT = {"rex": "sly"}
+ROLES = {"sam": "the founder", "penny": "the bookkeeper", "rex": "the runaway receipt", "zara": "the founder abroad",
+         "grace": "the angel investor", "dev": "the co-founder", "maya": "the freelancer", "dot": "the deadline"}
+
+
+def pose(who, expr=None):
+    """The character's key and the expression it will wear (an unknown expression falls back to its default)."""
+    who = (who or "").lower()
+    if who not in POSES:
+        raise ValueError("unknown cast member %s" % who)
+    return who, expr if expr in POSES[who] else POSE_DEFAULT.get(who, "happy")
+
+
+@functools.lru_cache(None)
+def sprite(who, expr):
+    """(data URI, width, height) of a sprite."""
+    from PIL import Image
+    path = os.path.join(SPRITES, "%s_%s.webp" % (who, expr))
+    with Image.open(path) as im:
+        w, h = im.size
+    with open(path, "rb") as f:
+        return "data:image/webp;base64," + base64.b64encode(f.read()).decode(), w, h
+
+
+def figure(who, expr=None):
+    who, expr = pose(who, expr)
+    uri, w, h = sprite(who, expr)
+    return '<img class="cast3d" alt="" src="%s" width="%d" height="%d">' % (uri, w, h)
+
+
+def row_height(whos, exprs, h, room, gap=6):
+    """The height at which the characters fit side by side in room pixels: h, or less when they would not fit."""
+    widths = []
+    for i, w in enumerate(whos):
+        who, expr = pose(w, exprs[i] if i < len(exprs) else None)
+        _, sw, sh = sprite(who, expr)
+        widths.append(sw / sh)
+    need = sum(widths) * h + gap * (len(widths) - 1)
+    return h if need <= room else int((room - gap * (len(widths) - 1)) / sum(widths))

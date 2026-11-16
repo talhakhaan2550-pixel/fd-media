@@ -430,7 +430,7 @@ def rex(root, expr='sly'):
         for j in range(nx):
             bm.faces.new((grid[i][j], grid[i][j + 1], grid[i + 1][j + 1], grid[i + 1][j]))
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-    paper = mat('receipt', '#FBFAF7', rough=0.85, sss=0.06, decal='rex_front')
+    paper = mat(f'receipt_{expr}', '#FBFAF7', rough=0.85, sss=0.06, decal=f'rex_front_{expr}')
     ob = None
     lay = bm.loops.layers.uv.new('decal')
     for f in bm.faces:

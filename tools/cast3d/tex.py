@@ -68,13 +68,13 @@ def torso_svg(who):
         s += '<text x="160" y="314" text-anchor="middle" font-family="PlexMono" font-size="44" fill="#FFD84D" stroke="#FFD84D" stroke-width="2.2">{ }</text>'
     return s + '</svg>'
 
-def rex_svg():
+def rex_svg(expr='sly'):
     s = '<svg viewBox="92 64 114 298" xmlns="http://www.w3.org/2000/svg">' + DEFS
     s += '<path d="M184 64h22v22z" fill="#E3DCCD"/>'
     s += '<g stroke="#B9B2A4" stroke-width="5" stroke-linecap="round"><path d="M110 222h56M180 222h12M110 244h44M180 244h12M110 266h60M180 266h12M110 288h36M180 288h12"/></g>'
     s += f'<path d="M108 306h86" stroke="{INK}" stroke-width="3" stroke-dasharray="6 6"/>'
     s += f'<text x="150" y="336" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="18" fill="{INK}">TOTAL $$$</text>'
-    s += blush(104, 168) + blush(196, 168) + mouth('sly', 150, 178)
+    s += blush(104, 168) + blush(196, 168) + mouth(expr, 150, 178)
     return s + '</svg>'
 
 def dot_svg(expr='happy'):
@@ -129,7 +129,8 @@ def items():
         for expr in ('happy', 'surprised', 'thinking'):
             out.append((f'face_{who}_{expr}', face_svg(who, expr), 1024, 1024))
         out.append((f'torso_{who}', torso_svg(who), 1024, 1024))
-    out += [('rex_front', rex_svg(), 456, 1192), ('dot_front_happy', dot_svg('happy'), 656, 1048), ('dot_front_surprised', dot_svg('surprised'), 656, 1048),
+    out += [(f'rex_front_{e}', rex_svg(e), 456, 1192) for e in ('sly', 'surprised', 'happy', 'wink')]
+    out += [('dot_front_happy', dot_svg('happy'), 656, 1048), ('dot_front_surprised', dot_svg('surprised'), 656, 1048),
             ('dot_front_wink', dot_svg('wink'), 656, 1048), ('invoice', invoice_svg(), 560, 720), ('screen', screen_svg(), 680, 460),
             ('passport', passport_svg(), 480, 620), ('ledger', ledger_svg(), 560, 704), ('coin', coin_svg(), 400, 400),
             ('bolt', bolt_svg(), 240, 240), ('clock', clock_svg(), 300, 300)]
