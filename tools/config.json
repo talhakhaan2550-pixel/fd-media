@@ -11,5 +11,10 @@
     21
   ],
   "max_feed_posts_per_day": 4,
-  "min_gap_hours": 2
+  "min_gap_hours": 2,
+  "trial_reels": {
+    "status": "untested",
+    "checked": "",
+    "error": ""
+  }
 }

@@ -3,7 +3,7 @@
 Finished media for Finance Department's social posts, served by GitHub Pages at
 https://talhakhaan2550-pixel.github.io/fd-media/. Scheduled Claude runs make the files here, and Buffer (Instagram,
 Facebook and, from 17 November 2026, YouTube) fetches them by link when a post is placed; Metricool takes any post Buffer
-has no room for. Everything in this repository is public.
+has no room for, and the hook tests' Instagram Trial Reels. Everything in this repository is public.
 
 ## Layout
 
@@ -41,7 +41,10 @@ has no room for. Everything in this repository is public.
 - `tools/check.mjs`: the automatic half of the quality check.
 - `tools/explainer.mjs`, `tools/ad.mjs`, `tools/stills.mjs`: the first engine (HyperFrames and Chromium), kept for any
   piece marked `"style": "classic"`; it needs `npm install`.
-- `tools/config.json`: the Pages address, the platforms switched on, posting hours and spacing.
+- `tools/config.json`: the Pages address, the platforms switched on, posting hours and spacing, and `trial_reels`, whether
+  Instagram takes our Trial Reels (see Hook tests below).
+- `hooks.json`: every hook test with both versions' numbers, the winner and its lesson, written by the Friday report and
+  read by the Monday plan.
 - `tools/assets/`: the fonts (Source Serif 4 and IBM Plex Sans, and for the light look Fraunces, Plus Jakarta Sans,
   Caveat and IBM Plex Mono, all SIL Open Font License), the FD mark, GSAP, `us-map.json` (US states from us-atlas, ISC
   licence), `textures/` (paper grain and a stamp mask, drawn in code) and `photos/` with Talha's real portrait, the
@@ -113,6 +116,8 @@ cannot be installed, explainers and ads are made with captions and music but no 
   posts as a reel on Instagram and Facebook one to three days after the carousel, with the carousel's claims and captions.
 - text `{text}`, and on Threads (since 16 November 2026) also `thread` (up to 4 follow up posts, each under 500 characters), `poll` (2 to 4 options of up to 25 characters), `first_reply` (our first reply under the post, the only place a Threads piece carries its tracked link) and `video_from` (an explainer in the same week whose video the post carries); a Threads caption is the post itself, under 500 characters, with exactly one hashtag, which Threads makes the topic tag; reel and cuts `{brief, opus_project, clip}`.
 
+An explainer in a hook test also carries `trial` `{test, variant, pattern, of?}`, as set out under Hook tests below.
+
 A piece with `"style": "classic"` is made by the first engine. `make.mjs` sets `ai_voice` to true on every explainer or
 ad it narrates, and the platforms' AI labels go on when it is placed (Meta requires one on a reel narrated with a
 realistic AI voice). Since the afternoon of 15 November 2026, at Talha's request, the videos carry no AI wording on
@@ -127,6 +132,34 @@ person presented as a client, a reviewer or Talha.
 Platforms are switched on in `tools/config.json`. LinkedIn (Talha's profile) takes explainers, ads, carousels and text
 posts, with the tracked link on middle and bottom of funnel pieces, once it is connected in Metricool and added there.
 Status runs Planned, Rendering, Made, Passed check, Held, Draft in Metricool, Scheduled, Vetoed, Published, Taken down.
+
+## Hook tests (since 16 November 2026)
+
+Talha asked for the "test reels" on 16 November 2026: each week one explainer that goes to Instagram is tried with two
+hooks on people who do not follow us yet, using Instagram's Trial Reels.
+
+- Version A is the planned explainer with `"trial": {"test": "{week}-H1", "variant": "A", "pattern": "question"}`. Its
+  other platforms post as usual; on Instagram it goes out as a Trial Reel.
+- Version B is its own explainer piece, numbered after the week's other explainers, with `"platforms": ["instagram"]`,
+  `"trial": {"test": "{week}-H1", "variant": "B", "of": "{A's ID}", "pattern": "contrast"}`, the same claims, kicker,
+  lines, offer, call to action, spoken lines and scenes after the hook, and a hook of its own (with its `say.hook` and
+  the first line of its Instagram caption). It goes out the next day at A's Eastern time. `check.mjs` holds B to this.
+- Patterns: question, number, contrast (old against new), mistake, myth, deadline, call out ("If you pay
+  contractors..."). B's pattern differs from A's.
+- Trial Reels are placed through Metricool (Instagram type `TRIAL_REEL`), never Buffer, whose connector has no trial
+  option. They show first only to people who do not follow us, and Metricool's Trial Reels share one with our
+  followers automatically when it does well within 72 hours. They count toward Metricool's 20 free posts a month and
+  stay out of the daily feed post count.
+- `tools/config.json` `trial_reels`: `status` is `untested` until the first Trial Reel publishes, then `working`; when
+  Instagram or Metricool refuses one it becomes `refused`, with `checked` (the date) and `error` (word for word). While
+  it is `refused` and under 28 days old, no hook test is planned, version A posts as a normal reel through Buffer and
+  version B is held. Instagram's help asks for a public professional account eligible for recommendations; guides
+  disagree on the follower minimum (200 or 1,000), so the first test settles it.
+- The Friday report reads both versions' numbers from Metricool's Instagram reels analytics (views, reach, average watch
+  time, skip rate, shares, saves) and adds the test to `hooks.json`:
+  `{"test", "week", "topic", "A": {"id", "hook", "pattern", "views", "reach", "skip_rate", "avg_watch_seconds", "shares", "saves"}, "B": {...}, "winner", "lesson"}`.
+  The winner has the lower skip rate (the share of viewers who swiped away in the first three seconds) or, within two
+  points, more views; "not readable" when Metricool gives no numbers for a Trial Reel.
 
 ## Threads (since 16 November 2026)
 

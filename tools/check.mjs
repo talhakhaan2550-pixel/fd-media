@@ -186,6 +186,35 @@ export function checkPiece(p, claims, week) {
     }
     if ((fmt === "explainer" || fmt === "ad") && p.ai_voice === true) warnings.push("AI voice: switch on each platform's AI label when placing");
   }
+  // Hook tests (since 16 November 2026): an explainer whose Instagram post goes out as an Instagram Trial Reel,
+  // shown first only to people who do not follow us. Version A is the planned explainer; version B is its own
+  // explainer piece, Instagram only, with the same words as A except the hook, a day later at the same time.
+  if (p.trial !== undefined) {
+    const t = p.trial || {};
+    if (fmt !== "explainer") errors.push("only an explainer can be a hook test");
+    if (!(p.platforms || []).includes("instagram")) errors.push("a hook test goes to Instagram");
+    if (typeof t.test !== "string" || !new RegExp(`^${week.week}-H\\d$`).test(t.test)) errors.push(`trial.test must be ${week.week}-H1`);
+    if (!["A", "B"].includes(t.variant)) errors.push('trial.variant is "A" or "B"');
+    if (typeof t.pattern !== "string" || !t.pattern.trim()) errors.push("trial.pattern names the hook's pattern");
+    if (t.variant === "B") {
+      if ((p.platforms || []).length !== 1) errors.push("a hook test's version B goes to Instagram only");
+      const a = week.pieces.find((x) => x.id === t.of);
+      if (!a || !a.trial || a.trial.variant !== "A" || a.trial.test !== t.test) errors.push("trial.of must name this test's version A");
+      else {
+        const c = p.content || {}, ac = a.content || {};
+        const same = (x, y) => JSON.stringify(x ?? null) === JSON.stringify(y ?? null);
+        if (!same(c.kicker, ac.kicker) || !same(c.lines, ac.lines) || !same(c.offer, ac.offer) || !same(c.cta, ac.cta)) errors.push("version B keeps A's kicker, lines, offer and call to action word for word; only the hook changes");
+        if (!same((c.say || {}).lines, (ac.say || {}).lines) || !same((c.say || {}).cta, (ac.say || {}).cta)) errors.push("version B keeps A's spoken lines and call to action");
+        if (!same((c.scenes || []).slice(1), (ac.scenes || []).slice(1))) errors.push("version B keeps A's scenes after the hook");
+        if (!c.hook || c.hook.trim() === (ac.hook || "").trim()) errors.push("version B needs a hook of its own");
+        if (!same([...(p.claims || [])].sort(), [...(a.claims || [])].sort())) errors.push("version B lists the same claims as A");
+        if (t.pattern === a.trial.pattern) warnings.push("version B uses the same hook pattern as A");
+        const ea = a.publish_at ? eastern(a.publish_at) : null;
+        const h = e && ea ? (e.ms - ea.ms) / 3600e3 : null;
+        if (h !== null && (h < 20 || h > 28)) warnings.push("version B usually goes out a day after A, at A's Eastern time");
+      }
+    }
+  }
   // Media
   if (fmt === "carousel_reel" && (p.media || []).length > 1) errors.push("a carousel_reel has one video");
   if (["explainer", "ad", "carousel", "carousel_reel", "story", "reel", "cut", "avatar"].includes(fmt) && ["Made", "Passed check", "Draft in Metricool", "Scheduled"].includes(p.status) && !(p.media || []).length) errors.push("no media");
@@ -201,11 +230,19 @@ export function checkWeek(week, claims, only) {
     const r = checkPiece(p, claims, week);
     if (r.eastern && p.format !== "story" && p.status !== "Held" && p.status !== "Vetoed") {
       for (const n of p.platforms || []) {
+        if (n === "instagram" && p.trial) continue; // a Trial Reel is not in our followers' feed
         const k = `${n}|${r.eastern.day}`;
         (feed[k] = feed[k] || []).push({ id: p.id, ms: r.eastern.ms });
       }
     }
     out[p.id] = { errors: r.errors, warnings: r.warnings };
+  }
+  // Each hook test has exactly one version A and one version B.
+  const tests = {};
+  for (const p of week.pieces) if (p.trial && p.trial.test && p.status !== "Vetoed") (tests[p.trial.test] = tests[p.trial.test] || []).push(p);
+  for (const [t, list] of Object.entries(tests)) {
+    const vs = list.map((x) => x.trial.variant).sort().join("");
+    if (vs !== "AB") for (const x of list) if (out[x.id]) out[x.id].errors.push(`hook test ${t} needs exactly one version A and one version B (has ${vs})`);
   }
   for (const [k, list] of Object.entries(feed)) {
     const [n, day] = k.split("|");

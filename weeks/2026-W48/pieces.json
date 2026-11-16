@@ -246,7 +246,12 @@
       "status": "Made",
       "check_notes": "",
       "metricool": {},
-      "ai_voice": true
+      "ai_voice": true,
+      "trial": {
+        "test": "2026-W48-H1",
+        "variant": "A",
+        "pattern": "question"
+      }
     },
     {
       "id": "2026-W48-T01",
@@ -1435,6 +1440,133 @@
       "status": "Made",
       "check_notes": "",
       "metricool": {}
+    },
+    {
+      "id": "2026-W48-E11",
+      "format": "explainer",
+      "title": "Your 2026 contractors: the 1099 threshold is now $2,000 (hook test, version B)",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "1099-01",
+        "1099-02"
+      ],
+      "publish_at": "2026-11-24T12:30:00-05:00",
+      "platforms": [
+        "instagram"
+      ],
+      "content": {
+        "kicker": "1099 threshold",
+        "hook": "For 2026 payments, the 1099-NEC threshold is $2,000, not $600.",
+        "lines": [
+          "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee.",
+          "Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.",
+          "The threshold was $600 before.",
+          "Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027."
+        ],
+        "cta": "Follow for more founder finance, explained simply",
+        "say": {
+          "hook": "For twenty twenty-six payments, the ten ninety-nine N E C threshold is two thousand dollars, not six hundred.",
+          "lines": [
+            "For payments made in twenty twenty-six, Form ten ninety-nine N E C reports nonemployee compensation of two thousand dollars or more, paid to a payee.",
+            "Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.",
+            "The threshold was six hundred dollars before.",
+            "Forms ten ninety-nine N E C for twenty twenty-six payments go to each payee, and to the I R S, by Monday, February first, twenty twenty-seven."
+          ],
+          "cta": "Follow for more founder finance, explained simply."
+        },
+        "scenes": [
+          null,
+          {
+            "type": "stat",
+            "value": "$2,000",
+            "prefix": "Form 1099-NEC, payments made in 2026",
+            "label": "or more, paid to a payee",
+            "at": "two"
+          },
+          {
+            "type": "icons",
+            "items": [
+              {
+                "icon": "person",
+                "label": "Not your employee",
+                "at": "not"
+              },
+              {
+                "icon": "doc",
+                "label": "Such as a contractor",
+                "at": "contractor"
+              }
+            ]
+          },
+          {
+            "type": "ladder",
+            "id": "thr",
+            "title": "Form 1099-NEC threshold",
+            "bars": [
+              {
+                "value": "$600",
+                "label": "Before",
+                "tone": "red"
+              },
+              {
+                "value": "$2,000",
+                "label": "Payments made in 2026",
+                "tone": "green"
+              }
+            ],
+            "show": [
+              0,
+              1
+            ],
+            "at": [
+              "six",
+              "before"
+            ]
+          },
+          {
+            "type": "route",
+            "label": "Form",
+            "title": "1099-NEC",
+            "tag": "2026",
+            "to": [
+              {
+                "label": "Payee",
+                "icon": "person",
+                "at": "payee"
+              },
+              {
+                "label": "IRS",
+                "icon": "bank",
+                "at": "i"
+              }
+            ],
+            "date": {
+              "top": "FEB 2027",
+              "day": "1",
+              "bottom": "MONDAY",
+              "at": "february"
+            }
+          },
+          null
+        ]
+      },
+      "captions": {
+        "instagram": "For 2026 payments, the 1099-NEC threshold is $2,000, not $600.\n\nFor payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee; the threshold was $600 before. Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.\n\nForms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027, since 31 January 2027 is a Sunday.\n\nFollow for more founder finance, explained simply.\n\n#1099 #contractors #smallbusiness #founders\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-E11.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "trial": {
+        "test": "2026-W48-H1",
+        "variant": "B",
+        "of": "2026-W48-E01",
+        "pattern": "contrast"
+      },
+      "ai_voice": true
     }
   ]
 }
