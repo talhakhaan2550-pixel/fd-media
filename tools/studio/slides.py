@@ -255,9 +255,27 @@ def v_checklist(v, mode, d):
             '<div style="font-family:Fraunces;font-weight:700;font-size:40px;color:#15191F">%s</div>%s</div>%s</div>' % (d, esc(v.get("title", "")), tag, rows))
 
 
+def v_cast(v, mode, d):
+    """The approved cartoon cast (cast.py): one to three characters, with an optional speech bubble holding the piece's own words."""
+    import cast
+    who = v.get("who") or ["sam"]
+    who = [who] if isinstance(who, str) else list(who)
+    exprs = v.get("expr") or []
+    exprs = [exprs] if isinstance(exprs, str) else list(exprs)
+    big = v.get("size") == "l"
+    h = (560 if big else 460) if mode == "post" else (700 if big else 560)
+    figs = ""
+    for i, w in enumerate(who[:3]):
+        e = exprs[i] if i < len(exprs) else None
+        figs += ('<div class="castc" data-a="pop" data-d="%.2f" style="height:%dpx">%s</div>'
+                 % (d + 0.25 + i * 0.15, h, cast.svg(w, e).replace("<svg ", '<svg style="height:100%" ', 1)))
+    bubble = ('<div class="castb" data-a="up" data-d="%.2f">%s</div>' % (d, esc(v["says"]))) if v.get("says") else ""
+    return '<div class="vis castv">%s<div class="castf">%s</div></div>' % (bubble, figs)
+
+
 VISUALS = {"map": v_map, "stats": v_stats, "date": v_date, "bars": v_bars, "quote": v_quote, "hero": v_hero, "chips": v_chips,
            "threshold": v_threshold, "split": v_split, "tiles": v_tiles, "list": v_list, "steps": v_steps, "compare": v_compare,
-           "checklist": v_checklist}
+           "checklist": v_checklist, "cast": v_cast}
 
 
 def visual(v, mode, d=0.6):
@@ -278,6 +296,11 @@ def visuals(s, mode, d=0.6):
 
 
 EXTRA = """
+.castv{display:flex;flex-direction:column;align-items:center;gap:26px}
+.castb{position:relative;background:#fff;border:3px solid #15191F;border-radius:24px;padding:18px 26px;font-size:34px;line-height:1.3;font-weight:600;color:#15191F;max-width:900px;text-align:center}
+.castb:after{content:"";position:absolute;bottom:-17px;left:50%;width:28px;height:28px;background:#fff;border-right:3px solid #15191F;border-bottom:3px solid #15191F;transform:translateX(-50%) rotate(45deg)}
+.castf{display:flex;align-items:flex-end;justify-content:center;gap:6px}
+.castc svg{display:block}
 .vis{flex:none;min-width:0}
 .statc,.feeW,.col,.lic,.card{min-width:0}
 .loc{position:absolute;right:0;top:-8px}
