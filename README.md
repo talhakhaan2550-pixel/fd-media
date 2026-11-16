@@ -2,7 +2,8 @@
 
 Finished media for Finance Department's social posts, served by GitHub Pages at
 https://talhakhaan2550-pixel.github.io/fd-media/. Scheduled Claude runs make the files here, and Buffer (Instagram,
-Facebook) and Metricool (YouTube) fetch them by link when a post is placed. Everything in this repository is public.
+Facebook and, from 17 November 2026, YouTube) fetches them by link when a post is placed; Metricool takes any post Buffer
+has no room for. Everything in this repository is public.
 
 ## Layout
 
@@ -83,7 +84,7 @@ cannot be installed, explainers and ads are made with captions and music but no 
   "content": { "kicker": "1099 season", "hook": "...", "lines": ["...", "..."], "cta": "...",
                "say": { "hook": "...", "lines": ["...", "..."], "cta": "..." }, "scenes": [null, {"type": "stat", "value": "$2,000"}, null, null] },
   "captions": { "instagram": "...", "facebook": "...", "tiktok": "...", "threads": "...", "youtube": { "title": "...", "description": "..." } },
-  "media": [], "status": "Planned", "check_notes": "", "metricool": {}
+  "media": [], "status": "Planned", "check_notes": "", "buffer": {}, "metricool": {}
 }
 ```
 
