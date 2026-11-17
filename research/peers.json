@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-17",
- "status": "proposed, waiting for Talha's approval. Metricool's free plan lets us add up to 5 competitors and does not let us remove or change them later, so nothing is added until he approves the five.",
+ "status": "added in Metricool on 17 November 2026 at 14:20 PKT, after Talha approved the five (\"Yes five peer accounts approved\"). Metricool's free plan holds 5 competitors and does not let us remove or change them, so these five stay until the plan is upgraded.",
  "metricool": {
   "brand": 7464082,
   "connectors": {
@@ -48,5 +48,32 @@
    "followers_seen": "7.4K"
   }
  ],
- "checked": "Handles confirmed from Instagram's own profile titles in search results on 17 November 2026; follower counts may be out of date."
+ "checked": "Handles confirmed from Instagram's own profile titles in search results on 17 November 2026; follower counts may be out of date. Follower counts at the time of adding are from Metricool's competitor list, 17 November 2026.",
+ "added": [
+  {
+   "handle": "karltondennis",
+   "metricool_name": "Karlton Dennis",
+   "followers_at_add": "766.2K"
+  },
+  {
+   "handle": "markjkohler",
+   "metricool_name": "Mark J. Kohler",
+   "followers_at_add": "123.39K"
+  },
+  {
+   "handle": "doolahq",
+   "metricool_name": "doola",
+   "followers_at_add": "16.66K"
+  },
+  {
+   "handle": "cartainc",
+   "metricool_name": "Carta",
+   "followers_at_add": "5.45K"
+  },
+  {
+   "handle": "yourcfoguy",
+   "metricool_name": "Josh Aharonoff",
+   "followers_at_add": "4.88K"
+  }
+ ]
 }
