@@ -415,9 +415,17 @@
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_06.jpg",
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_07.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 16 November 2026.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6afbabea797935b975d28b6e"
+        ],
+        "facebook": [
+          "6afbabeb3e42cd001e42d2fa"
+        ]
+      }
     },
     {
       "id": "2026-W47-E02",
@@ -497,10 +505,21 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-E02.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 16 November 2026.",
       "metricool": {},
-      "ai_voice": true
+      "ai_voice": true,
+      "buffer": {
+        "instagram": [
+          "6afbabf7df36f4d8255d8746"
+        ],
+        "facebook": [
+          "6afbabf885dca6b14a114f86"
+        ],
+        "youtube": [
+          "6afbabf885dca6b14a114fb8"
+        ]
+      }
     },
     {
       "id": "2026-W47-S02",
@@ -540,9 +559,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S02_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 16 November 2026. Both its facts are also lines in E01, posted 16 November 2026; its point, FIRE's last filing day, differs from E01's title, so it passes the Repeats test.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6afbac013e42cd001e42d93f"
+        ],
+        "facebook": [
+          "6afbac02797935b975d29645"
+        ]
+      }
     },
     {
       "id": "2026-W47-D01",
