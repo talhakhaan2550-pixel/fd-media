@@ -1526,6 +1526,537 @@
         "pattern": "contrast"
       },
       "ai_voice": true
+    },
+    {
+      "id": "2026-W48-C03",
+      "format": "carousel",
+      "title": "Comic: the 1099 on a different clock",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "1099-02",
+        "1099-03"
+      ],
+      "publish_at": "2026-11-23T08:30:00-05:00",
+      "platforms": [
+        "threads",
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Comic",
+            "title": "The 1099 on a different clock",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "Every 1099 is due February 1, right?"
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Form 1099-NEC",
+            "title": "This one, yes",
+            "body": "Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny"
+              ],
+              "expr": [
+                "thinking"
+              ],
+              "says": "That's the NEC."
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Form 1099-MISC",
+            "title": "This one, no",
+            "body": "Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "rex"
+              ],
+              "expr": [
+                "wink"
+              ],
+              "says": "I run on my own clock."
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Two forms, two dates",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny",
+                "rex"
+              ],
+              "expr": [
+                "happy",
+                "wink"
+              ]
+            }
+          }
+        ]
+      },
+      "captions": {
+        "threads": "Not every 1099 is due on the same day.\n\nForms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nWhich one do you file more of?\n\n#Taxes\n\nGeneral information, not tax or legal advice for your situation.",
+        "instagram": "Not every 1099 is due on the same day.\n\nForms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nFollow for more founder finance, explained simply.\n\n#smallbusiness #taxes #startups #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Not every 1099 is due on the same day.\n\nForms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C03_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C03_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C03_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C03_04.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T04",
+      "format": "text",
+      "title": "Wyoming LLC: the annual report rule",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "WY-01",
+        "WY-02",
+        "WY-03",
+        "WY-04",
+        "FD-11"
+      ],
+      "publish_at": "2026-11-23T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Formed a Wyoming LLC? Its annual report isn't due on one date for everyone. A short thread on the rule, with an example.",
+        "thread": [
+          "The rule: a Wyoming LLC's annual report is due on the first day of the month it was formed in, every year.",
+          "Worked example: an LLC formed in March has its annual report due on March 1, every year. Wyoming emails a courtesy reminder 60 days before the annual report is due, if the company has given the Secretary of State a current email address.",
+          "The cost: Wyoming's annual license tax is $60, or $0.0002 for each dollar of the company's assets located and employed in Wyoming, whichever is greater.",
+          "If it slips: a Wyoming company whose annual report tax is not paid within 60 days of the due date can be dissolved, and the reinstatement fee is $100."
+        ],
+        "first_reply": "The free US filing checklist, printable, is on our US Entry page: https://www.financedepartmentllc.com/us-entry?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w48-t04"
+      },
+      "captions": {
+        "threads": "Formed a Wyoming LLC? Its annual report isn't due on one date for everyone. A short thread on the rule, with an example.\n\nWhat month did you form yours?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-C04",
+      "format": "carousel",
+      "title": "Comic: the research costs from 2022 to 2024",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "RD-01",
+        "RD-03"
+      ],
+      "publish_at": "2026-11-24T08:30:00-05:00",
+      "platforms": [
+        "threads",
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Comic",
+            "title": "The research costs from 2022 to 2024",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam"
+              ],
+              "expr": [
+                "thinking"
+              ],
+              "says": "We're still spreading out our 2022 research costs."
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Tax years after 2024",
+            "title": "Deductible again",
+            "body": "For tax years beginning after December 31, 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A; spreading them over 60 months or more is optional.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "Deducted in the year paid or incurred."
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Older costs",
+            "title": "And 2022 to 2024?",
+            "body": "US research costs from 2022 to 2024 not yet amortized can be deducted in full in the first tax year beginning after 2024, or spread over that year and the next.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "rex"
+              ],
+              "expr": [
+                "surprised"
+              ],
+              "says": "In full, or over that year and the next?"
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Old costs, new choice",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam",
+                "penny"
+              ],
+              "expr": [
+                "happy",
+                "happy"
+              ]
+            }
+          }
+        ]
+      },
+      "captions": {
+        "threads": "Still spreading out research costs from 2022 to 2024? There's a choice now.\n\nUS research costs from 2022 to 2024 not yet amortized can be deducted in full in the first tax year beginning after 2024, or spread over that year and the next.\n\nIs your startup still amortizing older research costs?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation.",
+        "instagram": "Still spreading out research costs from 2022 to 2024? There's a choice now.\n\nFor tax years beginning after December 31, 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A; spreading them over 60 months or more is optional. US research costs from 2022 to 2024 not yet amortized can be deducted in full in the first tax year beginning after 2024, or spread over that year and the next.\n\nFollow for more founder finance, explained simply.\n\n#startups #founders #taxes #smallbusiness\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Still spreading out research costs from 2022 to 2024? There's a choice now.\n\nFor tax years beginning after December 31, 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A; spreading them over 60 months or more is optional. US research costs from 2022 to 2024 not yet amortized can be deducted in full in the first tax year beginning after 2024, or spread over that year and the next.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C04_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C04_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C04_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C04_04.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T05",
+      "format": "text",
+      "title": "Myth or fact: every US company still files a BOI report",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "BOI-01",
+        "BOI-02"
+      ],
+      "publish_at": "2026-11-24T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Myth or fact: every US company still has to report its beneficial owners to FinCEN.\n\nMyth. US companies and US persons do not report beneficial ownership information to FinCEN; a final rule made this permanent from August 14, 2026.",
+        "thread": [
+          "The exception to know: certain companies formed outside the US and registered to do business in a US state still report beneficial ownership information, leaving out any US person owners, within 30 days of notice that their registration is effective."
+        ]
+      },
+      "captions": {
+        "threads": "Myth or fact: every US company still has to report its beneficial owners to FinCEN.\n\nMyth. US companies and US persons do not report beneficial ownership information to FinCEN; a final rule made this permanent from August 14, 2026.\n\nWere you still planning to file one?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T06",
+      "format": "text",
+      "title": "Behind the numbers: $600 became $2,000",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "1099-01",
+        "1099-02"
+      ],
+      "publish_at": "2026-11-25T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Behind the numbers in this video: $600 became $2,000.\n\nFor payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee; the threshold was $600 before. Those forms go to each payee and to the IRS by Monday, February 1, 2027.",
+        "first_reply": "Sending 1099s this winter? Here's how we handle them for founders: https://www.financedepartmentllc.com/1099-filing?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w48-t06",
+        "video_from": "2026-W48-E01"
+      },
+      "captions": {
+        "threads": "Behind the numbers in this video: $600 became $2,000.\n\nFor payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee; the threshold was $600 before. Those forms go to each payee and to the IRS by Monday, February 1, 2027.\n\nHow many of your contractors cross $2,000 this year?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T07",
+      "format": "text",
+      "title": "Poll: which year-end task is still on your list?",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-11-25T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Before the holiday, a quick poll: which year-end finance task is still on your list?",
+        "poll": [
+          "Contractor W-9s",
+          "Year-end books",
+          "1099 prep",
+          "All of the above"
+        ]
+      },
+      "captions": {
+        "threads": "Before the holiday, a quick poll: which year-end finance task is still on your list?\n\nVote, and tell us in the replies what's slowing it down.\n\n#SmallBusiness"
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-M03",
+      "format": "carousel_reel",
+      "title": "Music reel: Comic: the 1099 on a different clock",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "1099-02",
+        "1099-03"
+      ],
+      "publish_at": "2026-11-25T19:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "from": "2026-W48-C03"
+      },
+      "captions": {
+        "instagram": "Not every 1099 is due on the same day.\n\nForms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nFollow for more founder finance, explained simply.\n\n#smallbusiness #taxes #startups #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Not every 1099 is due on the same day.\n\nForms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-M03.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T08",
+      "format": "text",
+      "title": "Thanksgiving question for founders",
+      "pillar": "Founder stories",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-11-26T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Happy Thanksgiving to every founder reading this between slices of pie."
+      },
+      "captions": {
+        "threads": "Happy Thanksgiving to every founder reading this between slices of pie.\n\nOne question for today: what's one thing about your business you're grateful for this year?\n\n#Entrepreneurship"
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T09",
+      "format": "text",
+      "title": "Myth or fact: no Social Security number, no EIN",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "EIN-01",
+        "EIN-04"
+      ],
+      "publish_at": "2026-11-26T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Myth or fact: you can't get an EIN for your US company without a Social Security number.\n\nMyth. A founder abroad who is not eligible for a Social Security number or an ITIN can still apply for an EIN on Form SS-4, writing \"foreign\" or N/A on line 7b, as its instructions direct.",
+        "thread": [
+          "Where people get stuck: the IRS's online EIN application needs the responsible party's Social Security number or ITIN, and is not open to a business whose principal place of business is outside the US."
+        ]
+      },
+      "captions": {
+        "threads": "Myth or fact: you can't get an EIN for your US company without a Social Security number.\n\nMyth. A founder abroad who is not eligible for a Social Security number or an ITIN can still apply for an EIN on Form SS-4, writing \"foreign\" or N/A on line 7b, as its instructions direct.\n\nDid you hit this wall?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-M04",
+      "format": "carousel_reel",
+      "title": "Music reel: Comic: the research costs from 2022 to 2024",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "RD-01",
+        "RD-03"
+      ],
+      "publish_at": "2026-11-26T15:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "content": {
+        "from": "2026-W48-C04"
+      },
+      "captions": {
+        "instagram": "Still spreading out research costs from 2022 to 2024? There's a choice now.\n\nFor tax years beginning after December 31, 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A; spreading them over 60 months or more is optional. US research costs from 2022 to 2024 not yet amortized can be deducted in full in the first tax year beginning after 2024, or spread over that year and the next.\n\nFollow for more founder finance, explained simply.\n\n#startups #founders #taxes #smallbusiness\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Still spreading out research costs from 2022 to 2024? There's a choice now.\n\nFor tax years beginning after December 31, 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A; spreading them over 60 months or more is optional. US research costs from 2022 to 2024 not yet amortized can be deducted in full in the first tax year beginning after 2024, or spread over that year and the next.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-M04.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T10",
+      "format": "text",
+      "title": "Black Friday question: receipts now or later?",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-11-27T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Black Friday question for founders: when you buy something for the business, do you log the receipt right away, or sort them all at year end?"
+      },
+      "captions": {
+        "threads": "Black Friday question for founders: when you buy something for the business, do you log the receipt right away, or sort them all at year end?\n\nNo judgment. Tell us your system in the replies.\n\n#SmallBusiness"
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T11",
+      "format": "text",
+      "title": "Form 1120: the deadline and the extension",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "1120-01"
+      ],
+      "publish_at": "2026-11-27T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Running a calendar year C corporation? One date and one form to put on your 2027 calendar now. A short thread.",
+        "thread": [
+          "The rule: a calendar year C corporation's Form 1120 for 2026 is due by Thursday, April 15, 2027.",
+          "The extension: Form 7004, filed by that date, gives an automatic six month extension of time to file, to Friday, October 15, 2027.",
+          "Worked example: your C corporation runs on the calendar year. File Form 7004 by April 15, 2027, and the time to file its 2026 Form 1120 runs to October 15, 2027."
+        ]
+      },
+      "captions": {
+        "threads": "Running a calendar year C corporation? One date and one form to put on your 2027 calendar now. A short thread.\n\nDo you usually file on time, or extend?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T12",
+      "format": "text",
+      "title": "Delaware LLC: the $400 tax and its due date",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "DE-08",
+        "DE-09",
+        "DE-01"
+      ],
+      "publish_at": "2026-11-28T11:00:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Delaware LLC owners: your yearly state tax has its own amount and its own date. A short thread.",
+        "thread": [
+          "The rule: a Delaware LLC pays an annual tax of $400, due by June 1 for the year before.",
+          "If it's late: a late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.",
+          "Worked example: an LLC that owes the tax for 2026 pays its $400 by June 1, 2027. Paid after that, the $200 penalty and the 1.5% a month interest are added.",
+          "Compare: Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday."
+        ]
+      },
+      "captions": {
+        "threads": "Delaware LLC owners: your yearly state tax has its own amount and its own date. A short thread.\n\nIs June 1 on your calendar?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W48-T13",
+      "format": "text",
+      "title": "Form D: the 15 day window",
+      "pillar": "Raise readiness",
+      "stage": "Top",
+      "claims": [
+        "RAISE-04"
+      ],
+      "publish_at": "2026-11-29T11:00:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Raising this winter? Here's a filing with a short window.\n\nA Form D notice is filed online through the SEC's EDGAR system within 15 days after the first sale, the date the first investor is irrevocably contractually committed; the SEC charges no fee."
+      },
+      "captions": {
+        "threads": "Raising this winter? Here's a filing with a short window.\n\nA Form D notice is filed online through the SEC's EDGAR system within 15 days after the first sale, the date the first investor is irrevocably contractually committed; the SEC charges no fee.\n\nHad you heard of the 15 day window before your first round?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
     }
   ]
 }

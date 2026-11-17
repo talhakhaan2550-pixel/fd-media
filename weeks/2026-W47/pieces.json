@@ -1619,6 +1619,296 @@
       "status": "Made",
       "check_notes": "",
       "metricool": {}
+    },
+    {
+      "id": "2026-W47-T04",
+      "format": "text",
+      "title": "Payment apps and Form 1099-K: the test that decides it",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "1099-06"
+      ],
+      "publish_at": "2026-11-18T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Got paid through a payment app this year? Here's the test for a 1099-K.\n\nPayment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200. Both have to be true."
+      },
+      "captions": {
+        "threads": "Got paid through a payment app this year? Here's the test for a 1099-K.\n\nPayment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200. Both have to be true.\n\nDid the $20,000 and 200 test surprise you?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T05",
+      "format": "text",
+      "title": "Poll: where did you form your US company?",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-11-18T19:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Founders, quick poll: where did you form your US company?",
+        "poll": [
+          "Delaware",
+          "Wyoming",
+          "Another state",
+          "Not formed yet"
+        ]
+      },
+      "captions": {
+        "threads": "Founders, quick poll: where did you form your US company?\n\nVote below, and tell us in the replies why you picked it.\n\n#Startups"
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T06",
+      "format": "text",
+      "title": "FIRE takes its last filings today",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "1099-05",
+        "1099-04"
+      ],
+      "publish_at": "2026-11-19T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Today is the day: the IRS's old FIRE system takes its last filings at 3 p.m. Eastern on Thursday, November 19, 2026.\n\nFor tax year 2026, IRIS is the only IRS system for filing information returns electronically. And a business filing 10 or more information returns in a year, counting every type of form together, must file them electronically."
+      },
+      "captions": {
+        "threads": "Today is the day: the IRS's old FIRE system takes its last filings at 3 p.m. Eastern on Thursday, November 19, 2026.\n\nFor tax year 2026, IRIS is the only IRS system for filing information returns electronically. And a business filing 10 or more information returns in a year, counting every type of form together, must file them electronically.\n\nIs your business set up in IRIS yet?\n\n#Taxes\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T07",
+      "format": "text",
+      "title": "Delaware franchise tax: two ways to work it out",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "DE-03",
+        "DE-04",
+        "DE-05",
+        "DE-06"
+      ],
+      "publish_at": "2026-11-19T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "A Delaware franchise tax bill can look scary. Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways. A short thread on the rule, with an example.",
+        "thread": [
+          "The rule: Delaware's page says \"Use the method that results in the lesser tax.\" The two methods are the Authorized Shares method and the Assumed Par Value Capital method.",
+          "Authorized Shares method: 5,000 shares or fewer pay the minimum $175, 5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85.",
+          "Assumed Par Value Capital method: a $400 minimum, at $400 for each $1 million of assumed par value capital or part of a million. It needs the corporation's issued shares and total gross assets.",
+          "Worked example: a corporation with 8,000 authorized shares pays $250 under the Authorized Shares method. And either way, Delaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer."
+        ],
+        "first_reply": "Want both methods worked out for your company? Here's how we do it: https://www.financedepartmentllc.com/delaware-franchise-tax?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w47-t07"
+      },
+      "captions": {
+        "threads": "A Delaware franchise tax bill can look scary. Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways. A short thread on the rule, with an example.\n\nHas one of these bills ever made you look twice?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T08",
+      "format": "text",
+      "title": "Myth or fact: a SAFE gives your investor shares today",
+      "pillar": "Raise readiness",
+      "stage": "Top",
+      "claims": [
+        "SAFE-01"
+      ],
+      "publish_at": "2026-11-20T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Myth or fact: when an investor signs a SAFE, they get shares in your startup that day.\n\nMyth. Y Combinator describes a SAFE as \"a short contract an investor signs to fund your startup now\", in return for the right to shares later."
+      },
+      "captions": {
+        "threads": "Myth or fact: when an investor signs a SAFE, they get shares in your startup that day.\n\nMyth. Y Combinator describes a SAFE as \"a short contract an investor signs to fund your startup now\", in return for the right to shares later.\n\nDid you know that when you signed your first SAFE?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T09",
+      "format": "text",
+      "title": "Behind the numbers: Form 5472 and the $25,000 penalty",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "5472-01",
+        "5472-04",
+        "FD-11"
+      ],
+      "publish_at": "2026-11-20T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "Behind the numbers in this video: $25,000.\n\nA US LLC owned entirely by one foreign person, and not taxed as a corporation, files Form 5472 with a pro forma Form 1120 for each year it has a reportable transaction with a related party, such as its owner. Not filing a required Form 5472 on time carries a $25,000 penalty.",
+        "first_reply": "The free US filing checklist, printable, is on our US Entry page: https://www.financedepartmentllc.com/us-entry?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w47-t09",
+        "video_from": "2026-W47-E03"
+      },
+      "captions": {
+        "threads": "Behind the numbers in this video: $25,000.\n\nA US LLC owned entirely by one foreign person, and not taxed as a corporation, files Form 5472 with a pro forma Form 1120 for each year it has a reportable transaction with a related party, such as its owner. Not filing a required Form 5472 on time carries a $25,000 penalty.\n\nDo you run a US LLC from outside the US?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-C03",
+      "format": "carousel",
+      "title": "Comic: the W-9 chase",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "1099-07",
+        "1099-02"
+      ],
+      "publish_at": "2026-11-21T11:00:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Comic",
+            "title": "The W-9 chase",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam",
+                "rex"
+              ],
+              "expr": [
+                "surprised",
+                "sly"
+              ],
+              "says": "Wait. Who has our contractors' W-9s?"
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Form W-9",
+            "title": "It comes to you",
+            "body": "Form W-9 is how a US payee gives you their correct taxpayer identification number; it goes to you as the requester, not to the IRS.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny"
+              ],
+              "expr": [
+                "thinking"
+              ],
+              "says": "It goes to us, not to the IRS."
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Why now",
+            "title": "February 1 comes fast",
+            "body": "Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "rex"
+              ],
+              "expr": [
+                "surprised"
+              ],
+              "says": "February 1? I'll be back by then. Probably."
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Ask for every W-9 now",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam",
+                "penny"
+              ],
+              "expr": [
+                "happy",
+                "happy"
+              ]
+            }
+          }
+        ]
+      },
+      "captions": {
+        "threads": "Rex the runaway receipt is hiding the W-9s again.\n\nForm W-9 is how a US payee gives you their correct taxpayer identification number; it goes to you as the requester, not to the IRS. Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027.\n\nHow many W-9s are you still waiting on?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C03_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C03_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C03_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C03_04.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {}
+    },
+    {
+      "id": "2026-W47-T10",
+      "format": "text",
+      "title": "QSBS: the date that splits the rules",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "QSBS-01",
+        "QSBS-02"
+      ],
+      "publish_at": "2026-11-22T11:00:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "content": {
+        "text": "If you hold startup stock, July 4, 2025 is a date to know. Qualified small business stock issued after it and stock issued on or before it follow different rules. A short thread.",
+        "thread": [
+          "Issued after July 4, 2025: the company's gross assets limit is $75 million, up from $50 million for stock issued on or before that date.",
+          "Issued on or before July 4, 2025: the stock must be held more than five years, and for stock acquired after September 27, 2010 the exclusion can reach 100% of the eligible gain.",
+          "Worked example, on the gross assets limit alone: a company with $60 million in gross assets is under the $75 million limit for stock issued after July 4, 2025, but over the $50 million limit for stock issued on or before that date."
+        ]
+      },
+      "captions": {
+        "threads": "If you hold startup stock, July 4, 2025 is a date to know. Qualified small business stock issued after it and stock issued on or before it follow different rules. A short thread.\n\nDo you know which side of that date your shares fall on?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {}
     }
   ]
 }
