@@ -1,0 +1,14 @@
+{
+ "about": "The LinkedIn engine's weekly wild card (Talha, 17 November 2026: try something new once a week, and if it works add it to the strategy). The Monday Research desk proposes three ideas in its LinkedIn brief and marks one pick; the Thursday drafting run makes it one of the week's six posts with \"experiment\": its id; node tools/linkedin.mjs learn judges it against the other posts of its week and the three weeks before (win at 1.25 times our usual or more, strong at 1.5, loss at 0.8 or less, otherwise inconclusive; under 150 impressions is not readable). One strong win or two wins marks it promote: the Research desk moves it into patterns.json as in rotation. Two losses retire it.",
+ "experiments": [
+  {
+   "id": "LIX-2026-W49-document",
+   "idea": "document",
+   "what": "First document post: what a Delaware corporation, a Delaware LLC and a Wyoming LLC each pay every year.",
+   "why": "Documents: 1.39x reach and 1.30x engagement for personal profiles (AuthoredUp); we have never posted one.",
+   "post": "LI-2026-12-04",
+   "started": "2026-11-30",
+   "status": "running"
+  }
+ ]
+}

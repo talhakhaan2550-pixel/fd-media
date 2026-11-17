@@ -1,8 +1,86 @@
 {
  "week": "linkedin",
  "media": "linkedin/media",
- "about": "One image per LinkedIn post, made by the studio (tools/studio/linkedin.py) from the post's own words. The LinkedIn daily run attaches each image when it schedules the post; the posts doc names it under the post in a paragraph starting Image:.",
+ "about": "Every LinkedIn post: its words, first comment, sources, tags for the learning loop and its design. Since 17 November 2026 this file is the single record of a post and the posts doc is its readable copy (node tools/linkedin.mjs doc prints a week's markdown from it). Images and documents are made by the studio (tools/studio/linkedin.py, render.py), checked by node tools/linkedin.mjs check, and attached by the LinkedIn daily run when it schedules the post. Posts dated before 23 November are marked legacy: text posts scheduled on 9 November, tagged so the loop can compare formats.",
  "pieces": [
+  {
+   "id": "LI-2026-11-10",
+   "format": "linkedin_text",
+   "date": "2026-11-10",
+   "post": "Tuesday 10 November: your 2026 contractor 1099s",
+   "legacy": true,
+   "about": "Scheduled on 9 November 2026 as a text post; its words are in the posts doc. Tagged on 17 November 2026 so the learning loop can compare formats.",
+   "stage": "top",
+   "kind": "rule change explainer",
+   "pattern": "news",
+   "topic": "1099 and contractors",
+   "lighter": false
+  },
+  {
+   "id": "LI-2026-11-11",
+   "format": "linkedin_text",
+   "date": "2026-11-11",
+   "post": "Wednesday 11 November: can you announce your raise?",
+   "legacy": true,
+   "about": "Scheduled on 9 November 2026 as a text post; its words are in the posts doc. Tagged on 17 November 2026 so the learning loop can compare formats.",
+   "stage": "top",
+   "kind": "rule explainer",
+   "pattern": "question",
+   "topic": "raising",
+   "lighter": false
+  },
+  {
+   "id": "LI-2026-11-12",
+   "format": "linkedin_text",
+   "date": "2026-11-12",
+   "post": "Thursday 12 November: SAFEs in 2026, the numbers and the math",
+   "legacy": true,
+   "about": "Scheduled on 9 November 2026 as a text post; its words are in the posts doc. Tagged on 17 November 2026 so the learning loop can compare formats.",
+   "stage": "top",
+   "kind": "worked example",
+   "pattern": "number",
+   "topic": "SAFEs",
+   "lighter": false
+  },
+  {
+   "id": "LI-2026-11-17",
+   "format": "linkedin_text",
+   "date": "2026-11-17",
+   "post": "Tuesday 17 November: the IRS's old 1099 filing system closes on Thursday",
+   "legacy": true,
+   "about": "Scheduled on 9 November 2026 as a text post; its words are in the posts doc. Tagged on 17 November 2026 so the learning loop can compare formats.",
+   "stage": "top",
+   "kind": "deadline explainer",
+   "pattern": "news",
+   "topic": "1099 and contractors",
+   "lighter": false
+  },
+  {
+   "id": "LI-2026-11-18",
+   "format": "linkedin_text",
+   "date": "2026-11-18",
+   "post": "Wednesday 18 November: Form 5472, the $25,000 form for foreign owned US LLCs",
+   "legacy": true,
+   "about": "Scheduled on 9 November 2026 as a text post; its words are in the posts doc. Tagged on 17 November 2026 so the learning loop can compare formats.",
+   "stage": "top",
+   "kind": "deadline explainer",
+   "pattern": "who_it_affects",
+   "topic": "US company from abroad",
+   "lighter": false
+  },
+  {
+   "id": "LI-2026-11-19",
+   "format": "linkedin_text",
+   "date": "2026-11-19",
+   "post": "Thursday 19 November: SBA loans in 2026, the numbers and the new ownership rule",
+   "legacy": true,
+   "about": "Scheduled on 9 November 2026 as a text post; its words are in the posts doc. Tagged on 17 November 2026 so the learning loop can compare formats.",
+   "stage": "top",
+   "kind": "rule change explainer",
+   "pattern": "news",
+   "topic": "SBA loans",
+   "lighter": false
+  },
   {
    "id": "LI-2026-11-23",
    "format": "linkedin_image",
@@ -70,7 +148,13 @@
       }
      ]
     }
-   }
+   },
+   "stage": "top",
+   "kind": "lighter",
+   "pattern": "expectation_reality",
+   "topic": "Delaware franchise tax",
+   "lighter": true,
+   "text_in_doc": true
   },
   {
    "id": "LI-2026-11-24",
@@ -116,7 +200,13 @@
       }
      ]
     }
-   }
+   },
+   "stage": "top",
+   "kind": "rule explainer",
+   "pattern": "question",
+   "topic": "raising",
+   "lighter": false,
+   "text_in_doc": true
   },
   {
    "id": "LI-2026-11-25",
@@ -177,7 +267,13 @@
       }
      ]
     }
-   }
+   },
+   "stage": "top",
+   "kind": "tax law change explainer",
+   "pattern": "who_it_affects",
+   "topic": "R&D and the 2025 tax law",
+   "lighter": false,
+   "text_in_doc": true
   },
   {
    "id": "LI-2026-11-27",
@@ -190,7 +286,7 @@
    "stage": "top",
    "kind": "deadline explainer",
    "pattern": "deadline",
-   "topic": "raise readiness",
+   "topic": "founder shares",
    "lighter": false,
    "format_hook": "deadline explainer, opens with who it affects and the 30 days",
    "text": [
@@ -360,7 +456,7 @@
     "1120-01"
    ],
    "stage": "top",
-   "kind": "deadline calendar",
+   "kind": "reference calendar",
    "pattern": "deadline",
    "topic": "deadlines",
    "lighter": false,
@@ -449,6 +545,423 @@
        "mark": "box",
        "title": "Not every date applies",
        "text": "Mark the ones that apply to your company, set a reminder two weeks before each, and name who owns it."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "LI-2026-11-30",
+   "format": "linkedin_image",
+   "date": "2026-11-30",
+   "post": "Monday 30 November: getting an EIN without a Social Security number",
+   "claims": [
+    "EIN-01",
+    "EIN-02",
+    "EIN-03",
+    "EIN-04"
+   ],
+   "stage": "top",
+   "kind": "rule explainer",
+   "pattern": "who_it_affects",
+   "topic": "US company from abroad",
+   "lighter": false,
+   "format_hook": "rule explainer, opens with who it is for and the catch (not online)",
+   "text": [
+    "If you formed a US company from abroad and have no Social Security number, you can still get its EIN. Just not online.",
+    "The IRS's online EIN tool is for organizations whose principal place of business is in the US, and it needs the responsible party's Social Security number or ITIN.",
+    "Without either, Form SS-4 is the way in. Its instructions say to enter “foreign” or N/A on line 7b when the responsible party does not have and is not eligible for an SSN or ITIN.",
+    "Then send it one of three ways, when the business has no legal residence, principal place of business or principal office in the US.",
+    "By phone: 267-941-1099, which is not toll free, from 6 a.m. to 11 p.m. Eastern, Monday to Friday.",
+    "By fax: 304-707-9471 from outside the US, or 855-215-1627 from inside it. Under the IRS's Fax-TIN program, the EIN generally comes back by fax within 4 business days.",
+    "By mail: Internal Revenue Service, Attn: EIN International Operation, Cincinnati, OH 45999.",
+    "What to do before you apply: have the company's formation documents in front of you, decide who the responsible party is, and complete every line of Form SS-4. The IRS says you never have to pay a fee for an EIN.",
+    "If you set up a US company from abroad, how did you get your EIN?"
+   ],
+   "first_comment": "Sources: the IRS's instructions for Form SS-4, https://www.irs.gov/pub/irs-pdf/iss4.pdf and the IRS's online EIN page, https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number. Setting up or running a US company from abroad? Our free US filing checklist lists the yearly filings a US company has, in order: https://www.financedepartmentllc.com/us-entry?utm_source=linkedin&utm_medium=content_linkedin&utm_campaign=post_2026_11_30",
+   "sources": [
+    {
+     "name": "IRS, Instructions for Form SS-4 (Rev. December 2025)",
+     "url": "https://www.irs.gov/pub/irs-pdf/iss4.pdf",
+     "supports": "enter foreign or N/A on line 7b if the responsible party doesn't have and is ineligible to obtain an SSN or ITIN; 267-941-1099, not toll free, 6:00 a.m. to 11:00 p.m. Eastern, Monday through Friday; fax 855-215-1627 within the United States or 304-707-9471 outside it; Attn: EIN International Operation, Cincinnati, OH 45999; Fax-TIN generally within 4 business days"
+    },
+    {
+     "name": "IRS, Get an employer identification number (reviewed 16 October 2026)",
+     "url": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+     "supports": "the online tool is for organizations whose principal place of business is in the US and needs the responsible party's SSN or ITIN; you can't use it if your principal place of business is outside the US; you never have to pay a fee for an EIN"
+    }
+   ],
+   "sources_note": "Claim Library EIN-01 to EIN-04.",
+   "alt": "A Form SS-4 sheet for applying from abroad: foreign or N/A on line 7b, the IRS phone and fax numbers and the Cincinnati address",
+   "content": {
+    "kicker": "EIN from abroad",
+    "lead": "No Social Security number? You can still get your company's EIN:",
+    "title": "Not online.\nBy phone, fax or mail.",
+    "emph": "By phone, fax or mail.",
+    "object": {
+     "type": "bill",
+     "title": "Form SS-4",
+     "sub": "Applying from abroad",
+     "height": 360,
+     "rows": [
+      [
+       "Line 7b, no SSN or ITIN",
+       "foreign or N/A"
+      ],
+      [
+       "Phone, Mon to Fri, 6am to 11pm ET",
+       "267-941-1099"
+      ],
+      [
+       "Fax from outside the US",
+       "304-707-9471"
+      ],
+      [
+       "Fax from inside the US",
+       "855-215-1627"
+      ],
+      [
+       "Mail",
+       "Cincinnati, OH 45999"
+      ]
+     ]
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "box",
+       "title": "Fax: about 4 business days",
+       "text": "Under the Fax-TIN program the EIN generally comes back by fax within 4 business days."
+      },
+      {
+       "mark": "tick",
+       "title": "No fee",
+       "text": "The IRS says you never have to pay a fee for an EIN."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "LI-2026-12-01",
+   "format": "linkedin_image",
+   "date": "2026-12-01",
+   "post": "Tuesday 1 December: beneficial ownership reports end for US companies",
+   "text_in_doc": true,
+   "about": "Drafted on 12 November 2026; its words are in the posts doc. The Monday plan run of 23 November makes its image (step 8a).",
+   "stage": "top",
+   "kind": "rule change explainer",
+   "pattern": "who_it_affects",
+   "topic": "BOI reporting",
+   "lighter": false
+  },
+  {
+   "id": "LI-2026-12-02",
+   "format": "linkedin_image",
+   "date": "2026-12-02",
+   "post": "Wednesday 2 December: qualified small business stock after the 2025 tax law",
+   "text_in_doc": true,
+   "about": "Drafted on 12 November 2026; its words are in the posts doc. The Monday plan run of 23 November makes its image (step 8a).",
+   "stage": "top",
+   "kind": "tax law change explainer",
+   "pattern": "number",
+   "topic": "QSBS",
+   "lighter": false
+  },
+  {
+   "id": "LI-2026-12-03",
+   "format": "linkedin_image",
+   "date": "2026-12-03",
+   "post": "Thursday 3 December: deferred revenue, Nobody then Founders",
+   "text_in_doc": true,
+   "about": "Drafted on 12 November 2026; its words are in the posts doc. The Monday plan run of 23 November makes its image (step 8a).",
+   "stage": "top",
+   "kind": "lighter",
+   "pattern": "nobody_founders",
+   "topic": "revenue recognition",
+   "lighter": true
+  },
+  {
+   "id": "LI-2026-12-04",
+   "format": "linkedin_document",
+   "date": "2026-12-04",
+   "post": "Friday 4 December: what a Delaware corporation, a Delaware LLC and a Wyoming LLC pay every year",
+   "claims": [
+    "DE-01",
+    "DE-02",
+    "DE-06",
+    "DE-07",
+    "DE-08",
+    "DE-09",
+    "WY-01",
+    "WY-02",
+    "WY-03",
+    "WY-04"
+   ],
+   "stage": "top",
+   "kind": "comparison",
+   "pattern": "who_it_affects",
+   "topic": "US company setup",
+   "lighter": false,
+   "experiment": "LIX-2026-W49-document",
+   "format_hook": "comparison document, opens with the three companies and the promise of one page each",
+   "text": [
+    "Delaware corporation, Delaware LLC or Wyoming LLC: what each one pays the state every year, one page each.",
+    "A Delaware corporation files an annual report and pays franchise tax by 1 March. The report fee is $50 if it is not exempt, and the minimum tax is $175 or $400, depending on the method.",
+    "A Delaware LLC files no annual report and pays a $400 annual tax by 1 June.",
+    "A Wyoming LLC files its annual report by the first day of the month it was formed in, with a license tax of $60 or $0.0002 per dollar of its assets located and employed in Wyoming, whichever is greater.",
+    "What to do this week: put your company's date in your calendar, with a reminder a month before it.",
+    "Which of the three did you choose, and what decided it?"
+   ],
+   "first_comment": "Sources: Delaware on annual reports and franchise tax for corporations, https://corp.delaware.gov/frtax/, Delaware's tax instructions for LLCs, https://corp.delaware.gov/alt-entitytaxinstructions/ and the Wyoming Secretary of State's business FAQs, https://sos.wyo.gov/faqs.aspx?root=BUS. Running a Delaware corporation? Our free calculator works your franchise tax out both ways from your share counts and total gross assets: https://www.financedepartmentllc.com/delaware-franchise-tax?utm_source=linkedin&utm_medium=content_linkedin&utm_campaign=post_2026_12_04",
+   "sources": [
+    {
+     "name": "Delaware Division of Corporations, annual report and tax information, updated 21 September 2026",
+     "url": "https://corp.delaware.gov/frtax/",
+     "supports": "received no later than 1 March; $50 filing fee for non exempt domestic corporations; minimum tax $175 under the Authorized Shares method and $400 under the Assumed Par Value Capital method; maximum $200,000; $200 penalty; 1.5% a month interest on unpaid tax"
+    },
+    {
+     "name": "Delaware Division of Corporations, LLC, LP and GP tax instructions",
+     "url": "https://corp.delaware.gov/alt-entitytaxinstructions/",
+     "supports": "annual tax of $400; due on or before 1 June for the prior year; no requirement to file an annual report; $200 penalty plus 1.5% interest a month on tax and penalty"
+    },
+    {
+     "name": "Wyoming Secretary of State, business entities FAQs",
+     "url": "https://sos.wyo.gov/faqs.aspx?root=BUS",
+     "supports": "annual report due date based on the anniversary month of formation (registered 15 January, due 1 January each year); license tax $60 or two tenths of one mill on the dollar ($.0002), whichever is greater, on assets located and employed in Wyoming; courtesy email reminders 60, 30 and 10 days before; administratively dissolved if not filed within 60 days after the due date"
+    }
+   ],
+   "sources_note": "$0.0002 is the state's two tenths of one mill on the dollar. Claim Library DE-01, DE-02, DE-06, DE-07, DE-08, DE-09 and WY-01 to WY-04.",
+   "alt": "Cover of a document comparing what a Delaware corporation, a Delaware LLC and a Wyoming LLC pay the state every year",
+   "content": {
+    "doc_title": "What a Delaware or Wyoming company pays every year",
+    "kicker": "US company setup",
+    "cover": {
+     "lead": "What each one pays the state every year, one page each:",
+     "title": "Delaware or\nWyoming?",
+     "emph": "Wyoming?",
+     "object": {
+      "type": "bill",
+      "title": "Every year",
+      "sub": "Due to the state",
+      "height": 250,
+      "rows": [
+       [
+        "Delaware corporation",
+        "by 1 March"
+       ],
+       [
+        "Delaware LLC",
+        "by 1 June"
+       ],
+       [
+        "Wyoming LLC",
+        "formation month"
+       ]
+      ]
+     }
+    },
+    "pages": [
+     {
+      "title": "Delaware corporation",
+      "emph": "corporation",
+      "text": "An annual report and franchise tax, received by 1 March every year.",
+      "object": {
+       "type": "bill",
+       "title": "Delaware corporation",
+       "sub": "Due 1 March",
+       "height": 300,
+       "rows": [
+        [
+         "Annual report fee, not exempt",
+         "$50"
+        ],
+        [
+         "Minimum tax, Authorized Shares",
+         "$175"
+        ],
+        [
+         "Minimum tax, Assumed Par Value",
+         "$400"
+        ],
+        [
+         "Maximum tax",
+         "$200,000"
+        ]
+       ]
+      }
+     },
+     {
+      "title": "Delaware LLC",
+      "emph": "LLC",
+      "text": "No annual report to file. One annual tax for the year before, due by 1 June.",
+      "object": {
+       "type": "bill",
+       "title": "Delaware LLC",
+       "sub": "Due 1 June",
+       "height": 230,
+       "rows": [
+        [
+         "Annual report",
+         "none"
+        ],
+        [
+         "Annual tax",
+         "$400"
+        ]
+       ]
+      }
+     },
+     {
+      "title": "Wyoming LLC",
+      "emph": "Wyoming",
+      "text": "An annual report by the first day of the month it was formed in. A company registered on 15 January is due on 1 January every year.",
+      "object": {
+       "type": "bill",
+       "title": "Wyoming LLC",
+       "sub": "Due in your formation month",
+       "height": 270,
+       "rows": [
+        [
+         "License tax, at least",
+         "$60"
+        ],
+        [
+         "Or per dollar of Wyoming assets",
+         "$0.0002"
+        ],
+        [
+         "Whichever is",
+         "greater"
+        ]
+       ]
+      }
+     },
+     {
+      "title": "What missing it costs",
+      "emph": "costs",
+      "points": {
+       "items": [
+        {
+         "mark": "cross",
+         "title": "Delaware corporation",
+         "text": "A $200 penalty, plus interest of 1.5% a month on unpaid tax."
+        },
+        {
+         "mark": "cross",
+         "title": "Delaware LLC",
+         "text": "A $200 penalty, plus 1.5% a month interest on the tax and penalty."
+        },
+        {
+         "mark": "cross",
+         "title": "Wyoming LLC",
+         "text": "Not filed within 60 days of the due date: administratively dissolved."
+        }
+       ]
+      },
+      "text": null
+     }
+    ],
+    "recap": {
+     "title": "Put these in your calendar",
+     "emph": "calendar",
+     "items": [
+      "Delaware corporation: report and tax by 1 March",
+      "Delaware LLC: $400 by 1 June",
+      "Wyoming LLC: report in your formation month, from $60",
+      "Wyoming emails reminders 60, 30 and 10 days before"
+     ]
+    }
+   }
+  },
+  {
+   "id": "LI-2026-12-05",
+   "format": "linkedin_image",
+   "date": "2026-12-05",
+   "post": "Saturday 5 December: what a late 1099 costs, expectation versus reality",
+   "claims": [
+    "1099-08",
+    "1099-02"
+   ],
+   "stage": "top",
+   "kind": "lighter",
+   "pattern": "expectation_reality",
+   "topic": "1099 penalties",
+   "lighter": true,
+   "format_hook": "lighter post, expectation versus reality, opens with the format's label, then a worked figure",
+   "text": [
+    "Expectation versus reality: filing your 1099s a few weeks late.",
+    "Expectation: a small late fee, once.",
+    "Reality: the IRS charges a penalty for each information return you did not file correctly or on time, and for each payee statement you did not provide correctly on time.",
+    "For returns and statements due in 2027, that is $60 each if you are up to 30 days late, $130 each from 31 days late through 1 August, and $340 each after 1 August or if never filed. Intentional disregard is $690 each.",
+    "A worked example: 10 contractors, Forms 1099-NEC due on 1 February 2027, filed with the IRS 45 days late. That is $130 for each of the 10 returns, $1,300, before any penalty for late payee statements.",
+    "What to do this month: list every contractor you paid $2,000 or more in 2026, check you hold a W-9 for each, and put 1 February 2027 in the calendar of whoever files.",
+    "Has a late 1099 ever cost your company more than you expected?"
+   ],
+   "first_comment": "Sources: the IRS on information return penalties, https://www.irs.gov/payments/information-return-penalties and the instructions for Forms 1099-MISC and 1099-NEC, https://www.irs.gov/pub/irs-pdf/i1099mec.pdf. Not sure which payments need a 1099? This free checker walks through it: https://www.financedepartmentllc.com/do-i-need-to-file-a-1099?utm_source=linkedin&utm_medium=content_linkedin&utm_campaign=post_2026_12_05",
+   "sources": [
+    {
+     "name": "IRS, Information return penalties (reviewed 30 October 2026)",
+     "url": "https://www.irs.gov/payments/information-return-penalties",
+     "supports": "a penalty for each information return not filed correctly or on time and for each payee statement not provided correctly on time; due in 2027: up to 30 days late $60, 31 days late through 1 August $130, after 1 August or not filed $340, intentional disregard $690"
+    },
+    {
+     "name": "IRS, Instructions for Forms 1099-MISC and 1099-NEC (Rev. December 2026)",
+     "url": "https://www.irs.gov/pub/irs-pdf/i1099mec.pdf",
+     "supports": "Form 1099-NEC filed and furnished by 31 January, the next business day when that is a weekend (1 February 2027); nonemployee compensation of $2,000 or more"
+    }
+   ],
+   "sources_note": "$1,300 is 10 returns at $130, since 45 days late is after the 30th day and before 1 August. Claim Library 1099-08 and 1099-02.",
+   "alt": "An IRS penalty bill for 1099s: $60, $130, $340 and $690 a return; 10 returns 45 days late cost $1,300, stamped Reality",
+   "content": {
+    "kicker": "1099 penalties",
+    "lead": "Expectation versus reality:",
+    "title": "Filing your 1099s\na few weeks late",
+    "emph": "a few weeks late",
+    "object": {
+     "type": "bill",
+     "title": "IRS penalties",
+     "sub": "Per return, due in 2027",
+     "height": 360,
+     "rows": [
+      [
+       "Up to 30 days late",
+       "$60"
+      ],
+      [
+       "31 days late through 1 Aug",
+       "$130"
+      ],
+      [
+       "After 1 Aug or never filed",
+       "$340"
+      ],
+      [
+       "Intentional disregard",
+       "$690"
+      ]
+     ],
+     "total": [
+      "10 returns, 45 days late",
+      "$1,300"
+     ],
+     "note": {
+      "label": "Expectation",
+      "text": "a small late fee",
+      "strike": true
+     }
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "box",
+       "title": "Each return, each statement",
+       "text": "Penalties apply to each information return and, separately, to each payee statement."
+      },
+      {
+       "mark": "box",
+       "title": "Due 1 February 2027",
+       "text": "Forms 1099-NEC go to each contractor and to the IRS."
       }
      ]
     }

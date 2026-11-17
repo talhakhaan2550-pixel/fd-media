@@ -13,6 +13,15 @@ Spec (a piece of format linkedin_image, content):
   object  one drawn object: {"type": "cheque" | "bill" | "spread" | any carousel visual type, ...}
   points  optional title (up to 50 characters) and items (up to 3): mark (box, tick, cross, num),
           title (up to 40 characters), text (up to 150 characters)
+
+Document posts (format linkedin_document, since 17 November 2026): LinkedIn shows a PDF as a swipeable carousel, the
+format with the highest reach and engagement multipliers in AuthoredUp's 3M post study (research/linkedin). Same look,
+1080 by 1350 pages, written into one PDF plus a JPEG of each page (the cover doubles as the fallback image).
+  doc_title  the title LinkedIn shows on the document, up to 58 characters
+  kicker     the tag on every page
+  cover      lead, title, emph and an optional object, as for an image; a hand-drawn "Swipe" cue
+  pages      3 to 8 pages: title (up to 60), emph, text (up to 60 words), optional object or points
+  recap      title and up to 4 items (up to 80 characters each), the page people save
 """
 from brand import esc, shell, photo_uri, texture_uri, DISCLAIMER
 import slides
@@ -211,3 +220,118 @@ def image(spec, disclaimer=True):
             % (esc(spec.get("kicker", "")), lead, h1, obj_html(spec.get("object")), points_html(spec.get("points")),
                photo_uri("talha_sticker"), ('<div class="li-disc">%s</div>' % DISCLAIMER) if disclaimer else ""))
     return shell(body, W, H, CSS)
+
+
+# ---------------------------------------------------------------- document posts (PDF carousels)
+DOC_CSS = """
+.dk-num{position:absolute;left:72px;top:150px;font-family:PlexMono;font-size:20px;color:#59606C;letter-spacing:.06em;z-index:5}
+.content.dk-col{top:230px;left:72px;right:72px;bottom:150px;display:block;z-index:4}
+.dk-h{font-family:Fraunces;font-weight:700;line-height:1.06;letter-spacing:-.02em;color:#15191F;margin:0;max-width:936px}
+.dk-h .em{font-style:italic;background:linear-gradient(transparent 14%,#FFD84D 14%,#FFD84D 92%,transparent 92%);padding:0 10px;margin:0 -5px;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:6px}
+.dk-p{font-family:Jakarta;font-weight:500;font-size:38px;line-height:1.42;color:#2A303A;margin:30px 0 0;max-width:930px}
+.dk-p b{font-weight:800;color:#15191F}
+.dk-foot{position:absolute;left:72px;right:72px;bottom:54px;display:flex;justify-content:space-between;align-items:center;font-family:Jakarta;font-size:19px;color:#59606C;z-index:5}
+.dk-foot b{color:#15191F;font-weight:700}
+.dk-swipe{position:absolute;left:72px;bottom:150px;font-family:Caveat;font-weight:700;font-size:64px;color:#24418F;z-index:6;display:flex;align-items:center;gap:14px}
+.dk-swipe svg{width:120px;height:44px}
+.dk-rc{margin-top:34px;display:flex;flex-direction:column;gap:22px}
+.dk-ri{display:flex;gap:22px;align-items:flex-start}
+.dk-ri .li-mk{width:48px;height:48px;margin-top:4px}
+.dk-ri p{font-family:Fraunces;font-weight:700;font-size:38px;line-height:1.18;color:#15191F;margin:0}
+.dk-disc{position:absolute;left:72px;bottom:96px;font-family:Jakarta;font-size:18px;line-height:1.4;color:#7A808A;max-width:560px;z-index:5}
+.dk-big{position:relative;margin-top:34px}
+.dk-big>.li-obj{width:690px;transform:scale(var(--k));transform-origin:top left;margin-top:0}
+.dk-col .li-pts{width:930px;margin-top:40px}
+.dk-col .li-it{gap:24px;margin-bottom:30px}
+.dk-col .li-mk{width:54px;height:54px;border-width:4px}
+.dk-col .li-im{font-size:44px}
+.dk-col .li-id{font-size:29px;line-height:1.38;margin-top:8px}
+.dk-cover-obj{position:relative;margin-top:36px}
+.dk-cover-obj>.li-obj{width:690px;transform:scale(1.12);transform-origin:top left}
+"""
+SWIPE = '<svg viewBox="0 0 120 44"><path d="M4 24 C 34 14, 66 30, 104 20" fill="none" stroke="#24418F" stroke-width="5" stroke-linecap="round"/><path d="M90 8 L108 20 L92 34" fill="none" stroke="#24418F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+DOC_LIMITS = {"doc_title": 58, "kicker": 32}
+
+
+def _h(title, emph, size):
+    return '<h1 class="dk-h" style="font-size:%dpx">%s</h1>' % (size, slides.emph_title(title, emph).replace("\n", "<br>"))
+
+
+def _foot(i, n, disclaimer):
+    left = '<span><b>Muhammad Talha</b> · Finance Department</span>'
+    right = '<span>Swipe for more</span>' if (not disclaimer and i < n) else ''
+    disc = '<div class="dk-disc">%s</div>' % DISCLAIMER if disclaimer else ''
+    return '<div class="dk-foot">%s%s</div>%s' % (left, right, disc)
+
+
+def _big(o, k=1.32):
+    """A drawn object on a document page, drawn larger so the page reads on a phone; its box grows to match."""
+    if not o:
+        return ""
+    h = int(o.get("height", 330 if o.get("type") == "bill" else 290))
+    if o.get("type") not in ("bill", "cheque"):
+        return '<div class="dk-big">%s</div>' % obj_html(o)
+    return '<div class="dk-big" style="--k:%.2f;height:%dpx">%s</div>' % (k, int(h * k) + 20, obj_html(o))
+
+
+def _top(kicker):
+    return ('<div class="top"><div class="brand"><div class="mark">FD</div>Finance Department</div><div class="li-tag">%s</div></div>'
+            % esc(kicker or ""))
+
+
+def doc_pages(spec, disclaimer=True):
+    """Every page of a document post as a finished HTML page, cover first and recap last."""
+    pages = spec.get("pages") or []
+    n = len(pages) + 2
+    out = []
+    c = spec.get("cover") or {}
+    lead = ('<p class="li-lead">%s</p>' % esc(c["lead"])) if c.get("lead") else ""
+    body = (_top(spec.get("kicker")) +
+            '<div class="content li-col">%s%s%s</div>' % (lead, '<h1 class="li-h1" style="font-size:%dpx">%s</h1>'
+                                                          % (title_size(c.get("title", "")), slides.emph_title(c.get("title", ""), c.get("emph")).replace("\n", "<br>")),
+                                                          ('<div class="dk-cover-obj" style="height:%dpx">%s</div>' % (int(int((c.get("object") or {}).get("height", 300)) * 1.12) + 10, obj_html(c.get("object"))) if c.get("object") else "")) +
+            '<div class="dk-swipe">Swipe %s</div>' % SWIPE +
+            '<div class="li-circle"></div><img class="li-photo" src="%s">'
+            '<div class="li-name"><b>Muhammad Talha</b><span>Finance Department</span></div>' % photo_uri("talha_sticker"))
+    out.append(shell(body, W, H, CSS + DOC_CSS))
+    for i, pg in enumerate(pages, start=2):
+        t = pg.get("title", "")
+        size = 76 if len(t) <= 34 else 66 if len(t) <= 48 else 58
+        text = ('<p class="dk-p">%s</p>' % esc(pg["text"])) if pg.get("text") else ""
+        body = (_top(spec.get("kicker")) + '<div class="dk-num">%02d / %02d</div>' % (i, n) +
+                '<div class="content dk-col">%s%s%s%s</div>' % (_h(t, pg.get("emph"), size), text, _big(pg.get("object")), points_html(pg.get("points"))) +
+                _foot(i, n, False))
+        out.append(shell(body, W, H, CSS + DOC_CSS))
+    r = spec.get("recap") or {}
+    items = "".join('<div class="dk-ri"><div class="li-mk tick">%s</div><p>%s</p></div>' % (TICK, esc(x)) for x in (r.get("items") or [])[:4])
+    body = (_top(spec.get("kicker")) + '<div class="dk-num">%02d / %02d</div>' % (n, n) +
+            '<div class="content dk-col">%s<div class="dk-rc">%s</div></div>' % (_h(r.get("title", "Recap"), r.get("emph"), 76), items) +
+            '<div class="li-circle" style="width:400px;height:400px;right:-100px;bottom:-120px"></div>'
+            '<img class="li-photo" style="width:300px" src="%s">' % photo_uri("talha_sticker") +
+            _foot(n, n, disclaimer))
+    out.append(shell(body, W, H, CSS + DOC_CSS))
+    return out
+
+
+def doc_problems(spec):
+    out = []
+    for k, lim in DOC_LIMITS.items():
+        if len(spec.get(k) or "") > lim:
+            out.append("%s is %d characters, over %d" % (k, len(spec.get(k) or ""), lim))
+    if not spec.get("doc_title"):
+        out.append("doc_title is missing (LinkedIn needs a document title)")
+    pages = spec.get("pages") or []
+    if not 3 <= len(pages) <= 8:
+        out.append("a document has 3 to 8 inner pages, this one has %d" % len(pages))
+    c = spec.get("cover") or {}
+    if len(c.get("title", "")) > 60 or not c.get("title"):
+        out.append("cover title is missing or over 60 characters")
+    for i, pg in enumerate(pages, start=2):
+        if len(pg.get("title", "")) > 60:
+            out.append("page %d title is over 60 characters" % i)
+        if len((pg.get("text") or "").split()) > 60:
+            out.append("page %d text is over 60 words" % i)
+    for x in ((spec.get("recap") or {}).get("items") or []):
+        if len(x) > 80:
+            out.append("a recap item is over 80 characters")
+    return out

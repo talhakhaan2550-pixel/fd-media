@@ -1,0 +1,374 @@
+{
+ "updated": "2026-11-17",
+ "how": "The LinkedIn engine's pattern library. evidence holds what the research found, each finding with its source and how sure it is (LinkedIn said, LinkedIn research, study, vendor claim). formats, kinds and hooks list what we post and their status (in rotation, testing, untested, retired); our_results are filled by the Research desk from research/linkedin/scores.json. wild_cards are the out-of-the-box ideas, one tried a week. Peers give patterns only, never their words or visuals.",
+ "evidence": [
+  {
+   "id": "li-dwell",
+   "kind": "LinkedIn said",
+   "finding": "The feed names long dwells as a signal and splits passive signals (click, skip, long dwell) from active ones (like, comment, share); LinkedIn has not published the weights.",
+   "source": "LinkedIn engineering blog, 12 March 2026, as summarised by Growigami",
+   "url": "https://growigami.com/blog/linkedin-algorithm",
+   "use": "Write for time spent: worked examples, documents people swipe through, posts long enough to read (150 to 260 words)."
+  },
+  {
+   "id": "li-feedsr",
+   "kind": "LinkedIn research",
+   "finding": "A sequential transformer ranker (Feed SR) replaced the older one and served most feed traffic for over three months; in A/B tests time spent rose 2.10% and likes, comments or reshares 3.52%. Six predicted actions: click, scroll past, long dwell, reaction, comment, share.",
+   "source": "Hertel, Srivastava et al., arXiv 2602.12354, 12 February 2026, as summarised by Growigami and Fast Growth Advisors",
+   "url": "https://fast-growth.fr/en/white-paper/linkedin-algorithm-2026/",
+   "use": "Comments and shares are part of what the model predicts: end with a real question and make posts worth sending to a cofounder."
+  },
+  {
+   "id": "li-bait",
+   "kind": "LinkedIn said",
+   "finding": "LinkedIn shows less engagement bait (its example: \"Comment 'Yes' if you agree\"), recycled thought leadership, engagement pods and comment automation.",
+   "source": "LinkedIn Pressroom and Tim Jurka, 12 March 2026, as summarised by Growigami",
+   "url": "https://growigami.com/blog/linkedin-algorithm",
+   "use": "The checker refuses comment-a-keyword, like, repost and tag asks."
+  },
+  {
+   "id": "li-slop",
+   "kind": "LinkedIn said",
+   "finding": "Generic AI content (AI slop) is less likely to spread beyond the author's immediate network; AI-assisted writing is fine when it reflects the author's own voice. Since August 2026 classifiers cover every post shown beyond the first network, with 94% precision, and slop got 40% fewer views.",
+   "source": "Laura Lorenzetti, 20 May 2026; LinkedIn Pressroom, 4 June 2026; Tim Jurka, 8 October 2026; as summarised by Growigami",
+   "url": "https://growigami.com/blog/linkedin-algorithm",
+   "use": "Specific facts, figures, dates and worked examples in every paragraph; the checker flags generic AI wording."
+  },
+  {
+   "id": "li-identity",
+   "kind": "LinkedIn said",
+   "finding": "Ranking factors in the author's professional identity (experience, profile content, skills); retrieval matches posts and members by meaning.",
+   "source": "Tim Jurka, 11 August 2025; LinkedIn engineering blog, 12 March 2026; as summarised by Growigami",
+   "url": "https://growigami.com/blog/linkedin-algorithm",
+   "use": "Stay on startup finance, US filings and raising, the topics Talha's profile and headline are about."
+  },
+  {
+   "id": "au-formats",
+   "kind": "study (vendor)",
+   "finding": "Personal profiles, 3M+ posts, March 2025 to February 2026, against each profile's own median: document 1.39x reach and 1.30x engagement (4.88% of posts); image 1.20x and 1.33x; poll 1.78x and 0.37x; text 1.07x and 0.78x; video 0.86x and 0.93x; article 0.69x and 0.44x; reshare 0.29x and 0.22x.",
+   "source": "AuthoredUp, Best performing content on LinkedIn",
+   "url": "https://authoredup.com/blog/best-performing-content-on-linkedin",
+   "use": "A document post every week; images for the rest; polls and video only as tests."
+  },
+  {
+   "id": "au-portrait",
+   "kind": "study (vendor)",
+   "finding": "Portrait images had a 2.83% median engagement rate against 2.54% for square and 2.14% for landscape (368,489 single image posts).",
+   "source": "AuthoredUp, Best performing content on LinkedIn",
+   "url": "https://authoredup.com/blog/best-performing-content-on-linkedin",
+   "use": "Images and document pages stay 1080 by 1350 (4:5)."
+  },
+  {
+   "id": "au-length",
+   "kind": "study (vendor)",
+   "finding": "Text posts of 1,000+ characters: 1.18x reach and engagement; under 300 characters: 0.88x reach; 20+ sentences 1.14x reach, under 5 sentences 0.64x. Image captions of 800 to 900 characters reached 1.04x, and over 1,000 added no reach. Document captions of 0 to 100 characters were about 28% above the format's average, though only a few percent against each author's usual reach.",
+   "source": "AuthoredUp, Best performing content on LinkedIn",
+   "url": "https://authoredup.com/blog/best-performing-content-on-linkedin",
+   "use": "Image posts 150 to 260 words; text-only posts 1,000+ characters; document posts 60 to 150 words, the pages carry the detail."
+  },
+  {
+   "id": "au-fold",
+   "kind": "study (vendor)",
+   "finding": "LinkedIn folds a post behind \"see more\" at about 210 characters on desktop and 140 on mobile; posts take 3,000 characters and comments 1,250.",
+   "source": "AuthoredUp, LinkedIn character limit (372,126 posts, September 2025 to February 2026)",
+   "url": "https://authoredup.com/blog/linkedin-character-limit",
+   "use": "The first paragraph states the useful point in under 140 characters; the first comment stays under 1,250."
+  },
+  {
+   "id": "au-video",
+   "kind": "study (vendor)",
+   "finding": "Video overall 0.86x reach; median video reach fell 36% year over year; videos of 3 minutes or more 1.21x reach, 30 to 60 seconds 0.95x (36,946 video posts).",
+   "source": "AuthoredUp, Best performing content on LinkedIn",
+   "url": "https://authoredup.com/blog/best-performing-content-on-linkedin",
+   "use": "Short reels go to LinkedIn only as a wild card."
+  },
+  {
+   "id": "au-frequency",
+   "kind": "study (vendor)",
+   "finding": "Median impressions per post: 1 post a week 679, 2 to 3 a week 741, 4 to 5 a week 870, 6 to 7 a week 959, 8 or more 586.",
+   "source": "AuthoredUp, Best performing content on LinkedIn",
+   "url": "https://authoredup.com/blog/best-performing-content-on-linkedin",
+   "use": "Six a week is inside the range that held up; eight or more is where it fell."
+  },
+  {
+   "id": "vdb-2026",
+   "kind": "study (gated)",
+   "finding": "1.3 million posts from about 50,000 creators: reach for active creators down about 60% over two years, engagement down 20 to 25%; the posting pace he considers best fell from 5 to 6 a week to about 2 to 4. A link in the post body cut median reach by 18.8%; no measured comparison exists for links in the first comment.",
+   "source": "Richard van der Blom, Algorithm Insights 2026, as described on Creator Science (2 June 2026) and summarised by Growigami and Fast Growth Advisors",
+   "url": "https://fast-growth.fr/en/white-paper/linkedin-algorithm-2026/",
+   "use": "The pace guardrail: if six a week cuts median impressions per post by a third two weeks running, Talha is asked whether to go back to four. Links stay out of the post body."
+  },
+  {
+   "id": "si-2026",
+   "kind": "study (vendor, company pages)",
+   "finding": "1.3M business posts: documents about 7.0% engagement, multi-image 6.45%, video 6.0%, image 5.3%, text 4.5%, polls 4.2%, link posts 3.25%.",
+   "source": "Socialinsider 2026 benchmarks, as reported by Vulse and Exeedin",
+   "url": "https://www.exeedin.com/post/linkedin-post-formats-compared",
+   "use": "Same order as AuthoredUp for documents; company pages differ from personal profiles, so weight AuthoredUp first."
+  },
+  {
+   "id": "mc-2026",
+   "kind": "study (vendor)",
+   "finding": "673,658 posts from 63,108 accounts: carousels averaged 1,451 impressions against 606 for video; posts with a direct question averaged 77% more comments.",
+   "source": "Metricool 2026 LinkedIn study, as reported by Exeedin and Promptslove",
+   "url": "https://www.exeedin.com/post/linkedin-post-formats-compared",
+   "use": "Every post ends on a direct question founders want to answer."
+  },
+  {
+   "id": "saves-claim",
+   "kind": "vendor claim, not confirmed by LinkedIn",
+   "finding": "An analysis of 3M+ posts found a save drives about five times the reach of a like and twice a comment; LinkedIn's published objectives do not include saves.",
+   "source": "Hootsuite, How the LinkedIn algorithm works in 2026; Fast Growth Advisors on its sourcing",
+   "url": "https://blog.hootsuite.com/linkedin-algorithm/",
+   "use": "Saves and sends are measured and count in the score, but no rule rests on this figure."
+  },
+  {
+   "id": "li-schedule",
+   "kind": "LinkedIn Help",
+   "finding": "LinkedIn's own scheduler cannot schedule Events, Jobs or Services posts; posts can hold up to 3,000 characters.",
+   "source": "LinkedIn Help, Schedule posts (a1347212); Post and share updates (a528176)",
+   "url": "https://www.linkedin.com/help/linkedin/answer/a1347212",
+   "use": "Documents, images, video and polls can go through the scheduler the daily run already uses; checked in Talha's Chrome before the first document goes out."
+  },
+  {
+   "id": "brew-360",
+   "kind": "research, not confirmed as deployed",
+   "finding": "360Brew is a 150 billion parameter research model for ranking, described as pre-production (arXiv, 27 January 2025; the paper is marked withdrawn); LinkedIn has not said it runs the feed.",
+   "source": "arXiv 2501.16450; Growigami",
+   "url": "https://growigami.com/blog/linkedin-algorithm",
+   "use": "No rule rests on 360Brew claims."
+  }
+ ],
+ "anatomy": {
+  "hook": "The first paragraph states the useful point in under 140 characters (au-fold).",
+  "length": "Image posts 150 to 260 words; text-only posts 1,000+ characters; document posts 60 to 150 words (au-length).",
+  "body": "Short paragraphs, specific figures and dates from primary sources, one worked example where it helps, one practical step (li-slop, li-dwell).",
+  "close": "A direct question founders would want to answer (mc-2026), never a like, repost, tag or keyword ask (li-bait).",
+  "links": "No link in the post (vdb-2026): the first comment carries the sources and one free resource with its tracked link.",
+  "visual": "Portrait 1080 by 1350: an image with one drawn object and up to three points, or a document of 5 to 10 pages (au-portrait, au-formats).",
+  "topics": "Startup finance, US filings and deadlines, raising, US companies owned from abroad: the topics of Talha's profile (li-identity).",
+  "time": "6:30 pm Pakistan time (8:30 am New York), Monday to Saturday; a US federal holiday moves to Sunday."
+ },
+ "formats": [
+  {
+   "id": "linkedin_image",
+   "status": "in rotation",
+   "since": "2026-11-23",
+   "what": "One 1080 by 1350 image in the light look: a drawn object (cheque, bill, timeline, calendar, checklist) and up to three points.",
+   "evidence": [
+    "au-formats",
+    "au-portrait"
+   ],
+   "our_results": null
+  },
+  {
+   "id": "linkedin_document",
+   "status": "testing",
+   "since": "2026-12-04",
+   "what": "A PDF of 5 to 10 pages that LinkedIn shows as a swipeable carousel: cover, one point a page, a recap page people save.",
+   "evidence": [
+    "au-formats",
+    "si-2026",
+    "mc-2026"
+   ],
+   "our_results": null
+  },
+  {
+   "id": "linkedin_text",
+   "status": "baseline",
+   "since": "2026-11-10",
+   "what": "Text only. The six posts of 10 to 19 November were text posts, so they are the baseline the others are compared with.",
+   "evidence": [
+    "au-formats",
+    "au-length"
+   ],
+   "our_results": null
+  },
+  {
+   "id": "linkedin_video",
+   "status": "untested",
+   "what": "A native vertical video: the week's best Content Engine reel, uploaded to LinkedIn with its own words.",
+   "evidence": [
+    "au-video"
+   ],
+   "our_results": null
+  },
+  {
+   "id": "linkedin_poll",
+   "status": "untested",
+   "what": "A poll with a real founder question, followed by a post with the sourced answer.",
+   "evidence": [
+    "au-formats"
+   ],
+   "our_results": null
+  }
+ ],
+ "kinds": [
+  "deadline explainer",
+  "rule explainer",
+  "rule change explainer",
+  "tax law change explainer",
+  "worked example",
+  "reference calendar",
+  "checklist",
+  "comparison",
+  "myth versus fact",
+  "data story",
+  "lighter",
+  "case breakdown",
+  "question post"
+ ],
+ "hooks": [
+  {
+   "id": "who_it_affects",
+   "what": "Opens by naming who the post is for, such as founders who received shares that vest.",
+   "status": "in rotation"
+  },
+  {
+   "id": "deadline",
+   "what": "Opens on a date or a number of days.",
+   "status": "in rotation"
+  },
+  {
+   "id": "news",
+   "what": "Opens on something that changed or closes soon.",
+   "status": "in rotation"
+  },
+  {
+   "id": "question",
+   "what": "Opens on a question the reader answers in their head.",
+   "status": "in rotation"
+  },
+  {
+   "id": "number",
+   "what": "Opens on one figure that surprises.",
+   "status": "in rotation"
+  },
+  {
+   "id": "mistake",
+   "what": "Opens on a costly mistake and its cost.",
+   "status": "untested"
+  },
+  {
+   "id": "myth",
+   "what": "Opens on a belief that is wrong, then the rule.",
+   "status": "untested"
+  },
+  {
+   "id": "contrast",
+   "what": "Opens on two figures side by side.",
+   "status": "untested"
+  },
+  {
+   "id": "story",
+   "what": "Opens on a short public case, such as an IRS or SEC action, then the lesson.",
+   "status": "untested"
+  },
+  {
+   "id": "expectation_reality",
+   "what": "Lighter: expectation versus reality.",
+   "status": "in rotation"
+  },
+  {
+   "id": "nobody_founders",
+   "what": "Lighter: Nobody, then Founders.",
+   "status": "in rotation"
+  },
+  {
+   "id": "investor_speak",
+   "what": "Lighter: investor speak translated.",
+   "status": "untested"
+  },
+  {
+   "id": "red_green_flag",
+   "what": "Lighter: red flag or green flag.",
+   "status": "in rotation"
+  },
+  {
+   "id": "receipt_day",
+   "what": "Lighter: a day in the life of a receipt.",
+   "status": "untested"
+  }
+ ],
+ "wild_cards": [
+  {
+   "idea": "document",
+   "what": "Our first document post: a PDF carousel, cover then one point a page and a recap page.",
+   "why": "Documents had the highest reach and engagement multipliers for personal profiles, and under 5% of posts use them (au-formats).",
+   "status": "picked",
+   "week": "2026-W49"
+  },
+  {
+   "idea": "data_story",
+   "what": "Original numbers we work out ourselves from public data, such as last week's Form D filings by US startups (count, median amount sold), with the method in the first comment.",
+   "why": "A unique perspective is the opposite of generic AI text (li-slop), and data posts are a peer's best pattern (Peter Walker, Carta).",
+   "status": "untried"
+  },
+  {
+   "idea": "cast_comic",
+   "what": "A single image comic with our own cartoon cast (Sam, Penny, Rex) about a founder finance moment, with the sourced point in the post.",
+   "why": "Talha wants humour on LinkedIn; the cast is ours and approved; at most one lighter post of this kind a week.",
+   "status": "untried"
+  },
+  {
+   "idea": "native_video",
+   "what": "The week's best Content Engine reel uploaded natively to LinkedIn with LinkedIn words.",
+   "why": "Video reach fell, but longer, useful video still did well (au-video); worth one test.",
+   "status": "untried"
+  },
+  {
+   "idea": "poll_then_answer",
+   "what": "A poll on a real founder question, then a post two days later with the sourced answer and the poll's split.",
+   "why": "Polls reach far but earn little engagement (au-formats); the follow-up post is where the value is.",
+   "status": "untried"
+  },
+  {
+   "idea": "myth_fact_document",
+   "what": "A document of five myths about one filing, each page a myth and the rule from the source.",
+   "why": "Myth then rule holds attention page by page.",
+   "status": "untried"
+  },
+  {
+   "idea": "text_only_story",
+   "what": "No image: a 1,000+ character post on a public case (an IRS, SEC or court action) and the lesson for founders.",
+   "why": "Tests whether our images help, against the text baseline (au-length).",
+   "status": "untried"
+  },
+  {
+   "idea": "printable_checklist",
+   "what": "A one or two page document that is a checklist to print or save for one deadline.",
+   "why": "Reference posts are the ones people keep and send.",
+   "status": "untried"
+  },
+  {
+   "idea": "calculator_receipt",
+   "what": "A worked calculation drawn like a till receipt, such as Delaware's tax worked both ways for a sample share count.",
+   "why": "Worked numbers hold attention (li-dwell).",
+   "status": "untried"
+  },
+  {
+   "idea": "before_after_books",
+   "what": "Messy books against clean books for one month of an invented sample company, labelled as a sample.",
+   "why": "A visual contrast founders recognise.",
+   "status": "untried"
+  },
+  {
+   "idea": "late_morning_slot",
+   "what": "The same kind of post at 12:30 pm New York instead of 8:30 am.",
+   "why": "Our time has never been tested.",
+   "status": "untried"
+  },
+  {
+   "idea": "newsletter_teaser",
+   "what": "A post that previews one finding from that week's Before the Wire edition.",
+   "why": "Tests whether posts grow the newsletter.",
+   "status": "untried"
+  },
+  {
+   "idea": "investor_speak_document",
+   "what": "A document translating six phrases from a term sheet or SAFE into plain English, each from the source document.",
+   "why": "Saveable glossary pages.",
+   "status": "untried"
+  }
+ ]
+}

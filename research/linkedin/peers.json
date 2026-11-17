@@ -1,0 +1,41 @@
+{
+ "status": "proposed 17 November 2026; read in Talha's LinkedIn by the daily run on Fridays (Metricool's competitor tracking does not cover LinkedIn). The first scan confirms each profile.",
+ "rules": "Patterns only: the format, the hook type, the structure and the topic. Never a peer's words, charts or visuals. A first line is recorded in under 15 words, only to show its pattern.",
+ "peers": [
+  {
+   "name": "Peter Walker",
+   "who": "Head of Insights at Carta",
+   "profile": "https://www.linkedin.com/in/peterjameswalker/",
+   "followers": "172K on his public profile page when checked on 17 November 2026",
+   "why": "Startup fundraising data as one chart and a short read, nearly every day; the topic our raising posts sit in."
+  },
+  {
+   "name": "Josh Aharonoff",
+   "who": "CPA and fractional CFO, the Your CFO Guy newsletter",
+   "profile": null,
+   "followers": "408,053 in Phyllo's list of 28 October 2024",
+   "why": "Accounting and finance explainers as visuals for founders and operators."
+  },
+  {
+   "name": "CJ Gustafson",
+   "who": "CFO, writes the Mostly Metrics newsletter",
+   "profile": null,
+   "followers": null,
+   "why": "Operator finance, metrics and board reporting from a CFO's seat."
+  },
+  {
+   "name": "Ben Murray",
+   "who": "The SaaS CFO",
+   "profile": null,
+   "followers": null,
+   "why": "SaaS metrics, revenue recognition and finance operations for startups."
+  },
+  {
+   "name": "Oana Labes",
+   "who": "FP&A and CFO educator",
+   "profile": null,
+   "followers": "349,918 in Phyllo's list of 28 October 2024",
+   "why": "Finance concepts as one-page infographics, a design pattern our images and documents can learn from."
+  }
+ ]
+}

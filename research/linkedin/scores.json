@@ -1,0 +1,9 @@
+{
+ "about": "Written by node tools/linkedin.mjs learn from research/linkedin/results/*.json, which the Research desk writes on Mondays from the Growth Loop sheet's LinkedIn posts tab (each post's numbers, read by the LinkedIn daily run on Fridays). Empty until the first results: Friday 27 November 2026 reads the posts of 16 to 22 November.",
+ "updated": null,
+ "by_tag": {},
+ "picks": {},
+ "pace": [],
+ "step_back": false,
+ "posts": []
+}

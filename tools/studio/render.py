@@ -3,7 +3,8 @@
   python3 tools/studio/render.py weeks/2026-W47/pieces.json 2026-W47-E05 --media weeks/2026-W47/media --preview .previews/2026-W47
 
 Formats: explainer and ad (narrated video), carousel (slides), carousel_reel (the carousel as a music reel),
-story (one frame), linkedin_image (one 1080 by 1350 image for a LinkedIn post; its file is linkedin/posts.json). A video whose narrator cannot run is made without a voice and says so in "notes".
+story (one frame), linkedin_image (one 1080 by 1350 image for a LinkedIn post; its file is linkedin/posts.json),
+linkedin_document (a LinkedIn document post: 1080 by 1350 pages in one PDF, each page as a JPEG, the cover as LI-....jpg). A video whose narrator cannot run is made without a voice and says so in "notes".
 """
 import argparse, hashlib, json, os, shutil, sys, tempfile, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -72,6 +73,28 @@ def render_linkedin(piece, media, preview, browser):
         problems.append("image: " + p)
     name = os.path.basename(to_jpeg(os.path.join(media, name)))
     return {"files": [name], "frames": [os.path.join(media, name)], "problems": problems}
+
+
+def render_linkedin_document(piece, media, preview, browser):
+    """A LinkedIn document post: each page as a JPEG, all of them in one PDF, and the cover again as the post's
+    fallback image (LI-....jpg), so the daily run can still attach a picture if the document upload fails."""
+    import img2pdf
+    c = piece["content"]
+    problems = linkedin.doc_problems(c)
+    jpgs = []
+    for i, html in enumerate(linkedin.doc_pages(c, disclaimer=disclaimer_for(piece)), start=1):
+        name = "%s%s_p%02d.png" % (prefix(piece), piece["id"], i)
+        p = browser.still(html, 1080, 1350, os.path.join(media, name), name)
+        if p:
+            problems.append("page %d: %s" % (i, p))
+        jpgs.append(to_jpeg(os.path.join(media, name)))
+    pdf = os.path.join(media, "%s%s.pdf" % (prefix(piece), piece["id"]))
+    with open(pdf, "wb") as f:
+        f.write(img2pdf.convert(jpgs))
+    cover = os.path.join(media, "%s%s.jpg" % (prefix(piece), piece["id"]))
+    shutil.copyfile(jpgs[0], cover)
+    return {"files": [os.path.basename(pdf), os.path.basename(cover)] + [os.path.basename(j) for j in jpgs],
+            "frames": jpgs, "problems": problems}
 
 
 def slide_seconds(s):
@@ -244,6 +267,8 @@ def main():
             r = render_carousel_reel(piece, week, media, preview, b)
         elif f == "linkedin_image":
             r = render_linkedin(piece, media, preview, b)
+        elif f == "linkedin_document":
+            r = render_linkedin_document(piece, media, preview, b)
         else:
             sys.exit("format %s is not made by the studio" % f)
     finally:
