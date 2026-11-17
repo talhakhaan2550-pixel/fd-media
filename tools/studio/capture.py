@@ -91,12 +91,18 @@ class Browser:
         return (time.time() - t0) / max(1, n)
 
 
-def encode(frames_dir, fps, out, audio=None, crf=19):
-    """Frames (and an audio track) to an H.264 MP4 that Instagram, Facebook and YouTube accept."""
+def encode(frames_dir, fps, out, audio=None, crf=19, tune=None, maxrate=None):
+    """Frames (and an audio track) to an H.264 MP4 that Instagram, Facebook and YouTube accept. Motion v2 reels use
+    crf 23, tune animation and a 3 Mbit/s cap: the same look at about half the size, so a week of them stays well
+    inside what GitHub Pages serves."""
     args = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-framerate", str(fps), "-i", os.path.join(frames_dir, "f%05d.jpg")]
     if audio:
         args += ["-i", audio]
     args += ["-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf), "-pix_fmt", "yuv420p", "-profile:v", "high", "-r", str(fps)]
+    if tune:
+        args += ["-tune", tune]
+    if maxrate:
+        args += ["-maxrate", maxrate, "-bufsize", "%dM" % (2 * int(str(maxrate).rstrip("M")))]
     if audio:
         args += ["-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest"]
     args += ["-movflags", "+faststart", out]

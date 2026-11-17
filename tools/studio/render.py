@@ -164,7 +164,7 @@ def render_motion_video(piece, media, preview, browser, allow_silent=True):
         wav = audio.mix(os.path.join(work, "mix.wav"), total, voice=voice, music_wav=mus, cues=cues)
         name = "%s%s.mp4" % (prefix(piece), piece["id"])
         out = os.path.join(media, name)
-        capture.encode(d, FPS, out, audio=wav)
+        capture.encode(d, FPS, out, audio=wav, crf=23, tune="animation", maxrate="3M")
         os.makedirs(preview, exist_ok=True)
         frames = [capture.grab(out, t, os.path.join(preview, "%s_%02d.png" % (piece["id"], i))) for i, t in enumerate(looks)]
         timing = [{"beat": b.key, "station": b.station, "start": round(b.start, 2), "end": round(b.end, 2), "say": b.say} for b in beats]

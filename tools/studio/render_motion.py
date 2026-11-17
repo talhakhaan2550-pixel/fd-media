@@ -75,7 +75,7 @@ def main():
         voice = [(x.wav, x.start) for x in beats if x.wav]
         wav = audio.mix(os.path.join(work, "mix.wav"), total, voice=voice, music_wav=mus, cues=cues)
         out = os.path.join(a.out, "%s.mp4" % piece["id"])
-        capture.encode(d, FPS, out, audio=wav)
+        capture.encode(d, FPS, out, audio=wav, crf=23, tune="animation", maxrate="3M")
         frames = [capture.grab(out, t, os.path.join(a.out, "%s_%02d.png" % (piece["id"], i)), width=540) for i, t in enumerate(looks)]
         sheet = os.path.join(a.out, "%s_sheet.png" % piece["id"])
         capture.sheet(frames[:9], sheet, width=300)
