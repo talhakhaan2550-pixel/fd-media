@@ -415,8 +415,8 @@
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_06.jpg",
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C01_07.jpg"
       ],
-      "status": "Made",
-      "check_notes": "",
+      "status": "Passed check",
+      "check_notes": "Passed the production check on 16 November 2026.",
       "metricool": {}
     },
     {
@@ -497,8 +497,8 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-E02.mp4"
       ],
-      "status": "Made",
-      "check_notes": "",
+      "status": "Passed check",
+      "check_notes": "Passed the production check on 16 November 2026.",
       "metricool": {},
       "ai_voice": true
     },
@@ -540,8 +540,8 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S02_01.jpg"
       ],
-      "status": "Made",
-      "check_notes": "",
+      "status": "Passed check",
+      "check_notes": "Passed the production check on 16 November 2026. Both its facts are also lines in E01, posted 16 November 2026; its point, FIRE's last filing day, differs from E01's title, so it passes the Repeats test.",
       "metricool": {}
     },
     {
