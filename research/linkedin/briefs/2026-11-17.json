@@ -1,0 +1,346 @@
+{
+ "made": "2026-11-17 15:55 PKT",
+ "for_week": "2026-12-07",
+ "iso_week": "2026-W50",
+ "first_brief": true,
+ "note": "The first LinkedIn brief, written by hand on 17 November 2026 when Talha set up the LinkedIn engine. No LinkedIn post has numbers in the sheet yet, so the ideas are ranked by the calendar, by what the week needs (a document while documents are testing, one wild card) and by the research in research/linkedin/patterns.json. Every hook is built only from December's Approved claims (Talha approved all 51 on 16 November 2026). From 23 November the Monday Research desk writes these briefs.",
+ "week_shape": {
+  "posts": 6,
+  "days": "Monday 7 to Saturday 12 December 2026 (no US federal holiday that week)",
+  "documents": "at least one: documents are testing since the week of 30 November",
+  "lighter": "up to two",
+  "wild_card": "one, marked pick below"
+ },
+ "suggested_week": [
+  {
+   "day": "Monday 7 December",
+   "idea": 1
+  },
+  {
+   "day": "Tuesday 8 December",
+   "idea": 4
+  },
+  {
+   "day": "Wednesday 9 December",
+   "idea": 2
+  },
+  {
+   "day": "Thursday 10 December",
+   "idea": 3
+  },
+  {
+   "day": "Friday 11 December",
+   "idea": 5
+  },
+  {
+   "day": "Saturday 12 December",
+   "idea": 6
+  }
+ ],
+ "inputs": {
+  "posts_scored": 0,
+  "peer_posts": 0,
+  "peer_standouts": 0,
+  "founder_questions": 0,
+  "news": 0,
+  "claims_used": "Claim Library, December 2026 tab (51 Approved claims and its topic bank)"
+ },
+ "ideas": [
+  {
+   "rank": 1,
+   "title": "IRIS is the only way to e-file 2026 1099s, and it needs a TCC",
+   "format": "linkedin_image",
+   "kind": "rule change explainer",
+   "pattern": "news",
+   "topic": "1099 and contractors",
+   "stage": "top",
+   "hook": "For 2026 returns, IRIS is the only IRS system for e-filing 1099s. Its TCC typically takes up to 45 business days, the IRS says.",
+   "claims": [
+    "1099-05",
+    "1099-11",
+    "1099-12",
+    "1099-04",
+    "1099-02"
+   ],
+   "resource": "/1099-filing",
+   "why": "The IRS says to apply for a TCC before the filing season, and the 1 February 2027 deadline is eight weeks after this week starts; the Claim Library's December notes make the same point. It follows our 17 November post on the old FIRE system closing. News hooks are in rotation.",
+   "evidence": [
+    {
+     "kind": "calendar",
+     "detail": "1099s for 2026 go to payees and the IRS by Monday 1 February 2027 (1099-02); the IRS says a typical TCC application is processed within 45 business days and to apply before the filing season (1099-12); businesses with 10 or more information returns must e-file (1099-04).",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    },
+    {
+     "kind": "ours",
+     "detail": "Follows the 17 November text post on FIRE closing; its numbers reach the LinkedIn posts tab on Friday 27 November.",
+     "link": ""
+    }
+   ]
+  },
+  {
+   "rank": 2,
+   "title": "Your 2026 year end close, page by page",
+   "format": "linkedin_document",
+   "kind": "checklist",
+   "pattern": "who_it_affects",
+   "topic": "year end close",
+   "stage": "top",
+   "hook": "The IRS says good records are what accurate financial statements are built from: your profit and loss statement and your balance sheet.",
+   "claims": [
+    "REC-01",
+    "REC-02",
+    "1099-01",
+    "1099-07",
+    "1099-10",
+    "EST-01",
+    "DE-11"
+   ],
+   "resource": "/funded-startups",
+   "why": "The week's document while documents are testing (one a week until the 4 December test is judged). 31 December closes the year for calendar year companies, and a checklist is a reference post, the kind we expect people to save and send.",
+   "evidence": [
+    {
+     "kind": "research",
+     "detail": "Documents: 1.39 times reach and 1.30 times engagement against each profile's own median, in under 5% of posts (au-formats); about 7.0% engagement, the highest of the formats in a 1.3M business post study (si-2026).",
+     "link": "https://authoredup.com/blog/best-performing-content-on-linkedin"
+    },
+    {
+     "kind": "calendar",
+     "detail": "31 December closes the 2026 books; Delaware's total gross assets come from the year end Form 1120 balance sheet (DE-11).",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "title": "An extension to file is not an extension to pay (the cast comic)",
+   "format": "linkedin_image",
+   "kind": "lighter",
+   "pattern": "expectation_reality",
+   "topic": "deadlines",
+   "stage": "top",
+   "hook": "Form 7004 gives a business six more months to file its tax return. It gives no extra time to pay the tax.",
+   "claims": [
+    "7004-01",
+    "1120-01",
+    "1065-01"
+   ],
+   "resource": "/startup-tax-returns",
+   "experiment": "LIX-2026-W50-cast_comic",
+   "why": "This week's wild card: a one panel comic with our own cast, for the humour Talha asked for on LinkedIn. The joke is on a situation any founder could be in, never on a person, and the post still teaches one sourced rule.",
+   "cast": {
+    "who": [
+     "sam",
+     "dot"
+    ],
+    "note": "Sam the founder sure the extension covers the tax, Dot the deadline winking; the bubble repeats a line from the post word for word (the editor checks it); at most two points on the image."
+   },
+   "evidence": [
+    {
+     "kind": "research",
+     "detail": "Generic AI text spreads less (li-slop); an original cast and a shared founder moment is the opposite of generic.",
+     "link": "https://growigami.com/blog/linkedin-algorithm"
+    },
+    {
+     "kind": "claims",
+     "detail": "7004-01: Form 7004 extends only the time to file, not the time to pay; 1120-01 and 1065-01: the 15 April and 15 March 2027 due dates and the six month extensions.",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "title": "15 December: the last 2026 estimated tax installment for calendar year corporations",
+   "format": "linkedin_image",
+   "kind": "deadline explainer",
+   "pattern": "deadline",
+   "topic": "deadlines",
+   "stage": "top",
+   "hook": "Calendar year C corporations: the last 2026 estimated tax installment is due Tuesday 15 December.",
+   "claims": [
+    "EST-01"
+   ],
+   "resource": "/startup-tax-returns",
+   "why": "December's own federal deadline, eight days after the week starts; best on the Monday or Tuesday. The 29 November calendar named the date; this post explains the installments and the $500 line.",
+   "evidence": [
+    {
+     "kind": "calendar",
+     "detail": "15 December 2026, a Tuesday: the 12th month installment for a calendar year corporation (EST-01).",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "title": "Payment apps and Form 1099-K: the $20,000 and 200 test",
+   "format": "linkedin_image",
+   "kind": "rule explainer",
+   "pattern": "number",
+   "topic": "1099-K and payment apps",
+   "stage": "top",
+   "hook": "A payment app is not required to file a 1099-K for you unless the year's payments top $20,000 and 200 transactions.",
+   "claims": [
+    "1099-06"
+   ],
+   "resource": "/do-i-need-to-file-a-1099",
+   "why": "A figure that surprises (number hooks are in rotation). Whether income with no 1099-K is still reportable needs its own IRS page, opened in the drafting run.",
+   "evidence": [
+    {
+     "kind": "claims",
+     "detail": "1099-06: no 1099-K requirement unless the year's payments exceed $20,000 and the transactions exceed 200.",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "title": "Is your startup a small business for tax? The $32 million test",
+   "format": "linkedin_image",
+   "kind": "rule explainer",
+   "pattern": "question",
+   "topic": "small business tests",
+   "stage": "top",
+   "hook": "Is your startup a small business for tax? For tax years beginning in 2026, the line is $32 million of average gross receipts.",
+   "claims": [
+    "448-01"
+   ],
+   "resource": "/startup-tax-returns",
+   "why": "A question hook (in rotation) with one exact figure; a calm topic for the Saturday slot.",
+   "evidence": [
+    {
+     "kind": "claims",
+     "detail": "448-01: average annual gross receipts over the three prior tax years of $32 million or less for 2026, $31 million for 2025.",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 7,
+   "title": "Your own estimated tax: 15 January 2027, or file by 1 February",
+   "format": "linkedin_image",
+   "kind": "deadline explainer",
+   "pattern": "deadline",
+   "topic": "deadlines",
+   "stage": "top",
+   "hook": "Your last 2026 estimated tax payment is due Friday 15 January 2027, unless you file by 1 February and pay it all.",
+   "claims": [
+    "EST-02"
+   ],
+   "resource": "/startup-tax-returns",
+   "why": "The individual side of the 15 December post; could also wait for the week of 4 January, closer to the date.",
+   "evidence": [
+    {
+     "kind": "calendar",
+     "detail": "15 January 2027 (EST-02).",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 8,
+   "title": "Contractors abroad: the W-8BENs from 2023 run out on 31 December",
+   "format": "linkedin_image",
+   "kind": "rule explainer",
+   "pattern": "who_it_affects",
+   "topic": "contractors abroad",
+   "stage": "top",
+   "hook": "Paying contractors abroad? A W-8BEN signed in 2023 generally stays valid only through 31 December 2026.",
+   "claims": [
+    "1099-09",
+    "1099-10",
+    "1099-14"
+   ],
+   "resource": "/1099-filing",
+   "why": "Timely for US companies with teams abroad, but the 28 November red flag post used 1099-10 and 1099-14: draft it only if it makes a point that post did not.",
+   "evidence": [
+    {
+     "kind": "calendar",
+     "detail": "31 December 2026: W-8 forms signed in 2023 generally run out (1099-14).",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "title": "Authorized shares and your Delaware bill before a round",
+   "format": "linkedin_image",
+   "kind": "worked example",
+   "pattern": "number",
+   "topic": "Delaware franchise tax",
+   "stage": "top",
+   "hook": "Delaware bills on authorized shares, but its own page says to use the method that results in the lesser tax.",
+   "claims": [
+    "DE-03",
+    "DE-04",
+    "DE-05",
+    "DE-11"
+   ],
+   "resource": "/delaware-franchise-tax",
+   "why": "Better in January or February as 1 March nears; 23 November and 4 December already covered Delaware, so it needs a new angle (the gross assets figure from the year end balance sheet).",
+   "evidence": [
+    {
+     "kind": "calendar",
+     "detail": "Delaware's annual report and franchise tax are due Monday 1 March 2027 (DE-01).",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "title": "Collect W-9s now, not in the last week of January",
+   "format": "linkedin_image",
+   "kind": "lighter",
+   "pattern": "receipt_day",
+   "topic": "1099 and contractors",
+   "stage": "top",
+   "hook": "A contractor with no taxpayer number on file by the time you pay them means 24% backup withholding on what you pay.",
+   "claims": [
+    "1099-07",
+    "1099-13",
+    "1099-02"
+   ],
+   "resource": "/do-i-need-to-file-a-1099",
+   "why": "A second lighter post if the week wants one; check the 28 November post first, since it used 1099-07 and 1099-13.",
+   "evidence": [
+    {
+     "kind": "claims",
+     "detail": "1099-13: backup withholding when no TIN is given by the time of payment, at the 24% printed on Form W-9.",
+     "link": "https://claude.ai/artifact/T7epQNC1rByn2Yrmhcvk8a"
+    }
+   ]
+  }
+ ],
+ "wild_cards": [
+  {
+   "idea": "cast_comic",
+   "what": "A single image comic with our own cartoon cast about a founder finance moment, with the sourced point in the post.",
+   "why": "Humour Talha asked for on LinkedIn, with a cast that is ours and approved; the studio draws the cast on LinkedIn images since 17 November 2026 (the test render passed with the bubble, two points and the photo).",
+   "needs": "A point a cast member can say in the post's own words; at most two points on the image; never a real person, client or Talha.",
+   "pick": true,
+   "post_idea": 3
+  },
+  {
+   "idea": "data_story",
+   "what": "Original numbers we work out ourselves from public data, with the method in the first comment.",
+   "why": "A unique perspective is the opposite of generic AI text (li-slop).",
+   "needs": "A public data set the page reader can open: sec.gov was refused in the 30 October Claim Library run, so Form D counts wait; IRS or SBA published tables may work.",
+   "pick": false
+  },
+  {
+   "idea": "text_only_story",
+   "what": "No image: a 1,000+ character post on a public IRS, SEC or court action and the lesson for founders.",
+   "why": "Tests whether our images help, against the six text posts of 10 to 19 November as the baseline (au-length).",
+   "needs": "A case page the page reader can open; no individual named as a wrongdoer beyond what the official page states; no person presented as a client.",
+   "pick": false
+  }
+ ],
+ "pace": {
+  "median_impressions": null,
+  "baseline": null,
+  "change": null,
+  "step_back": false,
+  "approved_four": false,
+  "note": "Six a week from 23 November. The pace check needs two weeks of six posts with numbers, so the earliest it can speak is Monday 14 December."
+ },
+ "scores_used": "None yet: the first LinkedIn numbers reach the sheet on Friday 20 November (posts of 9 to 15 November) and the Research desk scores them on Monday 23 November.",
+ "patterns_changed": []
+}

@@ -10,7 +10,11 @@ Spec (a piece of format linkedin_image, content):
   lead    optional line above the headline, up to 120 characters
   title   the headline, up to 60 characters, with \n where a line must break; emph is the part on the
           marker (default: as for slides)
-  object  one drawn object: {"type": "cheque" | "bill" | "spread" | any carousel visual type, ...}
+  object  one drawn object: {"type": "cheque" | "bill" | "spread" | any carousel visual type, ...}; since
+          17 November 2026 also the cartoon cast as a one panel comic (the cast_comic wild card):
+          {"type": "cast", "who": [up to three of cast.py's characters], "expr": [their expressions],
+           "says": the post's own words in the speech bubble (up to 90 characters), "height": 300 to 380}
+          with at most two points, so the cast, the points and the photo all fit
   points  optional title (up to 50 characters) and items (up to 3): mark (box, tick, cross, num),
           title (up to 40 characters), text (up to 150 characters)
 
@@ -109,6 +113,12 @@ CSS = """
 .tl-bar.yel{background:#FFD84D;color:#15191F}
 .tl-axis{display:flex;justify-content:space-between;font-family:PlexMono;font-size:16px;color:#59606C;margin-top:-4px}
 .ovis{width:936px}
+.li-obj .castv{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.li-obj .castb{position:relative;background:#fff;border:3px solid #15191F;border-radius:24px;padding:16px 24px;font-family:Jakarta;font-size:31px;line-height:1.28;font-weight:700;color:#15191F;max-width:640px;text-align:left}
+.li-obj .castb:after{content:"";position:absolute;bottom:-17px;left:120px;width:28px;height:28px;background:#fff;border-right:3px solid #15191F;border-bottom:3px solid #15191F;transform:rotate(45deg)}
+.li-obj .castf{display:flex;align-items:flex-end;justify-content:flex-start;gap:4px;padding-left:24px}
+.li-obj .castc{max-height:var(--casth,360px);transform-origin:50% 100%}
+.li-obj .castc svg,.li-obj .castc img{display:block;height:100%;max-height:var(--casth,360px);width:auto}
 """.replace("STAMP", texture_uri("stamp_mask"))
 
 
@@ -176,6 +186,11 @@ def obj_html(o):
     fn = OBJECTS.get(o.get("type"))
     if fn:
         return fn(o)
+    if o.get("type") == "cast":
+        # the cartoon cast as a one panel comic: up to three characters standing on the left, the speech bubble above
+        # them holding the post's own words; height (default 360) keeps room for the points and Talha's photo
+        return ('<div class="li-obj" style="--casth:%dpx"><div class="ovis">%s</div></div>'
+                % (int(o.get("height", 360)), slides.visual(o, "post", 0.0)))
     return '<div class="li-obj"><div class="ovis">%s</div></div>' % slides.visual(o, "post", 0.0)
 
 

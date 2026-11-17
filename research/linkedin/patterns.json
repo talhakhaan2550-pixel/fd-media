@@ -308,7 +308,9 @@
    "idea": "cast_comic",
    "what": "A single image comic with our own cartoon cast (Sam, Penny, Rex) about a founder finance moment, with the sourced point in the post.",
    "why": "Talha wants humour on LinkedIn; the cast is ours and approved; at most one lighter post of this kind a week.",
-   "status": "untried"
+   "status": "picked",
+   "week": "2026-W50",
+   "note": "Picked in the first brief (research/linkedin/briefs/2026-11-17.json) for Thursday 10 December; the studio draws the cast on LinkedIn images since 17 November 2026."
   },
   {
    "idea": "native_video",

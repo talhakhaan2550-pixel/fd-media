@@ -169,6 +169,15 @@ export function checkPost(p, opts = {}) {
     if (!p.alt) E.push("alt text is missing");
     else if (p.alt.length > 250) W.push(`alt text is ${p.alt.length} characters; keep it under 250`);
     if (p.format === "linkedin_document" && !(p.content || {}).doc_title) E.push("a document needs content.doc_title (LinkedIn asks for one)");
+    const ob = (p.content || {}).object;
+    if (ob && ob.type === "cast") {
+      // the cartoon cast (the cast_comic wild card): it says only the post's own words, never plays a real person
+      const flat = (x) => String(x).toLowerCase().replace(/[^a-z0-9$%]+/g, " ").trim();
+      if (!ob.says || ob.says.length > 90) E.push("the cast's speech bubble (says) needs words from the post, up to 90 characters");
+      else if (!flat(text).includes(flat(ob.says))) E.push("the cast's speech bubble must repeat words from the post exactly");
+      if ([].concat(ob.who || []).length > 3) E.push("a cast image shows at most three characters");
+      if ((((p.content || {}).points || {}).items || []).length > 2) E.push("a cast image takes at most two points, so the cast and the photo fit");
+    }
     if (opts.media) {
       const need = p.format === "linkedin_document" ? [`${p.id}.pdf`, `${p.id}.jpg`] : [`${p.id}.jpg`];
       for (const f of need) { const fp = join(MEDIA, f); if (!existsSync(fp)) E.push(`linkedin/media/${f} is not made yet`); else if (statSync(fp).size < 50000) E.push(`linkedin/media/${f} is under 50 KB`); }

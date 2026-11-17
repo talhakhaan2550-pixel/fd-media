@@ -65,10 +65,11 @@ has no room for, and the hook tests' Instagram Trial Reels. Everything in this r
   licence), `textures/` (paper grain and a stamp mask, drawn in code) and `photos/` with Talha's real portrait, the
   same photo cut out (`talha_cut.png`, and `talha_sticker.png` with a white edge) and the photo of him receiving the
   Best Freelancer of Swabi award (never AI made).
-- `linkedin/posts.json` and `linkedin/media/`: one image per LinkedIn post, made from the post's own words in the
-  LinkedIn posts doc and named under the post there in a paragraph starting "Image:"; the LinkedIn daily run attaches
-  it when it schedules the post. Make one with
-  `python3 tools/studio/render.py linkedin/posts.json LI-2026-11-24 --preview /tmp/prev`.
+- `linkedin/posts.json` and `linkedin/media/`: every LinkedIn post (its words, first comment, sources, tags and design;
+  the single record since 17 November 2026) and its image or document, named under the post in the LinkedIn posts doc
+  in paragraphs starting "Image:" and "Document:"; the LinkedIn daily run attaches them when it schedules the post.
+  Make one with `python3 tools/studio/render.py linkedin/posts.json LI-2026-11-24 --preview /tmp/prev`.
+- `research/linkedin/` and `tools/linkedin.mjs`: the LinkedIn engine (see "The LinkedIn engine" below).
 
 The words on screen are always exactly the words in the piece file: the tools add nothing, reword nothing and
 invent nothing. A visual or scene shows the piece's own words and figures again, never a new fact, and the narrator
@@ -280,3 +281,29 @@ goals each piece is for, and once a week it tries something really out of the bo
 5. The Monday Plan run follows the brief: the week's hooks and formats from the top of the scores for each stage, the
    tests, and the wild card as one extra piece, `{week}-X1` in its brief and the piece's `experiment`. Changes to the
    format mix, pace or platforms still go through the Direction tab and Talha's ✅.
+
+## The LinkedIn engine (since 17 November 2026)
+
+Talha, 17 November 2026: LinkedIn goes to six posts a week from the week of 23 November, with "the same research
+planning editing designing and writing system like we have for social media content", self improving and trying one
+new thing a week. `research/linkedin/README.md` is its handbook; in short:
+
+- Research: the Monday Research desk (its step 6a) turns the Growth Loop sheet's LinkedIn posts and LinkedIn peers
+  tabs into `research/linkedin/results/{week}.json`, runs `node tools/linkedin.mjs learn` and writes
+  `research/linkedin/briefs/{date}.json` and `.md` with ranked ideas, three wild cards with one pick, and the pace check.
+- Planning and writing: the Thursday "LinkedIn posts, next week" run plans the next free week from the brief and the
+  scores, researches every fact on its primary source, and writes the six posts into `linkedin/posts.json`.
+- Editing: `node tools/linkedin.mjs check --week {Monday}` holds every rule (first line, length, no links or hashtags,
+  sources, tracked resource link, tags, the week's mix) and the run fixes until it passes.
+- Design: the Monday Plan run (its step 8a) renders each post's image, or its document of swipeable pages, from the
+  post's own words (`tools/studio/linkedin.py`), checks them with `--media` and names them in the posts doc.
+- Publishing: the LinkedIn daily run schedules each week six days ahead in LinkedIn's own scheduler and adds weekday
+  first comments; the Social desk adds the weekend ones.
+- Measuring and learning: on Fridays the daily run reads each post's analytics and the five peers' posts into the
+  sheet; `learn` scores formats, kinds, hooks, topics and weekdays against our own eight week medians, judges the
+  week's wild card (`research/linkedin/experiments.json`) and promotes or retires ideas.
+- One new thing a week: the brief's wild card pick, tagged `experiment` LIX-{week}-{idea} on one post. The first
+  was the document post of 4 December; the second is the cartoon cast comic of 10 December.
+- Pace: six a week stays unless median impressions per post fall a third or more two weeks running; then Talha is
+  asked in #content, and only his ✅ moves it to four.
+

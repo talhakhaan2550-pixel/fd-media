@@ -49,7 +49,9 @@ readable copy, which the LinkedIn daily run schedules from.
 ### Design specs (tools/studio/linkedin.py)
 
 - `linkedin_image`: `kicker`, `lead`, `title` with `emph`, one `object` (cheque, bill, spread, or any carousel visual
-  such as date, steps, checklist, compare) and up to three `points`.
+  such as date, steps, checklist, compare) and up to three `points`. Since 17 November 2026 the object can also be the
+  cartoon cast as a one panel comic: `{"type": "cast", "who": [...], "expr": [...], "says": "...", "height": 360}`,
+  where the bubble repeats words from the post exactly (the editor checks it) and the image takes at most two points.
 - `linkedin_document`: `doc_title` (up to 58 characters, the title LinkedIn shows), `kicker`, `cover` (lead, title,
   emph, optional object), 3 to 8 `pages` (title, emph, text up to 60 words, optional object or points) and a `recap`
   (title and up to four items). It renders to `linkedin/media/{id}.pdf`, a JPEG of each page, and the cover as
@@ -78,7 +80,7 @@ Scores by tag (format, kind, pattern, topic, weekday, length, lighter) are weigh
 towards 1.0 until there is evidence (adj). The wild card is judged against the other posts of its week and the three
 weeks before. The pace check compares each week's median impressions per post with the four weeks before: two weeks
 running a third or more below, at six posts a week, and the Research desk asks Talha in #content whether to go back to
-four a week. Nothing about the pace changes without his ✅.
+four a week. His ✅ sets `pace.approved_four` in the next brief, and the Thursday run then plans four posts, Monday to Thursday. Nothing about the pace changes without his ✅.
 
 ## The Growth Loop sheet tabs the engine reads
 
@@ -96,7 +98,7 @@ four a week. Nothing about the pace changes without his ✅.
   "inputs": {"posts_scored": 0, "peer_posts": 0, "peer_standouts": 0, "founder_questions": 0, "news": 0},
   "ideas": [{"rank": 1, "title": "", "format": "", "kind": "", "pattern": "", "topic": "", "hook": "", "claims": [], "why": "", "evidence": [{"kind": "ours | peer | founder | calendar | news | research", "detail": "", "link": ""}]}],
   "wild_cards": [{"idea": "", "what": "", "why": "", "needs": "", "pick": true}],
-  "pace": {"median_impressions": null, "baseline": null, "change": null, "step_back": false},
+  "pace": {"median_impressions": null, "baseline": null, "change": null, "step_back": false, "approved_four": false},
   "scores_used": "",
   "patterns_changed": []
 }
