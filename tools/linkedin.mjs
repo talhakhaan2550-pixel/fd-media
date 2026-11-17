@@ -231,11 +231,11 @@ export function postMarkdown(p) {
   if (p.sources_note) src += `. ${p.sources_note}`;
   out.push(`**Sources:** ${src}`);
   out.push(`**Format and hook:** ${p.format_hook}${p.experiment ? ` (this week's test, ${p.experiment})` : ""}`);
-  if (p.format === "linkedin_image") out.push(`**Image:** ${RAW}${p.id}.jpg ([see it](${VIEW}${p.id}.jpg)). Alt text: ${p.alt}`);
-  if (p.format === "linkedin_document") {
-    out.push(`**Document:** ${RAW}${p.id}.pdf ([see it](${VIEW}${p.id}.pdf)). Title: ${p.content.doc_title}`);
-    out.push(`**Image:** ${RAW}${p.id}.jpg ([see it](${VIEW}${p.id}.jpg)). Alt text: ${p.alt}`);
-  }
+  // the Image: and Document: paragraphs go in only once their files are made (the Monday plan run makes them and adds
+  // the paragraphs for posts the Thursday run drafted), so the daily run never meets a link to a missing file
+  const made = (f) => existsSync(join(MEDIA, f));
+  if (p.format === "linkedin_document" && made(`${p.id}.pdf`)) out.push(`**Document:** ${RAW}${p.id}.pdf ([see it](${VIEW}${p.id}.pdf)). Title: ${p.content.doc_title}`);
+  if (["linkedin_image", "linkedin_document"].includes(p.format) && made(`${p.id}.jpg`)) out.push(`**Image:** ${RAW}${p.id}.jpg ([see it](${VIEW}${p.id}.jpg)). Alt text: ${p.alt}`);
   if (p.format === "linkedin_poll") out.push(`**Poll:** ${p.poll.question} | ${p.poll.options.join(" | ")} | ${p.poll.duration || "1 week"}`);
   return out.join("\n\n");
 }
