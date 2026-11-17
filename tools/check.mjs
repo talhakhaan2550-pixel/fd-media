@@ -10,6 +10,12 @@ import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const config = JSON.parse(readFileSync(join(here, "config.json"), "utf8"));
+// What each offer covers (word for word from its page, FD-31) and the approved comment and DM keywords.
+const OFFERS = JSON.parse(readFileSync(join(here, "coverage.json"), "utf8")).offers;
+// The pattern library the learning loop scores pieces by (research/patterns.json).
+const PATTERNS = (() => { try { return JSON.parse(readFileSync(join(here, "..", "research", "patterns.json"), "utf8")); } catch { return { hooks: [], formats: [], scenes: [] }; } })();
+const weekNo = (w) => { const m = /^(\d{4})-W(\d{2})$/.exec(w || ""); return m ? Number(m[1]) * 53 + Number(m[2]) : 0; };
+const KEYWORDS = JSON.parse(readFileSync(join(here, "keywords.json"), "utf8"));
 
 export const FORMAT_PLATFORMS = {
   explainer: ["youtube", "instagram", "facebook", "tiktok", "linkedin", "x", "threads"],
@@ -66,11 +72,21 @@ const CAST = { sam: PEOPLE, penny: PEOPLE, zara: PEOPLE, grace: PEOPLE, dev: PEO
 const FIGS = /\$[\d,.]+(?:\s?(?:million|billion|M|K))?|\d[\d,.]*%|\b\d{1,3}(?:,\d{3})+\b|\b\d{2,}(?:\.\d+)?(?=s?\b)/g;
 // Money keeps its $ and percentages their %, so $65 never passes for a 65 elsewhere; plain one and two digit
 // numbers (days on a calendar) are not checked.
-const figureSet = (s) => new Set((s.match(FIGS) || []).map((f) => f.replace(/[.,]+$/, "").replace(/[,\s]|million|billion/g, "")));
+const figureSet = (s) => new Set((s.match(FIGS) || []).map((f) => f.replace(/[.,]+$/, "").replace(/[,\s]|million|billion/g, "").replace(/\.0+$/, "")));
+// Motion v2 pieces (content.motion): their words, with every {"cover": id} read as the offer's own items and recap.
+const motionShots = (m) => (m.shots || []).flatMap((sh) => {
+  if (!sh || !sh.cover) return [sh];
+  const o = OFFERS[sh.cover];
+  if (!o) return [];
+  return [...o.items.map((it) => ({ shot: { type: "work", ...it.scene, title: it.title }, lines: [{ text: it.text, say: it.say }] })),
+    ...(sh.recap === false ? [] : [{ shot: { type: "recap", title: o.recap.title }, lines: [{ text: o.recap.text, say: o.recap.say }] }])];
+});
+const motionWords = (m) => [m.hook && m.hook.text, ...motionShots(m).flatMap((sh) => (sh && sh.lines || []).map((l) => l && l.text)), m.cta && m.cta.text, m.offer]
+  .filter((x) => typeof x === "string").join("\n");
 const allText = (p) => {
   const c = p.content || {};
   const parts = [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta, c.text, ...(c.slides || []).flatMap((s) => Object.entries(s).filter(([k]) => k !== "layout").flatMap(([, v]) => strings(v))),
-    ...strings(c.scenes || []), ...strings(c.say || {})];
+    ...strings(c.scenes || []), ...strings(c.say || {}), ...(c.motion ? strings({ ...c.motion, shots: motionShots(c.motion) }) : [])];
   for (const [k, v] of Object.entries(p.captions || {})) parts.push(typeof v === "string" ? v : [v.title, v.description].join(" "));
   return parts.filter((x) => typeof x === "string").join("\n");
 };
@@ -81,6 +97,148 @@ function eastern(iso) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour12: false, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" })
     .formatToParts(d).map((x) => [x.type, x.value]));
   return { day: `${parts.year}-${parts.month}-${parts.day}`, hour: Number(parts.hour) % 24 + Number(parts.minute) / 60, ms: d.getTime() };
+}
+
+// ---------------------------------------------------------------- motion v2
+const SHOT_TYPES = ["versus", "form", "castpay", "bars", "calendar", "follow", "person", "checklist", "docpair", "fax", "deadline", "penalty",
+  "comment", "report", "days", "price", "proof", "nofee", "phone", "work", "recap"];
+const WORK_KINDS = ["books", "revenue", "table", "review", "runway", "findings", "form", "send", "stack", "calendar", "compare", "setup"];
+const CTA_FOR = { top: "follow", middle: "comment", bottom: "dm" };
+
+function motionChecks(p, errors, warnings) {
+  const m = p.content.motion;
+  if (!["explainer", "ad"].includes(p.format)) errors.push("content.motion is for explainers and ads");
+  const stage = String(m.stage || "");
+  if (!CTA_FOR[stage]) errors.push('motion.stage is "top", "middle" or "bottom"');
+  else if (p.stage && stage !== String(p.stage).toLowerCase()) errors.push(`motion.stage ${stage} does not match the piece's stage ${p.stage}`);
+  const h = m.hook || {};
+  if (typeof h.text !== "string" || !h.text.trim()) errors.push("motion.hook needs its text");
+  if (!h.shot || !SHOT_TYPES.includes(h.shot.type)) errors.push(`motion.hook.shot has an unknown type ${h.shot && h.shot.type}`);
+  (m.shots || []).forEach((sh, i) => {
+    if (sh && sh.cover !== undefined) {
+      if (!OFFERS[sh.cover]) errors.push(`shot ${i + 1}: cover ${sh.cover} is not an offer in tools/coverage.json`);
+      return;
+    }
+    if (!sh || !sh.shot || !SHOT_TYPES.includes(sh.shot.type)) errors.push(`shot ${i + 1} has an unknown type ${sh && sh.shot && sh.shot.type}`);
+    else if (sh.shot.type === "work" && !WORK_KINDS.includes(sh.shot.kind)) errors.push(`shot ${i + 1}: work kind ${sh.shot.kind} is not one of ${WORK_KINDS.join(", ")}`);
+    if (!sh || !Array.isArray(sh.lines) || !sh.lines.length || sh.lines.some((l) => !l || typeof l.text !== "string" || !l.text.trim())) errors.push(`shot ${i + 1} needs lines, each with its text`);
+    for (const l of (sh && sh.lines) || []) if (l && l.say !== undefined && (typeof l.say !== "string" || !l.say.trim())) errors.push(`shot ${i + 1}: every say is a non-empty string`);
+    for (const l of (sh && sh.lines) || []) if (l && typeof l.text === "string" && l.text.split(/\s+/).length > 32) warnings.push(`shot ${i + 1}: a line of ${l.text.split(/\s+/).length} words holds one picture too long; split it`);
+  });
+  const cta = m.cta || {};
+  if (CTA_FOR[stage] && cta.kind !== CTA_FOR[stage] && !(p.format === "ad" && cta.kind === "dm")) errors.push(`a ${stage} of funnel piece ends with the ${CTA_FOR[stage]} call to action, not ${cta.kind}`);
+  if (!cta.shot || !SHOT_TYPES.includes(cta.shot.type)) errors.push("motion.cta needs a shot");
+  if (cta.kind === "comment" || cta.kind === "dm") {
+    const list = cta.kind === "comment" ? KEYWORDS.comment : KEYWORDS.dm;
+    const k = (list || []).find((x) => x.keyword === cta.keyword);
+    if (!k) errors.push(`${cta.keyword} is not an approved ${cta.kind === "dm" ? "DM" : "comment"} keyword in tools/keywords.json`);
+    else if (/^waits/i.test(k.status || "")) errors.push(`the ${cta.keyword} keyword ${k.status}`);
+    else if (!/^live/i.test(k.status || "")) warnings.push(`the ${cta.keyword} automation is ${k.status}: Talha tests it from his personal Instagram before it is live`);
+    if (cta.shot && cta.shot.keyword !== undefined && cta.shot.keyword !== cta.keyword) errors.push("the call to action's shot shows a different keyword from the one it asks for");
+    const covered = (m.shots || []).filter((x) => x && x.cover).map((x) => x.cover);
+    if (cta.kind === "dm" && covered.length && cta.keyword !== "CALL" && !covered.some((o) => OFFERS[o] && OFFERS[o].keyword === cta.keyword))
+      warnings.push(`DM ${cta.keyword} sends a page other than the offer this piece covers (${covered.join(", ")})`);
+  }
+  // figures in shots and scenes come from the piece's own words
+  const own = figureSet(motionWords(m));
+  const extras = [...strings(h.shot || {}), ...(m.shots || []).filter((x) => x && !x.cover).flatMap((x) => strings(x.shot || {})), ...strings(cta.shot || {})];
+  for (const t of extras) for (const f of figureSet(t)) if (!own.has(f) && !/^\d{1,2}$/.test(f)) errors.push(`a shot shows ${f}, which is not in the piece's own words`);
+}
+
+// ---------------------------------------------------------------- coverage before name and price
+const escRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const priceAt = (text, pr) => { const r = new RegExp(`${escRe(pr)}(?![\\d.,]*\\d)`).exec(text); return r ? r.index : -1; };
+const nameAt = (text, o) => Math.min(...[o.name, ...(o.names || [])].map((n) => { const i = text.toLowerCase().indexOf(n.toLowerCase()); return i < 0 ? Infinity : i; }));
+// Where in a text an offer is first named or priced: {named, priced} as positions, or -1. A price counts for an offer
+// only when the piece names or covers that offer ($600 in a post about the old 1099 threshold is not a price).
+function mentions(text, o, prices = true) {
+  const named = nameAt(text, o);
+  const at = prices ? o.prices.map((pr) => priceAt(text, pr)).filter((i) => i >= 0) : [];
+  return { named: named === Infinity ? -1 : named, priced: at.length ? Math.min(...at) : -1 };
+}
+const listsItems = (text, o, upTo) => { const t = text.slice(0, upTo < 0 ? undefined : upTo).toLowerCase(); return o.items.filter((it) => !t.includes(it.title.toLowerCase()) && !t.includes(it.text.toLowerCase())); };
+
+function coverageChecks(p, claims, errors, warnings) {
+  const c = p.content || {};
+  const used = p.claims || [];
+  // the piece's own words, without what a cover adds (the Sprint's items name the Scan)
+  const capText = Object.values(p.captions || {}).map((v) => (typeof v === "string" ? v : [v && v.title, v && v.description].join("\n"))).join("\n");
+  const own = [strings({ ...c, motion: undefined }).join("\n"), c.motion ? strings(c.motion).join("\n") : "", capText].join("\n");
+  const covers = new Set([...(c.motion ? (c.motion.shots || []).filter((x) => x && x.cover).map((x) => x.cover) : []),
+    ...(Array.isArray(c.slides) ? c.slides.filter((x) => x && x.cover).map((x) => x.cover) : [])]);
+  const known = new Set(Object.entries(OFFERS).filter(([id, o]) => covers.has(id) || nameAt(own, o) !== Infinity).map(([id]) => id));
+  const offersHere = new Set(known);
+  const priced = new Set();
+  const look = (text, id) => { const x = mentions(text, OFFERS[id], known.has(id)); if (x.priced >= 0) priced.add(id); return x; };
+  if (c.motion) {
+    const m = c.motion;
+    // the order the viewer meets things in: hook, shots, call to action, end card
+    const segs = [{ text: [m.hook && m.hook.text, ...strings((m.hook || {}).shot || {})].join("\n") },
+      ...(m.shots || []).map((sh) => (sh && sh.cover ? { cover: sh.cover } : { text: strings(sh || {}).join("\n") })),
+      { text: strings(m.cta || {}).join("\n") }, { text: m.offer || "" }];
+    for (const id of known) {
+      const o = OFFERS[id];
+      const at = segs.findIndex((g) => g.cover === id);
+      const first = segs.findIndex((g) => g.text !== undefined && (() => { const x = look(g.text, id); return x.named >= 0 || x.priced >= 0; })());
+      if (first >= 0 && (at < 0 || first < at))
+        errors.push(`${o.name} is ${first === 0 ? "named or priced in the hook" : "named or priced"} before what it covers is shown: put {"cover": "${id}"} first (Talha, 17 November 2026)`);
+    }
+  } else if (Array.isArray(c.slides) && c.slides.length) {
+    // a slide with "cover": "<offer id>" shows the offer's list: in a story after the kicker and title and before the
+    // body, in a carousel as the slide's visual, after its words. The offer is named or priced only after the list.
+    const story = p.format === "story";
+    const parts = (sl) => {
+      const t = (keys) => strings(Object.fromEntries(Object.entries(sl).filter(([k]) => keys.includes(k)))).join("\n");
+      const pre = sl.cover ? (story ? ["kicker", "title", "emph"] : ["kicker", "title", "emph", "body", "bold", "num"]) : Object.keys(sl).filter((k) => k !== "layout");
+      return [t(pre), sl.cover ? t(Object.keys(sl).filter((k) => !pre.includes(k) && !["layout", "cover", "visual", "visual2"].includes(k))) : ""];
+    };
+    for (const id of known) {
+      const o = OFFERS[id];
+      const at = c.slides.findIndex((sl) => sl.cover === id);
+      let first = Infinity;
+      c.slides.forEach((sl, i) => parts(sl).forEach((t, half) => { const x = look(t, id); if ((x.named >= 0 || x.priced >= 0) && i + half * 0.75 < first) first = i + half * 0.75; }));
+      if (first === Infinity) continue;
+      if (at < 0) errors.push(`${o.name} is named or priced on slide ${Math.floor(first) + 1} without its coverage: add a slide with "cover": "${id}" first (Talha, 17 November 2026)`);
+      else if (first < at + 0.5) errors.push(`${o.name} is named or priced on slide ${Math.floor(first) + 1} before its coverage list: name and price it ${story ? "in the body, after the list" : "on a slide after the cover slide"}`);
+    }
+    c.slides.forEach((sl, i) => { if (sl.cover !== undefined && !OFFERS[sl.cover]) errors.push(`slide ${i + 1}: cover ${sl.cover} is not an offer in tools/coverage.json`); });
+  } else if (["explainer", "ad"].includes(p.format)) {
+    const t = [c.kicker, c.hook, ...(c.lines || []), c.offer, c.cta].filter((x) => typeof x === "string").join("\n");
+    for (const id of known) {
+      const x = look(t, id);
+      if (x.named >= 0 || x.priced >= 0) errors.push(`${OFFERS[id].name} is named or priced in a classic video: make it a motion piece that shows what it covers first ({"cover": "${id}"})`);
+    }
+  } else if (typeof c.text === "string") {
+    for (const id of known) {
+      const o = OFFERS[id];
+      const x = look(c.text, id);
+      if (x.named < 0 && x.priced < 0) continue;
+      const upTo = Math.min(...[x.named, x.priced].filter((i) => i >= 0));
+      const missing = listsItems(c.text, o, upTo);
+      if (missing.length) errors.push(`${o.name} is named or priced before the post lists what it covers (missing: ${missing.map((i) => i.title).join(", ")})`);
+    }
+  }
+  // captions that quote a price list what the offer covers before the price
+  for (const [n, cap] of Object.entries(p.captions || {})) {
+    const body = typeof cap === "string" ? cap : [cap && cap.title, cap && cap.description].join("\n");
+    for (const id of known) {
+      const o = OFFERS[id];
+      const x = look(body, id);
+      if (x.priced < 0) continue;
+      const missing = listsItems(body, o, x.priced);
+      if (missing.length) errors.push(`the ${n} caption quotes ${o.name}'s price before listing what it covers (missing: ${missing.map((i) => i.title).join(", ")})`);
+    }
+  }
+  for (const id of offersHere) {
+    const o = OFFERS[id];
+    if (o.hold) errors.push(`${o.name} ${o.hold}`);
+    if (!used.includes("FD-31")) errors.push(`a piece about ${o.name} lists FD-31, the approved wording of what each offer covers`);
+    if (priced.has(id) && !o.claims.filter((x) => x !== "FD-31").some((x) => used.includes(x))) errors.push(`${o.name}'s price needs one of its claims listed (${o.claims.filter((x) => x !== "FD-31").join(", ")})`);
+  }
+  if (c.motion && String(p.stage) === "Bottom" && !offersHere.size) {
+    const kw = c.motion && c.motion.cta && c.motion.cta.keyword;
+    if (kw !== "CALL") warnings.push("a bottom of funnel piece usually covers one offer: add {\"cover\": \"<offer>\"} or ask for DM CALL");
+  }
 }
 
 export function checkPiece(p, claims, week) {
@@ -161,7 +319,7 @@ export function checkPiece(p, claims, week) {
     const c = p.content || {};
     if (c.hook_clip && typeof p.ai_generated !== "boolean") errors.push("an ad with a hook_clip needs ai_generated true or false");
     if (p.ai_generated === true) warnings.push("AI made footage: switch on each platform's AI label when placing");
-    if (!c.offer) warnings.push("an ad usually names its offer on the end card");
+    if (!c.offer && !(c.motion && c.motion.offer)) warnings.push("an ad usually names its offer on the end card");
   }
   // Studio: spoken words, scenes and visuals restate the piece's own words and add no figure
   if (p.style !== "classic") {
@@ -197,6 +355,23 @@ export function checkPiece(p, claims, week) {
     }
     if ((fmt === "explainer" || fmt === "ad") && p.ai_voice === true) warnings.push("AI voice: switch on each platform's AI label when placing");
   }
+  // Motion v2 (Talha approved the style on 17 November 2026): every explainer and ad is a content.motion piece.
+  if (p.content && p.content.motion) motionChecks(p, errors, warnings);
+  else if ((fmt === "explainer" || fmt === "ad") && p.style !== "classic" && !["Made", "Passed check", "Draft in Metricool", "Scheduled", "Posted"].includes(p.status))
+    warnings.push("explainers and ads are made as motion v2 since 17 November 2026: write content.motion (see tools/studio/motion.py)");
+  // Talha, 17 November 2026: a piece that introduces a service or quotes a price shows in detail what it covers first.
+  coverageChecks(p, claims, errors, warnings);
+  // The learning loop (since 17 November 2026): pieces planned from 2026-W49 carry tags, and the wild card its experiment.
+  if (weekNo(week.week) >= weekNo("2026-W49") && !p.test) {
+    const t = p.tags;
+    if (!t || typeof t !== "object") warnings.push("no tags: the learning loop cannot score this piece (tags {hook, format, scenes})");
+    else {
+      if (t.hook && !(PATTERNS.hooks || []).some((x) => x.id === t.hook)) warnings.push(`tags.hook ${t.hook} is not a hook in research/patterns.json`);
+      const fmts = [...(PATTERNS.formats || []).map((x) => x.id), ...(PATTERNS.wild_cards || []).map((x) => x.idea)];
+      if (t.format && !fmts.includes(t.format)) warnings.push(`tags.format ${t.format} is not a format or wild card in research/patterns.json`);
+    }
+  }
+  if (p.experiment !== undefined && !new RegExp(`^${week.week}-X\\d$`).test(String(p.experiment))) errors.push(`experiment must be ${week.week}-X1`);
   // Hook tests (since 16 November 2026): an explainer whose Instagram post goes out as an Instagram Trial Reel,
   // shown first only to people who do not follow us. Version A is the planned explainer; version B is its own
   // explainer piece, Instagram only, with the same words as A except the hook, a day later at the same time.
@@ -214,12 +389,20 @@ export function checkPiece(p, claims, week) {
       else {
         const c = p.content || {}, ac = a.content || {};
         const same = (x, y) => JSON.stringify(x ?? null) === JSON.stringify(y ?? null);
+        if (c.motion || ac.motion) {
+          const m = c.motion || {}, am = ac.motion || {};
+          if (!same(m.shots, am.shots) || !same(m.cta, am.cta) || !same(m.offer, am.offer)) errors.push("version B keeps A's shots, call to action and offer; only the hook changes");
+          if (!m.hook || !am.hook || (m.hook.text || "").trim() === (am.hook.text || "").trim()) errors.push("version B needs a hook of its own");
+          if (!same([...(p.claims || [])].sort(), [...(a.claims || [])].sort())) errors.push("version B lists the same claims as A");
+          if (t.pattern === a.trial.pattern) warnings.push("version B uses the same hook pattern as A");
+        } else {
         if (!same(c.kicker, ac.kicker) || !same(c.lines, ac.lines) || !same(c.offer, ac.offer) || !same(c.cta, ac.cta)) errors.push("version B keeps A's kicker, lines, offer and call to action word for word; only the hook changes");
         if (!same((c.say || {}).lines, (ac.say || {}).lines) || !same((c.say || {}).cta, (ac.say || {}).cta)) errors.push("version B keeps A's spoken lines and call to action");
         if (!same((c.scenes || []).slice(1), (ac.scenes || []).slice(1))) errors.push("version B keeps A's scenes after the hook");
         if (!c.hook || c.hook.trim() === (ac.hook || "").trim()) errors.push("version B needs a hook of its own");
         if (!same([...(p.claims || [])].sort(), [...(a.claims || [])].sort())) errors.push("version B lists the same claims as A");
         if (t.pattern === a.trial.pattern) warnings.push("version B uses the same hook pattern as A");
+        }
         const ea = a.publish_at ? eastern(a.publish_at) : null;
         const h = e && ea ? (e.ms - ea.ms) / 3600e3 : null;
         if (h !== null && (h < 20 || h > 28)) warnings.push("version B usually goes out a day after A, at A's Eastern time");

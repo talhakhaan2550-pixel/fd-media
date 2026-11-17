@@ -1,0 +1,16 @@
+{
+  "about": "The weekly wild card (Talha, 17 November 2026: once a week the system tries something really out of the box, and if it works it joins the content strategy). The Research desk proposes three wild card ideas in each Monday brief and marks one as the pick; the Plan run makes it as one of the week's pieces (an extra piece, not one taken from the mix) with \"experiment\": its id; the Weekly report run writes its numbers to research/results/{week}.json and node tools/learn.mjs judges it against the same stage's other pieces (win at 1.25 times our usual or more, loss at 0.8 or less, otherwise inconclusive; fewer than 100 views is not readable). An idea with one strong win (1.5 times) or two wins is marked promote: the Research desk then adds it to research/patterns.json as in rotation, and the Plan run uses it like any proven format. An idea that loses twice is retired there. Every wild card keeps every rule: approved claims only, the coverage rule, the brand, no AI face or voice of Talha, no on-screen wording saying the narrator is AI.",
+  "fields": {
+    "id": "{week}-X1",
+    "week": "the week it ran",
+    "idea": "short id of the idea, the same each time it is tried",
+    "what": "what makes it out of the box",
+    "hypothesis": "what it should beat and why",
+    "stage": "top | middle | bottom",
+    "piece": "the piece ID that carried it",
+    "metric": "the goal it is judged on (the stage's goal in tools/learn.mjs)",
+    "result": "written by tools/learn.mjs",
+    "promote": "true once it has earned a place"
+  },
+  "experiments": []
+}

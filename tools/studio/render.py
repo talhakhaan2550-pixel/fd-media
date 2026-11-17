@@ -137,7 +137,49 @@ def render_carousel_reel(piece, week, media, preview, browser):
         shutil.rmtree(work, ignore_errors=True)
 
 
+def render_motion_video(piece, media, preview, browser, allow_silent=True):
+    """Motion v2 (motion.py, work.py): every explainer and ad with content.motion, since Talha approved the style
+    on 17 November 2026. Returns the same shape as render_video."""
+    import motion
+    beats, stations = motion.make_beats(piece)
+    ok, why = audio.voice_status(download=True)
+    notes = []
+    work = tempfile.mkdtemp(prefix="fd-motion-")
+    try:
+        if ok:
+            for b in beats:
+                text = b.say or audio.speakable(b.text)
+                b.say = text
+                r = audio.narrate(text, os.path.join(work, "vo_%s.wav" % b.key))
+                b.dur, b.words, b.wav = r["dur"], r["words"], os.path.join(work, "vo_%s.wav" % b.key)
+        elif not allow_silent:
+            raise RuntimeError("narrator unavailable: " + why)
+        else:
+            notes.append("made without the AI voice: " + why)
+        html, total, cues, looks = motion.build(piece, beats, stations, disclaimer=disclaimer_for(piece))
+        d = os.path.join(work, "frames")
+        spf = browser.frames(html, 1080, 1920, FPS, total, d, "motion")
+        mus = audio.music(os.path.join(work, "music.wav"), total + 0.5, seed=seed_of(piece["id"]), preset=seed_of(piece["id"]) % 4)
+        voice = [(b.wav, b.start) for b in beats if b.wav]
+        wav = audio.mix(os.path.join(work, "mix.wav"), total, voice=voice, music_wav=mus, cues=cues)
+        name = "%s%s.mp4" % (prefix(piece), piece["id"])
+        out = os.path.join(media, name)
+        capture.encode(d, FPS, out, audio=wav)
+        os.makedirs(preview, exist_ok=True)
+        frames = [capture.grab(out, t, os.path.join(preview, "%s_%02d.png" % (piece["id"], i))) for i, t in enumerate(looks)]
+        timing = [{"beat": b.key, "station": b.station, "start": round(b.start, 2), "end": round(b.end, 2), "say": b.say} for b in beats]
+        covers = sorted({st["shot"].get("cover", "").split(".")[0] for st in stations if st["shot"].get("cover")})
+        if covers:
+            notes.append("shows what %s covers before its price" % ", ".join(covers))
+        return {"files": [name], "frames": frames, "seconds": total, "notes": notes, "voiced": ok, "loudness": audio.loudness(wav),
+                "seconds_per_frame": round(spf, 3), "timing": timing, "problems": [], "style": "motion"}
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
 def render_video(piece, media, preview, browser, allow_silent=True):
+    if piece.get("content", {}).get("motion"):
+        return render_motion_video(piece, media, preview, browser, allow_silent)
     beats = video.make_beats(piece)
     ok, why = audio.voice_status(download=True)
     notes = []

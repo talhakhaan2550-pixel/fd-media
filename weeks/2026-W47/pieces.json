@@ -1591,7 +1591,8 @@
       "stage": "Bottom",
       "claims": [
         "FD-13",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-22T18:00:00-05:00",
       "platforms": [
@@ -1603,23 +1604,11 @@
           {
             "layout": "STORY",
             "kicker": "Before you raise",
-            "title": "The 5 Day Investor Ready Scan: a findings report with a Money at Stake page in five working days",
-            "body": "$750 for our first five clients, then $1,250.",
-            "cta": "Reply CALL to book a 30 minute call",
-            "visual": {
-              "type": "stats",
-              "items": [
-                {
-                  "label": "First five clients",
-                  "value": "$750"
-                },
-                {
-                  "label": "Then",
-                  "value": "$1,250",
-                  "highlight": false
-                }
-              ]
-            }
+            "title": "Find what investors will find, in five working days.",
+            "emph": "in five working days",
+            "cover": "investor_ready_scan",
+            "body": "The 5 Day Investor Ready Scan: $750 for our first five clients, then $1,250.",
+            "cta": "Reply CALL to book a 30 minute call"
           }
         ]
       },

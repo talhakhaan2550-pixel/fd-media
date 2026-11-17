@@ -1,0 +1,1120 @@
+{
+  "_about": "What each offer covers, for pieces that introduce a service or quote a price (Talha, 17 November 2026: show in detail what it covers, practically showing the work, before the name and the price). Each item's text is word for word from the What you get list on the offer's page at financedepartmentllc.com (claim FD-31). title is the on-screen title, say the spoken words where narration needs them, scene the work shown (tools/studio/work.py). recap names the offer after its items. hook is a line from the page that may open a piece; it never quotes a price, because the coverage comes first. prices are the figures that make a piece quote this offer. hold says when the offer may not be posted yet. When an offer page's What you get list changes, change this file in the same chat; node tools/coverage.mjs --check <path to the financedepartment repo> compares them.",
+  "claim": "FD-31",
+  "read_from": "financedepartment repo, src/pages/*.tsx, gets lists, 17 November 2026",
+  "offers": {
+    "investor_ready_scan": {
+      "name": "5 Day Investor Ready Scan",
+      "names": [
+        "Investor Ready Scan"
+      ],
+      "page": "/investor-ready-scan",
+      "source": "InvestorReadyScan.tsx",
+      "keyword": "SCAN",
+      "claims": [
+        "FD-13",
+        "FD-14",
+        "FD-31"
+      ],
+      "prices": [
+        "$750",
+        "$1,250"
+      ],
+      "hook": "Find what investors will find, in five working days.",
+      "recap": {
+        "title": "The <mark>5 Day Investor Ready Scan</mark>",
+        "text": "That is the 5 Day Investor Ready Scan.",
+        "say": "That is the five day Investor Ready Scan."
+      },
+      "items": [
+        {
+          "id": "books",
+          "title": "Your books",
+          "text": "Your books reviewed: the general ledger, bank and card reconciliations, and the statements and cash position they produce",
+          "scene": {
+            "kind": "books",
+            "left": "Bank and card",
+            "right": "General ledger",
+            "rows": 5,
+            "chips": [
+              "Statements",
+              "Cash position"
+            ]
+          }
+        },
+        {
+          "id": "revenue",
+          "title": "Your revenue",
+          "text": "How you recognize revenue, checked against what investors expect",
+          "scene": {
+            "kind": "revenue",
+            "block": "Revenue",
+            "chip": "What investors expect"
+          }
+        },
+        {
+          "id": "captable",
+          "title": "Your cap table",
+          "text": "Your cap table checked against the equity and convertible instruments you give us",
+          "scene": {
+            "kind": "table",
+            "head": "Cap table",
+            "rows": 4,
+            "sources": [
+              "Equity",
+              "Convertible instruments"
+            ]
+          }
+        },
+        {
+          "id": "contracts",
+          "title": "Key contracts",
+          "text": "Your key contracts read for their financial terms and the questions an investor would ask",
+          "scene": {
+            "kind": "review",
+            "doc": "Key contract",
+            "notes": [
+              "Financial terms",
+              "Investor questions"
+            ]
+          }
+        },
+        {
+          "id": "runway",
+          "title": "Cash runway",
+          "text": "Your cash runway at your current rate of spending",
+          "scene": {
+            "kind": "runway",
+            "label": "Cash",
+            "sub": "At your current rate of spending",
+            "flag": "Runway"
+          }
+        },
+        {
+          "id": "findings",
+          "title": "Findings report",
+          "text": "A findings report naming every gap, with our estimate of the cost and time to fix it, and a walkthrough call",
+          "scene": {
+            "kind": "findings",
+            "page": "Money at Stake",
+            "row_label": "Gap",
+            "rows": 3,
+            "chips": [
+              "Cost to fix",
+              "Time to fix"
+            ],
+            "call": "Walkthrough call"
+          }
+        }
+      ]
+    },
+    "books_catch_up": {
+      "name": "Books Catch Up",
+      "names": [
+        "Books Catch Up"
+      ],
+      "page": "/books-cleanup",
+      "source": "BooksCleanup.tsx",
+      "keyword": "CLEANUP",
+      "claims": [
+        "FD-21",
+        "FD-31"
+      ],
+      "prices": [
+        "$1,000",
+        "$1,750",
+        "$3,000"
+      ],
+      "hook": "Books behind? Caught up before an investor looks.",
+      "recap": {
+        "title": "<mark>Books Catch Up</mark>",
+        "text": "That is Books Catch Up."
+      },
+      "items": [
+        {
+          "id": "accounts",
+          "title": "Every account",
+          "text": "Every bank, card, loan and payment processor account reconciled for the months behind",
+          "scene": {
+            "kind": "books",
+            "left": "Statements",
+            "right": "Your books",
+            "rows": 5,
+            "chips": [
+              "Bank",
+              "Card",
+              "Loan",
+              "Payment processor"
+            ]
+          }
+        },
+        {
+          "id": "accrual",
+          "title": "Accrual books",
+          "text": "Your books moved to accrual accounting, with revenue recognition set up",
+          "scene": {
+            "kind": "revenue",
+            "doc": "Your books",
+            "block": "Revenue",
+            "chip": "Accrual accounting"
+          }
+        },
+        {
+          "id": "statements",
+          "title": "Every month",
+          "text": "A profit and loss statement, balance sheet and cash summary for each month",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "Profit and loss",
+              "Balance sheet",
+              "Cash summary"
+            ]
+          }
+        },
+        {
+          "id": "log",
+          "title": "Adjustment log",
+          "text": "A log of every adjustment we made and why, and a call to walk you through it",
+          "scene": {
+            "kind": "findings",
+            "page": "Adjustment log",
+            "row_label": "Adjustment",
+            "rows": 3,
+            "chips": [
+              "Why"
+            ],
+            "call": "Walkthrough call"
+          }
+        }
+      ]
+    },
+    "delaware_franchise_tax": {
+      "name": "Delaware Franchise Tax, Worked Out Both Ways",
+      "names": [
+        "Delaware Franchise Tax, Worked Out Both Ways"
+      ],
+      "page": "/delaware-franchise-tax",
+      "source": "DelawareFranchiseTax.tsx",
+      "keyword": "DELAWARE",
+      "claims": [
+        "FD-27",
+        "FD-08",
+        "FD-31"
+      ],
+      "prices": [
+        "$125"
+      ],
+      "hook": "Your Delaware franchise tax may be far higher than it needs to be.",
+      "recap": {
+        "title": "Delaware Franchise Tax, <mark>Worked Out Both Ways</mark>",
+        "text": "That is Delaware Franchise Tax, Worked Out Both Ways."
+      },
+      "items": [
+        {
+          "id": "both",
+          "title": "Both methods",
+          "text": "Your franchise tax worked out under both of Delaware's methods, from your share records and year end balance sheet",
+          "scene": {
+            "kind": "compare",
+            "from": [
+              "Share records",
+              "Year end balance sheet"
+            ],
+            "left": "Method one",
+            "right": "Method two",
+            "pick": "right",
+            "tag": "The lower figure"
+          }
+        },
+        {
+          "id": "report",
+          "title": "Annual report",
+          "text": "Your annual report prepared with the lower figure and filed with Delaware before March 1",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Annual report",
+                "tag": "Delaware"
+              }
+            ],
+            "stamp": "Filed"
+          }
+        },
+        {
+          "id": "confirmation",
+          "title": "Confirmation",
+          "text": "Delaware's confirmation, with a one page comparison of both calculations",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "Delaware's confirmation",
+              "One page comparison"
+            ]
+          }
+        },
+        {
+          "id": "calendar",
+          "title": "Next year",
+          "text": "Next year's March 1 on your calendar",
+          "scene": {
+            "kind": "calendar",
+            "month": "MARCH",
+            "day": "1",
+            "label": "Next year"
+          }
+        }
+      ]
+    },
+    "filing_1099": {
+      "name": "1099s Done by February 1",
+      "names": [
+        "1099s Done by February 1"
+      ],
+      "page": "/1099-filing",
+      "source": "Filing1099.tsx",
+      "keyword": "1099",
+      "claims": [
+        "FD-24",
+        "FD-09",
+        "FD-31"
+      ],
+      "prices": [
+        "$100",
+        "$12.50"
+      ],
+      "hook": "Your 1099s filed by 1 February.",
+      "recap": {
+        "title": "1099s Done by <mark>February 1</mark>",
+        "text": "That is 1099s Done by February 1."
+      },
+      "items": [
+        {
+          "id": "forms",
+          "title": "Your 1099s",
+          "text": "Your Forms 1099-NEC prepared from your contractor list",
+          "scene": {
+            "kind": "table",
+            "head": "Contractor list",
+            "rows": 4,
+            "make": "1099-NEC"
+          }
+        },
+        {
+          "id": "w9",
+          "title": "W-9s collected",
+          "text": "A Form W-9 collected from each contractor who has not given you one, without their number passing through email",
+          "scene": {
+            "kind": "send",
+            "from_people": 3,
+            "items": [
+              "W-9"
+            ],
+            "to": [
+              {
+                "label": "Your W-9s",
+                "icon": "lock"
+              }
+            ],
+            "note": "Not through email"
+          }
+        },
+        {
+          "id": "filed",
+          "title": "Filed and sent",
+          "text": "Filed with the IRS and sent to each contractor by 1 February",
+          "scene": {
+            "kind": "send",
+            "items": [
+              "1099-NEC"
+            ],
+            "to": [
+              "IRS",
+              "Each contractor"
+            ],
+            "receipt": "By 1 February"
+          }
+        },
+        {
+          "id": "copies",
+          "title": "Your copies",
+          "text": "A copy of every form for your records",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "1099-NEC",
+              "1099-NEC",
+              "1099-NEC"
+            ],
+            "folder": "Your records"
+          }
+        }
+      ]
+    },
+    "form_5472": {
+      "name": "Form 5472 for Foreign Owned LLCs",
+      "names": [
+        "Form 5472 for Foreign Owned LLCs"
+      ],
+      "page": "/form-5472",
+      "source": "Form5472.tsx",
+      "keyword": "5472",
+      "claims": [
+        "FD-28",
+        "FD-16",
+        "FD-31"
+      ],
+      "prices": [
+        "$300"
+      ],
+      "hook": "Own a US LLC from abroad? Form 5472, filed for you.",
+      "recap": {
+        "title": "Form 5472 for <mark>Foreign Owned LLCs</mark>",
+        "text": "That is Form 5472 for Foreign Owned LLCs."
+      },
+      "items": [
+        {
+          "id": "transactions",
+          "title": "Transactions",
+          "text": "The year's reportable transactions worked out from your bank statements and records",
+          "scene": {
+            "kind": "table",
+            "head": "Bank statements",
+            "rows": 5,
+            "pick": [
+              1,
+              3
+            ],
+            "pick_tag": "Reportable transactions"
+          }
+        },
+        {
+          "id": "forms",
+          "title": "Both forms",
+          "text": "Form 5472 and the pro forma Form 1120 prepared",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Form 5472"
+              },
+              {
+                "name": "Form 1120",
+                "tag": "Pro forma"
+              }
+            ],
+            "stamp": "Prepared"
+          }
+        },
+        {
+          "id": "sent",
+          "title": "Fax or mail",
+          "text": "Sent to the IRS by fax or mail, the only ways it accepts them, within 10 working days of complete details",
+          "scene": {
+            "kind": "send",
+            "items": [
+              "Form 5472",
+              "Form 1120"
+            ],
+            "to": [
+              {
+                "label": "IRS by fax",
+                "icon": "send"
+              },
+              {
+                "label": "IRS by mail",
+                "icon": "mail"
+              }
+            ],
+            "receipt": "Within 10 working days"
+          }
+        },
+        {
+          "id": "proof",
+          "title": "Proof kept",
+          "text": "The fax confirmation or mailing proof kept for your records",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "Fax confirmation",
+              "Mailing proof"
+            ],
+            "folder": "Your records"
+          }
+        }
+      ]
+    },
+    "funded_plan": {
+      "name": "The Funded Startup Finance Department",
+      "names": [
+        "Funded Startup Finance Department"
+      ],
+      "page": "/funded-startups",
+      "source": "FundedPlan.tsx",
+      "keyword": "FUNDED",
+      "claims": [
+        "FD-18",
+        "FD-19",
+        "FD-17",
+        "FD-31"
+      ],
+      "prices": [
+        "$625"
+      ],
+      "hook": "For startups that have closed a round.",
+      "recap": {
+        "title": "The Funded Startup <mark>Finance Department</mark>",
+        "text": "That is the Funded Startup Finance Department."
+      },
+      "items": [
+        {
+          "id": "close",
+          "title": "Monthly close",
+          "text": "Bookkeeping for up to $100,000 in monthly expenses, closed within 10 working days of each month end",
+          "scene": {
+            "kind": "books",
+            "left": "Statements",
+            "right": "Your books",
+            "rows": 5,
+            "chips": [
+              "Within 10 working days"
+            ],
+            "stamp": "Closed"
+          }
+        },
+        {
+          "id": "runway",
+          "title": "Burn and runway",
+          "text": "Burn and runway with every close",
+          "scene": {
+            "kind": "runway",
+            "label": "Burn and runway",
+            "sub": "With every close",
+            "flag": "Runway"
+          }
+        },
+        {
+          "id": "update",
+          "title": "Investor update",
+          "text": "A monthly or quarterly investor update, built with you and then produced each period",
+          "scene": {
+            "kind": "review",
+            "doc": "Investor update",
+            "notes": [
+              "Built with you",
+              "Each period"
+            ]
+          }
+        },
+        {
+          "id": "review",
+          "title": "Quarterly review",
+          "text": "A quarterly review of where the business stands against what you told us mattered most",
+          "scene": {
+            "kind": "review",
+            "doc": "Quarterly review",
+            "notes": [
+              "Where it stands",
+              "What matters most"
+            ]
+          }
+        },
+        {
+          "id": "payroll",
+          "title": "Payroll",
+          "text": "Payroll for up to five people in your own Gusto account, which we set up if you need it",
+          "scene": {
+            "kind": "setup",
+            "app": "Gusto",
+            "rows": [
+              "Your own account",
+              "Up to five people"
+            ],
+            "done": "Set up"
+          }
+        },
+        {
+          "id": "returns",
+          "title": "Your returns",
+          "text": "Your federal business return and its state return each year",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Federal return"
+              },
+              {
+                "name": "State return"
+              }
+            ],
+            "stamp": "Each year"
+          }
+        },
+        {
+          "id": "filings",
+          "title": "1099s and Delaware",
+          "text": "Your Forms 1099-NEC and, for a Delaware corporation, your Delaware annual report each year",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "Forms 1099-NEC",
+              "Delaware annual report"
+            ]
+          }
+        }
+      ]
+    },
+    "international_founder_plan": {
+      "name": "The International Founder Plan",
+      "names": [
+        "International Founder Plan"
+      ],
+      "page": "/international-founder-plan",
+      "source": "InternationalFounderPlan.tsx",
+      "keyword": "ABROAD",
+      "claims": [
+        "FD-20",
+        "FD-17",
+        "FD-31"
+      ],
+      "prices": [
+        "$175"
+      ],
+      "hook": "Your US company kept compliant, every month.",
+      "recap": {
+        "title": "The <mark>International Founder Plan</mark>",
+        "text": "That is the International Founder Plan."
+      },
+      "items": [
+        {
+          "id": "books",
+          "title": "Monthly books",
+          "text": "Bookkeeping in QuickBooks Online or Xero for up to $25,000 in monthly expenses and 100 transactions a month",
+          "scene": {
+            "kind": "books",
+            "left": "Statements",
+            "right": "QuickBooks Online or Xero",
+            "rows": 5
+          }
+        },
+        {
+          "id": "close",
+          "title": "Closed each month",
+          "text": "Reconciled and closed within 10 working days of each month end, with a profit and loss statement, balance sheet and cash summary",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "Profit and loss",
+              "Balance sheet",
+              "Cash summary"
+            ],
+            "stamp": "Closed"
+          }
+        },
+        {
+          "id": "state",
+          "title": "Your state",
+          "text": "Registered agent service, the annual report and annual compliance in one state",
+          "scene": {
+            "kind": "setup",
+            "app": "One state",
+            "rows": [
+              "Registered agent",
+              "Annual report",
+              "Annual compliance"
+            ]
+          }
+        },
+        {
+          "id": "form5472",
+          "title": "Form 5472",
+          "text": "Form 5472 with its pro forma Form 1120 each year, for an LLC with one owner outside the US",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Form 5472"
+              },
+              {
+                "name": "Form 1120",
+                "tag": "Pro forma"
+              }
+            ],
+            "stamp": "Each year"
+          }
+        },
+        {
+          "id": "calendar",
+          "title": "Deadline calendar",
+          "text": "A calendar of every US filing deadline your company has, when you start",
+          "scene": {
+            "kind": "calendar",
+            "label": "Every US filing deadline"
+          }
+        }
+      ]
+    },
+    "investor_ready_sprint": {
+      "name": "Investor Ready Sprint",
+      "names": [
+        "Investor Ready Sprint"
+      ],
+      "page": "/investor-ready-sprint",
+      "source": "InvestorReadySprint.tsx",
+      "keyword": "SPRINT",
+      "claims": [
+        "FD-15",
+        "FD-13",
+        "FD-31"
+      ],
+      "prices": [
+        "$4,250"
+      ],
+      "hook": "Investor ready in 40 working days.",
+      "recap": {
+        "title": "The <mark>Investor Ready Sprint</mark>",
+        "text": "That is the Investor Ready Sprint."
+      },
+      "items": [
+        {
+          "id": "scan",
+          "title": "The Scan",
+          "text": "The 5 Day Investor Ready Scan, unless we delivered one to you in the last 90 days",
+          "say": "The five day Investor Ready Scan, unless we delivered one to you in the last ninety days",
+          "scene": {
+            "kind": "findings",
+            "page": "Money at Stake",
+            "row_label": "Gap",
+            "rows": 3,
+            "chips": [
+              "Cost to fix",
+              "Time to fix"
+            ]
+          }
+        },
+        {
+          "id": "model",
+          "title": "Financial model",
+          "text": "A three statement financial model with scenarios, an assumptions memo and a walkthrough call",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "Three statement model",
+              "Assumptions memo"
+            ],
+            "call": "Walkthrough call"
+          }
+        },
+        {
+          "id": "pack",
+          "title": "Investor pack",
+          "text": "An investor pack: a pitch deck, an investment memo and a one page summary",
+          "scene": {
+            "kind": "stack",
+            "docs": [
+              "Pitch deck",
+              "Investment memo",
+              "One page summary"
+            ]
+          }
+        },
+        {
+          "id": "dataroom",
+          "title": "Data room",
+          "text": "A data room with an index and a register of anything still missing",
+          "scene": {
+            "kind": "table",
+            "head": "Data room index",
+            "rows": 5,
+            "pick": [
+              3
+            ],
+            "pick_tag": "Still missing",
+            "pick_mark": "?"
+          }
+        }
+      ]
+    },
+    "payroll": {
+      "name": "Payroll Set Up Right",
+      "names": [
+        "Payroll Set Up Right"
+      ],
+      "page": "/payroll",
+      "source": "Payroll.tsx",
+      "keyword": "PAYROLL",
+      "claims": [
+        "FD-25",
+        "FD-16",
+        "FD-31"
+      ],
+      "prices": [
+        "$200",
+        "$75"
+      ],
+      "hook": "First hire coming? Payroll set up right from day one.",
+      "recap": {
+        "title": "<mark>Payroll Set Up Right</mark>",
+        "text": "That is Payroll Set Up Right."
+      },
+      "items": [
+        {
+          "id": "account",
+          "title": "Your Gusto",
+          "text": "A Gusto account opened in your company's name, or the one you have tidied",
+          "scene": {
+            "kind": "setup",
+            "app": "Gusto",
+            "rows": [
+              "Opened in your company's name",
+              "Or the one you have, tidied"
+            ]
+          }
+        },
+        {
+          "id": "registration",
+          "title": "Registrations",
+          "text": "Registration for federal payroll tax deposits, and for state withholding and unemployment tax in one state",
+          "scene": {
+            "kind": "table",
+            "head": "Registration",
+            "rows": [
+              "Federal payroll tax",
+              "State withholding",
+              "Unemployment tax"
+            ]
+          }
+        },
+        {
+          "id": "setup",
+          "title": "Set up in Gusto",
+          "text": "Your pay schedule, employees, deductions and any benefits you already offer set up",
+          "scene": {
+            "kind": "setup",
+            "app": "Gusto",
+            "rows": [
+              "Pay schedule",
+              "Employees",
+              "Deductions",
+              "Benefits"
+            ],
+            "done": "Set up"
+          }
+        },
+        {
+          "id": "first",
+          "title": "First payroll",
+          "text": "Your first payroll run checked with you before you approve it",
+          "scene": {
+            "kind": "review",
+            "doc": "First payroll run",
+            "notes": [
+              "Checked with you",
+              "Before you approve"
+            ]
+          }
+        },
+        {
+          "id": "monthly",
+          "title": "Every month",
+          "text": "Then, for $75 a month: every run checked, payroll reconciled to your books and W-2s each January",
+          "scene": {
+            "kind": "books",
+            "left": "Payroll",
+            "right": "Your books",
+            "rows": 4,
+            "chips": [
+              "Every run checked",
+              "W-2s each January"
+            ]
+          }
+        }
+      ]
+    },
+    "rd_credit": {
+      "name": "R&D Credit at a Fixed $1,000",
+      "names": [
+        "R&D Credit at a Fixed"
+      ],
+      "page": "/rd-tax-credit",
+      "source": "RdTaxCredit.tsx",
+      "keyword": "CREDIT",
+      "claims": [
+        "FD-16",
+        "FD-31"
+      ],
+      "prices": [
+        "$1,000"
+      ],
+      "hook": "Building a product? Claim the research credit against payroll taxes.",
+      "recap": {
+        "title": "The R&amp;D Credit at a <mark>Fixed $1,000</mark>",
+        "text": "That is the R&D Credit at a Fixed $1,000."
+      },
+      "items": [
+        {
+          "id": "review",
+          "title": "Your work",
+          "text": "Your product and engineering work, and the wages, contractor costs and supplies behind it, reviewed against the IRS test",
+          "scene": {
+            "kind": "table",
+            "head": "Product and engineering",
+            "rows": [
+              "Wages",
+              "Contractor costs",
+              "Supplies"
+            ],
+            "sources": [
+              "The IRS test"
+            ]
+          }
+        },
+        {
+          "id": "credit",
+          "title": "Form 6765",
+          "text": "The credit calculated, and Form 6765 prepared to go with your federal return",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Form 6765"
+              }
+            ],
+            "stamp": "Prepared"
+          }
+        },
+        {
+          "id": "election",
+          "title": "Payroll offset",
+          "text": "The payroll offset election made on that return, if your company qualifies",
+          "scene": {
+            "kind": "review",
+            "doc": "Federal return",
+            "notes": [
+              "Payroll offset election"
+            ]
+          }
+        },
+        {
+          "id": "quarterly",
+          "title": "Each quarter",
+          "text": "The Form 8974 claim set up with your payroll provider for each quarter after the return is filed",
+          "scene": {
+            "kind": "send",
+            "items": [
+              "Form 8974"
+            ],
+            "to": [
+              "Your payroll provider"
+            ],
+            "receipt": "Each quarter"
+          }
+        }
+      ]
+    },
+    "startup_tax_returns": {
+      "name": "Startup Tax Return, Filed On Time",
+      "names": [
+        "Startup Tax Return, Filed On Time"
+      ],
+      "page": "/startup-tax-returns",
+      "source": "StartupTaxReturns.tsx",
+      "keyword": "TAX",
+      "hold": "waits for Talha's PTIN, like the TAX and RETURN keywords",
+      "claims": [
+        "FD-22",
+        "FD-16",
+        "FD-23",
+        "FD-31"
+      ],
+      "prices": [
+        "$600",
+        "$750"
+      ],
+      "hook": "No profit yet? Your startup still files. We file it on time.",
+      "recap": {
+        "title": "Startup Tax Return, <mark>Filed On Time</mark>",
+        "text": "That is Startup Tax Return, Filed On Time."
+      },
+      "items": [
+        {
+          "id": "federal",
+          "title": "Federal return",
+          "text": "Your federal return from closed books: Form 1120, or Form 1120-S or 1065 with up to four owners' Schedules K-1",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Form 1120",
+                "tag": "or 1120-S or 1065"
+              }
+            ],
+            "stamp": "Prepared"
+          }
+        },
+        {
+          "id": "state",
+          "title": "State return",
+          "text": "The income or franchise tax return for one state",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "State return",
+                "tag": "One state"
+              }
+            ]
+          }
+        },
+        {
+          "id": "review",
+          "title": "For your review",
+          "text": "The return sent for your review within 15 working days of complete details",
+          "scene": {
+            "kind": "send",
+            "items": [
+              "Your return"
+            ],
+            "to": [
+              "You"
+            ],
+            "receipt": "Within 15 working days"
+          }
+        },
+        {
+          "id": "extension",
+          "title": "Free extension",
+          "text": "A free extension on Form 7004 if anything is late, with an estimate of any tax due so you can pay on time",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Form 7004"
+              }
+            ],
+            "stamp": "Extension"
+          }
+        },
+        {
+          "id": "delaware",
+          "title": "Delaware tax",
+          "text": "For a Delaware corporation, its franchise tax checked under both of Delaware's methods",
+          "scene": {
+            "kind": "compare",
+            "left": "Method one",
+            "right": "Method two",
+            "pick": "left",
+            "tag": "Both methods checked"
+          }
+        },
+        {
+          "id": "lastyear",
+          "title": "Last year's return",
+          "text": "A review of last year's return, if someone else prepared it",
+          "scene": {
+            "kind": "review",
+            "doc": "Last year's return",
+            "notes": [
+              "Reviewed"
+            ]
+          }
+        }
+      ]
+    },
+    "us_entry": {
+      "name": "US Company in 10 Working Days",
+      "names": [
+        "US Company in 10 Working Days"
+      ],
+      "page": "/us-entry",
+      "source": "UsEntry.tsx",
+      "keyword": "USA",
+      "claims": [
+        "FD-26",
+        "FD-31"
+      ],
+      "prices": [
+        "$425",
+        "$484"
+      ],
+      "hook": "Your US company filed in 10 working days.",
+      "recap": {
+        "title": "US Company in <mark>10 Working Days</mark>",
+        "text": "That is US Company in 10 Working Days."
+      },
+      "items": [
+        {
+          "id": "formation",
+          "title": "Your company",
+          "text": "Formation documents for a Wyoming LLC or a Delaware corporation prepared and filed, with the registered agent in place",
+          "scene": {
+            "kind": "form",
+            "forms": [
+              {
+                "name": "Formation documents",
+                "tag": "Wyoming LLC or Delaware corporation"
+              }
+            ],
+            "stamp": "Filed"
+          }
+        },
+        {
+          "id": "shares",
+          "title": "Founder shares",
+          "text": "Founder shares or membership interests issued, and for a corporation each founder's 83(b) election prepared",
+          "say": "Founder shares or membership interests issued, and for a corporation each founder's eighty-three B election prepared",
+          "scene": {
+            "kind": "table",
+            "head": "Founders",
+            "rows": 3,
+            "make": "83(b) election"
+          }
+        },
+        {
+          "id": "ein",
+          "title": "Your EIN",
+          "text": "Your EIN application prepared, submitted and followed until the IRS issues the number",
+          "scene": {
+            "kind": "send",
+            "items": [
+              "EIN application"
+            ],
+            "to": [
+              "IRS"
+            ],
+            "receipt": "Number issued"
+          }
+        },
+        {
+          "id": "bank",
+          "title": "US bank",
+          "text": "Your US bank application at Mercury, Brex or Relay, with help through onboarding and any rejection",
+          "scene": {
+            "kind": "setup",
+            "app": "Mercury, Brex or Relay",
+            "rows": [
+              "Application",
+              "Onboarding",
+              "Any rejection"
+            ]
+          }
+        },
+        {
+          "id": "year1",
+          "title": "First year",
+          "text": "Your first year of registered agent service and annual report, and for a Delaware corporation the franchise tax recalculated",
+          "scene": {
+            "kind": "setup",
+            "app": "Your first year",
+            "rows": [
+              "Registered agent",
+              "Annual report",
+              "Franchise tax recalculated"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

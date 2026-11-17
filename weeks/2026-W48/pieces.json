@@ -286,7 +286,8 @@
       "claims": [
         "FD-24",
         "FD-09",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-23T18:00:00-05:00",
       "platforms": [
@@ -298,24 +299,11 @@
           {
             "layout": "STORY",
             "kicker": "Paid contractors in 2026?",
-            "title": "1099s Done by February 1: $100 for up to five contractors, then $12.50 a form",
-            "emph": "Done by February 1",
-            "body": "Send your contractor list by 20 January, and if we miss 1 February we pay the IRS penalties up to $500; we collect your contractors' W-9s for you.",
-            "cta": "Reply CALL to book a 30 minute call",
-            "visual": {
-              "type": "stats",
-              "items": [
-                {
-                  "label": "Up to five contractors",
-                  "value": "$100"
-                },
-                {
-                  "label": "Then, a form",
-                  "value": "$12.50",
-                  "highlight": false
-                }
-              ]
-            }
+            "title": "Your 1099s filed by 1 February.",
+            "emph": "by 1 February",
+            "cover": "filing_1099",
+            "body": "1099s Done by February 1: $100 for up to five contractors, then $12.50 a form. Send your contractor list by 20 January, and if we miss 1 February we pay the IRS penalties up to $500.",
+            "cta": "Reply CALL to book a 30 minute call"
           }
         ]
       },
@@ -447,7 +435,8 @@
       "pillar": "US entry",
       "stage": "Middle",
       "claims": [
-        "FD-26"
+        "FD-26",
+        "FD-31"
       ],
       "publish_at": "2026-11-24T14:30:00-05:00",
       "platforms": [
@@ -455,93 +444,104 @@
         "instagram",
         "facebook"
       ],
-      "ai_generated": true,
+      "ai_generated": false,
       "content": {
         "hook_visual": "Slow push in on a tidy desk at dawn: a sealed envelope, a rubber stamp and an ink pad beside a closed laptop, a paper world map pinned on the wall behind, warm window light, shallow depth of field, no people, no hands, no faces, no readable text",
-        "kicker": "Forming a US company",
-        "hook": "Need a US company for your startup?",
-        "lines": [
-          "US Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included.",
-          "Filed within 10 working days of complete details, or our fee back.",
-          "The International Founder Plan's first month is free when you start it with your company."
-        ],
-        "offer": "US Company in 10 Working Days",
-        "cta": "Start your US company",
-        "say": {
-          "hook": "Need a U S company for your startup?",
-          "lines": [
-            "U S Company in Ten Working Days: four hundred twenty-five dollars for a Wyoming L L C, or four hundred eighty-four dollars for a Delaware corporation, state fee included.",
-            "Filed within ten working days of complete details, or our fee back.",
-            "The International Founder Plan's first month is free, when you start it with your company."
+        "motion": {
+          "stage": "middle",
+          "pills": {
+            "0": "Forming a US company",
+            "2": "Forming a US company"
+          },
+          "offer": "US Company in 10 Working Days",
+          "hook": {
+            "text": "Need a US company for your startup?",
+            "say": "Need a U S company for your startup?",
+            "shot": {
+              "type": "person",
+              "title": "Need a <mark>US company</mark> for your startup?",
+              "card": "US company",
+              "icon": "building",
+              "who": "dev",
+              "expr": "thinking"
+            }
+          },
+          "shots": [
+            {
+              "cover": "us_entry",
+              "pill": "What you get"
+            },
+            {
+              "shot": {
+                "type": "price",
+                "first": "$425",
+                "first_label": "for a Wyoming LLC",
+                "then_label": "Delaware corporation",
+                "then": "$484",
+                "seats": 0,
+                "at_first": "four",
+                "at_then": "delaware"
+              },
+              "lines": [
+                {
+                  "text": "US Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included.",
+                  "say": "U S Company in Ten Working Days: four hundred twenty-five dollars for a Wyoming L L C, or four hundred eighty-four dollars for a Delaware corporation, state fee included."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "checklist",
+                "title": "Filed within <mark>10 working days</mark>",
+                "rows": [
+                  "Complete details",
+                  "Filed within 10 working days",
+                  "Or our fee back"
+                ],
+                "at": [
+                  "complete",
+                  "filed",
+                  "fee"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "Filed within 10 working days of complete details, or our fee back.",
+                  "say": "Filed within ten working days of complete details, or our fee back."
+                }
+              ]
+            }
           ],
-          "cta": "Start your U S company."
-        },
-        "scenes": [
-          null,
-          {
-            "type": "compare",
-            "left": {
-              "title": "Wyoming LLC",
-              "icon": "building",
-              "values": [
-                "$425"
-              ]
-            },
-            "right": {
-              "title": "Delaware corporation",
-              "icon": "building",
-              "values": [
-                "$484"
-              ]
-            },
-            "join": "or",
-            "chip": "State fee included",
-            "at": "eighty",
-            "chip_at": "state"
-          },
-          {
-            "type": "stat",
-            "value": "10",
-            "prefix": "Filed within",
-            "label": "working days of complete details, or our fee back",
-            "at": "ten"
-          },
-          {
-            "type": "icons",
-            "items": [
-              {
-                "icon": "globe",
-                "label": "International Founder Plan",
-                "at": "international"
-              },
-              {
-                "icon": "check",
-                "label": "First month free",
-                "at": "free"
-              },
-              {
-                "icon": "building",
-                "label": "With your company",
-                "at": "company"
-              }
-            ]
-          },
-          null
-        ]
+          "cta": {
+            "kind": "dm",
+            "keyword": "USA",
+            "text": "DM USA and I'll send you the page.",
+            "say": "D M U S A, and I'll send you the page.",
+            "pill": "DM <b>USA</b>",
+            "shot": {
+              "type": "phone",
+              "keyword": "USA",
+              "reply": "Here is the page for US Company in 10 Working Days:",
+              "link": "financedepartmentllc.com/us-entry",
+              "at_type": "u",
+              "at_reply": "send"
+            }
+          }
+        }
       },
       "captions": {
-        "instagram": "Need a US company for your startup?\n\nUS Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included; filed within 10 working days of complete details, or our fee back; the International Founder Plan's first month free when you start it with your company.\n\nStart your US company through the link in bio.\n\n#usllc #delaware #startups #founders",
-        "facebook": "Need a US company for your startup?\n\nUS Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included; filed within 10 working days of complete details, or our fee back; the International Founder Plan's first month free when you start it with your company.\n\nStart your US company: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w48-d01",
+        "instagram": "Need a US company for your startup?\n\nWhat you get: your company, founder shares, your EIN, a US bank application and your first year.\n\nUS Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included; filed within 10 working days of complete details, or our fee back.\n\nDM USA, or start your US company through the link in bio.\n\n#usllc #delaware #startups #founders",
+        "facebook": "Need a US company for your startup?\n\nWhat you get: your company, founder shares, your EIN, a US bank application and your first year.\n\nUS Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included; filed within 10 working days of complete details, or our fee back.\n\nStart your US company: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w48-d01",
         "youtube": {
           "title": "US Company in 10 Working Days: a Wyoming LLC or a Delaware corporation",
-          "description": "US Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included; filed within 10 working days of complete details, or our fee back.\n\nStart your US company through the link on our channel page."
+          "description": "What you get: your company, founder shares, your EIN, a US bank application and your first year.\n\nUS Company in 10 Working Days: $425 for a Wyoming LLC or $484 for a Delaware corporation, state fee included; filed within 10 working days of complete details, or our fee back.\n\nStart your US company through the link on our channel page."
         }
       },
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-D01.mp4"
       ],
       "status": "Made",
-      "check_notes": "",
+      "check_notes": "shows what us_entry covers before its price",
       "metricool": {},
       "ai_voice": true
     },
@@ -579,7 +579,8 @@
       "stage": "Bottom",
       "claims": [
         "FD-20",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-24T18:00:00-05:00",
       "platforms": [
@@ -590,11 +591,11 @@
         "slides": [
           {
             "layout": "STORY",
-            "photo": "talha",
             "kicker": "Running a US company from abroad?",
-            "title": "The International Founder Plan, $175 a month",
-            "emph": "$175 a month",
-            "body": "Monthly books, Form 5472 with its pro forma 1120, your registered agent and state annual report (state fees at cost), and a deadline calendar when you start.",
+            "title": "Your US company kept compliant, every month.",
+            "emph": "every month",
+            "cover": "international_founder_plan",
+            "body": "The International Founder Plan, $175 a month.",
             "cta": "Reply CALL to book a 30 minute call"
           }
         ]
@@ -806,7 +807,8 @@
       "stage": "Bottom",
       "claims": [
         "FD-21",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-25T18:00:00-05:00",
       "platforms": [
@@ -818,29 +820,11 @@
           {
             "layout": "STORY",
             "kicker": "Books behind?",
-            "title": "Books Catch Up: every account reconciled to its statements, or we fix it free",
-            "emph": "or we fix it free",
-            "body": "$1,000 up to 6 months behind, $1,750 for 7 to 12 and $3,000 for 13 to 24, half to start and half on delivery.",
-            "cta": "Reply CALL to book a 30 minute call",
-            "visual": {
-              "type": "stats",
-              "items": [
-                {
-                  "label": "Up to 6 months behind",
-                  "value": "$1,000"
-                },
-                {
-                  "label": "7 to 12",
-                  "value": "$1,750",
-                  "highlight": false
-                },
-                {
-                  "label": "13 to 24",
-                  "value": "$3,000",
-                  "highlight": false
-                }
-              ]
-            }
+            "title": "Caught up before an investor looks.",
+            "emph": "before an investor looks",
+            "cover": "books_catch_up",
+            "body": "Books Catch Up: $1,000 up to 6 months behind, $1,750 for 7 to 12 and $3,000 for 13 to 24, half to start and half on delivery; every account reconciled to its statements, or we fix it free.",
+            "cta": "Reply CALL to book a 30 minute call"
           }
         ]
       },
@@ -975,7 +959,8 @@
       "claims": [
         "FD-30",
         "FD-18",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-26T18:00:00-05:00",
       "platforms": [
@@ -986,11 +971,11 @@
         "slides": [
           {
             "layout": "STORY",
-            "photo": "talha",
             "kicker": "Funded startup?",
             "title": "Every startup or company needs a Finance Department. Here's yours.",
             "emph": "Here's yours.",
-            "body": "The Funded Startup Finance Department, $625 a month: books closed within 10 working days of month end, burn (cash spent a month) and runway (months of cash left) with every close.",
+            "cover": "funded_plan",
+            "body": "The Funded Startup Finance Department, $625 a month.",
             "cta": "Reply CALL to book a 30 minute call"
           }
         ]
@@ -1170,7 +1155,8 @@
       "stage": "Bottom",
       "claims": [
         "FD-25",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-27T18:00:00-05:00",
       "platforms": [
@@ -1182,24 +1168,11 @@
           {
             "layout": "STORY",
             "kicker": "Hiring your first employee?",
-            "title": "Payroll Set Up Right: $200 to set up and $75 a month",
-            "emph": "Set Up Right",
-            "body": "If an error in our setup causes a payroll tax penalty, we pay it up to the setup fee.",
-            "cta": "Reply CALL to book a 30 minute call",
-            "visual": {
-              "type": "stats",
-              "items": [
-                {
-                  "label": "To set up",
-                  "value": "$200"
-                },
-                {
-                  "label": "A month",
-                  "value": "$75",
-                  "highlight": false
-                }
-              ]
-            }
+            "title": "If an error in our setup causes a payroll tax penalty, we pay it up to the setup fee.",
+            "emph": "we pay it",
+            "cover": "payroll",
+            "body": "Payroll Set Up Right: $200 to set up and $75 a month.",
+            "cta": "Reply CALL to book a 30 minute call"
           }
         ]
       },
@@ -1249,7 +1222,8 @@
       "stage": "Bottom",
       "claims": [
         "FD-27",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-28T18:00:00-05:00",
       "platforms": [
@@ -1261,17 +1235,11 @@
           {
             "layout": "STORY",
             "kicker": "Delaware corporation?",
-            "title": "Delaware Franchise Tax, Worked Out Both Ways: $125 a year, with a one page comparison of both methods",
-            "emph": "Worked Out Both Ways",
-            "body": "Franchise tax is Delaware's yearly state tax. Send your details by 15 February, and if we miss 1 March we pay the penalty and interest up to $500.",
-            "cta": "Reply CALL to book a 30 minute call",
-            "visual": {
-              "type": "date",
-              "month": "MARCH",
-              "day": "1",
-              "label": "If we miss 1 March",
-              "text": "We pay the penalty and interest up to $500"
-            }
+            "title": "Your Delaware franchise tax may be far higher than it needs to be.",
+            "emph": "far higher",
+            "cover": "delaware_franchise_tax",
+            "body": "Delaware Franchise Tax, Worked Out Both Ways: $125 a year. Send your details by 15 February, and if we miss 1 March we pay the penalty and interest up to $500.",
+            "cta": "Reply CALL to book a 30 minute call"
           }
         ]
       },
@@ -1403,8 +1371,8 @@
       "stage": "Bottom",
       "claims": [
         "FD-15",
-        "FD-10",
-        "FD-12"
+        "FD-12",
+        "FD-31"
       ],
       "publish_at": "2026-11-29T18:00:00-05:00",
       "platforms": [
@@ -1416,20 +1384,11 @@
           {
             "layout": "STORY",
             "kicker": "Raising in the next few months?",
-            "title": "The Investor Ready Sprint, $4,250",
-            "emph": "$4,250",
-            "body": "Six of our scorecard checks at full marks by delivery, or we keep working at no extra cost. Our free raise readiness scorecard is twelve questions.",
-            "cta": "Reply CALL to book a 30 minute call",
-            "visual": {
-              "type": "stats",
-              "items": [
-                {
-                  "label": "Scorecard checks",
-                  "value": "6",
-                  "note": "At full marks by delivery"
-                }
-              ]
-            }
+            "title": "Six of our scorecard checks at full marks by delivery, or we keep working at no extra cost.",
+            "emph": "or we keep working",
+            "cover": "investor_ready_sprint",
+            "body": "The Investor Ready Sprint, $4,250.",
+            "cta": "Reply CALL to book a 30 minute call"
           }
         ]
       },

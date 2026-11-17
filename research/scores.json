@@ -1,0 +1,7 @@
+{
+  "about": "Written by node tools/learn.mjs from research/results/*.json after each Friday Weekly report; empty until the first one writes its results (Friday 20 November 2026, covering 2026-W46). Pieces are tagged from 2026-W49, so the hook, format and scene scores start then; kind, pillar and platform scores start at once.",
+  "updated": null,
+  "by_stage": {},
+  "picks": {},
+  "pieces": []
+}

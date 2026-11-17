@@ -5,6 +5,47 @@ slide's own figures again in a picture. Visuals restate the slide's words; they 
 """
 import re
 from brand import esc, ic, ARROW, usmap, state_shape, photo_uri, shell, us_map, DISCLAIMER
+import json as _json
+import os as _os
+
+# What each offer covers (tools/coverage.json, word for word from its page, FD-31). Talha, 17 November 2026: a
+# piece that introduces a service or quotes a price shows what it covers first. A slide with "cover": "<offer id>"
+# shows the offer's list, an icon for the kind of work each item is, before the slide's body (stories) or as its
+# visual (carousels).
+_COVERAGE = None
+KIND_ICON = {"books": "bank", "revenue": "chart", "table": "list", "review": "search", "runway": "clock", "findings": "dollar",
+             "form": "doc", "send": "send", "stack": "stack", "calendar": "calendar", "compare": "scale", "setup": "check"}
+
+
+def cover_offer(oid):
+    global _COVERAGE
+    if _COVERAGE is None:
+        with open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "coverage.json")) as f:
+            _COVERAGE = _json.load(f)["offers"]
+    if oid not in _COVERAGE:
+        raise ValueError("cover: %s is not an offer in tools/coverage.json" % oid)
+    return _COVERAGE[oid]
+
+
+def cover_html(oid, d=0.45, detail=True):
+    """The offer's What you get list: each item's title, and in a story its words from the page, with a tick."""
+    items = cover_offer(oid)["items"]
+    n = len(items)
+    # sizes by how many items the offer has: (item words, item title, row padding, icon)
+    fs, ts, pad, box = (24, 33, 12, 56) if n <= 4 else (22, 31, 8, 52) if n == 5 else (20.5, 29, 6, 48)
+    rows = ""
+    for i, it in enumerate(items):
+        sub = ('<span style="display:block;font-weight:500;font-size:%spx;line-height:1.24;color:#3F4652;margin-top:3px">%s</span>'
+               % (fs, esc(it["text"]))) if detail else ""
+        rows += ('<div style="display:flex;align-items:flex-start;gap:16px;padding:%dpx 4px;%s" data-a="pop" data-d="%.2f">'
+                 '<span style="width:%dpx;height:%dpx;border-radius:14px;background:#E8F6EE;border:3px solid #15191F;display:grid;place-items:center;flex:none">%s</span>'
+                 '<span style="flex:1;padding-top:4px"><b style="font-weight:800;font-size:%dpx;color:#15191F">%s</b>%s</span>'
+                 '<span style="padding-top:10px">%s</span></div>'
+                 % (pad if detail else 12, "" if i == 0 else "border-top:2px solid #E6E0D3", d + 0.25 + i * 0.12, box, box,
+                    ic(KIND_ICON.get(it["scene"]["kind"], "check"), box - 22, "#0B7955", 3), ts if detail else 34, esc(it["title"]), sub, ic("check", 32, "#0B7955", 4.2)))
+    return ('<div class="card hl vis" style="padding:%dpx 30px;text-align:left" data-a="up" data-d="%.2f">'
+            '<div style="font-family:Fraunces;font-weight:700;font-size:%dpx;color:#15191F;margin-bottom:4px">What you get</div>%s</div>'
+            % (20 if n > 4 else 24, d, 36 if n > 4 else 40, rows))
 
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 FIG = re.compile(r"(\$[\d,.]+(?:\s?(?:million|billion|M|K)\b)?\+?|\d[\d,.]*%|\b\d{1,2} (?:" + MONTHS + r")(?: \d{4})?\b|\b\d{1,3}(?:,\d{3})+\b)")
@@ -294,7 +335,9 @@ def visual(v, mode, d=0.6, small=False):
 
 
 def visuals(s, mode, d=0.6, small=False):
-    """A slide may carry one visual, or two stacked (visual and visual2)."""
+    """A slide may carry one visual, or two stacked (visual and visual2), or an offer's coverage list (cover)."""
+    if s.get("cover"):
+        return cover_html(s["cover"], d, detail=False)
     out = visual(s.get("visual"), mode, d, small)
     if s.get("visual2"):
         out += '<div style="height:20px"></div>' + visual(s.get("visual2"), mode, d + 0.35, small)
@@ -464,13 +507,18 @@ def story_frame(s, disclaimer=False):
         inner += '<div class="kicker" data-a="down" data-d="0.2"><i></i>%s</div>' % esc(s["kicker"])
     t = s.get("title", "")
     size = 88 if len(t) <= 60 else (74 if len(t) <= 95 else 64)
+    if s.get("cover"):
+        size = 66 if len(t) <= 60 else (56 if len(t) <= 95 else 50)
     if photo:
         size = min(size, 76)
     inner += '<h1 style="margin-top:30px;font-size:%dpx" data-a="up" data-d="0.3">%s</h1>' % (size, emph_title(t, s.get("emph")))
+    if s.get("cover"):
+        inner += '<div style="height:22px"></div>' + cover_html(s["cover"], 0.4)
     if s.get("body"):
-        inner += '<p class="body" style="margin-top:26px" data-a="up" data-d="0.45">%s</p>' % bold_body(s["body"], s.get("bold"))
+        inner += '<p class="body" style="margin-top:%dpx%s" data-a="up" data-d="0.45">%s</p>' % (
+            18 if s.get("cover") else 26, ";font-size:32px;line-height:1.32" if s.get("cover") else "", bold_body(s["body"], s.get("bold")))
     inner += '<div class="sp"></div>'
-    if s.get("visual"):
+    if s.get("visual") and not s.get("cover"):
         inner += visuals(s, "post", 0.6) + '<div class="sp" style="flex:.4"></div>'
     if s.get("cta"):
         inner += '<div class="reply" data-a="pop" data-d="0.8">%s<span>%s</span></div>' % (ic("reply", 40, "#15191F", 3.2), esc(s["cta"]))

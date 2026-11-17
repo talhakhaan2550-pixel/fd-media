@@ -48,10 +48,16 @@ has no room for, and the hook tests' Instagram Trial Reels. Everything in this r
   `research/{week}/brief.json`, which the Monday plan reads. See `research/README.md`.
 - `tools/keywords.json`: the comment and DM keyword map Talha approved on 17 November 2026, with each keyword's page,
   tracked link, Meta automation and status (live once Talha's test passes).
-- `tools/studio/motion.py` and `tools/studio/render_motion.py`: the motion v2 engine (one camera moving over a
-  paper desk, the hook on screen from the first frame, step counters for middle of funnel videos). Its three
-  samples are in `samples/motion-v2/` and wait for Talha's approval; until then the weekly runs keep using
-  `video.py`.
+- `tools/studio/motion.py`, `tools/studio/work.py` and `tools/studio/render_motion.py`: the motion v2 engine (one
+  camera moving over a paper desk, the hook on screen from the first frame, step counters for middle of funnel videos,
+  and since 17 November 2026 the work scenes that show what an offer covers being done). Talha approved the style on
+  17 November 2026 ("the designing and video editing looks fine to me for now"): every explainer and ad with
+  `content.motion` is made by it through `render.py`; `video.py` stays for pieces written the old way. The samples are
+  in `samples/motion-v2/`.
+- `tools/coverage.json`: what each of the twelve offers covers, word for word from the What you get list on its page
+  (claim FD-31), with the on-screen title and the work scene for each item. See "What an offer covers" below.
+- `tools/learn.mjs`, `research/results/`, `research/scores.json` and `research/experiments.json`: the learning loop and
+  the weekly wild card. See "The learning loop" below.
 - `hooks.json`: every hook test with both versions' numbers, the winner and its lesson, written by the Friday report and
   read by the Monday plan.
 - `tools/assets/`: the fonts (Source Serif 4 and IBM Plex Sans, and for the light look Fraunces, Plus Jakarta Sans,
@@ -131,6 +137,64 @@ cannot be installed, explainers and ads are made with captions and music but no 
 
 An explainer in a hook test also carries `trial` `{test, variant, pattern, of?}`, as set out under Hook tests below.
 
+Every piece planned from 2026-W49 carries `tags`: `{"hook": a hook id from research/patterns.json, "format": a format
+id from it, "scenes": [the shot or scene types it leans on]}`, so the learning loop can tell what worked. The week's
+wild card also carries `experiment`: its id in research/experiments.json, such as "2026-W49-X1".
+
+### Motion v2: content.motion (explainers and ads, since 17 November 2026)
+
+```json
+"content": {"motion": {
+  "stage": "top | middle | bottom",
+  "pills": {"0": "Before you raise", "2": "Before you raise"},
+  "hook": {"text": "...", "say": "...", "shot": {"type": "report", "title": "..."}},
+  "shots": [
+    {"cover": "investor_ready_scan", "pill": "What you get"},
+    {"shot": {"type": "price", "first": "$750", "...": "..."}, "lines": [{"text": "...", "say": "..."}]}
+  ],
+  "cta": {"kind": "follow | comment | dm", "keyword": "SCAN", "text": "...", "say": "...", "pill": "DM <b>SCAN</b>",
+          "shot": {"type": "phone", "keyword": "SCAN", "reply": "...", "link": "financedepartmentllc.com/investor-ready-scan"}},
+  "offer": "words under Talha's name on the end card"
+}}
+```
+
+The hook's words are its title and are on screen from the first frame. Each shot is one picture at its own place on the
+desk; several lines in one shot keep the camera still. `pills` label the top pill by shot index (0 is the hook; a
+missing index keeps the last label). The call to action matches the stage: top follow, middle comment (a comment
+keyword from tools/keywords.json), bottom dm (a DM keyword); an ad may ask for its offer's DM keyword at any stage.
+Shot types and their fields are documented in `tools/studio/motion.py` and `tools/studio/work.py`: versus, form,
+castpay, bars, calendar, follow, person, checklist, docpair, fax, deadline, penalty, comment, report, days, price,
+proof, nofee, phone, work and recap. Every word on screen restates the piece's own approved words, and a shot shows no
+figure that its lines do not say. Preview a piece's frames without making the video with
+`python3 tools/studio/render_motion.py weeks/{week}/pieces.json {ID} --out /tmp/peek --peek 1,4.5,9`.
+
+### What an offer covers (since 17 November 2026)
+
+Talha, 17 November 2026: whenever a piece introduces a service or quotes a price, it first explains in detail what the
+service covers, in a visual form that practically shows the work, instead of just saying the name and the price.
+
+- A motion piece puts `{"cover": "<offer id>"}` among its shots before the offer is named or priced. It becomes one
+  numbered station per item of the offer's What you get list, each item's words spoken and captioned word for word and
+  its work shown being done (books matched line by line, revenue spread over the months it is earned, a cap table
+  checked against its papers, a contract read with its terms highlighted, runway drawn month by month, the findings
+  report's gaps with their cost and time to fix, forms filled in and stamped, papers sent and confirmed), then a recap
+  that ticks every item and names the offer. The price comes after. `"recap": false` leaves the recap out and
+  `"steps": false` the step numbers.
+- A story or carousel slide puts `"cover": "<offer id>"` on the slide: a story shows the list with each item's words
+  after its kicker and title and before its body, so the kicker and title must not name or price the offer; a
+  carousel shows the list as the slide's visual, and names and prices the offer only on a later slide.
+- A text post lists every item (its title or its words) before it names or prices the offer, and so does any caption
+  that quotes a price.
+- A classic video may not name or price an offer at all.
+- A piece about an offer lists FD-31, and one that quotes its price also lists the offer's own claim. The offer ids
+  are investor_ready_scan, investor_ready_sprint, books_catch_up, funded_plan, international_founder_plan,
+  startup_tax_returns (held until Talha's PTIN is active), filing_1099, payroll, rd_credit, us_entry,
+  delaware_franchise_tax and form_5472. A price counts only for an offer the piece names or covers, so $600 in a post
+  about the old 1099 threshold is not a price.
+- `tools/check.mjs` enforces all of this. When an offer page's What you get list changes, change `tools/coverage.json`
+  in the same chat and run `node tools/coverage.mjs --check ../financedepartment` with the website repository beside
+  this one.
+
 A piece with `"style": "classic"` is made by the first engine. `make.mjs` sets `ai_voice` to true on every explainer or
 ad it narrates, and the platforms' AI labels go on when it is placed (Meta requires one on a reel narrated with a
 realistic AI voice). Since the afternoon of 15 November 2026, at Talha's request, the videos carry no AI wording on
@@ -184,3 +248,35 @@ Threads is not placed through Buffer or Metricool. The Social desk, a scheduled 
 
 The Social desk also answers what people send us on Threads: replies, mentions and quotes of our posts, replies to our own replies on other accounts' posts (its step 2b) and direct messages (its step 6), from the answer bank on the kit's Replies tab. Anything it should not answer waits in Slack #content for Talha's ✅. Threads conversations and social media leads are logged in the Conversations sheet, not here.
 
+## The learning loop and the weekly wild card (since 17 November 2026)
+
+Talha, 17 November 2026: the system improves itself, its content strategy built on research for virality and on the
+goals each piece is for, and once a week it tries something really out of the box; what works joins the strategy.
+
+1. Every piece carries `tags` (hook pattern, format, scenes) and the wild card its `experiment` id.
+2. The Friday Weekly report writes `research/results/{week}.json` with every published piece's numbers:
+
+   ```json
+   {"week": "2026-W49", "made": "2026-12-11 10:12 PKT", "pieces": [
+     {"id": "2026-W49-E01", "format": "explainer", "stage": "Top", "pillar": "Deadlines", "tags": {"hook": "question", "format": "steps_video"},
+      "experiment": null, "keyword_actions": 3, "leads": 1, "calls": 0,
+      "posts": [{"platform": "instagram", "views": 1234, "reach": 1100, "likes": 50, "comments": 5, "saves": 12, "shares": 9,
+                 "avg_watch_s": 6.2, "skip_rate": 41.0}]}]}
+   ```
+
+   `keyword_actions` counts comments and DMs with the piece's keyword (Buffer Community, the Conversations sheet),
+   `leads` the HubSpot contacts credited to it by utm_campaign, `calls` those that reached Call booked. A number no
+   tool gives is left out, never estimated.
+3. It then runs `node tools/learn.mjs`, which scores every piece against its stage's goal (top: views, shares, saves and
+   holding attention; middle: views, saves, comments and keyword actions; bottom: views, keyword actions, leads and
+   calls), each number compared with the median of the same platform and kind of post over the last eight weeks, and
+   writes `research/scores.json`: each hook, format, scene, pillar and platform by stage, recent weeks counting most
+   (a four week half life) and pulled towards our usual until it has evidence. It also judges the wild card in
+   `research/experiments.json`: a win at 1.25 times the same stage's other pieces, a loss at 0.8 or less, otherwise
+   inconclusive, and not readable under 100 views. One strong win (1.5 times) or two wins mark it `promote`.
+4. The Monday Research desk reads both: it ranks the week's ideas by what scores best at each stage, keeps about 80% of
+   the plan on proven patterns and 20% on tests, proposes three wild cards from `research/patterns.json` wild_cards or
+   new ones, picks one, moves a promoted wild card into formats as in rotation, and retires an idea after two losses.
+5. The Monday Plan run follows the brief: the week's hooks and formats from the top of the scores for each stage, the
+   tests, and the wild card as one extra piece, `{week}-X1` in its brief and the piece's `experiment`. Changes to the
+   format mix, pace or platforms still go through the Direction tab and Talha's ✅.

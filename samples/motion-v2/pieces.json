@@ -341,25 +341,26 @@
    "stage": "Bottom",
    "claims": [
     "FD-13",
+    "FD-31",
     "FD-01",
     "FD-07",
-    "FD-05",
-    "FD-12"
+    "FD-05"
    ],
    "content": {
     "motion": {
      "stage": "bottom",
      "pills": {
-      "0": "Before you raise"
+      "0": "Before you raise",
+      "2": "Before you raise"
      },
      "offer": "The 5 Day Investor Ready Scan",
      "hook": {
-      "text": "Before you raise: the 5 Day Investor Ready Scan.",
-      "say": "Before you raise: the five day Investor Ready Scan.",
+      "text": "Find what investors will find, in five working days.",
+      "say": "Find what investors will find, in five working days.",
       "shot": {
        "type": "report",
-       "title": "The <mark>5 Day</mark> Investor Ready Scan",
-       "size": 104,
+       "title": "Find what investors will find, <mark>in five working days.</mark>",
+       "size": 92,
        "doc": "Findings report",
        "tab": "Money at Stake",
        "who": "sam",
@@ -371,19 +372,8 @@
      },
      "shots": [
       {
-       "shot": {
-        "type": "days",
-        "doc": "Findings report",
-        "page": "Money at Stake",
-        "at_page": "Money",
-        "days": 5
-       },
-       "lines": [
-        {
-         "text": "A findings report with a Money at Stake page, in five working days.",
-         "say": "A findings report, with a Money at Stake page, in five working days."
-        }
-       ]
+       "cover": "investor_ready_scan",
+       "pill": "What you get"
       },
       {
        "shot": {
@@ -473,7 +463,9 @@
       }
      }
     }
-   }
+   },
+   "offer_id": "investor_ready_scan",
+   "note": "Remade 17 November 2026 coverage first: everything the Scan covers is shown being done before its name and price (Talha, 17 November 2026)."
   }
  ]
 }

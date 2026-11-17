@@ -18,9 +18,12 @@ A piece's content.motion:
   shots:   [{"shot": {...}, "step": n, "lines": [{"text", "say"}, ...]}]   several lines keep the camera still
   cta:     {"text", "say", "kind": "follow" | "comment" | "dm", "keyword", "pill", "shot": {...}}
   offer:   optional words under Talha's name on the end card
+  shots may also hold {"cover": "<offer id>", "pill": "What you get"}: it becomes one numbered station per item
+  the offer covers (tools/coverage.json, word for word from its page) and a recap naming it (work.py). Talha,
+  17 November 2026: a piece that introduces a service or quotes a price shows what it covers first.
 Shot types: versus, form, castpay, bars, calendar, follow, person, checklist, docpair, fax, deadline, penalty,
-comment, report, days, price, proof, nofee, phone. Every word on screen restates the piece's own approved
-words: a shot never adds a fact.
+comment, report, days, price, proof, nofee, phone, and from work.py work and recap. Every word on screen restates
+the piece's own approved words: a shot never adds a fact.
 """
 import math
 from brand import esc, ic, shell, SITE, DISCLAIMER, photo_uri, texture_uri
@@ -82,14 +85,15 @@ def cross(size=44, color="#C23A2B"):
 def make_beats(piece):
     """Beats in speaking order, each tied to a station (the hook's, each shot's, the call to action's)."""
     m = piece["content"]["motion"]
+    shots, pills = work.expand(m)
     beats, stations = [], []
     i = 0
     hook = m["hook"]
     b = video.Beat(i, "hook", hook["text"], hook.get("say"), hook["shot"])
     b.station, b.caption = 0, False
-    beats.append(b); stations.append({"shot": hook["shot"], "beats": [b], "kind": "hook"})
-    for si, sh in enumerate(m.get("shots", [])):
-        st = {"shot": sh["shot"], "beats": [], "kind": "shot", "step": sh.get("step")}
+    beats.append(b); stations.append({"shot": hook["shot"], "beats": [b], "kind": "hook", "pill": pills.get("0")})
+    for si, sh in enumerate(shots):
+        st = {"shot": sh["shot"], "beats": [], "kind": "shot", "step": sh.get("step"), "pill": pills.get(str(si + 1))}
         for li, ln in enumerate(sh["lines"]):
             i += 1
             b = video.Beat(i, "s%d_%d" % (si + 1, li + 1), ln["text"], ln.get("say"), sh["shot"])
@@ -878,10 +882,9 @@ def build(piece, beats, stations, disclaimer=False):
         a = st_times[si][1]
         o.j("TL.fromTo('#push',{scale:1},{scale:1.045,duration:%.2f,ease:'none',immediateRender:false},%.3f);", max(0.5, t_end - a), a)
     # the top pill (and the step bar for middle of funnel pieces)
-    pills = m.get("pills", {})
     labels, cur = [], None
     for si in range(n):
-        lab = pills.get(str(si), cur)
+        lab = stations[si].get("pill") or cur
         labels.append(lab); cur = lab
     hud = ['<div class="hbrand"><span class="mark">FD</span>Finance Department</div>']
     seen = {}
@@ -939,3 +942,6 @@ def build(piece, beats, stations, disclaimer=False):
     html = shell(body, W, H, CSS, "video", script=script)
     looks = [0.0] + [round(max(0.2, (st["beats"][0].start + st["beats"][-1].end) / 2 + 0.4), 2) for st in stations[1:]] + [round(min(total - 0.3, end_at + 1.6), 2)]
     return html, total, o.cues, looks
+
+
+import work  # noqa: E402  (adds the work and recap shots and the cover expansion)

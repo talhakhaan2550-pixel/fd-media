@@ -7,7 +7,11 @@ week starting on the Monday after the run.
 
 ## What it reads
 
-1. Our own numbers: Metricool brand 7464082, Instagram reels for the last 28 days (caption, views, reach, average watch
+1. What has worked against each stage's goal: `research/scores.json` and `research/experiments.json`, which
+   `node tools/learn.mjs` writes from `research/results/{week}.json` after each Friday report (since 17 November 2026,
+   when Talha asked that the strategy improve itself and try one out-of-the-box idea a week; see the main README's
+   learning loop section). The best adj scores at an idea's stage rank first; a pattern with n under 3 is still a test.
+1b. Our own numbers: Metricool brand 7464082, Instagram reels for the last 28 days (caption, views, reach, average watch
    time, retention, skip rate, shares, saves, comments), Instagram posts (saves), Threads posts, plus `hooks.json` and
    the Growth Loop sheet's Scorecard and Tests tabs.
 2. Up to five peer accounts, tracked as competitors in Metricool (`peers.json`). Metricool gives their captions, likes,
@@ -44,6 +48,7 @@ week starting on the Monday after the run.
       "claims": ["Approved claim IDs the idea rests on"],
       "needs_claim": "What fact is missing from the Claim Library, or empty",
       "offer_page": "/form-5472",
+      "cover": "an offer id from tools/coverage.json when the idea introduces a service or quotes its price, or empty",
       "cta": "follow | comment CHECKLIST | DM SCAN | link in bio",
       "send_to": "Who a viewer would send it to",
       "why": "One or two sentences: the evidence for this idea",
@@ -53,6 +58,12 @@ week starting on the Monday after the run.
   "cases": [
     {"id": "{week}-CASE1", "company": "...", "angle": "...", "sources": ["SEC filing or the company's own published numbers"], "status": "waiting for Talha's ✅", "slack": "message link"}
   ],
+  "wild_cards": [
+    {"idea": "speedrun", "what": "What makes it out of the box", "why": "Why it could travel, or serve its stage's goal",
+     "stage": "top | middle | bottom", "hook": "A draft hook built only from Approved claims", "claims": ["..."],
+     "needs": "What the studio needs to make it (only what it makes today)", "pick": true}
+  ],
+  "scores_used": "The picks from research/scores.json the ranking leaned on, such as top hook question 1.31 (n 6)",
   "patterns_changed": ["What changed in patterns.json this week"]
 }
 ```
