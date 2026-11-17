@@ -43,6 +43,15 @@ has no room for, and the hook tests' Instagram Trial Reels. Everything in this r
   piece marked `"style": "classic"`; it needs `npm install`.
 - `tools/config.json`: the Pages address, the platforms switched on, posting hours and spacing, and `trial_reels`, whether
   Instagram takes our Trial Reels (see Hook tests below).
+- `research/`: the Research desk (since 17 November 2026): `patterns.json` (hook types, formats and scenes with our
+  results and peer sightings), `peers.json` (the peer accounts tracked in Metricool) and each week's
+  `research/{week}/brief.json`, which the Monday plan reads. See `research/README.md`.
+- `tools/keywords.json`: the comment and DM keyword map Talha approved on 17 November 2026, with each keyword's page,
+  tracked link, Meta automation and status (live once Talha's test passes).
+- `tools/studio/motion.py` and `tools/studio/render_motion.py`: the motion v2 engine (one camera moving over a
+  paper desk, the hook on screen from the first frame, step counters for middle of funnel videos). Its three
+  samples are in `samples/motion-v2/` and wait for Talha's approval; until then the weekly runs keep using
+  `video.py`.
 - `hooks.json`: every hook test with both versions' numbers, the winner and its lesson, written by the Friday report and
   read by the Monday plan.
 - `tools/assets/`: the fonts (Source Serif 4 and IBM Plex Sans, and for the light look Fraunces, Plus Jakarta Sans,

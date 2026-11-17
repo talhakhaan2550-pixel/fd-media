@@ -1,0 +1,479 @@
+{
+ "week": "motion-v2-samples",
+ "note": "Motion v2 samples, 17 November 2026: three remakes from wording already approved and checked in 2026-W47 and 2026-W48 (E11, E03, S01, S04, S06, S07). Not scheduled anywhere.",
+ "pieces": [
+  {
+   "id": "MV2-TOP-1099",
+   "remake_of": "2026-W48-E11",
+   "format": "explainer",
+   "stage": "Top",
+   "claims": [
+    "1099-01",
+    "1099-02"
+   ],
+   "content": {
+    "motion": {
+     "stage": "top",
+     "pills": {
+      "0": "1099 threshold"
+     },
+     "hook": {
+      "text": "For 2026 payments, the 1099-NEC threshold is $2,000, not $600.",
+      "say": "For twenty twenty-six payments, the ten ninety-nine N E C threshold is two thousand dollars, not six hundred.",
+      "shot": {
+       "type": "versus",
+       "title": "The <mark>1099-NEC</mark> threshold",
+       "label": "For 2026 payments",
+       "new": "$2,000",
+       "old": "$600",
+       "say_new": "two",
+       "say_old": "six",
+       "who": "sam",
+       "expr": "thinking",
+       "who_left": 620,
+       "who_top": 1250,
+       "who_h": 560
+      }
+     },
+     "shots": [
+      {
+       "shot": {
+        "type": "form",
+        "form": "Form 1099-NEC",
+        "tag": "2026",
+        "sub": "Nonemployee compensation",
+        "rows": [
+         "Payee"
+        ],
+        "field": "Nonemployee compensation",
+        "value": "$2,000.00",
+        "at_fill": "two",
+        "stamp": "$2,000 OR MORE",
+        "at_stamp": "more"
+       },
+       "lines": [
+        {
+         "text": "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee.",
+         "say": "For payments made in twenty twenty-six, Form ten ninety-nine N E C reports nonemployee compensation of two thousand dollars or more, paid to a payee."
+        }
+       ]
+      },
+      {
+       "shot": {
+        "type": "castpay",
+        "left": "sam",
+        "right": "maya",
+        "pay": "Pay for work",
+        "no": "Your employee",
+        "yes": "Contractor",
+        "at_pay": "pay",
+        "at_no": "not",
+        "at_yes": "contractor"
+       },
+       "lines": [
+        {
+         "text": "Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.",
+         "say": "Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor."
+        }
+       ]
+      },
+      {
+       "shot": {
+        "type": "bars",
+        "items": [
+         {
+          "label": "Before",
+          "value": "$600"
+         },
+         {
+          "label": "2026 payments",
+          "value": "$2,000"
+         }
+        ],
+        "at_old": "six"
+       },
+       "lines": [
+        {
+         "text": "The threshold was $600 before.",
+         "say": "The threshold was six hundred dollars before."
+        }
+       ]
+      },
+      {
+       "shot": {
+        "type": "calendar",
+        "month": "FEB 2027",
+        "day": "1",
+        "weekday": "MONDAY",
+        "flips": [
+         [
+          "JAN 2027",
+          ""
+         ],
+         [
+          "DEC 2026",
+          ""
+         ]
+        ],
+        "at_date": "February",
+        "to": [
+         "Each payee",
+         "The IRS"
+        ],
+        "at_to": [
+         "payee",
+         "I"
+        ],
+        "who": "dot",
+        "expr": "surprised"
+       },
+       "lines": [
+        {
+         "text": "Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday 1 February 2027.",
+         "say": "Forms ten ninety-nine N E C for twenty twenty-six payments go to each payee, and to the I R S, by Monday, February first, twenty twenty-seven."
+        }
+       ]
+      }
+     ],
+     "cta": {
+      "kind": "follow",
+      "text": "Follow for more founder finance, explained simply.",
+      "say": "Follow for more founder finance, explained simply.",
+      "pill": "Follow for more founder finance",
+      "shot": {
+       "type": "follow",
+       "title": "Follow for more founder finance, <mark>explained simply</mark>",
+       "handle": "talha.financedepartment"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "MV2-MID-5472",
+   "remake_of": "2026-W47-E03",
+   "format": "explainer",
+   "stage": "Middle",
+   "claims": [
+    "5472-01",
+    "5472-02",
+    "5472-03",
+    "5472-04",
+    "FD-11"
+   ],
+   "content": {
+    "motion": {
+     "stage": "middle",
+     "pills": {
+      "0": "Form 5472 in 4 steps",
+      "1": "Step 1 of 4",
+      "2": "Step 2 of 4",
+      "3": "Step 3 of 4",
+      "4": "Step 4 of 4",
+      "5": "Why it matters",
+      "6": "Free checklist"
+     },
+     "hook": {
+      "text": "Is your US LLC owned entirely by one foreign person?",
+      "say": "Is your U S L L C owned entirely by one foreign person?",
+      "shot": {
+       "type": "person",
+       "title": "Is your US LLC owned entirely by <mark>one foreign person</mark>?",
+       "size": 92,
+       "card": "US LLC",
+       "card_sub": "",
+       "tag": "Form 5472",
+       "who": "zara",
+       "expr": "thinking",
+       "icon": "building",
+       "card_top": 900,
+       "who_top": 790
+      }
+     },
+     "shots": [
+      {
+       "step": 1,
+       "shot": {
+        "type": "checklist",
+        "title": "Check it applies",
+        "rows": [
+         "Owned entirely by one foreign person",
+         "Not taxed as a corporation",
+         "A reportable transaction with a related party, such as its owner"
+        ],
+        "at": [
+         "start",
+         "corporation",
+         "transaction"
+        ],
+        "result": "It files Form 5472",
+        "at_result": "owner"
+       },
+       "lines": [
+        {
+         "text": "If it is not taxed as a corporation, it files Form 5472 for each year it has a reportable transaction with a related party, such as its owner.",
+         "say": "If it is not taxed as a corporation, it files Form fifty-four seventy-two for each year it has a reportable transaction with a related party, such as its owner."
+        }
+       ]
+      },
+      {
+       "step": 2,
+       "shot": {
+        "type": "docpair",
+        "title": "Prepare both forms",
+        "left": "Form 5472",
+        "left_sub": "",
+        "right": "Pro forma Form 1120",
+        "right_sub": "",
+        "note": "a corporate return filed as a formality",
+        "at_left": "fifty",
+        "at_right": "pro",
+        "at_note": "corporate"
+       },
+       "lines": [
+        {
+         "text": "It files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality.",
+         "say": "It files Form fifty-four seventy-two with a pro forma Form eleven twenty, a corporate return filed as a formality."
+        }
+       ]
+      },
+      {
+       "step": 3,
+       "shot": {
+        "type": "fax",
+        "title": "Fax it or mail it",
+        "no": "Not filed electronically",
+        "fax_label": "Fax",
+        "number": "855-887-7737",
+        "mail_to": "IRS",
+        "mail_where": "Ogden, Utah",
+        "at_no": "electronically",
+        "at_fax": "faxed",
+        "at_mail": "mailed"
+       },
+       "lines": [
+        {
+         "text": "This Form 5472 cannot be filed electronically: it is faxed to 855-887-7737 or mailed to the IRS in Ogden, Utah.",
+         "say": "This Form fifty-four seventy-two cannot be filed electronically: it is faxed to eight five five, eight eight seven, seven seven three seven, or mailed to the I R S in Ogden, Utah."
+        }
+       ]
+      },
+      {
+       "step": 4,
+       "shot": {
+        "type": "deadline",
+        "title": "File it by the date",
+        "due": {
+         "label": "Due by",
+         "month": "APR 2027",
+         "day": "15",
+         "weekday": "THURSDAY"
+        },
+        "ext": {
+         "label": "With Form 7004",
+         "month": "OCT 2027",
+         "day": "15",
+         "weekday": "FRIDAY"
+        },
+        "ext_tag": "Form 7004: six months more",
+        "at_due": "April",
+        "at_ext": "seventy",
+        "at_ext_date": "October"
+       },
+       "lines": [
+        {
+         "text": "For 2026, that pro forma 1120 with Form 5472 is due by Thursday 15 April 2027.",
+         "say": "For twenty twenty-six, that pro forma eleven twenty with Form fifty-four seventy-two is due by Thursday, April fifteenth, twenty twenty-seven."
+        },
+        {
+         "text": "Form 7004 extends the time to file by six months, to Friday 15 October 2027.",
+         "say": "Form seventy oh four extends the time to file by six months, to Friday, October fifteenth, twenty twenty-seven."
+        }
+       ]
+      },
+      {
+       "shot": {
+        "type": "penalty",
+        "label": "Not filed on time",
+        "value": "$25,000",
+        "to": 25000,
+        "sub": "penalty",
+        "at_value": "twenty",
+        "who": "zara",
+        "expr": "surprised",
+        "who_h": 470,
+        "who_left": 610,
+        "doc": "Form 5472",
+        "stamp": "NOT FILED ON TIME",
+        "at_stamp": "filing"
+       },
+       "lines": [
+        {
+         "text": "Not filing a required Form 5472 on time carries a $25,000 penalty.",
+         "say": "Not filing a required Form fifty-four seventy-two on time carries a twenty-five thousand dollar penalty."
+        }
+       ]
+      }
+     ],
+     "cta": {
+      "kind": "comment",
+      "keyword": "CHECKLIST",
+      "text": "Comment CHECKLIST and I'll send you the free US filing checklist.",
+      "say": "Comment checklist, and I'll send you the free U S filing checklist.",
+      "pill": "Comment <b>CHECKLIST</b>",
+      "shot": {
+       "type": "comment",
+       "title": "Get the free <mark>US filing checklist</mark>",
+       "keyword": "CHECKLIST",
+       "dm": "Here is the free US filing checklist.",
+       "link": "financedepartmentllc.com/us-entry",
+       "at_type": "checklist",
+       "at_dm": "send"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "MV2-BOT-SCAN",
+   "remake_of": "2026-W47-S07",
+   "format": "explainer",
+   "stage": "Bottom",
+   "claims": [
+    "FD-13",
+    "FD-01",
+    "FD-07",
+    "FD-05",
+    "FD-12"
+   ],
+   "content": {
+    "motion": {
+     "stage": "bottom",
+     "pills": {
+      "0": "Before you raise"
+     },
+     "offer": "The 5 Day Investor Ready Scan",
+     "hook": {
+      "text": "Before you raise: the 5 Day Investor Ready Scan.",
+      "say": "Before you raise: the five day Investor Ready Scan.",
+      "shot": {
+       "type": "report",
+       "title": "The <mark>5 Day</mark> Investor Ready Scan",
+       "size": 104,
+       "doc": "Findings report",
+       "tab": "Money at Stake",
+       "who": "sam",
+       "expr": "thinking",
+       "who_left": 40,
+       "who_top": 1250,
+       "who_h": 540
+      }
+     },
+     "shots": [
+      {
+       "shot": {
+        "type": "days",
+        "doc": "Findings report",
+        "page": "Money at Stake",
+        "at_page": "Money",
+        "days": 5
+       },
+       "lines": [
+        {
+         "text": "A findings report with a Money at Stake page, in five working days.",
+         "say": "A findings report, with a Money at Stake page, in five working days."
+        }
+       ]
+      },
+      {
+       "shot": {
+        "type": "price",
+        "first": "$750",
+        "first_label": "for our first five clients",
+        "then_label": "Then",
+        "then": "$1,250",
+        "at_first": "seven",
+        "at_seats": "first",
+        "at_then": "then",
+        "seats": 5
+       },
+       "lines": [
+        {
+         "text": "$750 for our first five clients, then $1,250.",
+         "say": "Seven hundred and fifty dollars for our first five clients, then twelve hundred and fifty dollars."
+        }
+       ]
+      },
+      {
+       "shot": {
+        "type": "proof",
+        "items": [
+         {
+          "value": "300+",
+          "to": 300,
+          "suf": "+",
+          "label": "founders we have worked with",
+          "at": "three"
+         },
+         {
+          "pre": "More than",
+          "value": "150",
+          "label": "reviews clients have left for Talha's work on Fiverr",
+          "at": "one"
+         }
+        ]
+       },
+       "lines": [
+        {
+         "text": "We have worked with 300+ founders.",
+         "say": "We have worked with three hundred plus founders."
+        },
+        {
+         "text": "More than 150 reviews clients have left for Talha's work on Fiverr.",
+         "say": "More than one hundred and fifty reviews clients have left for Talha's work on Fiverr."
+        }
+       ]
+      },
+      {
+       "shot": {
+        "type": "nofee",
+        "no": [
+         "Introduce investors",
+         "Take a success fee"
+        ],
+        "yes": "You stay in charge of your raise",
+        "at_no": [
+         "introduce",
+         "success"
+        ],
+        "at_yes": "charge",
+        "who": "sam"
+       },
+       "lines": [
+        {
+         "text": "We do not introduce investors or take a success fee; you stay in charge of your raise.",
+         "say": "We do not introduce investors or take a success fee; you stay in charge of your raise."
+        }
+       ]
+      }
+     ],
+     "cta": {
+      "kind": "dm",
+      "keyword": "SCAN",
+      "text": "DM SCAN and I'll send you the page.",
+      "say": "D M scan, and I'll send you the page.",
+      "pill": "DM <b>SCAN</b>",
+      "shot": {
+       "type": "phone",
+       "keyword": "SCAN",
+       "reply": "Here is the page for the 5 Day Investor Ready Scan:",
+       "link": "financedepartmentllc.com/investor-ready-scan",
+       "at_type": "scan",
+       "at_reply": "send"
+      }
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "updated": "2026-11-17",
+ "status": "proposed, waiting for Talha's approval. Metricool's free plan lets us add up to 5 competitors and does not let us remove or change them later, so nothing is added until he approves the five.",
+ "metricool": {
+  "brand": 7464082,
+  "connectors": {
+   "reels": "IGCR01 to IGCR10",
+   "posts": "IGCP01 to IGCP11"
+  },
+  "note": "Competitor data has captions, likes, comments, interactions and engagement, but no views."
+ },
+ "proposed": [
+  {
+   "handle": "doolahq",
+   "who": "doola, US company formation and compliance for founders abroad",
+   "why": "Our closest direct peer for the US company, Form 5472 and International Founder topics",
+   "followers_seen": "13K in an older Instagram snapshot"
+  },
+  {
+   "handle": "markjkohler",
+   "who": "Mark J. Kohler, small business tax attorney and CPA",
+   "why": "Very active US small business tax reels: hooks for deadlines, entities and payroll",
+   "followers_seen": "124K"
+  },
+  {
+   "handle": "karltondennis",
+   "who": "Karlton Dennis, EA, tax strategy creator",
+   "why": "High engagement short tax reels: a source of hook and format patterns (never his claims)",
+   "followers_seen": "108K"
+  },
+  {
+   "handle": "cartainc",
+   "who": "Carta, cap tables and fundraising",
+   "why": "On topic for raising, SAFEs and cap tables (the Scan and Sprint)",
+   "followers_seen": "4.6K"
+  },
+  {
+   "handle": "yourcfoguy",
+   "who": "Josh Aharonoff, fractional CFO",
+   "why": "Same positioning as Talha (fractional CFO for founders)",
+   "followers_seen": "4.3K in an older snapshot"
+  }
+ ],
+ "alternates": [
+  {
+   "handle": "amynorthardcpa",
+   "who": "The Accountant for Creatives, US small business taxes and bookkeeping",
+   "followers_seen": "7.4K"
+  }
+ ],
+ "checked": "Handles confirmed from Instagram's own profile titles in search results on 17 November 2026; follower counts may be out of date."
+}

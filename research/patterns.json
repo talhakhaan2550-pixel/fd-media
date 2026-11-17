@@ -1,0 +1,450 @@
+{
+ "updated": "2026-11-17",
+ "how": "Written by the Research desk every Monday before the Plan run. hooks hold the seven hook types the hook tests use; formats and scenes hold what the studio can make. our_results come from Metricool and hooks.json; peer_sightings count posts by the tracked peer accounts that beat that account's own median engagement in the last 28 days. A pattern first seen on a peer starts as untested and is tried in a hook test before it joins the rotation. Peers give us patterns only: never their words, visuals or scripts.",
+ "hooks": [
+  {
+   "id": "question",
+   "name": "Question",
+   "what": "Opens on a question the viewer answers in their head, such as whether a rule applies to them.",
+   "status": "in rotation",
+   "our_results": {
+    "tests": 0,
+    "wins": 0,
+    "median_skip_rate": null,
+    "median_avg_watch_seconds": null,
+    "shares_per_1000_reach": null
+   },
+   "peer_sightings": 0,
+   "peer_examples": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "number",
+   "name": "Number",
+   "what": "Opens on one figure: an amount, a count of steps or a date.",
+   "status": "in rotation",
+   "our_results": {
+    "tests": 0,
+    "wins": 0,
+    "median_skip_rate": null,
+    "median_avg_watch_seconds": null,
+    "shares_per_1000_reach": null
+   },
+   "peer_sightings": 0,
+   "peer_examples": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "contrast",
+   "name": "Contrast",
+   "what": "Old against new, or what founders think against what is true, such as $2,000 not $600.",
+   "status": "in rotation",
+   "our_results": {
+    "tests": 0,
+    "wins": 0,
+    "median_skip_rate": null,
+    "median_avg_watch_seconds": null,
+    "shares_per_1000_reach": null
+   },
+   "peer_sightings": 0,
+   "peer_examples": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "mistake",
+   "name": "Mistake",
+   "what": "Opens on a costly mistake a founder makes and what it costs.",
+   "status": "in rotation",
+   "our_results": {
+    "tests": 0,
+    "wins": 0,
+    "median_skip_rate": null,
+    "median_avg_watch_seconds": null,
+    "shares_per_1000_reach": null
+   },
+   "peer_sightings": 0,
+   "peer_examples": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "myth",
+   "name": "Myth",
+   "what": "Opens on a belief founders hold that an Approved claim shows is wrong.",
+   "status": "in rotation",
+   "our_results": {
+    "tests": 0,
+    "wins": 0,
+    "median_skip_rate": null,
+    "median_avg_watch_seconds": null,
+    "shares_per_1000_reach": null
+   },
+   "peer_sightings": 0,
+   "peer_examples": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "deadline",
+   "name": "Deadline",
+   "what": "Opens on a date that is coming and who it applies to.",
+   "status": "in rotation",
+   "our_results": {
+    "tests": 0,
+    "wins": 0,
+    "median_skip_rate": null,
+    "median_avg_watch_seconds": null,
+    "shares_per_1000_reach": null
+   },
+   "peer_sightings": 0,
+   "peer_examples": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "call_out",
+   "name": "Call out",
+   "what": "Names the viewer directly, such as \"If you pay contractors...\" or \"Own a US LLC from abroad?\".",
+   "status": "in rotation",
+   "our_results": {
+    "tests": 0,
+    "wins": 0,
+    "median_skip_rate": null,
+    "median_avg_watch_seconds": null,
+    "shares_per_1000_reach": null
+   },
+   "peer_sightings": 0,
+   "peer_examples": [],
+   "updated": "2026-11-17"
+  }
+ ],
+ "formats": [
+  {
+   "id": "explainer",
+   "name": "Narrated explainer",
+   "stages": "top, middle",
+   "status": "in rotation",
+   "what": "Motion graphics with the AI narrator, 30 to 90 seconds.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "carousel",
+   "name": "Carousel",
+   "stages": "middle",
+   "status": "in rotation",
+   "what": "Step by step slides; carousels drive saves.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "carousel_reel",
+   "name": "Carousel music reel",
+   "stages": "top, middle",
+   "status": "in rotation",
+   "what": "A carousel's slides as a reel with music.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "story",
+   "name": "Story",
+   "stages": "bottom",
+   "status": "in rotation",
+   "what": "Single frame; most close with Reply CALL.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "text",
+   "name": "Text post",
+   "stages": "top, middle",
+   "status": "in rotation",
+   "what": "Facebook text posts and Threads posts.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "comic",
+   "name": "Cast comic strip",
+   "stages": "top",
+   "status": "in rotation",
+   "what": "The cartoon cast acting out founder pain, 3 to 5 slides.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "ad",
+   "name": "Ad",
+   "stages": "bottom",
+   "status": "in rotation",
+   "what": "One offer, 15 to 30 seconds, posted with no budget.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "steps_video",
+   "name": "Actionable step video",
+   "stages": "middle",
+   "status": "sample, waiting for Talha's approval",
+   "what": "STEP 1 OF 4 counter, verb titles, a visual showing where to act; motion v2 sample MV2-MID-5472.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "playbook",
+   "name": "Goal playbook",
+   "stages": "middle",
+   "status": "planned (Phase 2)",
+   "what": "If you hired us to [goal]: every step from day one, one offer per playbook.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "case",
+   "name": "Famous company case",
+   "stages": "middle",
+   "status": "planned (Phase 2), each case needs Talha's approval",
+   "what": "If we ran [company]'s finance department, from public facts only, name in text only, no logos, with the not affiliated line.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "this_or_that",
+   "name": "This or that",
+   "stages": "top",
+   "status": "untested",
+   "what": "Two options (Delaware or Wyoming, LLC or C corp); people stay to the end for the answer.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "skit",
+   "name": "Cast skit reel",
+   "stages": "top",
+   "status": "untested",
+   "what": "The cast acting out a founder moment as a short reel.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "comment_reply",
+   "name": "Reply to a comment",
+   "stages": "middle",
+   "status": "untested",
+   "what": "A reel answering a real comment, quoted with the commenter's handle hidden.",
+   "our_results": {
+    "pieces": 0,
+    "median_views": null,
+    "median_saves": null,
+    "median_shares": null
+   },
+   "peer_sightings": 0,
+   "updated": "2026-11-17"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "versus",
+   "what": "Two figures side by side, the old one struck through",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "form",
+   "what": "A tax form with its box filling in and a stamp",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "castpay",
+   "what": "One cast member paying another, with chips naming who they are",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "bars",
+   "what": "A bar chart building itself",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "calendar",
+   "what": "A calendar flipping to the due date, with a ring around it",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "follow",
+   "what": "The profile card with Follow turning to Following",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "person",
+   "what": "A cast member with the object the piece is about",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "checklist",
+   "what": "A checklist ticking off",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "docpair",
+   "what": "Two documents with a plus between them",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "fax",
+   "what": "A fax machine with the number, and an envelope with the address",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "deadline",
+   "what": "Two calendars joined by an arrow, for a due date and its extension",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "penalty",
+   "what": "A penalty counting up, with a red stamp",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "comment",
+   "what": "A comment box with the keyword and the reply that arrives",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "report",
+   "what": "A report cover with a tab",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "days",
+   "what": "A row of day cards filling in",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "price",
+   "what": "A price card and its later price",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "proof",
+   "what": "Proof cards: founders worked with and reviews",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "nofee",
+   "what": "What we never do, struck through, and what the founder keeps",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  },
+  {
+   "id": "phone",
+   "what": "A phone with the DM keyword and our reply with the link",
+   "status": "sample, waiting for Talha's approval (motion v2)",
+   "used_in": [],
+   "updated": "2026-11-17"
+  }
+ ]
+}

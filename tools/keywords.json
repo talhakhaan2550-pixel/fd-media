@@ -1,0 +1,263 @@
+{
+ "updated": "2026-11-17",
+ "how": "The keyword map Talha approved on 17 November 2026. Meta Business Suite sends each reply (Page Finance Department LLC, Messenger and Instagram). DM keywords use Custom keywords: up to 5 spellings, an exact match, and the reply goes once the chat has been quiet for 15 minutes. Comment keywords use Comment to message: a public reply \"Sent you a message.\" and a private message with the link. A keyword may sit in only one automation, so comment and DM keywords never share a word. Status becomes live once Talha has sent the keyword from his personal Instagram and the right link came back. The call to action ladder: top of funnel asks people to follow (never a keyword), middle asks them to comment a comment keyword for its free tool, bottom asks them to DM a DM keyword (or link in bio).",
+ "dm": [
+  {
+   "keyword": "CALL",
+   "spellings": [
+    "CALL",
+    "Call",
+    "call"
+   ],
+   "offer": "30 minute call",
+   "page": "/book",
+   "link": "https://www.financedepartmentllc.com/book?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_call",
+   "automation": "Custom keywords - CALL: booking link",
+   "status": "live since 12 November 2026"
+  },
+  {
+   "keyword": "FUNDED",
+   "spellings": [
+    "FUNDED",
+    "Funded",
+    "funded"
+   ],
+   "offer": "The Funded Startup Finance Department",
+   "page": "/funded-startups",
+   "link": "https://www.financedepartmentllc.com/funded-startups?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_funded",
+   "automation": "Custom keywords - FUNDED",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "ABROAD",
+   "spellings": [
+    "ABROAD",
+    "Abroad",
+    "abroad"
+   ],
+   "offer": "The International Founder Plan",
+   "page": "/international-founder-plan",
+   "link": "https://www.financedepartmentllc.com/international-founder-plan?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_abroad",
+   "automation": "Custom keywords - ABROAD",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "CLEANUP",
+   "spellings": [
+    "CLEANUP",
+    "Cleanup",
+    "cleanup"
+   ],
+   "offer": "Books Catch Up",
+   "page": "/books-cleanup",
+   "link": "https://www.financedepartmentllc.com/books-cleanup?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_cleanup",
+   "automation": "Custom keywords - CLEANUP",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "1099",
+   "spellings": [
+    "1099"
+   ],
+   "offer": "1099s Done by February 1",
+   "page": "/1099-filing",
+   "link": "https://www.financedepartmentllc.com/1099-filing?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_1099",
+   "automation": "Custom keywords - 1099",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "PAYROLL",
+   "spellings": [
+    "PAYROLL",
+    "Payroll",
+    "payroll"
+   ],
+   "offer": "Payroll Set Up Right",
+   "page": "/payroll",
+   "link": "https://www.financedepartmentllc.com/payroll?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_payroll",
+   "automation": "Custom keywords - PAYROLL",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "CREDIT",
+   "spellings": [
+    "CREDIT",
+    "Credit",
+    "credit"
+   ],
+   "offer": "R&D Credit at a Fixed $1,000",
+   "page": "/rd-tax-credit",
+   "link": "https://www.financedepartmentllc.com/rd-tax-credit?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_credit",
+   "automation": "Custom keywords - CREDIT",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "USA",
+   "spellings": [
+    "USA",
+    "Usa",
+    "usa"
+   ],
+   "offer": "US Company in 10 Working Days",
+   "page": "/us-entry",
+   "link": "https://www.financedepartmentllc.com/us-entry?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_usa",
+   "automation": "Custom keywords - USA",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "DELAWARE",
+   "spellings": [
+    "DELAWARE",
+    "Delaware",
+    "delaware"
+   ],
+   "offer": "Delaware Franchise Tax, Worked Out Both Ways",
+   "page": "/delaware-franchise-tax",
+   "link": "https://www.financedepartmentllc.com/delaware-franchise-tax?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_delaware",
+   "automation": "Custom keywords - DELAWARE",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "5472",
+   "spellings": [
+    "5472"
+   ],
+   "offer": "Form 5472 for Foreign Owned LLCs",
+   "page": "/form-5472",
+   "link": "https://www.financedepartmentllc.com/form-5472?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_5472",
+   "automation": "Custom keywords - 5472",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "SCAN",
+   "spellings": [
+    "SCAN",
+    "Scan",
+    "scan"
+   ],
+   "offer": "5 Day Investor Ready Scan",
+   "page": "/investor-ready-scan",
+   "link": "https://www.financedepartmentllc.com/investor-ready-scan?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_scan",
+   "automation": "Custom keywords - SCAN",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "SPRINT",
+   "spellings": [
+    "SPRINT",
+    "Sprint",
+    "sprint"
+   ],
+   "offer": "Investor Ready Sprint",
+   "page": "/investor-ready-sprint",
+   "link": "https://www.financedepartmentllc.com/investor-ready-sprint?utm_source=instagram&utm_medium=social_media&utm_campaign=dm_sprint",
+   "automation": "Custom keywords - SPRINT",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "TAX",
+   "offer": "Startup Tax Return, Filed On Time",
+   "page": "/startup-tax-returns",
+   "status": "waits for Talha's PTIN"
+  }
+ ],
+ "comment": [
+  {
+   "keyword": "SCORE",
+   "spellings": [
+    "SCORE",
+    "Score",
+    "score"
+   ],
+   "free_tool": "The free raise readiness scorecard",
+   "page": "/scorecard",
+   "link": "https://www.financedepartmentllc.com/scorecard?utm_source=instagram&utm_medium=social_media&utm_campaign=comment_score",
+   "automation": "Comment to message - SCORE",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "CHECKER",
+   "spellings": [
+    "CHECKER",
+    "Checker",
+    "checker"
+   ],
+   "free_tool": "The free 1099 checker",
+   "page": "/do-i-need-to-file-a-1099",
+   "link": "https://www.financedepartmentllc.com/do-i-need-to-file-a-1099?utm_source=instagram&utm_medium=social_media&utm_campaign=comment_checker",
+   "automation": "Comment to message - CHECKER",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "CALC",
+   "spellings": [
+    "CALC",
+    "Calc",
+    "calc"
+   ],
+   "free_tool": "The free Delaware franchise tax calculator",
+   "page": "/delaware-franchise-tax-calculator",
+   "link": "https://www.financedepartmentllc.com/delaware-franchise-tax-calculator?utm_source=instagram&utm_medium=social_media&utm_campaign=comment_calc",
+   "automation": "Comment to message - CALC",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "BEHIND",
+   "spellings": [
+    "BEHIND",
+    "Behind",
+    "behind"
+   ],
+   "free_tool": "How far behind are your books",
+   "page": "/books-cleanup#how-far-behind",
+   "link": "https://www.financedepartmentllc.com/books-cleanup?utm_source=instagram&utm_medium=social_media&utm_campaign=comment_behind#how-far-behind",
+   "automation": "Comment to message - BEHIND",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "HEALTH",
+   "spellings": [
+    "HEALTH",
+    "Health",
+    "health"
+   ],
+   "free_tool": "The free books health check",
+   "page": "/funded-startups#check",
+   "link": "https://www.financedepartmentllc.com/funded-startups?utm_source=instagram&utm_medium=social_media&utm_campaign=comment_health#check",
+   "automation": "Comment to message - HEALTH",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "OFFSET",
+   "spellings": [
+    "OFFSET",
+    "Offset",
+    "offset"
+   ],
+   "free_tool": "The free payroll offset check",
+   "page": "/rd-tax-credit#offset",
+   "link": "https://www.financedepartmentllc.com/rd-tax-credit?utm_source=instagram&utm_medium=social_media&utm_campaign=comment_offset#offset",
+   "automation": "Comment to message - OFFSET",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "CHECKLIST",
+   "spellings": [
+    "CHECKLIST",
+    "Checklist",
+    "checklist"
+   ],
+   "free_tool": "The free US filing checklist",
+   "page": "/us-entry#checklist",
+   "link": "https://www.financedepartmentllc.com/us-entry?utm_source=instagram&utm_medium=social_media&utm_campaign=comment_checklist#checklist",
+   "automation": "Comment to message - CHECKLIST",
+   "status": "built, test pending"
+  },
+  {
+   "keyword": "RETURN",
+   "free_tool": "Which federal return your company files",
+   "page": "/startup-tax-returns#which-return",
+   "status": "waits for Talha's PTIN"
+  }
+ ]
+}
