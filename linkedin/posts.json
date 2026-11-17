@@ -178,6 +178,281 @@
      ]
     }
    }
+  },
+  {
+   "id": "LI-2026-11-27",
+   "format": "linkedin_image",
+   "date": "2026-11-27",
+   "post": "Friday 27 November: founder shares and the 30 day 83(b) election",
+   "claims": [
+    "83B-01"
+   ],
+   "stage": "top",
+   "kind": "deadline explainer",
+   "pattern": "deadline",
+   "topic": "raise readiness",
+   "lighter": false,
+   "format_hook": "deadline explainer, opens with who it affects and the 30 days",
+   "text": [
+    "If you received founder shares that vest, one tax form has a 30 day deadline, and it starts the day the shares are issued to you.",
+    "It is the 83(b) election. The IRS's own form for it, Form 15620, says it must be filed no later than 30 days after the date the property was transferred.",
+    "Here is what it changes. Without the election, shares that vest over time count as income for your services when they vest: their value at that point, minus what you paid. With it, you count that difference now, at the value when the shares were issued.",
+    "A worked example: if you paid the full fair market value of your shares when they were issued, the difference is zero, so the election reports no income now.",
+    "How it is filed: sign Form 15620, mail it to the IRS office where you file your federal income tax return, and give a copy to your company. For shares transferred since 1 January 2016, you no longer attach a copy to your tax return.",
+    "What to do this week: find the date your shares were issued and count 30 days. If you are inside the window, decide with your accountant or attorney before it closes. The election is not required, and whether it suits you depends on what you paid and what the shares are worth. Keep proof of the date you mailed it.",
+    "Did you file an 83(b) when you received your founder shares?"
+   ],
+   "first_comment": "Sources: the IRS's Form 15620 for the 83(b) election, https://www.irs.gov/pub/irs-pdf/f15620.pdf and T.D. 9779 in Internal Revenue Bulletin 2016-33, https://www.irs.gov/irb/2016-33_IRB. Raising soon? Our free readiness scorecard takes twelve questions, then gives you your score and your three biggest gaps: https://www.financedepartmentllc.com/scorecard?utm_source=linkedin&utm_medium=content_linkedin&utm_campaign=post_2026_11_27",
+   "sources": [
+    {
+     "name": "IRS, Form 15620, Section 83(b) Election (Rev. 4-2025)",
+     "url": "https://www.irs.gov/pub/irs-pdf/f15620.pdf",
+     "supports": "filed no later than 30 days after the date the property was transferred; include in gross income the excess, if any, of fair market value over the amount paid; signed and submitted by mail to the IRS office where the service provider files; a copy to the person for whom the services are performed; not required"
+    },
+    {
+     "name": "IRS, Internal Revenue Bulletin 2016-33, T.D. 9779",
+     "url": "https://www.irs.gov/irb/2016-33_IRB",
+     "supports": "section 83(a): without an election, the excess of fair market value over the amount paid is included when the shares first become transferable or not subject to a substantial risk of forfeiture; a copy with the return is no longer required for property transferred on or after 1 January 2016"
+    }
+   ],
+   "sources_note": "The zero in the worked example follows from that rule. Claim Library 83B-01.",
+   "alt": "A calendar page showing day 30 for an 83(b) election, with Form 15620 and the three filing steps",
+   "content": {
+    "kicker": "Founder shares",
+    "lead": "If you received founder shares that vest, one tax form has a deadline:",
+    "title": "30 days to file\nyour 83(b)",
+    "emph": "30 days",
+    "object": {
+     "type": "date",
+     "month": "DAY",
+     "day": "30",
+     "sub": "after transfer",
+     "label": "Form 15620",
+     "text": "Counted from the day the shares are issued to you"
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "num",
+       "title": "Find your issue date",
+       "text": "Count 30 days from the day the shares were issued to you."
+      },
+      {
+       "mark": "num",
+       "title": "Mail Form 15620",
+       "text": "To the IRS office where you file your federal income tax return. Keep proof of the date you mailed it."
+      },
+      {
+       "mark": "num",
+       "title": "Give your company a copy",
+       "text": "For shares transferred since 1 January 2016, no copy goes with your tax return."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "LI-2026-11-28",
+   "format": "linkedin_image",
+   "date": "2026-11-28",
+   "post": "Saturday 28 November: contractor paperwork, red flag or green flag",
+   "claims": [
+    "1099-07",
+    "1099-10",
+    "1099-13",
+    "1099-14"
+   ],
+   "stage": "top",
+   "kind": "lighter",
+   "pattern": "red_green_flag",
+   "topic": "1099 and contractors",
+   "lighter": true,
+   "format_hook": "lighter post, red flag or green flag, opens with the format's label and the 31 December check",
+   "text": [
+    "Red flag or green flag: three things in your contractor files to check before 31 December.",
+    "One. A US contractor you paid this year has never sent you a Form W-9.",
+    "Red flag. The W-9 is how a US payee gives you their correct taxpayer identification number for the information returns you file, such as their Form 1099-NEC. And when a payee has not given you that number in the required manner, the IRS says the payer must withhold a flat 24% from payments such as contractor fees.",
+    "Two. Your contractor abroad sent you a signed Form W-8BEN.",
+    "Green flag. When you hold a valid Form W-8 that you can reliably match to the payment, the IRS's instructions for requesters say you are exempt from reporting it on a Form 1099 and from backup withholding.",
+    "Three. That W-8BEN was signed in 2023.",
+    "Red flag from 1 January. A Form W-8 is generally valid from the date signed until the last day of the third calendar year after that, unless a change in circumstances makes it incorrect. So a form signed in 2023 generally runs out on 31 December 2026.",
+    "What to do this month: list every contractor you paid in 2026, note which form you hold for each and the date it was signed, then request the missing W-9s and any W-8 that runs out this year.",
+    "Which form takes longer to collect on your team, the W-9 or the W-8BEN?"
+   ],
+   "first_comment": "Sources: the IRS on backup withholding, https://www.irs.gov/taxtopics/tc307 and the IRS's instructions for requesters of Forms W-8, https://www.irs.gov/instructions/iw8. Not sure which payments need a 1099? This free checker walks through it: https://www.financedepartmentllc.com/do-i-need-to-file-a-1099?utm_source=linkedin&utm_medium=content_linkedin&utm_campaign=post_2026_11_28",
+   "sources": [
+    {
+     "name": "IRS, About Form W-9",
+     "url": "https://www.irs.gov/forms-pubs/about-form-w-9",
+     "supports": "use Form W-9 to provide your correct TIN to the person who is required to file an information return, for example income paid to you"
+    },
+    {
+     "name": "IRS, Topic no. 307, Backup withholding",
+     "url": "https://www.irs.gov/taxtopics/tc307",
+     "supports": "a flat 24% when the payee does not give the TIN in the required manner; fees for work performed as an independent contractor, Form 1099-NEC; reviewed 24 September 2026"
+    },
+    {
+     "name": "IRS, Instructions for the Requester of Forms W-8 (Rev. June 2022)",
+     "url": "https://www.irs.gov/instructions/iw8",
+     "supports": "valid from the date signed until the last day of the third succeeding calendar year unless a change in circumstances; a valid W-8 reliably associated with the payment exempts it from Form 1099 reporting and section 3406 withholding; request a new form before the validity period expires"
+    }
+   ],
+   "sources_note": "31 December 2026 is worked from that rule, as in the IRS's own example. Claim Library 1099-07, 1099-10, 1099-13 and 1099-14.",
+   "alt": "Three contractor file checks marked red flag or green flag: no W-9, a valid W-8BEN, and a W-8BEN signed in 2023 that runs out on 31 December 2026",
+   "content": {
+    "kicker": "Contractor paperwork",
+    "lead": "Before 31 December, check your contractor files:",
+    "title": "Red flag or\ngreen flag?",
+    "emph": "green flag?",
+    "object": {
+     "type": "bill",
+     "title": "Contractor files",
+     "sub": "Paid in 2026",
+     "height": 250,
+     "rows": [
+      [
+       "US contractor: Form W-9",
+       "missing"
+      ],
+      [
+       "Contractor abroad: Form W-8BEN",
+       "valid"
+      ],
+      [
+       "Form W-8BEN signed in 2023",
+       "ends 31 Dec 2026"
+      ]
+     ]
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "cross",
+       "title": "No W-9 from a US contractor",
+       "text": "Without their number in the required manner, the payer must withhold a flat 24% from contractor fees."
+      },
+      {
+       "mark": "tick",
+       "title": "A valid W-8BEN from abroad",
+       "text": "No Form 1099 reporting and no backup withholding on payments you can reliably match to it."
+      },
+      {
+       "mark": "cross",
+       "title": "A W-8BEN signed in 2023",
+       "text": "Generally runs out on 31 December 2026. Request a new one this month."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "LI-2026-11-29",
+   "format": "linkedin_image",
+   "date": "2026-11-29",
+   "post": "Sunday 29 November: six dates from 15 December to 15 April",
+   "claims": [
+    "EST-01",
+    "EST-02",
+    "1099-02",
+    "DE-01",
+    "DE-07",
+    "1065-01",
+    "1120-01"
+   ],
+   "stage": "top",
+   "kind": "deadline calendar",
+   "pattern": "deadline",
+   "topic": "deadlines",
+   "lighter": false,
+   "format_hook": "reference calendar, opens with the six dates and the span",
+   "text": [
+    "Six dates to put in your company calendar now, from 15 December to 15 April.",
+    "Tuesday 15 December 2026. A calendar year corporation that pays estimated tax makes its last 2026 installment. Installments are due on the 15th day of the 4th, 6th, 9th and 12th months of the tax year.",
+    "Friday 15 January 2027. The last 2026 estimated tax payment for individuals. You can skip it if you file your 2026 return by 1 February 2027 and pay the entire balance with it.",
+    "Monday 1 February 2027. Forms 1099-NEC go to each contractor and to the IRS. The rule says 31 January, which is a Sunday in 2027, so the next business day applies.",
+    "Monday 1 March 2027. A Delaware corporation's annual report and franchise tax. Missing it brings a $200 penalty, and interest of 1.5% a month on unpaid tax.",
+    "Monday 15 March 2027. Form 1065 for calendar year partnerships, and Form 1120-S for calendar year S corporations.",
+    "Thursday 15 April 2027. Form 1120 for calendar year C corporations.",
+    "Not every date applies to every company. What to do this week: mark the ones that apply to yours in a shared calendar, set a reminder two weeks before each, and name who owns it.",
+    "Which of these six is already on your company's calendar?"
+   ],
+   "first_comment": "Sources: IRS Publication 509, https://www.irs.gov/publications/p509, Form 1040-ES for 2026, https://www.irs.gov/pub/irs-pdf/f1040es.pdf, the instructions for Forms 1099-MISC and 1099-NEC, https://www.irs.gov/pub/irs-pdf/i1099mec.pdf, the IRS's Form 7004 due date chart, https://www.irs.gov/pub/irs-efile/Form-7004-Due-Date-Chart-PY2026-dated-11032025.pdf and Delaware's annual report page, https://corp.delaware.gov/frtax/. Unsure which federal return your company files? Our free return finder shows which one: https://www.financedepartmentllc.com/startup-tax-returns?utm_source=linkedin&utm_medium=content_linkedin&utm_campaign=post_2026_11_29",
+   "sources": [
+    {
+     "name": "IRS, Publication 509 (2026), Tax Calendars",
+     "url": "https://www.irs.gov/publications/p509",
+     "supports": "corporations' estimated tax payments are due on the 15th day of the 4th, 6th, 9th and 12th months of the tax year; a due date on a Saturday, Sunday or legal holiday moves to the next day that is not one"
+    },
+    {
+     "name": "IRS, Form 1040-ES (2026)",
+     "url": "https://www.irs.gov/pub/irs-pdf/f1040es.pdf",
+     "supports": "4th payment 15 January 2027; not needed if the 2026 return is filed by 1 February 2027 with the entire balance paid"
+    },
+    {
+     "name": "IRS, Instructions for Forms 1099-MISC and 1099-NEC (Rev. December 2026)",
+     "url": "https://www.irs.gov/pub/irs-pdf/i1099mec.pdf",
+     "supports": "Form 1099-NEC filed and furnished by 31 January; a date on a Saturday, Sunday or legal holiday moves to the next business day"
+    },
+    {
+     "name": "IRS, Form 7004 due date chart, PY2026",
+     "url": "https://www.irs.gov/pub/irs-efile/Form-7004-Due-Date-Chart-PY2026-dated-11032025.pdf",
+     "supports": "tax period 202612: Forms 1065 and 1120-S due 15 March 2027; Form 1120 due 15 April 2027"
+    },
+    {
+     "name": "Delaware Division of Corporations, annual report and tax information, updated 21 September 2026",
+     "url": "https://corp.delaware.gov/frtax/",
+     "supports": "received no later than 1 March; $200 penalty; 1.5% a month interest on unpaid tax"
+    }
+   ],
+   "sources_note": "The weekdays are worked from the calendar; 15 December is the 15th day of the 12th month for a calendar year corporation. Claim Library EST-01, EST-02, 1099-02, DE-01, DE-07, 1065-01 and 1120-01.",
+   "alt": "A deadline sheet with six dates: 15 December, 15 January, 1 February, 1 March, 15 March and 15 April",
+   "content": {
+    "kicker": "Founder calendar",
+    "lead": "From 15 December to 15 April:",
+    "title": "Six dates for\nyour calendar",
+    "emph": "your calendar",
+    "object": {
+     "type": "bill",
+     "title": "Deadlines",
+     "sub": "Dec 2026 to Apr 2027",
+     "height": 400,
+     "rows": [
+      [
+       "Corporations: last 2026 estimated tax",
+       "15 Dec"
+      ],
+      [
+       "Individuals: last 2026 estimated tax",
+       "15 Jan"
+      ],
+      [
+       "Forms 1099-NEC to contractors and IRS",
+       "1 Feb"
+      ],
+      [
+       "Delaware annual report and tax",
+       "1 Mar"
+      ],
+      [
+       "Forms 1065 and 1120-S",
+       "15 Mar"
+      ],
+      [
+       "Form 1120",
+       "15 Apr"
+      ]
+     ]
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "box",
+       "title": "Not every date applies",
+       "text": "Mark the ones that apply to your company, set a reminder two weeks before each, and name who owns it."
+      }
+     ]
+    }
+   }
   }
  ]
 }
