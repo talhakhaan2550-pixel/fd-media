@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2026-W47-T05",
+    "scheduled_et": "2026-11-18T19:30:00-05:00",
+    "scheduled_pkt": "2026-11-19T05:30:00+05:00",
+    "first_reply": false
+  },
+  {
+    "id": "2026-W47-T06",
+    "scheduled_et": "2026-11-19T08:30:00-05:00",
+    "scheduled_pkt": "2026-11-19T18:30:00+05:00",
+    "first_reply": false
+  },
+  {
+    "id": "2026-W47-T07",
+    "scheduled_et": "2026-11-19T12:30:00-05:00",
+    "scheduled_pkt": "2026-11-19T22:30:00+05:00",
+    "first_reply": true
+  },
+  {
+    "id": "2026-W47-T08",
+    "scheduled_et": "2026-11-20T08:30:00-05:00",
+    "scheduled_pkt": "2026-11-20T18:30:00+05:00",
+    "first_reply": false
+  },
+  {
+    "id": "2026-W47-C03",
+    "scheduled_et": "2026-11-21T11:00:00-05:00",
+    "scheduled_pkt": "2026-11-21T21:00:00+05:00",
+    "first_reply": false
+  }
+]

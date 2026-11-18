@@ -1664,8 +1664,8 @@
         "threads": "Got paid through a payment app this year? Here's the test for a 1099-K.\n\nPayment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200. Both have to be true.\n\nDid the $20,000 and 200 test surprise you?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Planned",
-      "check_notes": "",
+      "status": "Held",
+      "check_notes": "missed its slot",
       "metricool": {}
     },
     {
@@ -1692,7 +1692,7 @@
         "threads": "Founders, quick poll: where did you form your US company?\n\nVote below, and tell us in the replies why you picked it.\n\n#Startups"
       },
       "media": [],
-      "status": "Planned",
+      "status": "Scheduled",
       "check_notes": "",
       "metricool": {}
     },
@@ -1717,7 +1717,7 @@
         "threads": "Today is the day: the IRS's old FIRE system takes its last filings at 3 p.m. Eastern on Thursday, November 19, 2026.\n\nFor tax year 2026, IRIS is the only IRS system for filing information returns electronically. And a business filing 10 or more information returns in a year, counting every type of form together, must file them electronically.\n\nIs your business set up in IRIS yet?\n\n#Taxes\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Planned",
+      "status": "Scheduled",
       "check_notes": "",
       "metricool": {}
     },
@@ -1751,7 +1751,7 @@
         "threads": "A Delaware franchise tax bill can look scary. Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways. A short thread on the rule, with an example.\n\nHas one of these bills ever made you look twice?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Planned",
+      "status": "Scheduled",
       "check_notes": "",
       "metricool": {}
     },
@@ -1775,7 +1775,7 @@
         "threads": "Myth or fact: when an investor signs a SAFE, they get shares in your startup that day.\n\nMyth. Y Combinator describes a SAFE as \"a short contract an investor signs to fund your startup now\", in return for the right to shares later.\n\nDid you know that when you signed your first SAFE?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Planned",
+      "status": "Scheduled",
       "check_notes": "",
       "metricool": {}
     },
@@ -1803,8 +1803,8 @@
         "threads": "Behind the numbers in this video: $25,000.\n\nA US LLC owned entirely by one foreign person, and not taxed as a corporation, files Form 5472 with a pro forma Form 1120 for each year it has a reportable transaction with a related party, such as its owner. Not filing a required Form 5472 on time carries a $25,000 penalty.\n\nDo you run a US LLC from outside the US?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Planned",
-      "check_notes": "",
+      "status": "Held",
+      "check_notes": "Not scheduled on Threads (Social desk, 18 November 2026): E03's narrated video needs the AI label, and with Add AI label on, the Threads composer greys out Schedule (it returns when the label is removed).",
       "metricool": {}
     },
     {
@@ -1900,7 +1900,7 @@
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C03_03.jpg",
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C03_04.jpg"
       ],
-      "status": "Made",
+      "status": "Scheduled",
       "check_notes": "",
       "metricool": {}
     },
