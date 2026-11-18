@@ -1031,12 +1031,13 @@
       "source": "UsEntry.tsx",
       "keyword": "USA",
       "claims": [
-        "FD-26",
+        "FD-32",
         "FD-31"
       ],
       "prices": [
-        "$425",
-        "$484"
+        "$197",
+        "$299.40",
+        "$306"
       ],
       "hook": "Your US company filed in 10 working days.",
       "recap": {
@@ -1088,11 +1089,11 @@
         },
         {
           "id": "bank",
-          "title": "US bank",
-          "text": "Your US bank application at Mercury, Brex or Relay, with help through onboarding and any rejection",
+          "title": "US bank or payment account",
+          "text": "Your US bank or payment account application, with a provider open to founders where you live, and help through onboarding and any rejection",
           "scene": {
             "kind": "setup",
-            "app": "Mercury, Brex or Relay",
+            "app": "Bank or payment account",
             "rows": [
               "Application",
               "Onboarding",
@@ -1102,8 +1103,8 @@
         },
         {
           "id": "year1",
-          "title": "First year",
-          "text": "Your first year of registered agent service and annual report, and for a Delaware corporation the franchise tax recalculated",
+          "title": "Every year",
+          "text": "Registered agent service and the annual report each year of your plan, and for a Delaware corporation the franchise tax recalculated",
           "scene": {
             "kind": "setup",
             "app": "Your first year",
