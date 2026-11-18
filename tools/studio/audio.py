@@ -1,6 +1,6 @@
 """Sound for the studio videos: the AI narrator, original music, sound effects and the final mix.
 
-Narrator: Kokoro 82M (Apache 2.0), run locally through kokoro-onnx with the voice af_heart. Its two model files
+Narrator: Kokoro 82M (Apache 2.0), run locally through kokoro-onnx with the voice am_michael (US male, since 18 November 2026; af_heart before). Its two model files
 come from the kokoro-onnx GitHub release and are kept in ~/.cache/fd-studio/voice (checked by SHA-256).
 Music and sound effects are generated here from code, so they are original and free of any licence or claim.
 The mix ducks the music under the voice and is normalised to -14 LUFS with ffmpeg's loudnorm.
@@ -17,7 +17,7 @@ MODEL_FILES = {
     "kokoro-v1.0.onnx": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
     "voices-v1.0.bin": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
 }
-VOICE, SPEED = "af_heart", 1.06
+VOICE, SPEED = "am_michael", 1.06  # US male, since 18 November 2026 (Talha: a man's voice); af_heart before
 SR = 48000
 
 

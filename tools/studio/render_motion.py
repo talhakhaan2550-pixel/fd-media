@@ -4,7 +4,7 @@
   python3 tools/studio/render_motion.py samples/motion-v2/pieces.json MV2-MID-5472 --peek 0,3.5,9   # stills only
 
 --peek draws only the frames at those seconds (fast, for checking layout); without it the whole reel is made:
-narration (Kokoro, the generic af_heart voice), frames at 30 fps, original music, sound effects, -14 LUFS.
+narration (Kokoro, the generic am_michael voice, US male since 18 November 2026), frames at 30 fps, original music, sound effects, -14 LUFS.
 """
 import argparse, hashlib, json, os, shutil, sys, tempfile, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

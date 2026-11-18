@@ -26,7 +26,7 @@ has no room for, and the hook tests' Instagram Trial Reels. Everything in this r
     Talha's photo); `profiles.py` draws the Facebook cover, the YouTube banner and the LinkedIn company banner put up
     on 15 November 2026;
     `brand.py` holds the fonts, colours, icons, US map and page shell; `capture.py` drives Chromium and ffmpeg.
-  - `audio.py` is the sound: the AI narrator (Kokoro 82M through kokoro-onnx, voice af_heart, never Talha's voice), word
+  - `audio.py` is the sound: the AI narrator (Kokoro 82M through kokoro-onnx, voice am_michael, a US male voice since 18 November 2026 (af_heart before), never Talha's voice), word
     timings for the captions, music beds and sound effects made in code (original, so free of any licence), and the
     mix, ducked under the voice and set to -14 LUFS.
   - `doctor.py` checks the workspace and, with `--setup`, installs the narrator (pip package and model files, about
