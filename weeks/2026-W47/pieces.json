@@ -653,8 +653,19 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-D01.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 17 November 2026. It goes out without its opening shot (hook_visual), since the Higgsfield route is not tested yet.",
+      "buffer": {
+        "instagram": [
+          "6afcfe7193fa11d37df98fcd"
+        ],
+        "facebook": [
+          "6afcfe72fc933ac285b5d2c0"
+        ],
+        "youtube": [
+          "6afcfe73f0c5ce9361b2b667"
+        ]
+      },
       "metricool": {},
       "ai_voice": true
     },
@@ -678,8 +689,13 @@
         "facebook": "Paid through a payment app this year?\n\nPayment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200. Both have to be true.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 17 November 2026.",
+      "buffer": {
+        "facebook": [
+          "6afcfe7e93fa11d37df99361"
+        ]
+      },
       "metricool": {}
     },
     {
@@ -721,8 +737,16 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S03_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 17 November 2026. Its headline fact (WY-01) is also on C01's Wyoming LLC slide, posted 17 November 2026; its point, the Wyoming due date and what missing it costs, differs from C01's title, so it passes the Repeats test.",
+      "buffer": {
+        "instagram": [
+          "6afcfe7ef0c5ce9361b2b9e7"
+        ],
+        "facebook": [
+          "6afcfe7ffc933ac285b5d5b0"
+        ]
+      },
       "metricool": {}
     },
     {
