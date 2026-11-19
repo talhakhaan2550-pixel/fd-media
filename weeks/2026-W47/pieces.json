@@ -780,8 +780,16 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-M01.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 19 November 2026. It is C01's music reel, placed two days after C01 (posted 17 November 2026) as the kit's carousel music reel rule sets out, so the Repeats test does not hold it against its own carousel; every slide matches C01's script word for word.",
+      "buffer": {
+        "instagram": [
+          "6afe4f213802f5b9fc59e234"
+        ],
+        "facebook": [
+          "6afe4f27b16549e9b814f44c"
+        ]
+      },
       "metricool": {}
     },
     {
@@ -951,8 +959,19 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-E03.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 19 November 2026. Narrated by the US male voice am_michael (remade 18 November 2026), sound at -14.5 LUFS; every caption and scene matches its approved lines.",
+      "buffer": {
+        "youtube": [
+          "6afe4f3059eff0b616ce85f2"
+        ],
+        "instagram": [
+          "6afe4f36f6b6aa0cd490c2c3"
+        ],
+        "facebook": [
+          "6afe4f3c3802f5b9fc59ef2d"
+        ]
+      },
       "metricool": {},
       "ai_voice": true
     },
@@ -977,8 +996,13 @@
         "facebook": "Beneficial ownership reports in 2026: who still files?\n\nBeneficial ownership information is about who owns or controls a company. US companies and US persons do not report it to FinCEN, the Financial Crimes Enforcement Network; a final rule made this permanent from 14 August 2026.\n\nCertain companies formed outside the US and registered to do business in a US state still report it, leaving out any US person owners, within 30 days of notice that their registration is effective.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 19 November 2026.",
+      "buffer": {
+        "facebook": [
+          "6afe4f4159eff0b616ce8e15"
+        ]
+      },
       "metricool": {}
     },
     {
@@ -1012,8 +1036,16 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S04_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 19 November 2026. Its body (FD-05) is also the point of T01, posted 16 November 2026; its point, the 30 minute call, differs from T01's title, so it passes the Repeats test.",
+      "buffer": {
+        "instagram": [
+          "6afe4f4a3802f5b9fc59f24f"
+        ],
+        "facebook": [
+          "6afe4f4a59eff0b616ce8fbb"
+        ]
+      },
       "metricool": {}
     },
     {
