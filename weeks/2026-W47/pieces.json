@@ -1177,8 +1177,16 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-E04.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 20 November 2026. Narrated by the US male voice am_michael (remade 18 November 2026), sound at -14.8 LUFS; every caption and scene matches its approved lines.",
+      "buffer": {
+        "instagram": [
+          "6affa07eca85ebefb0e68ed0"
+        ],
+        "facebook": [
+          "6affa07f738ce4635f7748eb"
+        ]
+      },
       "metricool": {},
       "ai_voice": true
     },
@@ -1227,8 +1235,16 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S05_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 20 November 2026. Its headline fact (DE-01) is also on C01's Delaware corporation slide, posted 17 November 2026, and in C01's music reel M01 (19 November 2026); its point, the Delaware due date and what missing it costs (DE-07), differs from C01's title, so it passes the Repeats test.",
+      "buffer": {
+        "instagram": [
+          "6affa07fd5f8acdd0d5f4661"
+        ],
+        "facebook": [
+          "6affa080ca85ebefb0e68f73"
+        ]
+      },
       "metricool": {}
     },
     {
