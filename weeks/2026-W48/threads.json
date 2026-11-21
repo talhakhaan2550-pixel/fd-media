@@ -10,5 +10,11 @@
     "scheduled_et": "2026-11-23T12:30:00-05:00",
     "scheduled_pkt": "2026-11-23T22:30:00+05:00",
     "first_reply": true
+  },
+  {
+    "id": "2026-W48-C04",
+    "scheduled_et": "2026-11-24T08:30:00-05:00",
+    "scheduled_pkt": "2026-11-24T18:30:00+05:00",
+    "first_reply": false
   }
 ]
