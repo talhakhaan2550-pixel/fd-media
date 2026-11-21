@@ -1394,8 +1394,16 @@
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_04.jpg",
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-C02_05.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 21 November 2026. Every slide matches its script word for word (RAISE-05 on slide 2, RAISE-06 split over slides 3 and 4 with every figure and condition kept), nothing overflows, the brand fonts loaded, and the close carries Talha's photo and the disclaimer. Its point, the SEC's three tests, differs from E04's (506(b) or 506(c), 20 November 2026), which names the tests in one line, so it passes the Repeats test.",
+      "buffer": {
+        "instagram": [
+          "6b00f1bd20a2d09a0ac411c1"
+        ],
+        "facebook": [
+          "6b00f1bd9ffbc8503cebd043"
+        ]
+      },
       "metricool": {}
     },
     {
@@ -1430,8 +1438,16 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S06_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 21 November 2026. The frame matches its script word for word (the award from FD-04, FD-07's wording, the call from FD-12), with the real award photo from tools/assets/photos and the story call to action. No register piece in the last eight weeks makes this point; the profile's Credentials and Client reviews highlights (15 November 2026) also show the award and the reviews.",
+      "buffer": {
+        "instagram": [
+          "6b00f1c5dd205ed779ad5967"
+        ],
+        "facebook": [
+          "6b00f1c5d9cbb430a10dc467"
+        ]
+      },
       "metricool": {}
     },
     {
