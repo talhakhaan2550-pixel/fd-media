@@ -1637,10 +1637,18 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-E05.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 22 November 2026. Narrated by the US male voice am_michael (remade 18 November 2026), sound at -14.7 LUFS; every caption and scene matches its approved lines (1099-02 on line 1, 1099-08 over lines 2 to 5 with every figure and condition kept and 1 August given without a year, as the claim says, and the free US filing checklist from FD-11), and the end card carries Talha's photo and the disclaimer. No register piece in the last eight weeks makes this point, so it passes the Repeats test.",
       "metricool": {},
-      "ai_voice": true
+      "ai_voice": true,
+      "buffer": {
+        "instagram": [
+          "6b0243a0846b0ee9074ee6ea"
+        ],
+        "facebook": [
+          "6b0243a5846b0ee9074ee7aa"
+        ]
+      }
     },
     {
       "id": "2026-W47-M02",
@@ -1667,9 +1675,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-M02.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 22 November 2026. It is C02's music reel, placed one day after C02 (posted 21 November 2026) as the kit's carousel music reel rule sets out, so the Repeats test does not hold it against its own carousel; every slide matches C02's script word for word, with C02's captions, and the sound sits at -14.0 LUFS.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6b0243aad5eabfb8cc737b0f"
+        ],
+        "facebook": [
+          "6b0243afc72676f5e9f41833"
+        ]
+      }
     },
     {
       "id": "2026-W47-S07",
@@ -1704,9 +1720,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W47/media/2026-W47-S07_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 22 November 2026. The frame matches its script word for word: the six What you get items from FD-31 come before the Scan is named and priced in FD-13's wording, with the story call to action from FD-12. No register piece in the last eight weeks makes this point, so it passes the Repeats test.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6b0243b4846b0ee9074eea68"
+        ],
+        "facebook": [
+          "6b0243b8cc364169c11ab038"
+        ]
+      }
     },
     {
       "id": "2026-W47-T04",
