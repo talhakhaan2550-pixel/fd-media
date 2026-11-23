@@ -859,7 +859,7 @@
           "text": "Your product and engineering work, and the wages, contractor costs and supplies behind it, reviewed against the IRS test",
           "scene": {
             "kind": "table",
-            "head": "Product and engineering",
+            "head": "Product work",
             "rows": [
               "Wages",
               "Contractor costs",

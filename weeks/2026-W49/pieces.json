@@ -1,0 +1,4255 @@
+{
+  "week": "2026-W49",
+  "claims_tab": "November 2026",
+  "pieces": [
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E01.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E01",
+      "format": "explainer",
+      "title": "Before January: get a W-9 or W-8BEN from every contractor",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "1099-01",
+        "1099-07",
+        "1099-10",
+        "1099-02"
+      ],
+      "publish_at": "2026-11-30T08:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "steps_video",
+        "scenes": [
+          "person",
+          "checklist",
+          "work",
+          "comment"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "middle",
+          "pills": {
+            "0": "Contractor forms in 4 steps",
+            "1": "Step 1 of 4",
+            "2": "Step 2 of 4",
+            "3": "Step 3 of 4",
+            "4": "Step 4 of 4",
+            "5": "Free 1099 checker"
+          },
+          "hook": {
+            "text": "Paid contractors in 2026? Get their forms before January.",
+            "say": "Paid contractors in twenty twenty-six? Get their forms before January.",
+            "shot": {
+              "type": "person",
+              "title": "Paid contractors in 2026? <mark>Get their forms</mark> before January.",
+              "size": 88,
+              "card": "W-9",
+              "card_sub": "or W-8BEN",
+              "icon": "doc",
+              "who": "maya",
+              "expr": "happy",
+              "tag": "1099 season"
+            }
+          },
+          "shots": [
+            {
+              "step": 1,
+              "shot": {
+                "type": "checklist",
+                "title": "List who you paid",
+                "rows": [
+                  "Each payee",
+                  "Nonemployee compensation",
+                  "$2,000 or more in 2026"
+                ],
+                "at": [
+                  "payments",
+                  "nonemployee",
+                  "two"
+                ],
+                "result": "Form 1099-NEC",
+                "at_result": "paid"
+              },
+              "lines": [
+                {
+                  "text": "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee.",
+                  "say": "For payments made in twenty twenty-six, Form ten ninety-nine N E C reports nonemployee compensation of two thousand dollars or more, paid to a payee."
+                }
+              ]
+            },
+            {
+              "step": 2,
+              "shot": {
+                "type": "work",
+                "kind": "form",
+                "title": "Ask each US payee for Form W-9",
+                "forms": [
+                  {
+                    "name": "Form W-9",
+                    "tag": "US payee"
+                  }
+                ],
+                "stamp": "TO YOU, NOT THE IRS"
+              },
+              "lines": [
+                {
+                  "text": "Form W-9 is how a US payee gives you their correct taxpayer identification number; it goes to you as the requester, not to the IRS.",
+                  "say": "Form W nine is how a U S payee gives you their correct taxpayer identification number; it goes to you as the requester, not to the I R S."
+                }
+              ]
+            },
+            {
+              "step": 3,
+              "shot": {
+                "type": "work",
+                "kind": "form",
+                "title": "Ask contractors abroad for a W-8",
+                "forms": [
+                  {
+                    "name": "Form W-8BEN",
+                    "tag": "A foreign contractor"
+                  },
+                  {
+                    "name": "Form W-8BEN-E",
+                    "tag": "A foreign company"
+                  }
+                ],
+                "stamp": "NO FORM 1099 REPORTING"
+              },
+              "lines": [
+                {
+                  "text": "Ask a foreign contractor for Form W-8BEN, or Form W-8BEN-E from a foreign company; a valid W-8 exempts the payment from Form 1099 reporting.",
+                  "say": "Ask a foreign contractor for Form W eight B E N, or Form W eight B E N E from a foreign company; a valid W eight exempts the payment from Form ten ninety-nine reporting."
+                }
+              ]
+            },
+            {
+              "step": 4,
+              "shot": {
+                "type": "work",
+                "kind": "send",
+                "title": "Send Forms 1099-NEC by February 1",
+                "items": [
+                  "Form 1099-NEC"
+                ],
+                "to": [
+                  {
+                    "label": "Each payee",
+                    "icon": "person"
+                  },
+                  {
+                    "label": "The IRS",
+                    "icon": "building"
+                  }
+                ],
+                "note": "By Monday, February 1, 2027"
+              },
+              "lines": [
+                {
+                  "text": "Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027.",
+                  "say": "Forms ten ninety-nine N E C for twenty twenty-six payments go to each payee, and to the I R S, by Monday, February first, twenty twenty-seven."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "comment",
+            "keyword": "CHECKER",
+            "text": "Comment CHECKER for the free 1099 checker.",
+            "say": "Comment checker, for the free ten ninety-nine checker.",
+            "pill": "Comment <b>CHECKER</b>",
+            "shot": {
+              "type": "comment",
+              "title": "Get the free <mark>1099 checker</mark>",
+              "keyword": "CHECKER",
+              "dm": "Here is the free 1099 checker.",
+              "link": "financedepartmentllc.com/do-i-need-to-file-a-1099",
+              "at_type": "check",
+              "at_dm": "send"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Paid contractors in 2026? Get their forms before January.\n\n1. List who you paid. For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee. Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.\n2. Ask each US payee for Form W-9. It is how a US payee gives you their correct taxpayer identification number, and it goes to you as the requester, not to the IRS.\n3. Ask a foreign contractor for Form W-8BEN, or Form W-8BEN-E from a foreign company. A valid W-8 exempts the payment from Form 1099 reporting.\n4. Send Forms 1099-NEC for 2026 payments to each payee and to the IRS by Monday, February 1, 2027.\n\nComment CHECKER for the free 1099 checker, or find it through the link in bio.\n\n#1099 #contractors #smallbusiness #startups\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Paid contractors in 2026? Get their forms before January.\n\n1. List who you paid. For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee. Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.\n2. Ask each US payee for Form W-9. It is how a US payee gives you their correct taxpayer identification number, and it goes to you as the requester, not to the IRS.\n3. Ask a foreign contractor for Form W-8BEN, or Form W-8BEN-E from a foreign company. A valid W-8 exempts the payment from Form 1099 reporting.\n4. Send Forms 1099-NEC for 2026 payments to each payee and to the IRS by Monday, February 1, 2027.\n\nNot sure who needs a 1099? Our 1099 page: https://www.financedepartmentllc.com/1099-filing?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-e01\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "Before January: get a W-9 or W-8BEN from every contractor",
+          "description": "1. List who you paid. For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee. Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.\n2. Ask each US payee for Form W-9. It is how a US payee gives you their correct taxpayer identification number, and it goes to you as the requester, not to the IRS.\n3. Ask a foreign contractor for Form W-8BEN, or Form W-8BEN-E from a foreign company. A valid W-8 exempts the payment from Form 1099 reporting.\n4. Send Forms 1099-NEC for 2026 payments to each payee and to the IRS by Monday, February 1, 2027.\n\nGet the free 1099 checker through the link on our channel page.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T07",
+      "format": "text",
+      "title": "Cyber Monday question: where do your sales come in?",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-11-30T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Cyber Monday question for founders: where do most of your sales come in? An online store, a payment app, invoices, or something else?"
+      },
+      "captions": {
+        "threads": "Cyber Monday question for founders: where do most of your sales come in? An online store, a payment app, invoices, or something else?\n\nTell us below.\n\n#SmallBusiness"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S01_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S01",
+      "format": "story",
+      "title": "Your $400 tax is due by June 1",
+      "pillar": "Deadlines",
+      "stage": "Bottom",
+      "claims": [
+        "DE-08",
+        "DE-09",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-30T09:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "deadline",
+        "format": "story",
+        "scenes": [
+          "story"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Delaware LLC?",
+            "title": "Your $400 tax is due by June 1",
+            "emph": "by June 1",
+            "body": "A Delaware LLC pays an annual tax of $400, due by June 1 for the year before. A late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C05_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C05_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C05_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C05_04.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-C05",
+      "format": "carousel",
+      "title": "Comic: whose name are the books in?",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "FD-17"
+      ],
+      "publish_at": "2026-11-30T12:30:00-05:00",
+      "platforms": [
+        "threads",
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "comic",
+        "scenes": [
+          "cast"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Comic",
+            "title": "Whose name are the books in?",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "dev"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "Our books live on my laptop."
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Sam asks",
+            "title": "If we ever switch, who keeps the books?",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam"
+              ],
+              "expr": [
+                "thinking"
+              ],
+              "says": "Who keeps the books?"
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Penny answers",
+            "title": "Your company's own name",
+            "body": "On our plans, your books are always in your company's own name, and that month is free if we close your books late.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "In your company's own name. Always."
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Your books, your name",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny",
+                "dev"
+              ],
+              "expr": [
+                "happy",
+                "surprised"
+              ]
+            }
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Whose name are your company's books in?\n\nOn our plans, your books are always in your company's own name, and that month is free if we close your books late.\n\nFollow for more founder finance, explained simply.\n\n#startups #bookkeeping #founders #smallbusiness",
+        "facebook": "Whose name are your company's books in?\n\nOn our plans, your books are always in your company's own name, and that month is free if we close your books late.\n\nFollow for more founder finance, explained simply.",
+        "threads": "Whose name are your company's books in?\n\nOn our plans, your books are always in your company's own name, and that month is free if we close your books late.\n\nWhere do your books live right now?\n\n#Startups"
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T01",
+      "format": "text",
+      "title": "Delaware franchise tax has a ceiling: $200,000 a year",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "DE-06",
+        "DE-04"
+      ],
+      "publish_at": "2026-11-30T15:00:00-05:00",
+      "platforms": [
+        "facebook"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Delaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer. At the other end, under the Authorized Shares method, 5,000 shares or fewer pay the minimum $175."
+      },
+      "captions": {
+        "facebook": "Is there a limit to Delaware's franchise tax? Yes.\n\nDelaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer.\n\nAt the other end, under the Authorized Shares method, 5,000 shares or fewer pay the minimum $175, 5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85.\n\nWorking out your 2027 bill? Our Delaware franchise tax page: https://www.financedepartmentllc.com/delaware-franchise-tax?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-t01\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E02.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E02",
+      "format": "explainer",
+      "title": "Late in Delaware: a corporation and an LLC pay differently",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "DE-01",
+        "DE-07",
+        "DE-08",
+        "DE-09"
+      ],
+      "publish_at": "2026-11-30T19:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "trial": {
+        "test": "2026-W49-H1",
+        "variant": "A",
+        "pattern": "contrast"
+      },
+      "tags": {
+        "hook": "contrast",
+        "format": "explainer",
+        "scenes": [
+          "person",
+          "calendar",
+          "penalty",
+          "docpair",
+          "follow"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "top",
+          "pills": {
+            "0": "Late in Delaware"
+          },
+          "hook": {
+            "text": "Late in Delaware? A corporation and an LLC pay differently.",
+            "say": "Late in Delaware? A corporation and an L L C pay differently.",
+            "shot": {
+              "type": "person",
+              "title": "Late in Delaware? A corporation and an LLC <mark>pay differently.</mark>",
+              "size": 88,
+              "card": "Delaware",
+              "card_sub": "Corporation or LLC",
+              "icon": "building",
+              "who": "dev",
+              "expr": "surprised",
+              "tag": "Delaware deadlines"
+            }
+          },
+          "shots": [
+            {
+              "shot": {
+                "type": "calendar",
+                "month": "MAR 2027",
+                "day": "1",
+                "weekday": "MONDAY",
+                "flips": [
+                  [
+                    "FEB 2027",
+                    ""
+                  ],
+                  [
+                    "JAN 2027",
+                    ""
+                  ]
+                ],
+                "at_date": "march",
+                "to": [
+                  "Annual report",
+                  "Franchise tax"
+                ],
+                "at_to": [
+                  "annual",
+                  "franchise"
+                ],
+                "who": "dot",
+                "expr": "surprised"
+              },
+              "lines": [
+                {
+                  "text": "Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday.",
+                  "say": "Delaware corporations file their annual report and pay franchise tax by March first each year; in twenty twenty-seven, that is a Monday."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "penalty",
+                "label": "Missed March 1",
+                "value": "$200",
+                "to": 200,
+                "sub": "penalty, plus interest",
+                "who": "sam",
+                "expr": "surprised",
+                "who_left": 610,
+                "who_h": 470,
+                "doc": "Annual report",
+                "stamp": "LATE",
+                "at_stamp": "missing",
+                "at_value": "two"
+              },
+              "lines": [
+                {
+                  "text": "Missing March 1 brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.",
+                  "say": "Missing March first brings a two hundred dollar penalty, plus interest of one and a half percent a month on any unpaid tax."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "calendar",
+                "month": "JUNE",
+                "day": "1",
+                "weekday": "LLC TAX",
+                "flips": [
+                  [
+                    "MAY",
+                    ""
+                  ],
+                  [
+                    "APRIL",
+                    ""
+                  ]
+                ],
+                "at_date": "june",
+                "to": [
+                  "Delaware LLC",
+                  "$400"
+                ],
+                "at_to": [
+                  "delaware",
+                  "four"
+                ],
+                "who": "dot",
+                "expr": "happy"
+              },
+              "lines": [
+                {
+                  "text": "A Delaware LLC pays an annual tax of $400, due by June 1 for the year before.",
+                  "say": "A Delaware L L C pays an annual tax of four hundred dollars, due by June first, for the year before."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "docpair",
+                "title": "The LLC's interest runs on <mark>the penalty too</mark>",
+                "left": "Corporation",
+                "left_sub": "1.5% a month on any unpaid tax",
+                "right": "LLC",
+                "right_sub": "1.5% a month on the tax and penalty",
+                "note": "a $200 penalty for each",
+                "at_left": "late",
+                "at_right": "interest",
+                "at_note": "penalty"
+              },
+              "lines": [
+                {
+                  "text": "A late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.",
+                  "say": "A late Delaware L L C tax brings a two hundred dollar penalty, plus interest of one and a half percent a month, on the tax and penalty."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "follow",
+            "text": "Follow for more founder finance, explained simply.",
+            "say": "Follow for more founder finance, explained simply.",
+            "pill": "Follow for more founder finance",
+            "shot": {
+              "type": "follow",
+              "title": "Follow for more founder finance, <mark>explained simply</mark>",
+              "handle": "talha.financedepartment"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Late in Delaware? A corporation and an LLC pay differently.\n\nDelaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Missing March 1 brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.\n\nA Delaware LLC pays an annual tax of $400, due by June 1 for the year before. A late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.\n\nFollow for more founder finance, explained simply.\n\n#delaware #startups #smallbusiness #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Late in Delaware? A corporation and an LLC pay differently.\n\nDelaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Missing March 1 brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.\n\nA Delaware LLC pays an annual tax of $400, due by June 1 for the year before. A late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "Late in Delaware: a corporation and an LLC pay differently",
+          "description": "Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Missing March 1 brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.\n\nA Delaware LLC pays an annual tax of $400, due by June 1 for the year before. A late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S02_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S02",
+      "format": "story",
+      "title": "Form 5472, sent the only ways the IRS accepts it",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "FD-28",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-11-30T20:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Foreign owned US LLC?",
+            "title": "Form 5472, sent the only ways the IRS accepts it",
+            "emph": "the only ways",
+            "cover": "form_5472",
+            "body": "Form 5472 for Foreign Owned LLCs: $300 a year, with a free extension when needed; if your details are in by March 31 and we miss April 15, the fee back and a penalty relief request.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C01_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C01_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C01_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C01_04.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-C01",
+      "format": "carousel",
+      "title": "Selling to investors who aren't accredited? What Rule 506(b) asks",
+      "pillar": "Raise readiness",
+      "stage": "Middle",
+      "claims": [
+        "RAISE-01",
+        "RAISE-02",
+        "FD-10"
+      ],
+      "publish_at": "2026-11-30T21:00:00-05:00",
+      "platforms": [
+        "instagram"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "carousel",
+        "scenes": [
+          "compare",
+          "checklist",
+          "list"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Raising under 506(b)",
+            "title": "Selling to investors who aren't accredited? What Rule 506(b) asks",
+            "emph": "What Rule 506(b) asks",
+            "visual": {
+              "type": "compare",
+              "left": {
+                "title": "Accredited investors",
+                "icon": "people",
+                "value": "Any number"
+              },
+              "right": {
+                "title": "Other purchasers",
+                "icon": "person",
+                "value": "Up to 35",
+                "note": "Financially sophisticated"
+              },
+              "join": "+"
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "1",
+            "tag": "Rule 506(b)",
+            "title": "No general solicitation, up to 35 others",
+            "body": "Under Rule 506(b), a company cannot use general solicitation or advertising, and can sell to any number of accredited investors plus up to 35 other purchasers who are financially sophisticated, alone or with a representative.",
+            "visual": {
+              "type": "checklist",
+              "title": "Rule 506(b)",
+              "items": [
+                "No general solicitation or advertising",
+                "Any number of accredited investors",
+                "Up to 35 other purchasers"
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "2",
+            "tag": "Non-accredited purchasers",
+            "title": "They receive disclosure documents",
+            "body": "Non-accredited purchasers in a 506(b) offering must receive disclosure documents generally the same as those used in Regulation A or registered offerings, including financial statements that in some cases may need to be certified or audited by an accountant.",
+            "visual": {
+              "type": "list",
+              "title": "Disclosure documents",
+              "items": [
+                {
+                  "icon": "doc",
+                  "text": "Generally the same as Regulation A or registered offerings"
+                },
+                {
+                  "icon": "chart",
+                  "text": "Financial statements"
+                },
+                {
+                  "icon": "check",
+                  "text": "In some cases certified or audited"
+                }
+              ]
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Raising soon?",
+            "body": "Take the free raise readiness scorecard: twelve questions, then your score and your three biggest gaps.",
+            "cta": "Link in bio for the free scorecard"
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Selling to investors who aren't accredited? Here's what Rule 506(b) asks.\n\nUnder Rule 506(b), a company cannot use general solicitation or advertising, and can sell to any number of accredited investors plus up to 35 other purchasers who are financially sophisticated, alone or with a representative. General solicitation means promoting the raise to the public.\n\nNon-accredited purchasers in a 506(b) offering must receive disclosure documents generally the same as those used in Regulation A or registered offerings, including financial statements that in some cases may need to be certified or audited by an accountant.\n\nRaising soon? The free raise readiness scorecard is twelve questions, then your score and your three biggest gaps. Get it through the link in bio, or comment SCORE and we'll send it.\n\n#startups #fundraising #founders #venturecapital\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E03.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E03",
+      "format": "explainer",
+      "title": "Three tax lines that moved up: $2,000, $32 million and $75 million",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "1099-01",
+        "448-01",
+        "QSBS-01"
+      ],
+      "publish_at": "2026-12-01T08:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "number",
+        "format": "explainer",
+        "scenes": [
+          "person",
+          "bars",
+          "follow"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "top",
+          "pills": {
+            "0": "Three lines that moved up"
+          },
+          "hook": {
+            "text": "Three tax lines moved up for founders: $2,000, $32 million and $75 million.",
+            "say": "Three tax lines moved up for founders: two thousand dollars, thirty-two million and seventy-five million.",
+            "shot": {
+              "type": "person",
+              "title": "Three tax lines <mark>moved up</mark>: $2,000, $32 million and $75 million.",
+              "size": 84,
+              "card": "Moved up",
+              "card_sub": "Three tax lines",
+              "icon": "chart",
+              "who": "sam",
+              "expr": "surprised"
+            }
+          },
+          "shots": [
+            {
+              "shot": {
+                "type": "bars",
+                "items": [
+                  {
+                    "label": "Before",
+                    "value": "$600"
+                  },
+                  {
+                    "label": "2026 payments",
+                    "value": "$2,000"
+                  }
+                ],
+                "at_old": "six"
+              },
+              "lines": [
+                {
+                  "text": "For payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee; the threshold was $600 before.",
+                  "say": "For payments made in twenty twenty-six, Form ten ninety-nine N E C reports nonemployee compensation of two thousand dollars or more, paid to a payee; the threshold was six hundred dollars before."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "bars",
+                "items": [
+                  {
+                    "label": "For 2025",
+                    "value": "$31 million"
+                  },
+                  {
+                    "label": "Tax years beginning in 2026",
+                    "value": "$32 million"
+                  }
+                ],
+                "at_old": "figure"
+              },
+              "lines": [
+                {
+                  "text": "For a tax year beginning in 2026, a business meets the small business gross receipts test",
+                  "say": "For a tax year beginning in twenty twenty-six, a business meets the small business gross receipts test,"
+                },
+                {
+                  "text": "when its average annual gross receipts over the three prior tax years are $32 million or less; for 2025 the figure is $31 million.",
+                  "say": "when its average annual gross receipts over the three prior tax years are thirty-two million dollars or less; for twenty twenty-five, the figure is thirty-one million."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "bars",
+                "items": [
+                  {
+                    "label": "On or before July 4, 2025",
+                    "value": "$50 million"
+                  },
+                  {
+                    "label": "After July 4, 2025",
+                    "value": "$75 million"
+                  }
+                ],
+                "at_old": "limit"
+              },
+              "lines": [
+                {
+                  "text": "For qualified small business stock issued after July 4, 2025, the company's gross assets limit is $75 million,",
+                  "say": "For qualified small business stock issued after July fourth, twenty twenty-five, the company's gross assets limit is seventy-five million dollars,"
+                },
+                {
+                  "text": "up from $50 million for stock issued on or before that date.",
+                  "say": "up from fifty million dollars, for stock issued on or before that date."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "follow",
+            "text": "Follow for more founder finance, explained simply.",
+            "say": "Follow for more founder finance, explained simply.",
+            "pill": "Follow for more founder finance",
+            "shot": {
+              "type": "follow",
+              "title": "Follow for more founder finance, <mark>explained simply</mark>",
+              "handle": "talha.financedepartment"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Three tax lines moved up for founders: $2,000, $32 million and $75 million.\n\n$2,000: for payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee; the threshold was $600 before. Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.\n\n$32 million: a business meets the small business gross receipts test for a tax year beginning in 2026 when its average annual gross receipts over the three prior tax years are $32 million or less; for 2025 the figure is $31 million.\n\n$75 million: for qualified small business stock issued after July 4, 2025, the company's gross assets limit is $75 million, up from $50 million for stock issued on or before that date.\n\nFollow for more founder finance, explained simply.\n\n#taxes #startups #founders #smallbusiness\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Three tax lines moved up for founders: $2,000, $32 million and $75 million.\n\n$2,000: for payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee; the threshold was $600 before. Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.\n\n$32 million: a business meets the small business gross receipts test for a tax year beginning in 2026 when its average annual gross receipts over the three prior tax years are $32 million or less; for 2025 the figure is $31 million.\n\n$75 million: for qualified small business stock issued after July 4, 2025, the company's gross assets limit is $75 million, up from $50 million for stock issued on or before that date.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "Three tax lines that moved up: $2,000, $32 million and $75 million",
+          "description": "$2,000: for payments made in 2026, Form 1099-NEC reports nonemployee compensation of $2,000 or more paid to a payee; the threshold was $600 before. Nonemployee compensation is pay for work by someone who is not your employee, such as a contractor.\n\n$32 million: a business meets the small business gross receipts test for a tax year beginning in 2026 when its average annual gross receipts over the three prior tax years are $32 million or less; for 2025 the figure is $31 million.\n\n$75 million: for qualified small business stock issued after July 4, 2025, the company's gross assets limit is $75 million, up from $50 million for stock issued on or before that date.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T08",
+      "format": "text",
+      "title": "Accredited investor: the SEC's three tests for an individual",
+      "pillar": "Raise readiness",
+      "stage": "Middle",
+      "claims": [
+        "RAISE-05",
+        "RAISE-06",
+        "FD-10"
+      ],
+      "publish_at": "2026-12-01T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Raising from friends and family? Check one thing first: is each of them an accredited investor? A short thread on the SEC's tests for an individual, with an example.",
+        "thread": [
+          "Test 1, income: an individual is an accredited investor with income over $200,000, or over $300,000 with a spouse or spousal equivalent, in each of the last two years, and reasonably expects the same this year.",
+          "Test 2, net worth: an individual also qualifies with a net worth over $1 million, alone or with a spouse or spousal equivalent, not counting their primary residence.",
+          "Test 3, a license: an individual also qualifies by holding a Series 7, 65 or 82 license in good standing.",
+          "Worked example: a friend whose net worth is over $1 million only when their home is counted does not pass the net worth test, since the primary residence is not counted. They may still qualify on income or a license."
+        ],
+        "first_reply": "Raising soon? Take the free raise readiness scorecard: twelve questions, then your score and your three biggest gaps. https://www.financedepartmentllc.com/scorecard?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w49-t08"
+      },
+      "captions": {
+        "threads": "Raising from friends and family? Check one thing first: is each of them an accredited investor? A short thread on the SEC's tests for an individual, with an example.\n\nWhich test do most of your investors meet?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S03_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S03",
+      "format": "story",
+      "title": "Your franchise tax, worked out both ways before March 1",
+      "pillar": "Deadlines",
+      "stage": "Bottom",
+      "claims": [
+        "FD-27",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-01T09:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "deadline",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Delaware corporation?",
+            "title": "Your franchise tax, worked out both ways before March 1",
+            "emph": "before March 1",
+            "cover": "delaware_franchise_tax",
+            "body": "Delaware Franchise Tax, Worked Out Both Ways: $125 a year. Send your details by February 15, and if we miss March 1 we pay the penalty and interest up to $500.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E04.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E04",
+      "format": "explainer",
+      "title": "Before March 1: the two numbers Delaware's other method needs",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "DE-03",
+        "DE-05",
+        "DE-01"
+      ],
+      "publish_at": "2026-12-01T12:30:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "number",
+        "format": "steps_video",
+        "scenes": [
+          "person",
+          "checklist",
+          "docpair",
+          "work",
+          "comment"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "middle",
+          "pills": {
+            "0": "Delaware franchise tax",
+            "1": "Step 1 of 4",
+            "2": "Step 2 of 4",
+            "3": "Step 3 of 4",
+            "4": "Step 4 of 4",
+            "5": "Free calculator"
+          },
+          "hook": {
+            "text": "Two numbers can change your Delaware franchise tax bill.",
+            "say": "Two numbers can change your Delaware franchise tax bill.",
+            "shot": {
+              "type": "person",
+              "title": "Two numbers can change your <mark>Delaware franchise tax</mark> bill.",
+              "size": 88,
+              "card": "Delaware",
+              "card_sub": "Franchise tax",
+              "icon": "doc",
+              "who": "penny",
+              "expr": "thinking",
+              "tag": "Delaware"
+            }
+          },
+          "shots": [
+            {
+              "step": 1,
+              "shot": {
+                "type": "checklist",
+                "title": "Know how Delaware bills you",
+                "rows": [
+                  "Based on authorized shares",
+                  "Work it out both ways",
+                  "Use the lesser tax"
+                ],
+                "at": [
+                  "authorized",
+                  "both",
+                  "ways"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways.",
+                  "say": "Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways."
+                },
+                {
+                  "text": "The state's page says \"Use the method that results in the lesser tax.\"",
+                  "say": "The state's page says, use the method that results in the lesser tax."
+                }
+              ]
+            },
+            {
+              "step": 2,
+              "shot": {
+                "type": "docpair",
+                "title": "Gather two numbers",
+                "left": "Issued shares",
+                "right": "Total gross assets",
+                "note": "for the Assumed Par Value Capital method",
+                "at_left": "issued",
+                "at_right": "total",
+                "at_note": "needs"
+              },
+              "lines": [
+                {
+                  "text": "The Assumed Par Value Capital method needs the corporation's issued shares and total gross assets.",
+                  "say": "The Assumed Par Value Capital method needs the corporation's issued shares, and total gross assets."
+                }
+              ]
+            },
+            {
+              "step": 3,
+              "shot": {
+                "type": "checklist",
+                "title": "Work out the second method",
+                "rows": [
+                  "$400 minimum",
+                  "$400 for each $1 million",
+                  "Or part of a million"
+                ],
+                "at": [
+                  "minimum",
+                  "each",
+                  "part"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "That method has a $400 minimum, at $400 for each $1 million of assumed par value capital or part of a million.",
+                  "say": "That method has a four hundred dollar minimum, at four hundred dollars for each one million dollars of assumed par value capital, or part of a million."
+                }
+              ]
+            },
+            {
+              "step": 4,
+              "shot": {
+                "type": "work",
+                "kind": "calendar",
+                "title": "File and pay by March 1",
+                "month": "MAR 2027",
+                "day": "1",
+                "weekday": "MONDAY",
+                "label": "Annual report and franchise tax"
+              },
+              "lines": [
+                {
+                  "text": "Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday.",
+                  "say": "Delaware corporations file their annual report and pay franchise tax by March first each year; in twenty twenty-seven, that is a Monday."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "comment",
+            "keyword": "CALC",
+            "text": "Comment CALC for the free Delaware franchise tax calculator.",
+            "say": "Comment calc, for the free Delaware franchise tax calculator.",
+            "pill": "Comment <b>CALC</b>",
+            "shot": {
+              "type": "comment",
+              "title": "Get the free <mark>franchise tax calculator</mark>",
+              "keyword": "CALC",
+              "dm": "Here is the free Delaware franchise tax calculator.",
+              "link": "financedepartmentllc.com/delaware-franchise-tax-calculator",
+              "at_type": "calc",
+              "at_dm": "send"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Two numbers can change your Delaware franchise tax bill.\n\n1. Know how Delaware bills you. Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways; the state's page says \"Use the method that results in the lesser tax.\"\n2. Gather two numbers. The Assumed Par Value Capital method needs the corporation's issued shares and total gross assets.\n3. Work out the second method. It has a $400 minimum, at $400 for each $1 million of assumed par value capital or part of a million.\n4. File and pay by March 1. Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday.\n\nComment CALC for the free Delaware franchise tax calculator, or find it through the link in bio.\n\n#delaware #startups #founders #taxes\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Two numbers can change your Delaware franchise tax bill.\n\n1. Know how Delaware bills you. Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways; the state's page says \"Use the method that results in the lesser tax.\"\n2. Gather two numbers. The Assumed Par Value Capital method needs the corporation's issued shares and total gross assets.\n3. Work out the second method. It has a $400 minimum, at $400 for each $1 million of assumed par value capital or part of a million.\n4. File and pay by March 1. Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday.\n\nWork out your 2027 bill both ways on our Delaware franchise tax page: https://www.financedepartmentllc.com/delaware-franchise-tax?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-e04\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "Before March 1: the two numbers Delaware's other method needs",
+          "description": "1. Know how Delaware bills you. Delaware's bill is based on authorized shares, but a corporation may work its tax out both ways; the state's page says \"Use the method that results in the lesser tax.\"\n2. Gather two numbers. The Assumed Par Value Capital method needs the corporation's issued shares and total gross assets.\n3. Work out the second method. It has a $400 minimum, at $400 for each $1 million of assumed par value capital or part of a million.\n4. File and pay by March 1. Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday.\n\nGet the free Delaware franchise tax calculator through the link on our channel page.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T09",
+      "format": "text",
+      "title": "Myth or fact: you can e-file Form 5472",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "5472-03",
+        "5472-01"
+      ],
+      "publish_at": "2026-12-01T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "myth",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Myth or fact: you can e-file Form 5472 for a US LLC owned by one foreign person.\n\nMyth. This Form 5472 cannot be filed electronically: it is faxed to 855-887-7737 or mailed to the IRS in Ogden, Utah.",
+        "thread": [
+          "Which LLCs file it: a US LLC owned entirely by one foreign person, and not taxed as a corporation, files Form 5472 with a pro forma Form 1120, a corporate return filed as a formality, for each year it has a reportable transaction with a related party, such as its owner."
+        ]
+      },
+      "captions": {
+        "threads": "Myth or fact: you can e-file Form 5472 for a US LLC owned by one foreign person.\n\nMyth. This Form 5472 cannot be filed electronically: it is faxed to 855-887-7737 or mailed to the IRS in Ogden, Utah.\n\nDid you know it has to go by fax or mail?\n\n#SmallBusiness\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T02",
+      "format": "text",
+      "title": "The R&D credit for a fixed $1,000: what the work covers",
+      "pillar": "Founder finance",
+      "stage": "Bottom",
+      "claims": [
+        "FD-16",
+        "FD-35",
+        "FD-31"
+      ],
+      "publish_at": "2026-12-01T15:00:00-05:00",
+      "platforms": [
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Building a product in the US? Here's what the R&D credit work covers:\n\n1. Your product and engineering work, and the wages, contractor costs and supplies behind it, reviewed against the IRS test\n2. The credit calculated, and Form 6765 prepared to go with your federal return\n3. The payroll offset election made on that return, if your company qualifies\n4. The Form 8974 claim set up with your payroll provider for each quarter after the return is filed\n\nThe R&D credit for a fixed $1,000, with the fee back if there is no credit to claim. Before paying, you answer our eligibility questions: what the company builds, who builds it, its gross receipts and the year it first had any. If the full study finds no credit you can claim, we refund the fee in full."
+      },
+      "captions": {
+        "facebook": "Building a product in the US? Here's what the R&D credit work covers:\n\n1. Your product and engineering work, and the wages, contractor costs and supplies behind it, reviewed against the IRS test\n2. The credit calculated, and Form 6765 prepared to go with your federal return\n3. The payroll offset election made on that return, if your company qualifies\n4. The Form 8974 claim set up with your payroll provider for each quarter after the return is filed\n\nThe R&D credit for a fixed $1,000, with the fee back if there is no credit to claim. Before paying, you answer our eligibility questions: what the company builds, who builds it, its gross receipts and the year it first had any. If the full study finds no credit you can claim, we refund the fee in full.\n\nSee the R&D Credit at a Fixed $1,000: https://www.financedepartmentllc.com/rd-tax-credit?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-t02"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-M05.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-M05",
+      "format": "carousel_reel",
+      "title": "Music reel: Comic: whose name are the books in?",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "FD-17"
+      ],
+      "publish_at": "2026-12-01T18:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "carousel_reel",
+        "scenes": [
+          "cast"
+        ]
+      },
+      "content": {
+        "from": "2026-W49-C05"
+      },
+      "captions": {
+        "instagram": "Whose name are your company's books in?\n\nOn our plans, your books are always in your company's own name, and that month is free if we close your books late.\n\nFollow for more founder finance, explained simply.\n\n#startups #bookkeeping #founders #smallbusiness",
+        "facebook": "Whose name are your company's books in?\n\nOn our plans, your books are always in your company's own name, and that month is free if we close your books late.\n\nFollow for more founder finance, explained simply."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E11.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E11",
+      "format": "explainer",
+      "title": "Late in Delaware: a corporation and an LLC pay differently (hook test, version B)",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "DE-01",
+        "DE-07",
+        "DE-08",
+        "DE-09"
+      ],
+      "publish_at": "2026-12-01T19:00:00-05:00",
+      "platforms": [
+        "instagram"
+      ],
+      "trial": {
+        "test": "2026-W49-H1",
+        "variant": "B",
+        "of": "2026-W49-E02",
+        "pattern": "mistake"
+      },
+      "tags": {
+        "hook": "mistake",
+        "format": "explainer",
+        "scenes": [
+          "person",
+          "calendar",
+          "penalty",
+          "docpair",
+          "follow"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "top",
+          "pills": {
+            "0": "Late in Delaware"
+          },
+          "hook": {
+            "text": "Missed a Delaware deadline? It's a $200 penalty, plus interest.",
+            "say": "Missed a Delaware deadline? It's a two hundred dollar penalty, plus interest.",
+            "shot": {
+              "type": "person",
+              "title": "Missed a Delaware deadline? It's <mark>a $200 penalty, plus interest.</mark>",
+              "size": 84,
+              "card": "Delaware",
+              "card_sub": "Corporation or LLC",
+              "icon": "warning",
+              "who": "sam",
+              "expr": "surprised",
+              "tag": "Delaware deadlines"
+            }
+          },
+          "shots": [
+            {
+              "shot": {
+                "type": "calendar",
+                "month": "MAR 2027",
+                "day": "1",
+                "weekday": "MONDAY",
+                "flips": [
+                  [
+                    "FEB 2027",
+                    ""
+                  ],
+                  [
+                    "JAN 2027",
+                    ""
+                  ]
+                ],
+                "at_date": "march",
+                "to": [
+                  "Annual report",
+                  "Franchise tax"
+                ],
+                "at_to": [
+                  "annual",
+                  "franchise"
+                ],
+                "who": "dot",
+                "expr": "surprised"
+              },
+              "lines": [
+                {
+                  "text": "Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday.",
+                  "say": "Delaware corporations file their annual report and pay franchise tax by March first each year; in twenty twenty-seven, that is a Monday."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "penalty",
+                "label": "Missed March 1",
+                "value": "$200",
+                "to": 200,
+                "sub": "penalty, plus interest",
+                "who": "sam",
+                "expr": "surprised",
+                "who_left": 610,
+                "who_h": 470,
+                "doc": "Annual report",
+                "stamp": "LATE",
+                "at_stamp": "missing",
+                "at_value": "two"
+              },
+              "lines": [
+                {
+                  "text": "Missing March 1 brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.",
+                  "say": "Missing March first brings a two hundred dollar penalty, plus interest of one and a half percent a month on any unpaid tax."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "calendar",
+                "month": "JUNE",
+                "day": "1",
+                "weekday": "LLC TAX",
+                "flips": [
+                  [
+                    "MAY",
+                    ""
+                  ],
+                  [
+                    "APRIL",
+                    ""
+                  ]
+                ],
+                "at_date": "june",
+                "to": [
+                  "Delaware LLC",
+                  "$400"
+                ],
+                "at_to": [
+                  "delaware",
+                  "four"
+                ],
+                "who": "dot",
+                "expr": "happy"
+              },
+              "lines": [
+                {
+                  "text": "A Delaware LLC pays an annual tax of $400, due by June 1 for the year before.",
+                  "say": "A Delaware L L C pays an annual tax of four hundred dollars, due by June first, for the year before."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "docpair",
+                "title": "The LLC's interest runs on <mark>the penalty too</mark>",
+                "left": "Corporation",
+                "left_sub": "1.5% a month on any unpaid tax",
+                "right": "LLC",
+                "right_sub": "1.5% a month on the tax and penalty",
+                "note": "a $200 penalty for each",
+                "at_left": "late",
+                "at_right": "interest",
+                "at_note": "penalty"
+              },
+              "lines": [
+                {
+                  "text": "A late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.",
+                  "say": "A late Delaware L L C tax brings a two hundred dollar penalty, plus interest of one and a half percent a month, on the tax and penalty."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "follow",
+            "text": "Follow for more founder finance, explained simply.",
+            "say": "Follow for more founder finance, explained simply.",
+            "pill": "Follow for more founder finance",
+            "shot": {
+              "type": "follow",
+              "title": "Follow for more founder finance, <mark>explained simply</mark>",
+              "handle": "talha.financedepartment"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Missed a Delaware deadline? It's a $200 penalty, plus interest.\n\nDelaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Missing March 1 brings a $200 penalty, plus interest of 1.5% a month on any unpaid tax.\n\nA Delaware LLC pays an annual tax of $400, due by June 1 for the year before. A late Delaware LLC tax brings a $200 penalty plus interest of 1.5% a month on the tax and penalty.\n\nFollow for more founder finance, explained simply.\n\n#delaware #startups #smallbusiness #founders\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S04_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S04",
+      "format": "story",
+      "title": "Filed within 10 working days of complete details, or our fee back",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "FD-32",
+        "FD-26",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-01T20:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Starting a US company?",
+            "title": "Filed within 10 working days of complete details, or our fee back",
+            "emph": "or our fee back",
+            "cover": "us_entry",
+            "body": "US Company in 10 Working Days: $197 a year plus the state's fees at cost. Filed within 10 working days of complete details, or our fee back.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-M01.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-M01",
+      "format": "carousel_reel",
+      "title": "Music reel: Selling to investors who aren't accredited? What Rule 506(b) asks",
+      "pillar": "Raise readiness",
+      "stage": "Middle",
+      "claims": [
+        "RAISE-01",
+        "RAISE-02",
+        "FD-10"
+      ],
+      "publish_at": "2026-12-01T21:00:00-05:00",
+      "platforms": [
+        "instagram"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "carousel_reel",
+        "scenes": [
+          "compare",
+          "checklist",
+          "list"
+        ]
+      },
+      "content": {
+        "from": "2026-W49-C01"
+      },
+      "captions": {
+        "instagram": "Selling to investors who aren't accredited? Here's what Rule 506(b) asks.\n\nUnder Rule 506(b), a company cannot use general solicitation or advertising, and can sell to any number of accredited investors plus up to 35 other purchasers who are financially sophisticated, alone or with a representative. General solicitation means promoting the raise to the public.\n\nNon-accredited purchasers in a 506(b) offering must receive disclosure documents generally the same as those used in Regulation A or registered offerings, including financial statements that in some cases may need to be certified or audited by an accountant.\n\nRaising soon? The free raise readiness scorecard is twelve questions, then your score and your three biggest gaps. Get it through the link in bio, or comment SCORE and we'll send it.\n\n#startups #fundraising #founders #venturecapital\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E05.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E05",
+      "format": "explainer",
+      "title": "No US office? Send Form SS-4 by fax or mail",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "EIN-04",
+        "EIN-03",
+        "FD-11"
+      ],
+      "publish_at": "2026-12-02T08:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "steps_video",
+        "scenes": [
+          "person",
+          "checklist",
+          "fax",
+          "comment"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "middle",
+          "pills": {
+            "0": "Form SS-4 from abroad",
+            "1": "Step 1 of 3",
+            "2": "Step 2 of 3",
+            "3": "Step 3 of 3",
+            "4": "Free checklist"
+          },
+          "hook": {
+            "text": "No US office? Form SS-4 can go by fax.",
+            "say": "No U S office? Form S S four can go by fax.",
+            "shot": {
+              "type": "person",
+              "title": "No US office? <mark>Form SS-4</mark> can go by fax.",
+              "size": 92,
+              "card": "SS-4",
+              "card_sub": "EIN application",
+              "icon": "send",
+              "who": "zara",
+              "expr": "thinking",
+              "tag": "EIN from abroad"
+            }
+          },
+          "shots": [
+            {
+              "step": 1,
+              "shot": {
+                "type": "checklist",
+                "title": "Check the online route",
+                "rows": [
+                  "Online EIN application",
+                  "Needs a Social Security number or ITIN",
+                  "Not open if the principal place of business is outside the US"
+                ],
+                "at": [
+                  "online",
+                  "needs",
+                  "social"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "The IRS's online EIN application needs the responsible party's Social Security number or ITIN,",
+                  "say": "The I R S's online E I N application needs the responsible party's Social Security number, or I T I N,"
+                },
+                {
+                  "text": "and is not open to a business whose principal place of business is outside the US.",
+                  "say": "and is not open to a business whose principal place of business is outside the U S."
+                }
+              ]
+            },
+            {
+              "step": 2,
+              "shot": {
+                "type": "checklist",
+                "title": "Check the fax route applies",
+                "rows": [
+                  "No legal residence in a US state or DC",
+                  "No principal place of business there",
+                  "No principal office there"
+                ],
+                "at": [
+                  "legal",
+                  "principal",
+                  "office"
+                ],
+                "result": "Fax Form SS-4",
+                "at_result": "fax"
+              },
+              "lines": [
+                {
+                  "text": "A business with no legal residence, principal place of business or principal office in a US state or DC can fax Form SS-4.",
+                  "say": "A business with no legal residence, principal place of business, or principal office in a U S state or D C, can fax Form S S four."
+                }
+              ]
+            },
+            {
+              "step": 3,
+              "shot": {
+                "type": "fax",
+                "title": "Fax it, or mail it",
+                "no": "Online application not open",
+                "fax_label": "From outside the US",
+                "number": "304-707-9471",
+                "mail_to": "IRS EIN International Operation",
+                "mail_where": "Cincinnati",
+                "at_no": "fax",
+                "at_fax": "three",
+                "at_mail": "inside"
+              },
+              "lines": [
+                {
+                  "text": "The fax number is 304-707-9471 from outside the US, or 855-215-1627 from inside it.",
+                  "say": "The fax number is three oh four, seven oh seven, nine four seven one from outside the U S, or eight five five, two one five, one six two seven from inside it."
+                },
+                {
+                  "text": "Or it can mail Form SS-4 to the IRS's EIN International Operation in Cincinnati.",
+                  "say": "Or it can mail Form S S four to the I R S's E I N International Operation, in Cincinnati."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "comment",
+            "keyword": "CHECKLIST",
+            "text": "Comment CHECKLIST for the free US filing checklist.",
+            "say": "Comment checklist, for the free U S filing checklist.",
+            "pill": "Comment <b>CHECKLIST</b>",
+            "shot": {
+              "type": "comment",
+              "title": "Get the free <mark>US filing checklist</mark>",
+              "keyword": "CHECKLIST",
+              "dm": "Here is the free US filing checklist.",
+              "link": "financedepartmentllc.com/us-entry",
+              "at_type": "check",
+              "at_dm": "send"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "No US office? Form SS-4 can go by fax.\n\n1. Check the online route. The IRS's online EIN application needs the responsible party's Social Security number or ITIN, and is not open to a business whose principal place of business is outside the US. The responsible party is the person who controls the company, and an ITIN is an IRS tax number for individuals.\n2. Check the fax route applies. A business with no legal residence, principal place of business or principal office in a US state or DC can fax Form SS-4.\n3. Fax it or mail it. The fax number is 304-707-9471 from outside the US, or 855-215-1627 from inside it. Or mail Form SS-4 to the IRS's EIN International Operation in Cincinnati.\n\nComment CHECKLIST for the free US filing checklist, or find it through the link in bio.\n\n#ein #usllc #globalfounders #startups\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "No US office? Form SS-4 can go by fax.\n\n1. Check the online route. The IRS's online EIN application needs the responsible party's Social Security number or ITIN, and is not open to a business whose principal place of business is outside the US. The responsible party is the person who controls the company, and an ITIN is an IRS tax number for individuals.\n2. Check the fax route applies. A business with no legal residence, principal place of business or principal office in a US state or DC can fax Form SS-4.\n3. Fax it or mail it. The fax number is 304-707-9471 from outside the US, or 855-215-1627 from inside it. Or mail Form SS-4 to the IRS's EIN International Operation in Cincinnati.\n\nThe free US filing checklist, printable, is on our US Entry page: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-e05\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "No US office? Send Form SS-4 by fax or mail",
+          "description": "1. Check the online route. The IRS's online EIN application needs the responsible party's Social Security number or ITIN, and is not open to a business whose principal place of business is outside the US. The responsible party is the person who controls the company, and an ITIN is an IRS tax number for individuals.\n2. Check the fax route applies. A business with no legal residence, principal place of business or principal office in a US state or DC can fax Form SS-4.\n3. Fax it or mail it. The fax number is 304-707-9471 from outside the US, or 855-215-1627 from inside it. Or mail Form SS-4 to the IRS's EIN International Operation in Cincinnati.\n\nGet the free US filing checklist through the link on our channel page.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T10",
+      "format": "text",
+      "title": "No US office? Form SS-4 by fax or mail",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "EIN-03",
+        "EIN-04",
+        "FD-11"
+      ],
+      "publish_at": "2026-12-02T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "No US office? Your company's EIN application doesn't have to go online. A short thread on sending Form SS-4 from abroad, with an example.",
+        "thread": [
+          "The rule: a business with no legal residence, principal place of business or principal office in a US state or DC can fax Form SS-4 to 304-707-9471 from outside the US or 855-215-1627 from inside it, or mail it to the IRS's EIN International Operation in Cincinnati.",
+          "Why not online: the IRS's online EIN application needs the responsible party's Social Security number or ITIN, and is not open to a business whose principal place of business is outside the US.",
+          "Worked example: a founder in Dubai whose Wyoming LLC has no legal residence, principal place of business or principal office in any US state or DC faxes its Form SS-4 to 304-707-9471, the number for faxing from outside the US."
+        ],
+        "first_reply": "The free US filing checklist, printable, is on our US Entry page: https://www.financedepartmentllc.com/us-entry?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w49-t10"
+      },
+      "captions": {
+        "threads": "No US office? Your company's EIN application doesn't have to go online. A short thread on sending Form SS-4 from abroad, with an example.\n\nHow did you get your EIN?\n\n#Entrepreneurship\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S05_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S05",
+      "format": "story",
+      "title": "Form SS-4 can go by fax",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "EIN-03",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-02T09:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "No US office?",
+            "title": "Form SS-4 can go by fax",
+            "emph": "by fax",
+            "body": "A business with no legal residence, principal place of business or principal office in a US state or DC can fax Form SS-4 to 304-707-9471 from outside the US or 855-215-1627 from inside it.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C06_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C06_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C06_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C06_04.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-C06",
+      "format": "carousel",
+      "title": "Comic: the success fee question",
+      "pillar": "Founder stories",
+      "stage": "Top",
+      "claims": [
+        "FD-05"
+      ],
+      "publish_at": "2026-12-02T12:30:00-05:00",
+      "platforms": [
+        "threads",
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "contrast",
+        "format": "comic",
+        "scenes": [
+          "cast"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Comic",
+            "title": "The success fee question",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "Can you find me investors, for a cut?"
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Penny answers",
+            "title": "No introductions, no success fee",
+            "body": "We do not introduce investors or take a success fee; you stay in charge of your raise.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "You stay in charge of your raise."
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Grace overhears",
+            "title": "The angel approves",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "grace"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "A founder in charge? Good."
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "You stay in charge",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam",
+                "grace"
+              ],
+              "expr": [
+                "happy",
+                "happy"
+              ]
+            }
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Can a finance firm find you investors for a cut? Not this one.\n\nWe do not introduce investors or take a success fee; you stay in charge of your raise.\n\nFollow for more founder finance, explained simply.\n\n#startups #fundraising #founders #angelinvesting",
+        "facebook": "Can a finance firm find you investors for a cut? Not this one.\n\nWe do not introduce investors or take a success fee; you stay in charge of your raise.\n\nFollow for more founder finance, explained simply.",
+        "threads": "Can a finance firm find you investors for a cut? Not this one.\n\nWe do not introduce investors or take a success fee; you stay in charge of your raise.\n\nWho do you go to first when you start raising?\n\n#Startups"
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T03",
+      "format": "text",
+      "title": "Year end question: the one number you check every week",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-12-02T15:00:00-05:00",
+      "platforms": [
+        "facebook"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Year end question for founders: what's the one number you check every week?"
+      },
+      "captions": {
+        "facebook": "Year end question for founders: what's the one number you check every week?\n\nCash in the bank, revenue, spending or something else? Tell us in the comments.\n\nFollow for more founder finance, explained simply."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E06.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E06",
+      "format": "explainer",
+      "title": "Own a Wyoming LLC? Three steps around its annual report",
+      "pillar": "US entry",
+      "stage": "Middle",
+      "claims": [
+        "WY-01",
+        "WY-03",
+        "WY-04",
+        "FD-11"
+      ],
+      "publish_at": "2026-12-02T19:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "deadline",
+        "format": "steps_video",
+        "scenes": [
+          "person",
+          "work",
+          "checklist",
+          "comment"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "middle",
+          "pills": {
+            "0": "Wyoming LLC",
+            "1": "Step 1 of 3",
+            "2": "Step 2 of 3",
+            "3": "Step 3 of 3",
+            "4": "Free checklist"
+          },
+          "hook": {
+            "text": "Own a Wyoming LLC? Its annual report is due in the month you formed it.",
+            "say": "Own a Wyoming L L C? Its annual report is due in the month you formed it.",
+            "shot": {
+              "type": "person",
+              "title": "Own a Wyoming LLC? Its annual report is due <mark>in the month you formed it.</mark>",
+              "size": 84,
+              "card": "Wyoming",
+              "card_sub": "LLC annual report",
+              "icon": "building",
+              "who": "zara",
+              "expr": "happy",
+              "tag": "Wyoming"
+            }
+          },
+          "shots": [
+            {
+              "step": 1,
+              "shot": {
+                "type": "work",
+                "kind": "calendar",
+                "title": "Mark your formation month",
+                "label": "The first day of the month",
+                "rings": [
+                  0
+                ]
+              },
+              "lines": [
+                {
+                  "text": "A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year.",
+                  "say": "A Wyoming L L C's annual report is due on the first day of the month it was formed in, every year."
+                }
+              ]
+            },
+            {
+              "step": 2,
+              "shot": {
+                "type": "checklist",
+                "title": "Keep your email current",
+                "rows": [
+                  "A current email address",
+                  "Given to the Secretary of State",
+                  "A reminder 60 days before"
+                ],
+                "at": [
+                  "current",
+                  "secretary",
+                  "sixty"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "Wyoming emails a courtesy reminder 60 days before the annual report is due, if the company has given the Secretary of State a current email address.",
+                  "say": "Wyoming emails a courtesy reminder sixty days before the annual report is due, if the company has given the Secretary of State a current email address."
+                }
+              ]
+            },
+            {
+              "step": 3,
+              "shot": {
+                "type": "checklist",
+                "title": "Pay within 60 days of the due date",
+                "rows": [
+                  "Not paid within 60 days: can be dissolved",
+                  "Reinstatement fee: $100"
+                ],
+                "at": [
+                  "dissolved",
+                  "hundred"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "A Wyoming company whose annual report tax is not paid within 60 days of the due date can be dissolved, and the reinstatement fee is $100.",
+                  "say": "A Wyoming company whose annual report tax is not paid within sixty days of the due date can be dissolved, and the reinstatement fee is one hundred dollars."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "comment",
+            "keyword": "CHECKLIST",
+            "text": "Comment CHECKLIST for the free US filing checklist.",
+            "say": "Comment checklist, for the free U S filing checklist.",
+            "pill": "Comment <b>CHECKLIST</b>",
+            "shot": {
+              "type": "comment",
+              "title": "Get the free <mark>US filing checklist</mark>",
+              "keyword": "CHECKLIST",
+              "dm": "Here is the free US filing checklist.",
+              "link": "financedepartmentllc.com/us-entry",
+              "at_type": "check",
+              "at_dm": "send"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Own a Wyoming LLC? Its annual report is due in the month you formed it.\n\n1. Mark your formation month. A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year.\n2. Keep your email current. Wyoming emails a courtesy reminder 60 days before the annual report is due, if the company has given the Secretary of State a current email address.\n3. Pay within 60 days of the due date. A Wyoming company whose annual report tax is not paid within 60 days of the due date can be dissolved, and the reinstatement fee is $100.\n\nComment CHECKLIST for the free US filing checklist, or find it through the link in bio.\n\n#wyomingllc #usllc #globalfounders #smallbusiness\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Own a Wyoming LLC? Its annual report is due in the month you formed it.\n\n1. Mark your formation month. A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year.\n2. Keep your email current. Wyoming emails a courtesy reminder 60 days before the annual report is due, if the company has given the Secretary of State a current email address.\n3. Pay within 60 days of the due date. A Wyoming company whose annual report tax is not paid within 60 days of the due date can be dissolved, and the reinstatement fee is $100.\n\nThe free US filing checklist, printable, is on our US Entry page: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-e06\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "Own a Wyoming LLC? Three steps around its annual report",
+          "description": "1. Mark your formation month. A Wyoming LLC's annual report is due on the first day of the month it was formed in, every year.\n2. Keep your email current. Wyoming emails a courtesy reminder 60 days before the annual report is due, if the company has given the Secretary of State a current email address.\n3. Pay within 60 days of the due date. A Wyoming company whose annual report tax is not paid within 60 days of the due date can be dissolved, and the reinstatement fee is $100.\n\nGet the free US filing checklist through the link on our channel page.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S06_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S06",
+      "format": "story",
+      "title": "Every account reconciled to its statements, or we fix it free",
+      "pillar": "Founder finance",
+      "stage": "Bottom",
+      "claims": [
+        "FD-21",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-02T20:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Books behind?",
+            "title": "Every account reconciled to its statements, or we fix it free",
+            "emph": "or we fix it free",
+            "cover": "books_catch_up",
+            "body": "Books Catch Up: $1,000 up to 6 months behind, $1,750 for 7 to 12 and $3,000 for 13 to 24, half to start and half on delivery.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E07.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E07",
+      "format": "explainer",
+      "title": "Delaware franchise tax: the $175 minimum and the $200,000 cap",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "DE-04",
+        "DE-06"
+      ],
+      "publish_at": "2026-12-03T08:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram"
+      ],
+      "tags": {
+        "hook": "contrast",
+        "format": "explainer",
+        "scenes": [
+          "person",
+          "bars",
+          "checklist",
+          "follow"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "top",
+          "pills": {
+            "0": "Delaware franchise tax"
+          },
+          "hook": {
+            "text": "Delaware's franchise tax has a floor and a ceiling.",
+            "say": "Delaware's franchise tax has a floor and a ceiling.",
+            "shot": {
+              "type": "person",
+              "title": "Delaware's franchise tax has <mark>a floor and a ceiling.</mark>",
+              "size": 92,
+              "card": "Delaware",
+              "card_sub": "Franchise tax",
+              "icon": "building",
+              "who": "grace",
+              "expr": "thinking",
+              "tag": "Delaware"
+            }
+          },
+          "shots": [
+            {
+              "shot": {
+                "type": "bars",
+                "items": [
+                  {
+                    "label": "5,000 shares or fewer",
+                    "value": "$175"
+                  },
+                  {
+                    "label": "5,001 to 10,000 shares",
+                    "value": "$250"
+                  }
+                ],
+                "at_old": "one"
+              },
+              "lines": [
+                {
+                  "text": "Under the Authorized Shares method, 5,000 shares or fewer pay the minimum $175.",
+                  "say": "Under the Authorized Shares method, five thousand shares or fewer pay the minimum, one hundred seventy-five dollars."
+                },
+                {
+                  "text": "5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85.",
+                  "say": "Five thousand and one to ten thousand shares pay two hundred fifty dollars, and each further ten thousand shares, or part of them, adds eighty-five dollars."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "checklist",
+                "title": "Capped at <mark>$200,000</mark> a year",
+                "rows": [
+                  "$200,000 a year",
+                  "$250,000 for a Large Corporate Filer"
+                ],
+                "at": [
+                  "capped",
+                  "large"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "Delaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer.",
+                  "say": "Delaware franchise tax is capped at two hundred thousand dollars a year, or two hundred fifty thousand dollars for a Large Corporate Filer."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "follow",
+            "text": "Follow for more founder finance, explained simply.",
+            "say": "Follow for more founder finance, explained simply.",
+            "pill": "Follow for more founder finance",
+            "shot": {
+              "type": "follow",
+              "title": "Follow for more founder finance, <mark>explained simply</mark>",
+              "handle": "talha.financedepartment"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Delaware's franchise tax has a floor and a ceiling.\n\nUnder the Authorized Shares method, 5,000 shares or fewer pay the minimum $175. 5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85.\n\nDelaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer.\n\nFollow for more founder finance, explained simply.\n\n#delaware #startups #founders #taxes\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "Delaware franchise tax: the $175 minimum and the $200,000 cap",
+          "description": "Under the Authorized Shares method, 5,000 shares or fewer pay the minimum $175. 5,001 to 10,000 shares pay $250, and each further 10,000 shares or part of them adds $85.\n\nDelaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T11",
+      "format": "text",
+      "title": "Poll: where are your 2026 receipts right now?",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-12-03T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Quick poll: where are your 2026 receipts right now?",
+        "poll": [
+          "A shoebox",
+          "A spreadsheet",
+          "Bookkeeping software",
+          "My email inbox"
+        ]
+      },
+      "captions": {
+        "threads": "Quick poll: where are your 2026 receipts right now?\n\nVote, and tell us in the replies if one of them ran away.\n\n#SmallBusiness"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S07_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S07",
+      "format": "story",
+      "title": "Keep your email current with the state",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "WY-03",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-03T09:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "deadline",
+        "format": "story",
+        "scenes": [
+          "story"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Wyoming LLC?",
+            "title": "Keep your email current with the state",
+            "emph": "current",
+            "photo": "talha",
+            "body": "Wyoming emails a courtesy reminder 60 days before the annual report is due, if the company has given the Secretary of State a current email address.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C02_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C02_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C02_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C02_04.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C02_05.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C02_06.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-C02",
+      "format": "carousel",
+      "title": "Your 2027 filing calendar: five dates from February to June",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "1099-02",
+        "1099-03",
+        "DE-01",
+        "1120-01",
+        "DE-08",
+        "FD-11"
+      ],
+      "publish_at": "2026-12-03T12:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "deadline",
+        "format": "carousel",
+        "scenes": [
+          "chips",
+          "date"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "2027 filing calendar",
+            "title": "Five dates for your US company, February to June 2027",
+            "emph": "February to June 2027",
+            "visual": {
+              "type": "chips",
+              "label": "2027",
+              "items": [
+                {
+                  "text": "February 1",
+                  "icon": "calendar"
+                },
+                {
+                  "text": "March 1",
+                  "icon": "calendar"
+                },
+                {
+                  "text": "March 31",
+                  "icon": "calendar"
+                },
+                {
+                  "text": "April 15",
+                  "icon": "calendar"
+                },
+                {
+                  "text": "June 1",
+                  "icon": "calendar"
+                }
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "1",
+            "tag": "Forms 1099-NEC",
+            "title": "Monday, February 1, 2027",
+            "body": "Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday.",
+            "visual": {
+              "type": "date",
+              "month": "FEB",
+              "day": "1",
+              "sub": "2027",
+              "label": "Forms 1099-NEC",
+              "chips": [
+                {
+                  "text": "Each payee",
+                  "icon": "person"
+                },
+                {
+                  "text": "The IRS",
+                  "icon": "bank"
+                }
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "2",
+            "tag": "Delaware and Form 1099-MISC",
+            "title": "March 1 and March 31, 2027",
+            "body": "Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.",
+            "visual": {
+              "type": "date",
+              "month": "MAR",
+              "day": "1",
+              "sub": "2027",
+              "label": "Delaware annual report and franchise tax",
+              "chips": [
+                {
+                  "text": "Form 1099-MISC on paper",
+                  "icon": "doc"
+                }
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "3",
+            "tag": "C corporations",
+            "title": "Thursday, April 15, 2027",
+            "body": "A calendar year C corporation's Form 1120 for 2026 is due by Thursday, April 15, 2027; Form 7004, filed by that date, gives an automatic six month extension of time to file, to Friday, October 15, 2027.",
+            "visual": {
+              "type": "date",
+              "month": "APR",
+              "day": "15",
+              "sub": "2027",
+              "label": "Form 1120",
+              "chips": [
+                {
+                  "text": "Form 7004: to October 15, 2027",
+                  "icon": "clock"
+                }
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "4",
+            "tag": "Delaware LLCs",
+            "title": "June 1",
+            "body": "A Delaware LLC pays an annual tax of $400, due by June 1 for the year before.",
+            "visual": {
+              "type": "date",
+              "month": "JUN",
+              "day": "1",
+              "label": "Delaware LLC tax",
+              "text": "$400 for the year before"
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Every date in one place",
+            "body": "The free US filing checklist, printable, is on our US Entry page.",
+            "cta": "Link in bio for the free checklist"
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Five dates for your US company, February to June 2027.\n\nFebruary 1: Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday.\n\nMarch 1 and March 31: Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nApril 15: A calendar year C corporation's Form 1120 for 2026 is due by Thursday, April 15, 2027; Form 7004, filed by that date, gives an automatic six month extension of time to file, to Friday, October 15, 2027.\n\nJune 1: A Delaware LLC pays an annual tax of $400, due by June 1 for the year before.\n\nThe free US filing checklist, printable, is on our US Entry page: link in bio, or comment CHECKLIST and we'll send it.\n\n#startups #smallbusiness #taxes #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Five dates for your US company, February to June 2027.\n\nFebruary 1: Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday.\n\nMarch 1 and March 31: Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nApril 15: A calendar year C corporation's Form 1120 for 2026 is due by Thursday, April 15, 2027; Form 7004, filed by that date, gives an automatic six month extension of time to file, to Friday, October 15, 2027.\n\nJune 1: A Delaware LLC pays an annual tax of $400, due by June 1 for the year before.\n\nThe free US filing checklist, printable, is on our US Entry page: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-c02\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T12",
+      "format": "text",
+      "title": "Behind the numbers: $175 and $200,000",
+      "pillar": "Deadlines",
+      "stage": "Top",
+      "claims": [
+        "DE-04",
+        "DE-06"
+      ],
+      "publish_at": "2026-12-03T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "number",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Behind the numbers in this video: $175 and $200,000.\n\nUnder the Authorized Shares method, 5,000 shares or fewer pay the minimum $175. And Delaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer.",
+        "video_from": "2026-W49-E07"
+      },
+      "captions": {
+        "threads": "Behind the numbers in this video: $175 and $200,000.\n\nUnder the Authorized Shares method, 5,000 shares or fewer pay the minimum $175. And Delaware franchise tax is capped at $200,000 a year, or $250,000 for a Large Corporate Filer.\n\nDid you know Delaware's franchise tax had a cap?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T04",
+      "format": "text",
+      "title": "More than $100M raised with materials we prepared",
+      "pillar": "Founder stories",
+      "stage": "Top",
+      "claims": [
+        "FD-02",
+        "FD-01"
+      ],
+      "publish_at": "2026-12-03T15:00:00-05:00",
+      "platforms": [
+        "facebook"
+      ],
+      "tags": {
+        "hook": "number",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds."
+      },
+      "captions": {
+        "facebook": "Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds.\n\nWe have worked with 300+ founders.\n\nFollow for more founder finance, explained simply."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-D01.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "shows what investor_ready_scan covers before its price",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-D01",
+      "format": "ad",
+      "title": "Ad: the 5 Day Investor Ready Scan",
+      "pillar": "Raise readiness",
+      "stage": "Bottom",
+      "claims": [
+        "FD-13",
+        "FD-14",
+        "FD-31"
+      ],
+      "publish_at": "2026-12-03T19:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "ai_generated": false,
+      "tags": {
+        "hook": "number",
+        "format": "ad",
+        "scenes": [
+          "report",
+          "work",
+          "recap",
+          "price",
+          "checklist",
+          "phone"
+        ]
+      },
+      "content": {
+        "hook_visual": "Slow push in on a paper desk at morning light: a closed findings report with a red Money at Stake tab, a pen and a calculator beside it, no people, no hands, no faces, no readable text",
+        "motion": {
+          "stage": "bottom",
+          "pills": {
+            "0": "Before you raise",
+            "2": "Before you raise"
+          },
+          "offer": "The 5 Day Investor Ready Scan",
+          "hook": {
+            "text": "Find what investors will find, in five working days.",
+            "say": "Find what investors will find, in five working days.",
+            "shot": {
+              "type": "report",
+              "title": "Find what investors will find, <mark>in five working days.</mark>",
+              "size": 92,
+              "doc": "Findings report",
+              "tab": "Money at Stake",
+              "who": "grace",
+              "expr": "thinking",
+              "who_left": 40,
+              "who_top": 1250,
+              "who_h": 540
+            }
+          },
+          "shots": [
+            {
+              "cover": "investor_ready_scan",
+              "pill": "What you get"
+            },
+            {
+              "shot": {
+                "type": "price",
+                "first": "$750",
+                "first_label": "for our first five clients",
+                "then_label": "Then",
+                "then": "$1,250",
+                "at_first": "seven",
+                "at_seats": "first",
+                "at_then": "then",
+                "seats": 5
+              },
+              "lines": [
+                {
+                  "text": "$750 for our first five clients, then $1,250.",
+                  "say": "Seven hundred and fifty dollars for our first five clients, then twelve hundred and fifty dollars."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "checklist",
+                "title": "Or the <mark>fee back</mark>",
+                "rows": [
+                  "Your findings",
+                  "Within five working days of complete documents",
+                  "Or the fee back"
+                ],
+                "at": [
+                  "findings",
+                  "within",
+                  "fee"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "Your findings within five working days of complete documents, or the fee back.",
+                  "say": "Your findings within five working days of complete documents, or the fee back."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "dm",
+            "keyword": "SCAN",
+            "text": "DM SCAN and I'll send you the page.",
+            "say": "D M scan, and I'll send you the page.",
+            "pill": "DM <b>SCAN</b>",
+            "shot": {
+              "type": "phone",
+              "keyword": "SCAN",
+              "reply": "Here is the page for the 5 Day Investor Ready Scan:",
+              "link": "financedepartmentllc.com/investor-ready-scan",
+              "at_type": "scan",
+              "at_reply": "send"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Find what investors will find, in five working days.\n\nWhat you get:\n1. Your books reviewed: the general ledger, bank and card reconciliations, and the statements and cash position they produce\n2. How you recognize revenue, checked against what investors expect\n3. Your cap table checked against the equity and convertible instruments you give us\n4. Your key contracts read for their financial terms and the questions an investor would ask\n5. Your cash runway at your current rate of spending\n6. A findings report naming every gap, with our estimate of the cost and time to fix it, and a walkthrough call\n\nThe 5 Day Investor Ready Scan: a findings report with a Money at Stake page in five working days, $750 for our first five clients, then $1,250. Your findings within five working days of complete documents, or the fee back.\n\nDM SCAN, or see the Scan through the link in bio.\n\n#startups #fundraising #founders #investors",
+        "facebook": "Find what investors will find, in five working days.\n\nWhat you get:\n1. Your books reviewed: the general ledger, bank and card reconciliations, and the statements and cash position they produce\n2. How you recognize revenue, checked against what investors expect\n3. Your cap table checked against the equity and convertible instruments you give us\n4. Your key contracts read for their financial terms and the questions an investor would ask\n5. Your cash runway at your current rate of spending\n6. A findings report naming every gap, with our estimate of the cost and time to fix it, and a walkthrough call\n\nThe 5 Day Investor Ready Scan: a findings report with a Money at Stake page in five working days, $750 for our first five clients, then $1,250. Your findings within five working days of complete documents, or the fee back.\n\nSee the 5 Day Investor Ready Scan: https://www.financedepartmentllc.com/investor-ready-scan?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-d01",
+        "youtube": {
+          "title": "The 5 Day Investor Ready Scan: find what investors will find",
+          "description": "What you get:\n1. Your books reviewed: the general ledger, bank and card reconciliations, and the statements and cash position they produce\n2. How you recognize revenue, checked against what investors expect\n3. Your cap table checked against the equity and convertible instruments you give us\n4. Your key contracts read for their financial terms and the questions an investor would ask\n5. Your cash runway at your current rate of spending\n6. A findings report naming every gap, with our estimate of the cost and time to fix it, and a walkthrough call\n\nThe 5 Day Investor Ready Scan: a findings report with a Money at Stake page in five working days, $750 for our first five clients, then $1,250. Your findings within five working days of complete documents, or the fee back.\n\nSee the Scan through the link on our channel page."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S08_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S08",
+      "format": "story",
+      "title": "Payroll that grows with your team",
+      "pillar": "Founder finance",
+      "stage": "Bottom",
+      "claims": [
+        "FD-36",
+        "FD-25",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-03T20:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Growing your team?",
+            "title": "Payroll that grows with your team",
+            "emph": "grows with your team",
+            "cover": "payroll",
+            "body": "The $200 setup (plus $75 for each further state) is paid when you sign; payroll management, $75 a month for up to five people and $5 for each person beyond five.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-M06.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-M06",
+      "format": "carousel_reel",
+      "title": "Music reel: Comic: the success fee question",
+      "pillar": "Founder stories",
+      "stage": "Top",
+      "claims": [
+        "FD-05"
+      ],
+      "publish_at": "2026-12-03T21:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "contrast",
+        "format": "carousel_reel",
+        "scenes": [
+          "cast"
+        ]
+      },
+      "content": {
+        "from": "2026-W49-C06"
+      },
+      "captions": {
+        "instagram": "Can a finance firm find you investors for a cut? Not this one.\n\nWe do not introduce investors or take a success fee; you stay in charge of your raise.\n\nFollow for more founder finance, explained simply.\n\n#startups #fundraising #founders #angelinvesting",
+        "facebook": "Can a finance firm find you investors for a cut? Not this one.\n\nWe do not introduce investors or take a success fee; you stay in charge of your raise.\n\nFollow for more founder finance, explained simply."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E08.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E08",
+      "format": "explainer",
+      "title": "Does your US company still file a beneficial ownership report?",
+      "pillar": "US entry",
+      "stage": "Top",
+      "claims": [
+        "BOI-01",
+        "BOI-02"
+      ],
+      "publish_at": "2026-12-04T08:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "explainer",
+        "scenes": [
+          "person",
+          "checklist",
+          "docpair",
+          "follow"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "top",
+          "pills": {
+            "0": "Beneficial ownership"
+          },
+          "hook": {
+            "text": "Does your US company still file a beneficial ownership report?",
+            "say": "Does your U S company still file a beneficial ownership report?",
+            "shot": {
+              "type": "person",
+              "title": "Does your US company still file a <mark>beneficial ownership report?</mark>",
+              "size": 84,
+              "card": "FinCEN",
+              "card_sub": "Beneficial ownership",
+              "icon": "shield",
+              "who": "sam",
+              "expr": "thinking"
+            }
+          },
+          "shots": [
+            {
+              "shot": {
+                "type": "checklist",
+                "title": "No report to <mark>FinCEN</mark>",
+                "rows": [
+                  "US companies",
+                  "US persons"
+                ],
+                "at": [
+                  "companies",
+                  "persons"
+                ],
+                "result": "Permanent from August 14, 2026",
+                "at_result": "permanent"
+              },
+              "lines": [
+                {
+                  "text": "US companies and US persons do not report beneficial ownership information to FinCEN; a final rule made this permanent from August 14, 2026.",
+                  "say": "U S companies and U S persons do not report beneficial ownership information to Fin Sen; a final rule made this permanent from August fourteenth, twenty twenty-six."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "docpair",
+                "title": "Who still reports",
+                "left": "Formed outside the US",
+                "right": "Registered in a US state",
+                "note": "within 30 days of notice",
+                "at_left": "formed",
+                "at_right": "registered",
+                "at_note": "still"
+              },
+              "lines": [
+                {
+                  "text": "Certain companies formed outside the US and registered to do business in a US state still report beneficial ownership information.",
+                  "say": "Certain companies formed outside the U S, and registered to do business in a U S state, still report beneficial ownership information."
+                },
+                {
+                  "text": "They leave out any US person owners, and report within 30 days of notice that their registration is effective.",
+                  "say": "They leave out any U S person owners, and report within thirty days of notice that their registration is effective."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "follow",
+            "text": "Follow for more founder finance, explained simply.",
+            "say": "Follow for more founder finance, explained simply.",
+            "pill": "Follow for more founder finance",
+            "shot": {
+              "type": "follow",
+              "title": "Follow for more founder finance, <mark>explained simply</mark>",
+              "handle": "talha.financedepartment"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Does your US company still file a beneficial ownership report?\n\nUS companies and US persons do not report beneficial ownership information to FinCEN (the Financial Crimes Enforcement Network); a final rule made this permanent from August 14, 2026.\n\nCertain companies formed outside the US and registered to do business in a US state still report beneficial ownership information, leaving out any US person owners, within 30 days of notice that their registration is effective.\n\nFollow for more founder finance, explained simply.\n\n#usllc #startups #globalfounders #smallbusiness\n\nGeneral information, not tax or legal advice for your situation.",
+        "youtube": {
+          "title": "Does your US company still file a beneficial ownership report?",
+          "description": "US companies and US persons do not report beneficial ownership information to FinCEN (the Financial Crimes Enforcement Network); a final rule made this permanent from August 14, 2026.\n\nCertain companies formed outside the US and registered to do business in a US state still report beneficial ownership information, leaving out any US person owners, within 30 days of notice that their registration is effective.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T13",
+      "format": "text",
+      "title": "Rule 506(c): advertise your raise, then verify",
+      "pillar": "Raise readiness",
+      "stage": "Middle",
+      "claims": [
+        "RAISE-03",
+        "RAISE-01",
+        "FD-10"
+      ],
+      "publish_at": "2026-12-04T08:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Want to talk about your raise in public? Rule 506(c) is the route for that. A short thread on what it allows and what it asks, with an example.",
+        "thread": [
+          "The rule: under Rule 506(c), a company can advertise its raise broadly, but every purchaser must be accredited and the company must take reasonable steps to verify it, such as reviewing tax returns or bank statements.",
+          "The other route: under Rule 506(b), a company cannot use general solicitation or advertising, and can sell to any number of accredited investors plus up to 35 other purchasers who are financially sophisticated, alone or with a representative.",
+          "Worked example: a round advertised broadly under Rule 506(c) cannot take money from a purchaser who is not accredited, even one who is financially sophisticated."
+        ],
+        "first_reply": "Raising soon? Take the free raise readiness scorecard: twelve questions, then your score and your three biggest gaps. https://www.financedepartmentllc.com/scorecard?utm_source=threads&utm_medium=social_media&utm_campaign=2026-w49-t13"
+      },
+      "captions": {
+        "threads": "Want to talk about your raise in public? Rule 506(c) is the route for that. A short thread on what it allows and what it asks, with an example.\n\nWould you raise under 506(b) or 506(c)?\n\n#Startups\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S09_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S09",
+      "format": "story",
+      "title": "No beneficial ownership report to file",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "BOI-01",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-04T09:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "myth",
+        "format": "story",
+        "scenes": [
+          "story"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "US company?",
+            "title": "No beneficial ownership report to file",
+            "emph": "No beneficial ownership report",
+            "body": "US companies and US persons do not report beneficial ownership information to FinCEN; a final rule made this permanent from August 14, 2026.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C03_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C03_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C03_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C03_04.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C03_05.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-C03",
+      "format": "carousel",
+      "title": "Funded startup? What your finance department does every month",
+      "pillar": "Founder finance",
+      "stage": "Bottom",
+      "claims": [
+        "FD-18",
+        "FD-19",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-04T12:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "carousel",
+        "scenes": [
+          "cast",
+          "cover",
+          "stats",
+          "checklist"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Funded startup?",
+            "title": "What your finance department does every month",
+            "emph": "every month",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam",
+                "penny"
+              ],
+              "expr": [
+                "thinking",
+                "happy"
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "1",
+            "tag": "What you get",
+            "title": "Seven things, done for you",
+            "cover": "funded_plan"
+          },
+          {
+            "layout": "POINT",
+            "num": "2",
+            "tag": "The price",
+            "title": "The Funded Startup Finance Department",
+            "body": "The Funded Startup Finance Department, $625 a month: books closed within 10 working days of month end, burn and runway with every close, payroll for up to five people in your own Gusto, and your federal and state return each year.",
+            "visual": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "A month",
+                  "value": "$625"
+                },
+                {
+                  "label": "Books closed within",
+                  "value": "10 working days",
+                  "note": "of month end",
+                  "highlight": false
+                }
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "3",
+            "tag": "When you start",
+            "title": "Up to three months caught up free",
+            "body": "On the Funded plan, up to three months of past books caught up free when you start, and your 1099s and Delaware filing included; leave anytime on 30 days' notice with a full handover.",
+            "visual": {
+              "type": "checklist",
+              "title": "On the Funded plan",
+              "items": [
+                "Up to three months of past books caught up free",
+                "Your 1099s and Delaware filing included",
+                "Leave anytime on 30 days' notice"
+              ]
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Funded and ready to hand off the books?",
+            "body": "Book a 30 minute call with Muhammad Talha.",
+            "cta": "Link in bio to book a call"
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Funded startup? Here's what your finance department does every month.\n\nWhat you get:\n1. Bookkeeping for up to $100,000 in monthly expenses, closed within 10 working days of each month end\n2. Burn and runway with every close\n3. A monthly or quarterly investor update, built with you and then produced each period\n4. A quarterly review of where the business stands against what you told us mattered most\n5. Payroll for up to five people in your own Gusto account, which we set up if you need it\n6. Your federal business return and its state return each year\n7. Your Forms 1099-NEC and, for a Delaware corporation, your Delaware annual report each year\n\nThe Funded Startup Finance Department, $625 a month: books closed within 10 working days of month end, burn and runway with every close, payroll for up to five people in your own Gusto, and your federal and state return each year.\n\nOn the Funded plan, up to three months of past books caught up free when you start, and your 1099s and Delaware filing included; leave anytime on 30 days' notice with a full handover.\n\nBook a 30 minute call with Muhammad Talha through the link in bio, or DM FUNDED.\n\n#startups #founders #bookkeeping #fundraising",
+        "facebook": "Funded startup? Here's what your finance department does every month.\n\nWhat you get:\n1. Bookkeeping for up to $100,000 in monthly expenses, closed within 10 working days of each month end\n2. Burn and runway with every close\n3. A monthly or quarterly investor update, built with you and then produced each period\n4. A quarterly review of where the business stands against what you told us mattered most\n5. Payroll for up to five people in your own Gusto account, which we set up if you need it\n6. Your federal business return and its state return each year\n7. Your Forms 1099-NEC and, for a Delaware corporation, your Delaware annual report each year\n\nThe Funded Startup Finance Department, $625 a month: books closed within 10 working days of month end, burn and runway with every close, payroll for up to five people in your own Gusto, and your federal and state return each year.\n\nOn the Funded plan, up to three months of past books caught up free when you start, and your 1099s and Delaware filing included; leave anytime on 30 days' notice with a full handover.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/book?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-c03"
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T14",
+      "format": "text",
+      "title": "Myth or fact: all research costs are deductible in the year paid",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "RD-01",
+        "RD-02",
+        "LAW-01"
+      ],
+      "publish_at": "2026-12-04T12:30:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "myth",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Myth or fact: under the 2025 tax law, all research costs can be deducted in the year they're paid.\n\nMyth. For tax years beginning after December 31, 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A. Research and experimental costs for work done outside the US must still be spread over 15 years."
+      },
+      "captions": {
+        "threads": "Myth or fact: under the 2025 tax law, all research costs can be deducted in the year they're paid.\n\nMyth. For tax years beginning after December 31, 2024, US research and experimental costs can again be deducted in the year paid or incurred, under Section 174A. Research and experimental costs for work done outside the US must still be spread over 15 years.\n\nDoes your team do research outside the US?\n\n#Taxes\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T05",
+      "format": "text",
+      "title": "Friday question: where do your receipts go?",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-12-04T15:00:00-05:00",
+      "platforms": [
+        "facebook"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Friday question: where do your receipts go when you get them?"
+      },
+      "captions": {
+        "facebook": "Friday question: where do your receipts go when you get them?\n\nA folder, a photo on your phone, an app, or a shoebox? Tell us in the comments.\n\nFollow for more founder finance, explained simply."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-D02.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "shows what filing_1099 covers before its price",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-D02",
+      "format": "ad",
+      "title": "Ad: 1099s Done by February 1",
+      "pillar": "Deadlines",
+      "stage": "Bottom",
+      "claims": [
+        "FD-24",
+        "FD-09",
+        "FD-31"
+      ],
+      "publish_at": "2026-12-04T19:00:00-05:00",
+      "platforms": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "ai_generated": false,
+      "tags": {
+        "hook": "call_out",
+        "format": "ad",
+        "scenes": [
+          "person",
+          "work",
+          "recap",
+          "price",
+          "checklist",
+          "phone"
+        ]
+      },
+      "content": {
+        "hook_visual": "A neat stack of blank contractor forms beside a desk calendar turned to February, a rubber stamp lifting off the top form, soft daylight, no people, no hands, no faces, no readable text",
+        "motion": {
+          "stage": "bottom",
+          "pills": {
+            "0": "1099 season",
+            "2": "1099 season"
+          },
+          "offer": "1099s Done by February 1",
+          "hook": {
+            "text": "Paid contractors in 2026? Hand off your 1099s.",
+            "say": "Paid contractors in twenty twenty-six? Hand off your ten ninety-nines.",
+            "shot": {
+              "type": "person",
+              "title": "Paid contractors in 2026? <mark>Hand off your 1099s.</mark>",
+              "size": 90,
+              "card": "1099s",
+              "card_sub": "Contractor forms",
+              "icon": "doc",
+              "who": "maya",
+              "expr": "happy",
+              "tag": "1099 season"
+            }
+          },
+          "shots": [
+            {
+              "cover": "filing_1099",
+              "pill": "What you get"
+            },
+            {
+              "shot": {
+                "type": "price",
+                "first": "$100",
+                "first_label": "for up to five contractors",
+                "then_label": "Then, a form",
+                "then": "$12.50",
+                "seats": 0,
+                "at_first": "one",
+                "at_then": "twelve"
+              },
+              "lines": [
+                {
+                  "text": "Contractor 1099s: $100 for up to five contractors, then $12.50 a form.",
+                  "say": "Contractor ten ninety-nines: one hundred dollars for up to five contractors, then twelve dollars and fifty cents a form."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "checklist",
+                "title": "Send your list by <mark>January 20</mark>",
+                "rows": [
+                  "Your contractor list by January 20",
+                  "We miss February 1: we pay the IRS penalties up to $500",
+                  "We collect your contractors' W-9s"
+                ],
+                "at": [
+                  "send",
+                  "miss",
+                  "collect"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "Send your contractor list by January 20, and if we miss February 1 we pay the IRS penalties up to $500; we collect your contractors' W-9s for you.",
+                  "say": "Send your contractor list by January twentieth, and if we miss February first, we pay the I R S penalties up to five hundred dollars; we collect your contractors' W nines for you."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "dm",
+            "keyword": "1099",
+            "text": "DM 1099 and I'll send you the page.",
+            "say": "D M ten ninety-nine, and I'll send you the page.",
+            "pill": "DM <b>1099</b>",
+            "shot": {
+              "type": "phone",
+              "keyword": "1099",
+              "reply": "Here is the page for 1099s Done by February 1:",
+              "link": "financedepartmentllc.com/1099-filing",
+              "at_type": "ten",
+              "at_reply": "send"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Paid contractors in 2026? Hand off your 1099s.\n\nWhat you get:\n1. Your Forms 1099-NEC prepared from your contractor list\n2. A Form W-9 collected from each contractor who has not given you one, without their number passing through email\n3. Filed with the IRS and sent to each contractor by 1 February\n4. A copy of every form for your records\n\nContractor 1099s: $100 for up to five contractors, then $12.50 a form. 1099s Done by February 1: send your contractor list by January 20, and if we miss February 1 we pay the IRS penalties up to $500; we collect your contractors' W-9s for you.\n\nDM 1099, or see the page through the link in bio.\n\n#1099 #contractors #smallbusiness #startups",
+        "facebook": "Paid contractors in 2026? Hand off your 1099s.\n\nWhat you get:\n1. Your Forms 1099-NEC prepared from your contractor list\n2. A Form W-9 collected from each contractor who has not given you one, without their number passing through email\n3. Filed with the IRS and sent to each contractor by 1 February\n4. A copy of every form for your records\n\nContractor 1099s: $100 for up to five contractors, then $12.50 a form. 1099s Done by February 1: send your contractor list by January 20, and if we miss February 1 we pay the IRS penalties up to $500; we collect your contractors' W-9s for you.\n\nSee 1099s Done by February 1: https://www.financedepartmentllc.com/1099-filing?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-d02",
+        "youtube": {
+          "title": "1099s Done by February 1: your contractor 1099s, handed off",
+          "description": "What you get:\n1. Your Forms 1099-NEC prepared from your contractor list\n2. A Form W-9 collected from each contractor who has not given you one, without their number passing through email\n3. Filed with the IRS and sent to each contractor by 1 February\n4. A copy of every form for your records\n\nContractor 1099s: $100 for up to five contractors, then $12.50 a form. 1099s Done by February 1: send your contractor list by January 20, and if we miss February 1 we pay the IRS penalties up to $500; we collect your contractors' W-9s for you.\n\nSee the page through the link on our channel page."
+        }
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S10_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S10",
+      "format": "story",
+      "title": "Your findings within five working days of complete documents, or the fee back",
+      "pillar": "Raise readiness",
+      "stage": "Bottom",
+      "claims": [
+        "FD-13",
+        "FD-14",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-04T20:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Raising in 2027?",
+            "title": "Your findings within five working days of complete documents, or the fee back",
+            "emph": "or the fee back",
+            "cover": "investor_ready_scan",
+            "body": "The 5 Day Investor Ready Scan: a findings report with a Money at Stake page in five working days, $750 for our first five clients, then $1,250.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C07_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C07_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C07_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C07_04.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C07_05.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-C07",
+      "format": "carousel",
+      "title": "Receipt roast: the shoebox, the runaway and the payment app pile",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "1099-06"
+      ],
+      "publish_at": "2026-12-05T08:00:00-05:00",
+      "platforms": [
+        "instagram"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "receipt_roast",
+        "scenes": [
+          "cast"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Receipt roast",
+            "title": "Sam's shoebox of receipts",
+            "emph": "shoebox of receipts",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "My books! All of them!"
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Receipt 1",
+            "title": "Penny opens the box",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny"
+              ],
+              "expr": [
+                "surprised"
+              ],
+              "says": "Sam. This is a shoebox."
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Receipt 2",
+            "title": "One makes a run for it",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "rex"
+              ],
+              "expr": [
+                "wink"
+              ],
+              "says": "You'll never sort me!"
+            }
+          },
+          {
+            "layout": "POINT",
+            "tag": "Receipt 3",
+            "title": "The payment app pile",
+            "body": "Payment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200.",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "sam"
+              ],
+              "expr": [
+                "thinking"
+              ],
+              "says": "Will the app file a 1099-K for me?"
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "One rule, one shoebox",
+            "body": "Follow for more founder finance, explained simply.",
+            "cta": "Follow for more",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "penny",
+                "rex"
+              ],
+              "expr": [
+                "happy",
+                "sly"
+              ]
+            }
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Receipt roast: Sam brought Penny a shoebox.\n\nOne rule from the pile: payment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200.\n\nWhat's hiding in your shoebox?\n\nFollow for more founder finance, explained simply.\n\n#smallbusiness #bookkeeping #startups #founders\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "experiment": "2026-W49-X1"
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S11_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S11",
+      "format": "story",
+      "title": "Materials we prepared have helped founders raise more than $100M",
+      "pillar": "Founder stories",
+      "stage": "Bottom",
+      "claims": [
+        "FD-02",
+        "FD-01",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-05T09:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "number",
+        "format": "story",
+        "scenes": [
+          "story"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Who you'd work with",
+            "title": "Materials we prepared have helped founders raise more than $100M",
+            "emph": "more than $100M",
+            "photo": "talha",
+            "body": "Across SBA loans, angel rounds and early venture rounds. We have worked with 300+ founders.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T15",
+      "format": "text",
+      "title": "Weekend question: which finance task would you hand off first?",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-12-05T11:00:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Weekend question for founders: which finance task would you hand off first if you could? Bookkeeping, payroll, contractor forms or something else?"
+      },
+      "captions": {
+        "threads": "Weekend question for founders: which finance task would you hand off first if you could? Bookkeeping, payroll, contractor forms or something else?\n\nTell us below.\n\n#Entrepreneurship"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C04_01.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C04_02.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C04_03.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C04_04.jpg",
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-C04_05.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-C04",
+      "format": "carousel",
+      "title": "Running a US company from abroad? What we handle for you",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "FD-20",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-05T12:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "carousel",
+        "scenes": [
+          "cast",
+          "cover",
+          "stats",
+          "date"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "COVER",
+            "kicker": "Founder abroad?",
+            "title": "Running a US company from abroad?",
+            "emph": "from abroad?",
+            "visual": {
+              "type": "cast",
+              "who": [
+                "zara"
+              ],
+              "expr": [
+                "happy"
+              ],
+              "says": "My company is in the US. I'm not.",
+              "size": "l"
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "1",
+            "tag": "What you get",
+            "title": "Five things, done for you",
+            "cover": "international_founder_plan"
+          },
+          {
+            "layout": "POINT",
+            "num": "2",
+            "tag": "The price",
+            "title": "The International Founder Plan",
+            "body": "The International Founder Plan, $175 a month: monthly books, Form 5472 with its pro forma 1120, your registered agent and state annual report (state fees at cost), and a deadline calendar when you start.",
+            "visual": {
+              "type": "stats",
+              "items": [
+                {
+                  "label": "A month",
+                  "value": "$175"
+                }
+              ]
+            }
+          },
+          {
+            "layout": "POINT",
+            "num": "3",
+            "tag": "If we miss it",
+            "title": "Your Form 5472 by April 15",
+            "body": "If your Form 5472 details are in by March 31 and we miss April 15, a month's fee back and a penalty relief request.",
+            "visual": {
+              "type": "date",
+              "month": "APR",
+              "day": "15",
+              "label": "Form 5472",
+              "text": "Details in by March 31"
+            }
+          },
+          {
+            "layout": "CLOSE",
+            "title": "Founder abroad with a US company?",
+            "body": "Book a 30 minute call with Muhammad Talha.",
+            "cta": "Link in bio to book a call"
+          }
+        ]
+      },
+      "captions": {
+        "instagram": "Running a US company from abroad? Here's what we handle for you.\n\nWhat you get:\n1. Bookkeeping in QuickBooks Online or Xero for up to $25,000 in monthly expenses and 100 transactions a month\n2. Reconciled and closed within 10 working days of each month end, with a profit and loss statement, balance sheet and cash summary\n3. Registered agent service, the annual report and annual compliance in one state\n4. Form 5472 with its pro forma Form 1120 each year, for an LLC with one owner outside the US\n5. A calendar of every US filing deadline your company has, when you start\n\nThe International Founder Plan, $175 a month: monthly books, Form 5472 with its pro forma 1120, your registered agent and state annual report (state fees at cost), and a deadline calendar when you start. If your Form 5472 details are in by March 31 and we miss April 15, a month's fee back and a penalty relief request.\n\nBook a 30 minute call with Muhammad Talha through the link in bio, or DM ABROAD.\n\n#globalfounders #usllc #startups #bookkeeping",
+        "facebook": "Running a US company from abroad? Here's what we handle for you.\n\nWhat you get:\n1. Bookkeeping in QuickBooks Online or Xero for up to $25,000 in monthly expenses and 100 transactions a month\n2. Reconciled and closed within 10 working days of each month end, with a profit and loss statement, balance sheet and cash summary\n3. Registered agent service, the annual report and annual compliance in one state\n4. Form 5472 with its pro forma Form 1120 each year, for an LLC with one owner outside the US\n5. A calendar of every US filing deadline your company has, when you start\n\nThe International Founder Plan, $175 a month: monthly books, Form 5472 with its pro forma 1120, your registered agent and state annual report (state fees at cost), and a deadline calendar when you start. If your Form 5472 details are in by March 31 and we miss April 15, a month's fee back and a penalty relief request.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/book?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-c04"
+      }
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T06",
+      "format": "text",
+      "title": "Form 5472 for Foreign Owned LLCs: what the work covers",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "FD-28",
+        "FD-31"
+      ],
+      "publish_at": "2026-12-05T15:00:00-05:00",
+      "platforms": [
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Own a US LLC from abroad? Here's what our Form 5472 work covers:\n\n1. The year's reportable transactions worked out from your bank statements and records\n2. Form 5472 and the pro forma Form 1120 prepared\n3. Sent to the IRS by fax or mail, the only ways it accepts them, within 10 working days of complete details\n4. The fax confirmation or mailing proof kept for your records\n\nForm 5472 for Foreign Owned LLCs: $300 a year, with a free extension when needed; if your details are in by March 31 and we miss April 15, the fee back and a penalty relief request."
+      },
+      "captions": {
+        "facebook": "Own a US LLC from abroad? Here's what our Form 5472 work covers:\n\n1. The year's reportable transactions worked out from your bank statements and records\n2. Form 5472 and the pro forma Form 1120 prepared\n3. Sent to the IRS by fax or mail, the only ways it accepts them, within 10 working days of complete details\n4. The fax confirmation or mailing proof kept for your records\n\nForm 5472 for Foreign Owned LLCs: $300 a year, with a free extension when needed; if your details are in by March 31 and we miss April 15, the fee back and a penalty relief request.\n\nSee Form 5472 for Foreign Owned LLCs: https://www.financedepartmentllc.com/form-5472?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-t06"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-M02.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-M02",
+      "format": "carousel_reel",
+      "title": "Music reel: Your 2027 filing calendar: five dates from February to June",
+      "pillar": "Deadlines",
+      "stage": "Middle",
+      "claims": [
+        "1099-02",
+        "1099-03",
+        "DE-01",
+        "1120-01",
+        "DE-08",
+        "FD-11"
+      ],
+      "publish_at": "2026-12-05T19:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "deadline",
+        "format": "carousel_reel",
+        "scenes": [
+          "chips",
+          "date"
+        ]
+      },
+      "content": {
+        "from": "2026-W49-C02"
+      },
+      "captions": {
+        "instagram": "Five dates for your US company, February to June 2027.\n\nFebruary 1: Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday.\n\nMarch 1 and March 31: Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nApril 15: A calendar year C corporation's Form 1120 for 2026 is due by Thursday, April 15, 2027; Form 7004, filed by that date, gives an automatic six month extension of time to file, to Friday, October 15, 2027.\n\nJune 1: A Delaware LLC pays an annual tax of $400, due by June 1 for the year before.\n\nThe free US filing checklist, printable, is on our US Entry page: link in bio, or comment CHECKLIST and we'll send it.\n\n#startups #smallbusiness #taxes #founders\n\nGeneral information, not tax or legal advice for your situation.",
+        "facebook": "Five dates for your US company, February to June 2027.\n\nFebruary 1: Forms 1099-NEC for 2026 payments go to each payee and to the IRS by Monday, February 1, 2027, since January 31, 2027 is a Sunday.\n\nMarch 1 and March 31: Delaware corporations file their annual report and pay franchise tax by March 1 each year; in 2027 that is a Monday. Form 1099-MISC for 2026 is due to the IRS by Monday, March 1, 2027 on paper, or by Wednesday, March 31, 2027 when filed electronically.\n\nApril 15: A calendar year C corporation's Form 1120 for 2026 is due by Thursday, April 15, 2027; Form 7004, filed by that date, gives an automatic six month extension of time to file, to Friday, October 15, 2027.\n\nJune 1: A Delaware LLC pays an annual tax of $400, due by June 1 for the year before.\n\nThe free US filing checklist, printable, is on our US Entry page: https://www.financedepartmentllc.com/us-entry?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-m02\n\nGeneral information, not tax or legal advice for your situation."
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S12_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S12",
+      "format": "story",
+      "title": "We collect your contractors' W-9s for you",
+      "pillar": "Deadlines",
+      "stage": "Bottom",
+      "claims": [
+        "FD-24",
+        "FD-09",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-05T20:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Paid contractors in 2026?",
+            "title": "We collect your contractors' W-9s for you",
+            "emph": "W-9s",
+            "cover": "filing_1099",
+            "body": "1099s Done by February 1: send your list by January 20, and if we miss February 1 we pay the IRS penalties up to $500. $100 for up to five contractors, then $12.50 a form.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-M03.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-M03",
+      "format": "carousel_reel",
+      "title": "Music reel: Funded startup? What your finance department does every month",
+      "pillar": "Founder finance",
+      "stage": "Bottom",
+      "claims": [
+        "FD-18",
+        "FD-19",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-05T21:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "carousel_reel",
+        "scenes": [
+          "cast",
+          "cover",
+          "stats",
+          "checklist"
+        ]
+      },
+      "content": {
+        "from": "2026-W49-C03"
+      },
+      "captions": {
+        "instagram": "Funded startup? Here's what your finance department does every month.\n\nWhat you get:\n1. Bookkeeping for up to $100,000 in monthly expenses, closed within 10 working days of each month end\n2. Burn and runway with every close\n3. A monthly or quarterly investor update, built with you and then produced each period\n4. A quarterly review of where the business stands against what you told us mattered most\n5. Payroll for up to five people in your own Gusto account, which we set up if you need it\n6. Your federal business return and its state return each year\n7. Your Forms 1099-NEC and, for a Delaware corporation, your Delaware annual report each year\n\nThe Funded Startup Finance Department, $625 a month: books closed within 10 working days of month end, burn and runway with every close, payroll for up to five people in your own Gusto, and your federal and state return each year.\n\nOn the Funded plan, up to three months of past books caught up free when you start, and your 1099s and Delaware filing included; leave anytime on 30 days' notice with a full handover.\n\nBook a 30 minute call with Muhammad Talha through the link in bio, or DM FUNDED.\n\n#startups #founders #bookkeeping #fundraising",
+        "facebook": "Funded startup? Here's what your finance department does every month.\n\nWhat you get:\n1. Bookkeeping for up to $100,000 in monthly expenses, closed within 10 working days of each month end\n2. Burn and runway with every close\n3. A monthly or quarterly investor update, built with you and then produced each period\n4. A quarterly review of where the business stands against what you told us mattered most\n5. Payroll for up to five people in your own Gusto account, which we set up if you need it\n6. Your federal business return and its state return each year\n7. Your Forms 1099-NEC and, for a Delaware corporation, your Delaware annual report each year\n\nThe Funded Startup Finance Department, $625 a month: books closed within 10 working days of month end, burn and runway with every close, payroll for up to five people in your own Gusto, and your federal and state return each year.\n\nOn the Funded plan, up to three months of past books caught up free when you start, and your 1099s and Delaware filing included; leave anytime on 30 days' notice with a full handover.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/book?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-m03"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E09.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "shows what rd_credit covers before its price",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E09",
+      "format": "explainer",
+      "title": "R&D Credit at a Fixed $1,000: what the work covers",
+      "pillar": "Founder finance",
+      "stage": "Bottom",
+      "claims": [
+        "FD-16",
+        "FD-35",
+        "FD-31"
+      ],
+      "publish_at": "2026-12-06T08:00:00-05:00",
+      "platforms": [
+        "instagram"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "explainer",
+        "scenes": [
+          "person",
+          "work",
+          "recap",
+          "checklist",
+          "phone"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "bottom",
+          "pills": {
+            "0": "The R&D credit",
+            "2": "The R&D credit"
+          },
+          "offer": "R&D Credit at a Fixed $1,000",
+          "hook": {
+            "text": "Does your product work qualify for the R&D credit?",
+            "say": "Does your product work qualify for the R and D credit?",
+            "shot": {
+              "type": "person",
+              "title": "Does your product work qualify for <mark>the R&D credit?</mark>",
+              "size": 90,
+              "card": "R&D",
+              "card_sub": "Your product work",
+              "icon": "rocket",
+              "who": "dev",
+              "expr": "thinking"
+            }
+          },
+          "shots": [
+            {
+              "cover": "rd_credit",
+              "pill": "What you get"
+            },
+            {
+              "shot": {
+                "type": "checklist",
+                "title": "A fixed <mark>$1,000</mark>",
+                "rows": [
+                  "The R&D credit for a fixed $1,000",
+                  "The fee back if there is no credit to claim"
+                ],
+                "at": [
+                  "fixed",
+                  "back"
+                ]
+              },
+              "lines": [
+                {
+                  "text": "The R&D credit for a fixed $1,000, with the fee back if there is no credit to claim.",
+                  "say": "The R and D credit for a fixed one thousand dollars, with the fee back if there is no credit to claim."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "checklist",
+                "title": "Answer four questions first",
+                "rows": [
+                  "What the company builds",
+                  "Who builds it",
+                  "Its gross receipts",
+                  "The year it first had any"
+                ],
+                "at": [
+                  "builds",
+                  "who",
+                  "gross",
+                  "year"
+                ],
+                "result": "No credit you can claim: the fee back in full",
+                "at_result": "refund"
+              },
+              "lines": [
+                {
+                  "text": "Before paying, you answer our eligibility questions: what the company builds, who builds it, its gross receipts and the year it first had any.",
+                  "say": "Before paying, you answer our eligibility questions: what the company builds, who builds it, its gross receipts, and the year it first had any."
+                },
+                {
+                  "text": "If the full study finds no credit you can claim, we refund the fee in full.",
+                  "say": "If the full study finds no credit you can claim, we refund the fee in full."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "dm",
+            "keyword": "CREDIT",
+            "text": "DM CREDIT and I'll send you the page.",
+            "say": "D M credit, and I'll send you the page.",
+            "pill": "DM <b>CREDIT</b>",
+            "shot": {
+              "type": "phone",
+              "keyword": "CREDIT",
+              "reply": "Here is the page for the R&D Credit at a Fixed $1,000:",
+              "link": "financedepartmentllc.com/rd-tax-credit",
+              "at_type": "credit",
+              "at_reply": "send"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Does your product work qualify for the R&D credit?\n\nWhat you get:\n1. Your product and engineering work, and the wages, contractor costs and supplies behind it, reviewed against the IRS test\n2. The credit calculated, and Form 6765 prepared to go with your federal return\n3. The payroll offset election made on that return, if your company qualifies\n4. The Form 8974 claim set up with your payroll provider for each quarter after the return is filed\n\nThe R&D credit for a fixed $1,000, with the fee back if there is no credit to claim. Before paying, you answer our eligibility questions: what the company builds, who builds it, its gross receipts and the year it first had any. If the full study finds no credit you can claim, we refund the fee in full.\n\nDM CREDIT, or see the R&D credit page through the link in bio.\n\n#startups #rdtaxcredit #founders #saas"
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S13_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S13",
+      "format": "story",
+      "title": "Six scorecard checks at full marks by delivery",
+      "pillar": "Raise readiness",
+      "stage": "Bottom",
+      "claims": [
+        "FD-15",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-06T09:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Raising soon?",
+            "title": "Six scorecard checks at full marks by delivery",
+            "emph": "at full marks",
+            "cover": "investor_ready_sprint",
+            "body": "The Investor Ready Sprint, $4,250: six of our scorecard checks at full marks by delivery, or we keep working at no extra cost.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [],
+      "status": "Planned",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-T16",
+      "format": "text",
+      "title": "Sunday question: the money question you've been putting off",
+      "pillar": "Founder stories",
+      "stage": "Top",
+      "claims": [],
+      "publish_at": "2026-12-06T11:00:00-05:00",
+      "platforms": [
+        "threads"
+      ],
+      "tags": {
+        "hook": "question",
+        "format": "text",
+        "scenes": []
+      },
+      "content": {
+        "text": "Sunday question: what's the money question about your company you've been putting off asking?"
+      },
+      "captions": {
+        "threads": "Sunday question: what's the money question about your company you've been putting off asking?\n\nAsk it below, no judgment.\n\n#Startups"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-E10.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-E10",
+      "format": "explainer",
+      "title": "Every startup or company needs a Finance Department. Here's yours.",
+      "pillar": "Founder stories",
+      "stage": "Top",
+      "claims": [
+        "FD-30",
+        "FD-01",
+        "FD-02",
+        "FD-05"
+      ],
+      "publish_at": "2026-12-06T12:30:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "explainer",
+        "scenes": [
+          "person",
+          "proof",
+          "nofee",
+          "follow"
+        ]
+      },
+      "content": {
+        "motion": {
+          "stage": "top",
+          "pills": {
+            "0": "Finance Department"
+          },
+          "hook": {
+            "text": "Every startup or company needs a Finance Department. Here's yours.",
+            "say": "Every startup or company needs a Finance Department. Here's yours.",
+            "shot": {
+              "type": "person",
+              "title": "Every startup or company needs a Finance Department. <mark>Here's yours.</mark>",
+              "size": 80,
+              "card": "300+",
+              "card_sub": "founders",
+              "icon": "building",
+              "who": "penny",
+              "expr": "happy"
+            }
+          },
+          "shots": [
+            {
+              "shot": {
+                "type": "proof",
+                "items": [
+                  {
+                    "value": "300+",
+                    "to": 300,
+                    "suf": "+",
+                    "label": "founders we have worked with",
+                    "at": "three"
+                  },
+                  {
+                    "pre": "More than",
+                    "value": "$100M",
+                    "label": "raised by founders with materials we prepared",
+                    "at": "one"
+                  }
+                ]
+              },
+              "lines": [
+                {
+                  "text": "We have worked with 300+ founders.",
+                  "say": "We have worked with three hundred plus founders."
+                },
+                {
+                  "text": "Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds.",
+                  "say": "Materials we prepared have helped founders raise more than one hundred million dollars, across S B A loans, angel rounds, and early venture rounds."
+                }
+              ]
+            },
+            {
+              "shot": {
+                "type": "nofee",
+                "no": [
+                  "Introduce investors",
+                  "Take a success fee"
+                ],
+                "yes": "You stay in charge of your raise",
+                "at_no": [
+                  "introduce",
+                  "success"
+                ],
+                "at_yes": "charge",
+                "who": "sam"
+              },
+              "lines": [
+                {
+                  "text": "We do not introduce investors or take a success fee; you stay in charge of your raise.",
+                  "say": "We do not introduce investors or take a success fee; you stay in charge of your raise."
+                }
+              ]
+            }
+          ],
+          "cta": {
+            "kind": "follow",
+            "text": "Follow for more founder finance, explained simply.",
+            "say": "Follow for more founder finance, explained simply.",
+            "pill": "Follow for more founder finance",
+            "shot": {
+              "type": "follow",
+              "title": "Follow for more founder finance, <mark>explained simply</mark>",
+              "handle": "talha.financedepartment"
+            }
+          }
+        }
+      },
+      "captions": {
+        "instagram": "Every startup or company needs a Finance Department. Here's yours.\n\nWe have worked with 300+ founders. Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds.\n\nWe do not introduce investors or take a success fee; you stay in charge of your raise.\n\nFollow for more founder finance, explained simply.\n\n#startups #founders #bookkeeping #smallbusiness",
+        "facebook": "Every startup or company needs a Finance Department. Here's yours.\n\nWe have worked with 300+ founders. Materials we prepared have helped founders raise more than $100M across SBA loans, angel rounds and early venture rounds.\n\nWe do not introduce investors or take a success fee; you stay in charge of your raise.\n\nFollow for more founder finance, explained simply."
+      },
+      "ai_voice": true
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-M04.mp4"
+      ],
+      "status": "Held",
+      "check_notes": "layout: slide 1: content taller or wider than its box. The reel draws C04's cover at 1080 by 1920; the cover's title was shortened once at planning and the reel still overflows, so it is held for the week",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-M04",
+      "format": "carousel_reel",
+      "title": "Music reel: Running a US company from abroad? What we handle for you",
+      "pillar": "US entry",
+      "stage": "Bottom",
+      "claims": [
+        "FD-20",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-06T19:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "carousel_reel",
+        "scenes": [
+          "cast",
+          "cover",
+          "stats",
+          "date"
+        ]
+      },
+      "content": {
+        "from": "2026-W49-C04"
+      },
+      "captions": {
+        "instagram": "Running a US company from abroad? Here's what we handle for you.\n\nWhat you get:\n1. Bookkeeping in QuickBooks Online or Xero for up to $25,000 in monthly expenses and 100 transactions a month\n2. Reconciled and closed within 10 working days of each month end, with a profit and loss statement, balance sheet and cash summary\n3. Registered agent service, the annual report and annual compliance in one state\n4. Form 5472 with its pro forma Form 1120 each year, for an LLC with one owner outside the US\n5. A calendar of every US filing deadline your company has, when you start\n\nThe International Founder Plan, $175 a month: monthly books, Form 5472 with its pro forma 1120, your registered agent and state annual report (state fees at cost), and a deadline calendar when you start. If your Form 5472 details are in by March 31 and we miss April 15, a month's fee back and a penalty relief request.\n\nBook a 30 minute call with Muhammad Talha through the link in bio, or DM ABROAD.\n\n#globalfounders #usllc #startups #bookkeeping",
+        "facebook": "Running a US company from abroad? Here's what we handle for you.\n\nWhat you get:\n1. Bookkeeping in QuickBooks Online or Xero for up to $25,000 in monthly expenses and 100 transactions a month\n2. Reconciled and closed within 10 working days of each month end, with a profit and loss statement, balance sheet and cash summary\n3. Registered agent service, the annual report and annual compliance in one state\n4. Form 5472 with its pro forma Form 1120 each year, for an LLC with one owner outside the US\n5. A calendar of every US filing deadline your company has, when you start\n\nThe International Founder Plan, $175 a month: monthly books, Form 5472 with its pro forma 1120, your registered agent and state annual report (state fees at cost), and a deadline calendar when you start. If your Form 5472 details are in by March 31 and we miss April 15, a month's fee back and a penalty relief request.\n\nBook a 30 minute call with Muhammad Talha: https://www.financedepartmentllc.com/book?utm_source=facebook&utm_medium=social_media&utm_campaign=2026-w49-m04"
+      }
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-S14_01.jpg"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-S14",
+      "format": "story",
+      "title": "No credit to claim? The fee back.",
+      "pillar": "Founder finance",
+      "stage": "Bottom",
+      "claims": [
+        "FD-16",
+        "FD-35",
+        "FD-31",
+        "FD-12"
+      ],
+      "publish_at": "2026-12-06T20:00:00-05:00",
+      "platforms": [
+        "instagram",
+        "facebook"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "story",
+        "scenes": [
+          "story",
+          "cover"
+        ]
+      },
+      "content": {
+        "slides": [
+          {
+            "layout": "STORY",
+            "kicker": "Building a product?",
+            "title": "No credit to claim? The fee back.",
+            "emph": "The fee back.",
+            "cover": "rd_credit",
+            "body": "The R&D credit for a fixed $1,000, with the fee back if there is no credit to claim.",
+            "cta": "Reply CALL to book a 30 minute call"
+          }
+        ]
+      },
+      "captions": {}
+    },
+    {
+      "media": [
+        "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W49/media/2026-W49-M07.mp4"
+      ],
+      "status": "Made",
+      "check_notes": "",
+      "metricool": {},
+      "buffer": {},
+      "id": "2026-W49-M07",
+      "format": "carousel_reel",
+      "title": "Music reel: Receipt roast: the shoebox, the runaway and the payment app pile",
+      "pillar": "Founder finance",
+      "stage": "Top",
+      "claims": [
+        "1099-06"
+      ],
+      "publish_at": "2026-12-06T21:00:00-05:00",
+      "platforms": [
+        "instagram"
+      ],
+      "tags": {
+        "hook": "call_out",
+        "format": "carousel_reel",
+        "scenes": [
+          "cast"
+        ]
+      },
+      "content": {
+        "from": "2026-W49-C07"
+      },
+      "captions": {
+        "instagram": "Receipt roast: Sam brought Penny a shoebox.\n\nOne rule from the pile: payment apps and other third party settlement organizations are not required to file Form 1099-K for a payee unless the year's payments to that payee exceed $20,000 and the transactions exceed 200.\n\nWhat's hiding in your shoebox?\n\nFollow for more founder finance, explained simply.\n\n#smallbusiness #bookkeeping #startups #founders\n\nGeneral information, not tax or legal advice for your situation."
+      },
+      "experiment": "2026-W49-X1"
+    }
+  ]
+}

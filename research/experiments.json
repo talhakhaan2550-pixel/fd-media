@@ -12,5 +12,17 @@
     "result": "written by tools/learn.mjs",
     "promote": "true once it has earned a place"
   },
-  "experiments": []
+  "experiments": [
+    {
+      "id": "2026-W49-X1",
+      "week": "2026-W49",
+      "idea": "receipt_roast",
+      "what": "A cast comic carousel, comedy first: Sam hands Penny a shoebox of receipts, the cast reacts as each one is sorted (Rex makes a run for it), and one Approved rule closes it (1099-06, the Form 1099-K test for payment apps); its music reel 2026-W49-M07 follows a day later",
+      "hypothesis": "Comedy first with the cast holds attention and earns more shares and saves than a top of funnel carousel that states its rule from the first slide",
+      "stage": "top",
+      "piece": "2026-W49-C07",
+      "metric": "the top of funnel goal in tools/learn.mjs: views, shares, saves and holding attention, against the same stage's other pieces",
+      "chosen": "No Research brief for 2026-W49 existed when the Plan run read research/ on 23 November 2026, so the plan took the first untried idea in research/patterns.json wild_cards that the studio can make: speedrun needs a real task shown click by click, which the studio cannot show, so receipt_roast came next"
+    }
+  ]
 }
