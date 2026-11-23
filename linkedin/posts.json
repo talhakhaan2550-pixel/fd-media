@@ -653,7 +653,52 @@
    "kind": "rule change explainer",
    "pattern": "who_it_affects",
    "topic": "BOI reporting",
-   "lighter": false
+   "lighter": false,
+   "claims": [
+    "BOI-01",
+    "BOI-02"
+   ],
+   "alt": "A FinCEN sheet, permanent since 14 August 2026: a US formed company files no beneficial ownership report",
+   "content": {
+    "kicker": "Beneficial ownership",
+    "lead": "If your company was formed in the United States:",
+    "title": "No beneficial ownership\nreport to file",
+    "emph": "report to file",
+    "object": {
+     "type": "bill",
+     "title": "FinCEN",
+     "sub": "Permanent since 14 August 2026",
+     "height": 300,
+     "rows": [
+      [
+       "Formed in the US",
+       "no report"
+      ],
+      [
+       "US persons",
+       "not reported"
+      ],
+      [
+       "Formed abroad, registered in a state",
+       "30 days"
+      ]
+     ]
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "tick",
+       "title": "Where it was formed",
+       "text": "The test is where the company was formed, not where its owners live."
+      },
+      {
+       "mark": "cross",
+       "title": "Asked to pay for a filing?",
+       "text": "Check FinCEN's beneficial ownership page before you pay anything. There is no fee to file directly with FinCEN."
+      }
+     ]
+    }
+   }
   },
   {
    "id": "LI-2026-12-02",
@@ -679,7 +724,54 @@
    "kind": "lighter",
    "pattern": "nobody_founders",
    "topic": "revenue recognition",
-   "lighter": true
+   "lighter": true,
+   "claims": [],
+   "alt": "A December sheet for a $12,000 annual plan: $12,000 in the bank, $1,000 of revenue and $11,000 deferred",
+   "content": {
+    "kicker": "Revenue recognition",
+    "lead": "Nobody: Founders in December, after the annual renewals land:",
+    "title": "Best revenue\nmonth ever?",
+    "emph": "month ever?",
+    "object": {
+     "type": "bill",
+     "title": "December",
+     "sub": "Paid 1 December",
+     "height": 330,
+     "rows": [
+      [
+       "Bank balance",
+       "$12,000"
+      ],
+      [
+       "December revenue",
+       "$1,000"
+      ],
+      [
+       "Contract liability at 31 December",
+       "$11,000"
+      ]
+     ],
+     "note": {
+      "label": "Founders",
+      "text": "best revenue month ever",
+      "strike": false
+     }
+    },
+    "points": {
+     "items": [
+      {
+       "mark": "tick",
+       "title": "Revenue as you deliver",
+       "text": "Under Topic 606, the US revenue standard, you recognize revenue as you deliver what the customer paid for."
+      },
+      {
+       "mark": "box",
+       "title": "List who paid in advance",
+       "text": "Before you send year end numbers to anyone, list every customer who paid in advance and the period each payment covers."
+      }
+     ]
+    }
+   }
   },
   {
    "id": "LI-2026-12-04",
