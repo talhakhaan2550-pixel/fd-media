@@ -116,9 +116,17 @@
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C01_04.jpg",
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C01_05.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 23 November 2026. Every slide matches its script word for word (1099-07, 1099-09 and 1099-10 with every condition kept, nonresident alien and backup withholding explained in plain words), each visual shows only the piece's own words, and the last slide carries Talha's photo and the disclaimer. No register piece in the last eight weeks makes this point, so it passes the Repeats test.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6b0395b6c72676f5e9761284"
+        ],
+        "facebook": [
+          "6b0395b6c72676f5e97612cc"
+        ]
+      }
     },
     {
       "id": "2026-W48-E01",
@@ -243,14 +251,27 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-E01.mp4"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 23 November 2026. Narrated by the US male voice am_michael (remade 18 November 2026), sound at -14.7 LUFS; every caption and scene matches its approved lines (1099-01 on the hook and lines 1 and 3, 1099-02 on line 4 with the date kept), nonemployee compensation is explained the first time, and the end card carries Talha's photo and the disclaimer. Version A of hook test 2026-W48-H1. No register piece in the last eight weeks makes this point, so it passes the Repeats test.",
-      "metricool": {},
+      "metricool": {
+        "instagram": {
+          "id": "438163911",
+          "uuid": "2887285410796421152"
+        }
+      },
       "ai_voice": true,
       "trial": {
         "test": "2026-W48-H1",
         "variant": "A",
         "pattern": "question"
+      },
+      "buffer": {
+        "youtube": [
+          "6b0395c7a6de38de9eab48c4"
+        ],
+        "facebook": [
+          "6b0395c8d864a011050e2c0b"
+        ]
       }
     },
     {
@@ -273,9 +294,14 @@
         "facebook": "Is your company a small business for tax?\n\nA business meets the small business gross receipts test for a tax year beginning in 2026 when its average annual gross receipts over the three prior tax years are $32 million or less. For 2025 the figure is $31 million.\n\nGross receipts are the money a business takes in before any costs, and the test averages them over the three tax years before the one being tested.\n\nFollow for more founder finance, explained simply.\n\nGeneral information, not tax or legal advice for your situation."
       },
       "media": [],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 23 November 2026. The Facebook post gives 448-01 with both figures and years unchanged, explains gross receipts the first time, and ends with the follow call to action and the disclaimer. No register piece in the last eight weeks makes this point, so it passes the Repeats test.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "facebook": [
+          "6b0395dfa6de38de9eab51c0"
+        ]
+      }
     },
     {
       "id": "2026-W48-S01",
@@ -311,9 +337,17 @@
       "media": [
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-S01_01.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 23 November 2026. The frame matches its script word for word: the four What you get items from FD-31 come before the offer is named and priced in FD-24 and FD-09's wording, with the story call to action from FD-12. No register piece in the last eight weeks makes this point, so it passes the Repeats test.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6b0395e0c72676f5e9761f49"
+        ],
+        "facebook": [
+          "6b0395e0d864a011050e32fc"
+        ]
+      }
     },
     {
       "id": "2026-W48-E02",
@@ -1622,9 +1656,17 @@
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C03_03.jpg",
         "https://talhakhaan2550-pixel.github.io/fd-media/weeks/2026-W48/media/2026-W48-C03_04.jpg"
       ],
-      "status": "Passed check",
+      "status": "Scheduled",
       "check_notes": "Passed the production check on 23 November 2026. Every slide matches its script word for word (1099-02 on slide 2 and 1099-03 on slide 3, every date and condition kept), the cast speaks only the piece's own words, and the last slide carries the disclaimer. The Instagram and Facebook captions give both claims whole with the follow call to action and the disclaimer, four hashtags on Instagram and none on Facebook. No register piece in the last eight weeks makes this point, so it passes the Repeats test.",
-      "metricool": {}
+      "metricool": {},
+      "buffer": {
+        "instagram": [
+          "6b0395b4cc364169c19daf1f"
+        ],
+        "facebook": [
+          "6b0395b5c72676f5e9761214"
+        ]
+      }
     },
     {
       "id": "2026-W48-T04",
